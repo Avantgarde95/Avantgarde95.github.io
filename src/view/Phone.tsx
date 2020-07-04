@@ -1,8 +1,9 @@
 /** @jsx jsx */
 
-import {jsx} from "@emotion/core";
+import {jsx} from '@emotion/core';
 import {StatusBar} from './StatusBar';
 import {NavigationBar} from './NavigationBar';
+import {HomeScreen} from './HomeScreen';
 
 export const Phone = () => (
     <div css={{
@@ -14,12 +15,7 @@ export const Phone = () => (
         backgroundColor: '#000000'
     }}>
         <StatusBar/>
-        <div css={{
-            width: '100%',
-            height: 'calc(100% - 4.5rem)'
-        }}>
-
-        </div>
+        <HomeScreen/>
         <NavigationBar/>
     </div>
 );

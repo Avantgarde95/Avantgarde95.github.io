@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import * as React from 'react';
-import {jsx} from "@emotion/core";
+import {jsx} from '@emotion/core';
 import {Icon} from './Icon';
 import {faWifi} from '@fortawesome/free-solid-svg-icons/faWifi';
 

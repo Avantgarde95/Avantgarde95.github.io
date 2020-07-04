@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import {jsx} from "@emotion/core";
+import {jsx} from '@emotion/core';
 import {icon, IconDefinition} from '@fortawesome/fontawesome-svg-core';
 
 export const Icon = (
