@@ -2,8 +2,11 @@
 
 import * as React from 'react';
 import {jsx} from '@emotion/core';
-import {Icon} from './Icon';
 import {faWifi} from '@fortawesome/free-solid-svg-icons/faWifi';
+import {faSignal} from '@fortawesome/free-solid-svg-icons/faSignal';
+import {faBatteryFull} from '@fortawesome/free-solid-svg-icons/faBatteryFull';
+import {Icon} from './Icon';
+import {AMPM, Clock, Hour, Minute} from './Clock';
 
 const LeftArea: React.FC = props => (
     <div css={{
@@ -47,6 +50,9 @@ export const StatusBar = () => (
         </LeftArea>
         <RightArea>
             <Block><Icon definition={faWifi}/></Block>
+            <Block><Icon definition={faSignal}/></Block>
+            <Block><Icon definition={faBatteryFull}/></Block>
+            <Block><Clock><Hour/>:<Minute/> <AMPM/></Clock></Block>
         </RightArea>
     </div>
 );
