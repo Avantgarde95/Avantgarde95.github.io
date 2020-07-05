@@ -5,7 +5,9 @@ import {jsx} from '@emotion/core';
 import {IconDefinition} from '@fortawesome/fontawesome-svg-core';
 import {faIdCard} from '@fortawesome/free-solid-svg-icons/faIdCard';
 import {faFileAlt} from '@fortawesome/free-solid-svg-icons/faFileAlt';
+import {faNewspaper} from '@fortawesome/free-solid-svg-icons/faNewspaper';
 import {faFlask} from '@fortawesome/free-solid-svg-icons/faFlask';
+import {faCode} from '@fortawesome/free-solid-svg-icons/faCode';
 import {Screen} from './Screen';
 import {Icon} from './Icon';
 
@@ -41,20 +43,29 @@ const Name: React.FC = props => (
     </div>
 );
 
-const App: React.FC = props => (
+const App: React.FC<{ width: number, height: number }> = props => (
     <div css={{
+        display: 'inline-block',
         boxSizing: 'border-box',
         cursor: 'pointer',
-        webkitTapHighlightColor: 'rgba(255, 255, 255, 0)',
-        width: '8rem',
-        height: '8rem',
-        paddingTop: '1rem'
+        width: `${props.width}rem`,
+        height: `${props.height}rem`,
+        paddingTop: '1rem',
+        webkitTapHighlightColor: 'rgba(255, 255, 255, 0)'
     }}>
         {props.children}
     </div>
 );
 
-const appInfos: {
+const Placeholder: React.FC<{ width: number, height: number }> = props => (
+    <div css={{
+        display: 'inline-block',
+        width: `${props.width}rem`,
+        height: `${props.width}rem`
+    }}/>
+);
+
+const apps: {
     name: string,
     path: string,
     icon: IconDefinition,
@@ -62,18 +73,40 @@ const appInfos: {
 }[] = [
     {name: 'About', path: '/About', icon: faIdCard, color: '#afb029'},
     {name: 'CV', path: '/CV', icon: faFileAlt, color: '#8d9e9d'},
-    {name: 'Lab', path: '/Lab', icon: faFlask, color: '#876766'}
+    {name: 'Articles', path: '/Articles', icon: faNewspaper, color: '#677963'},
+    {name: 'Lab', path: '/Lab', icon: faFlask, color: '#876766'},
+    {name: 'Code', path: '/Code', icon: faCode, color: '#444957'}
 ];
 
-export const HomeScreen = () => (
+export const HomeScreen = (
+    {
+        appWidth = 8,
+        appHeight = 8,
+        maxAppsPerLine = 5
+    }
+) => (
     <Screen>
-        {appInfos.map(info => (
-            <App>
-                <Button color={info.color}>
-                    <Icon definition={info.icon}/>
-                </Button>
-                <Name>{info.name}</Name>
-            </App>
-        ))}
+        <div css={{
+            textAlign: 'center',
+            width: '100%',
+            height: '100%'
+        }}>
+            <div css={{
+                display: 'inline-block',
+                maxWidth: `${appWidth * maxAppsPerLine}rem`
+            }}>
+                {apps.map(app => (
+                    <App width={appWidth} height={appHeight}>
+                        <Button color={app.color}>
+                            <Icon definition={app.icon}/>
+                        </Button>
+                        <Name>{app.name}</Name>
+                    </App>
+                ))}
+                {Array.apply(null, Array(maxAppsPerLine)).map(() => (
+                    <Placeholder width={appWidth} height={appHeight}/>
+                ))}
+            </div>
+        </div>
     </Screen>
 );
