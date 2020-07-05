@@ -77,7 +77,7 @@ const Placeholder = (
     <div css={{
         display: 'inline-block',
         width: `${width}rem`,
-        height: `${width}rem`
+        height: `${height}rem`
     }}>
         {children}
     </div>
