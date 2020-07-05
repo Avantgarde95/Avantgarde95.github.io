@@ -1,12 +1,12 @@
 /** @jsx jsx */
 
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import {Global, jsx} from '@emotion/core';
+import {Fragment} from 'react';
+import {render} from 'react-dom';
 import {Phone} from './view/Phone';
 
-ReactDOM.render((
-    <React.Fragment>
+render((
+    <Fragment>
         <Global styles={{
             html: {
                 width: '100%',
@@ -24,5 +24,5 @@ ReactDOM.render((
             }
         }}/>
         <Phone/>
-    </React.Fragment>
+    </Fragment>
 ), document.body);

@@ -1,37 +1,37 @@
 /** @jsx jsx */
 
-import * as React from 'react';
 import {jsx} from '@emotion/core';
+import {ReactNode} from 'react';
 import {faWifi} from '@fortawesome/free-solid-svg-icons/faWifi';
 import {faSignal} from '@fortawesome/free-solid-svg-icons/faSignal';
 import {faBatteryFull} from '@fortawesome/free-solid-svg-icons/faBatteryFull';
 import {Icon} from './Icon';
 import {AMPM, Clock, Hour, Minute} from './Clock';
 
-const LeftArea: React.FC = props => (
+const LeftArea = ({children = {} as ReactNode}) => (
     <div css={{
         float: 'left',
         height: '100%'
     }}>
-        {props.children}
+        {children}
     </div>
 );
 
-const RightArea: React.FC = props => (
+const RightArea = ({children = {} as ReactNode}) => (
     <div css={{
         float: 'right',
         height: '100%'
     }}>
-        {props.children}
+        {children}
     </div>
 );
 
-const Block: React.FC = props => (
+const Block = ({children = {} as ReactNode}) => (
     <span css={{
         marginLeft: '0.2rem',
         marginRight: '0.2rem'
     }}>
-        {props.children}
+        {children}
     </span>
 );
 

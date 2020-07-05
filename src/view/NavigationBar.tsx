@@ -1,22 +1,22 @@
 /** @jsx jsx */
 
-import * as React from 'react';
 import {jsx} from '@emotion/core';
+import {ReactNode} from 'react';
 import {Icon} from './Icon';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import {faGithub} from '@fortawesome/free-brands-svg-icons/faGithub';
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
 
-const Cell: React.FC = props => (
+const Cell = ({children = {} as ReactNode}) => (
     <span css={{
         display: 'table-cell',
         textAlign: 'center'
     }}>
-        {props.children}
+        {children}
     </span>
 );
 
-const Button: React.FC = props => (
+const Button = ({children = {} as ReactNode}) => (
     <span css={{
         display: 'inline-block',
         cursor: 'pointer',
@@ -27,7 +27,7 @@ const Button: React.FC = props => (
             transform: 'scale(0.9)'
         }
     }}>
-        {props.children}
+        {children}
     </span>
 );
 

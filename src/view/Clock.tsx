@@ -1,8 +1,7 @@
 /** @jsx jsx */
 
-import * as React from 'react';
-import {createContext, Fragment, useContext, useEffect, useState} from 'react';
 import {jsx} from '@emotion/core';
+import {createContext, Fragment, ReactNode, useContext, useEffect, useState} from 'react';
 
 const monthNames = [
     'January',
@@ -57,7 +56,7 @@ function getCurrentTime() {
 
 const ClockContext = createContext(new Time());
 
-export const Clock: React.FC = props => {
+export const Clock = ({children = {} as ReactNode}) => {
     const [time, setTime] = useState(getCurrentTime());
 
     useEffect(() => {
@@ -71,9 +70,9 @@ export const Clock: React.FC = props => {
     });
 
     return (
-        <ClockContext.Provider value={time}>{
-            props.children
-        }</ClockContext.Provider>
+        <ClockContext.Provider value={time}>
+            {children}
+        </ClockContext.Provider>
     );
 };
 
