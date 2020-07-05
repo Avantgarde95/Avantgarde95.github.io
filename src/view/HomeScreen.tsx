@@ -13,25 +13,30 @@ import {Icon} from './Icon';
 const Button = (
     {
         color = '#ffffff',
+        path = '/#',
         children = {} as ReactNode
     }
 ) => (
-    <div css={{
-        textAlign: 'center',
-        verticalAlign: 'middle',
-        width: '4rem',
-        height: '4rem',
-        margin: 'auto',
-        borderRadius: '1rem',
-        lineHeight: '4rem',
-        fontSize: '2.5rem',
-        color: color,
-        backgroundColor: '#ffffff',
-        transition: 'all 0.1s',
-        '&:hover, &:active': {
-            transform: 'scale(0.85)'
-        }
-    }}>
+    <div
+        css={{
+            textAlign: 'center',
+            verticalAlign: 'middle',
+            width: '4rem',
+            height: '4rem',
+            margin: 'auto',
+            borderRadius: '1rem',
+            lineHeight: '4rem',
+            fontSize: '2.5rem',
+            color: color,
+            backgroundColor: '#ffffff',
+            transition: 'all 0.1s',
+            '&:hover, &:active': {
+                transform: 'scale(0.85)'
+            }
+        }}
+        onClick={() => {
+        }}
+    >
         {children}
     </div>
 );
@@ -110,7 +115,7 @@ export const HomeScreen = (
             }}>
                 {apps.map(app => (
                     <App width={appWidth} height={appHeight}>
-                        <Button color={app.color}>
+                        <Button path={app.path} color={app.color}>
                             <Icon definition={app.icon}/>
                         </Button>
                         <Name>{app.name}</Name>
