@@ -1,12 +1,18 @@
 /** @jsx jsx */
 
+import './Polyfill';
+
 import {Global, jsx} from '@emotion/core';
-import {Fragment} from 'react';
 import {render} from 'react-dom';
-import {Phone} from './view/Phone';
+import {HashRouter, Route, Routes} from 'react-router-dom';
+import {StatusBar} from './view/StatusBar';
+import {HomeScreen} from './view/HomeScreen';
+import {NavigationBar} from './view/NavigationBar';
+import {AppScreen} from './view/AppScreen';
+import {NotFoundScreen} from './view/NotFoundScreen';
 
 render((
-    <Fragment>
+    <HashRouter>
         <Global styles={{
             html: {
                 width: '100%',
@@ -23,6 +29,21 @@ render((
                 padding: 0
             }
         }}/>
-        <Phone/>
-    </Fragment>
+        <div css={{
+            overflowY: 'hidden',
+            width: '100%',
+            height: '100%',
+            margin: 0,
+            padding: 0,
+            backgroundColor: '#000000'
+        }}>
+            <StatusBar/>
+            <Routes>
+                <Route path={'/'} element={<HomeScreen/>}/>
+                <Route path={'/App'} element={<AppScreen/>}/>
+                <Route path={'*'} element={<NotFoundScreen/>}/>
+            </Routes>
+            <NavigationBar/>
+        </div>
+    </HashRouter>
 ), document.body);
