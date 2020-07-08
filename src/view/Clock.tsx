@@ -32,13 +32,13 @@ function fillZero(value: number, length: number) {
     return `${Math.pow(10, length) + value}`.slice(1);
 }
 
-class Time {
-    year = 0;
-    month = 0;
-    monthDay = 0;
-    weekDay = 0;
-    hour = 0;
-    minute = 0;
+interface Time {
+    year: number;
+    month: number;
+    monthDay: number;
+    weekDay: number;
+    hour: number;
+    minute: number;
 }
 
 function getCurrentTime() {
@@ -54,7 +54,14 @@ function getCurrentTime() {
     } as Time;
 }
 
-const ClockContext = createContext(new Time());
+const ClockContext = createContext({
+    year: 0,
+    month: 0,
+    monthDay: 0,
+    weekDay: 0,
+    hour: 0,
+    minute: 0
+} as Time);
 
 export const Clock = ({children = {} as ReactNode}) => {
     const [time, setTime] = useState(getCurrentTime());
