@@ -9,9 +9,12 @@ import {StatusBar} from './view/StatusBar';
 import {HomeScreen} from './view/HomeScreen';
 import {NavigationBar} from './view/NavigationBar';
 import {NotFoundScreen} from './view/NotFoundScreen';
+import {AppScreen} from './view/AppScreen';
+import {AboutApp} from './view/AboutApp';
 
 const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
+    {path: '/About', element: <AppScreen><AboutApp/></AppScreen>},
     {path: '*', element: <NotFoundScreen/>}
 ]);
 
