@@ -4,16 +4,14 @@ import './Polyfill';
 
 import {Global, jsx} from '@emotion/core';
 import {render} from 'react-dom';
-import {HashRouter, Route, Routes, useRoutes} from 'react-router-dom';
+import {HashRouter, useRoutes} from 'react-router-dom';
 import {StatusBar} from './view/StatusBar';
 import {HomeScreen} from './view/HomeScreen';
 import {NavigationBar} from './view/NavigationBar';
-import {AppScreen} from './view/AppScreen';
 import {NotFoundScreen} from './view/NotFoundScreen';
 
-const ScreenRoutes = () => useRoutes([
+const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
-    {path: '/App', element: <AppScreen/>},
     {path: '*', element: <NotFoundScreen/>}
 ]);
 
@@ -44,7 +42,7 @@ const Device = () => (
             backgroundColor: '#000000'
         }}>
             <StatusBar/>
-            <ScreenRoutes/>
+            <DeviceRoutes/>
             <NavigationBar/>
         </div>
     </HashRouter>

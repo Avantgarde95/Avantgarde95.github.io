@@ -9,37 +9,43 @@ import {faFlask} from '@fortawesome/free-solid-svg-icons/faFlask';
 import {faCode} from '@fortawesome/free-solid-svg-icons/faCode';
 import {Screen} from './Screen';
 import {Icon} from './Icon';
+import {useNavigate} from 'react-router-dom';
 
 const Button = (
     {
         color = '#ffffff',
-        path = '/#',
+        path = '',
         children = {} as ReactNode
     }
-) => (
-    <div
-        css={{
-            textAlign: 'center',
-            verticalAlign: 'middle',
-            width: '4rem',
-            height: '4rem',
-            margin: 'auto',
-            borderRadius: '1rem',
-            lineHeight: '4rem',
-            fontSize: '2.5rem',
-            color: color,
-            backgroundColor: '#ffffff',
-            transition: 'all 0.1s',
-            '&:hover, &:active': {
-                transform: 'scale(0.85)'
-            }
-        }}
-        onClick={() => {
-        }}
-    >
-        {children}
-    </div>
-);
+) => {
+    const navigate = useNavigate();
+
+    return (
+        <div
+            css={{
+                textAlign: 'center',
+                verticalAlign: 'middle',
+                width: '4rem',
+                height: '4rem',
+                margin: 'auto',
+                borderRadius: '1rem',
+                lineHeight: '4rem',
+                fontSize: '2.5rem',
+                color: color,
+                backgroundColor: '#ffffff',
+                transition: 'all 0.1s',
+                '&:hover, &:active': {
+                    transform: 'scale(0.85)'
+                }
+            }}
+            onClick={() => {
+                navigate(path);
+            }}
+        >
+            {children}
+        </div>
+    );
+};
 
 const Name = ({children = {} as ReactNode}) => (
     <div css={{
