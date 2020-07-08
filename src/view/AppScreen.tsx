@@ -4,7 +4,7 @@ import {jsx, keyframes} from '@emotion/core';
 import {ReactNode} from 'react';
 import {Screen} from './Screen';
 
-const openApp = keyframes({
+const openingAnimation = keyframes({
     from: {
         opacity: 0.5
     },
@@ -18,7 +18,7 @@ export const AppScreen = ({children = {} as ReactNode}) => (
         <div css={{
             width: '100%',
             height: '100%',
-            animation: `${openApp} 0.15s`
+            animation: `${openingAnimation} 0.15s`
         }}>
             {children}
         </div>

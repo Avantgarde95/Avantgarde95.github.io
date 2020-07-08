@@ -12,11 +12,15 @@ import {NotFoundScreen} from './view/NotFoundScreen';
 import {AppScreen} from './view/AppScreen';
 import {AboutApp} from './view/AboutApp';
 import {CVApp} from './view/CVApp';
+import {UnfinishedApp} from './view/UnfinishedApp';
 
 const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
     {path: '/About', element: <AppScreen><AboutApp/></AppScreen>},
     {path: '/CV', element: <AppScreen><CVApp/></AppScreen>},
+    {path: '/Articles', element: <AppScreen><UnfinishedApp/></AppScreen>},
+    {path: '/Lab', element: <AppScreen><UnfinishedApp/></AppScreen>},
+    {path: '/Code', element: <AppScreen><UnfinishedApp/></AppScreen>},
     {path: '*', element: <NotFoundScreen/>}
 ]);
 

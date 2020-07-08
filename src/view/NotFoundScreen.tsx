@@ -1,9 +1,19 @@
 /** @jsx jsx */
 
-import {jsx} from '@emotion/core';
+import {jsx, keyframes} from '@emotion/core';
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
+import {faSadTear} from '@fortawesome/free-solid-svg-icons/faSadTear';
 import {Screen} from './Screen';
 import {Icon} from './Icon';
+
+const openingAnimation = keyframes({
+    from: {
+        opacity: 0.5
+    },
+    to: {
+        opacity: 1
+    }
+});
 
 export const NotFoundScreen = () => (
     <Screen>
@@ -12,16 +22,27 @@ export const NotFoundScreen = () => (
             textAlign: 'center',
             width: '100%',
             height: '100%',
-            backgroundColor: '#202020'
+            color: '#ffffff',
+            backgroundColor: '#202020',
+            animation: `${openingAnimation} 0.15s`
+        }}>
+        <span css={{
+            display: 'table-cell',
+            verticalAlign: 'middle'
         }}>
             <span css={{
-                display: 'table-cell',
-                verticalAlign: 'middle',
-                fontSize: '1.5rem',
-                color: '#ffffff'
+                marginBottom: '2rem',
+                fontSize: '1.5rem'
             }}>
-            Page not found :( Click <Icon definition={faHome}/> to return.
+                Page not found! Click <Icon definition={faHome}/> to return.
             </span>
+            <br/>
+            <span css={{
+                fontSize: '4rem'
+            }}>
+                <Icon definition={faSadTear}/>
+            </span>
+        </span>
         </div>
     </Screen>
 );

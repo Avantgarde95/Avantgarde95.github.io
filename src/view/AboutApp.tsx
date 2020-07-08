@@ -56,8 +56,8 @@ export const AboutApp = () => (
         </List>
         <Title>Education</Title>
         <List>
-            <Item>2013 ~ 2018: BS, Computer science & Mathematics, KAIST</Item>
-            <Item>2018 ~ Present: MS, Computer science, KAIST</Item>
+            <Item>2018 ~ Present: M.S., School of Computing (전산학부), KAIST</Item>
+            <Item>2013 ~ 2018: B.S., School of Computing (전산학부) and Department of Mathematical Sciences (수리과학과), KAIST</Item>
         </List>
         <Title>Interests (Computer)</Title>
         <List>
