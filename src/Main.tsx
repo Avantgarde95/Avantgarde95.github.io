@@ -11,10 +11,12 @@ import {NavigationBar} from './view/NavigationBar';
 import {NotFoundScreen} from './view/NotFoundScreen';
 import {AppScreen} from './view/AppScreen';
 import {AboutApp} from './view/AboutApp';
+import {CVApp} from './view/CVApp';
 
 const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
     {path: '/About', element: <AppScreen><AboutApp/></AppScreen>},
+    {path: '/CV', element: <AppScreen><CVApp/></AppScreen>},
     {path: '*', element: <NotFoundScreen/>}
 ]);
 

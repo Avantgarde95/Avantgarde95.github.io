@@ -59,13 +59,16 @@ export const AboutApp = () => (
             <Item>2013 ~ 2018: BS, Computer science & Mathematics, KAIST</Item>
             <Item>2018 ~ Present: MS, Computer science, KAIST</Item>
         </List>
-        <Title>Interests</Title>
+        <Title>Interests (Computer)</Title>
         <List>
-            <Item>Computer graphics</Item>
-            <Item>Programming language</Item>
-            <Item>Front-end web application</Item>
-            <Item>Mobile application</Item>
-            <Item>Music (Piano, Guitar)</Item>
+            <Item>Real-time global illumination</Item>
+            <Item>Collaborative 3D modeling</Item>
+            <Item>Augmented reality</Item>
+        </List>
+        <Title>Interests (Music)</Title>
+        <List>
+            <Item>Piano, guitar</Item>
+            <Item>Heavy metal (nu metal, metalcore, djent), jazz, classical</Item>
         </List>
         <Title>Contact</Title>
         <List>
