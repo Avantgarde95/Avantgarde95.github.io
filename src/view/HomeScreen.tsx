@@ -2,6 +2,7 @@
 
 import {jsx} from '@emotion/core';
 import {ReactNode} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {faIdCard} from '@fortawesome/free-solid-svg-icons/faIdCard';
 import {faFileAlt} from '@fortawesome/free-solid-svg-icons/faFileAlt';
 import {faNewspaper} from '@fortawesome/free-solid-svg-icons/faNewspaper';
@@ -9,7 +10,6 @@ import {faFlask} from '@fortawesome/free-solid-svg-icons/faFlask';
 import {faCode} from '@fortawesome/free-solid-svg-icons/faCode';
 import {Screen} from './Screen';
 import {Icon} from './Icon';
-import {useNavigate} from 'react-router-dom';
 
 const Button = (
     {
