@@ -40,6 +40,7 @@ const Button = (
                 transform: 'scale(0.9)'
             }
         }}
+        title={title}
         onClick={() => {
             onClick();
         }}
