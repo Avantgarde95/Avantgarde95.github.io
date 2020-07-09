@@ -13,43 +13,46 @@ import {Icon} from './Icon';
 
 const Button = (
     {
-        color = '#ffffff',
+        title = '',
         path = '',
+        color = '#ffffff',
         children = {} as ReactNode
     }
 ) => {
     const navigate = useNavigate();
 
     return (
-        <div
+        <button
             css={{
+                cursor: 'pointer',
                 textAlign: 'center',
                 verticalAlign: 'middle',
                 width: '4rem',
                 height: '4rem',
                 margin: 'auto',
+                border: 'none',
                 borderRadius: '1rem',
                 lineHeight: '4rem',
                 fontSize: '2.5rem',
                 color: color,
                 backgroundColor: '#ffffff',
                 transition: 'all 0.1s',
-                '&:hover, &:active': {
+                '&:hover, &:active, &:focus': {
                     transform: 'scale(0.85)'
                 }
             }}
+            title={title}
             onClick={() => {
                 navigate(path);
             }}
         >
             {children}
-        </div>
+        </button>
     );
 };
 
 const Name = ({children = {} as ReactNode}) => (
     <div css={{
-        userSelect: 'none',
         textAlign: 'center',
         margin: '1rem auto auto auto',
         color: '#ffffff'
@@ -68,7 +71,6 @@ const App = (
     <div css={{
         display: 'inline-block',
         boxSizing: 'border-box',
-        cursor: 'pointer',
         width: `${width}rem`,
         height: `${height}rem`,
         paddingTop: '1rem',
@@ -121,7 +123,7 @@ export const HomeScreen = (
             }}>
                 {apps.map(app => (
                     <App width={appWidth} height={appHeight}>
-                        <Button path={app.path} color={app.color}>
+                        <Button title={app.name} path={app.path} color={app.color}>
                             <Icon definition={app.icon}/>
                         </Button>
                         <Name>{app.name}</Name>

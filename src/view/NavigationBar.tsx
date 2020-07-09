@@ -19,25 +19,33 @@ const Cell = ({children = {} as ReactNode}) => (
 
 const Button = (
     {
+        title = '',
         onClick = {} as () => void,
         children = {} as ReactNode
     }
 ) => (
-    <span
+    <button
         css={{
-            display: 'inline-block',
             cursor: 'pointer',
+            display: 'inline-block',
             transition: 'all 0.1s',
             width: '3rem',
-            webkitTapHighlightColor: 'rgba(255, 255, 255, 0)',
-            '&:hover, &:active': {
+            height: '2.5rem',
+            border: 'none',
+            lineHeight: '2.5rem',
+            fontSize: '1.5rem',
+            color: '#ffffff',
+            backgroundColor: 'transparent',
+            '&:hover, &:active, &:focus': {
                 transform: 'scale(0.9)'
             }
         }}
-        onClick={() => onClick()}
+        onClick={() => {
+            onClick();
+        }}
     >
         {children}
-    </span>
+    </button>
 );
 
 export const NavigationBar = () => {
@@ -46,28 +54,24 @@ export const NavigationBar = () => {
     return (
         <div css={{
             display: 'table',
-            width: '100%',
-            height: '2.5rem',
-            lineHeight: '2.5rem',
-            fontSize: '1.5rem',
-            color: '#ffffff'
+            width: '100%'
         }}>
             <Cell>
-                <Button onClick={() => {
+                <Button title={'Back'} onClick={() => {
                     navigate('..');
                 }}>
                     <Icon definition={faArrowLeft}/>
                 </Button>
             </Cell>
             <Cell>
-                <Button onClick={() => {
+                <Button title={'GitHub'} onClick={() => {
                     location.href = 'https://github.com/Avantgarde95';
                 }}>
                     <Icon definition={faGithub}/>
                 </Button>
             </Cell>
             <Cell>
-                <Button onClick={() => {
+                <Button title={'Home'} onClick={() => {
                     navigate('/', {replace: true});
                 }}>
                     <Icon definition={faHome}/>
