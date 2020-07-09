@@ -18,7 +18,7 @@ const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
     {path: '/About', element: <AppScreen><AboutApp/></AppScreen>},
     {path: '/CV', element: <AppScreen><CVApp/></AppScreen>},
-    {path: '/Articles', element: <AppScreen><UnfinishedApp/></AppScreen>},
+    {path: '/Blog', element: <AppScreen><UnfinishedApp/></AppScreen>},
     {path: '/Lab', element: <AppScreen><UnfinishedApp/></AppScreen>},
     {path: '/Code', element: <AppScreen><UnfinishedApp/></AppScreen>},
     {path: '*', element: <NotFoundScreen/>}

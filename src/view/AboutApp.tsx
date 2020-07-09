@@ -39,6 +39,12 @@ const Item = ({children = {} as ReactNode}) => (
     </li>
 );
 
+const Link = ({url = '', children = {} as ReactNode}) => (
+    <a target={'_blank'} rel={'noopener noreferrer'} href={url}>
+        {children}
+    </a>
+);
+
 export const AboutApp = () => (
     <div css={{
         overflowY: 'auto',
@@ -49,11 +55,13 @@ export const AboutApp = () => (
         background: `url(${Background}) repeat`,
         color: '#000000'
     }}>
-        <Title>About</Title>
-        <List>
-            <Item>Name: Hunmin Park</Item>
-            <Item>Country: South Korea</Item>
-        </List>
+        <div css={{
+            fontWeight: 'bold',
+            fontSize: '1.8rem',
+            marginBottom: '1.3rem'
+        }}>
+            Hunmin Park
+        </div>
         <Title>Education</Title>
         <List>
             <Item>2018 ~ Present: M.S., School of Computing (전산학부), KAIST</Item>
@@ -71,9 +79,18 @@ export const AboutApp = () => (
             <Item>Piano, guitar</Item>
             <Item>Heavy metal (nu metal, metalcore, djent), jazz, classical</Item>
         </List>
-        <Title>Contact</Title>
+        <Title>Links</Title>
         <List>
-            <Item>Email: 95phm@kaist.ac.kr</Item>
+            <Item>
+                Email:&nbsp;
+                <Link url={'mailto:95phm@kaist.ac.kr'}>95phm@kaist.ac.kr</Link>
+            </Item>
+            <Item>
+                SNS:&nbsp;
+                <Link url={'https://www.youtube.com/user/Scottparkmusic'}>YouTube</Link>,&nbsp;
+                <Link url={'https://www.facebook.com/s.ramanujan'}>Facebook</Link>,&nbsp;
+                <Link url={'https://www.instagram.com/hunminpark95'}>Instagram</Link>
+            </Item>
         </List>
     </div>
 );
