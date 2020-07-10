@@ -6,8 +6,8 @@ import {useNavigate} from 'react-router-dom';
 import {faIdCard} from '@fortawesome/free-solid-svg-icons/faIdCard';
 import {faFileAlt} from '@fortawesome/free-solid-svg-icons/faFileAlt';
 import {faFlask} from '@fortawesome/free-solid-svg-icons/faFlask';
-import {faCode} from '@fortawesome/free-solid-svg-icons/faCode';
 import {faNewspaper} from '@fortawesome/free-solid-svg-icons/faNewspaper';
+import {faGamepad} from '@fortawesome/free-solid-svg-icons/faGamepad';
 import {Screen} from './Screen';
 import {Icon} from './Icon';
 
@@ -101,7 +101,7 @@ const apps = [
     {name: 'CV', path: '/CV', icon: faFileAlt, color: '#8d9e9d'},
     {name: 'Blog', path: '/Blog', icon: faNewspaper, color: '#677963'},
     {name: 'Lab', path: '/Lab', icon: faFlask, color: '#876766'},
-    {name: 'Code', path: '/Code', icon: faCode, color: '#444957'}
+    {name: 'Games', path: '/Game', icon: faGamepad, color: '#444957'}
 ];
 
 export const HomeScreen = (
