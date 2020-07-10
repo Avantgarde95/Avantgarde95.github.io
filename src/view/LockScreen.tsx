@@ -3,6 +3,7 @@
 import {jsx} from '@emotion/core';
 import {Screen} from './Screen';
 import {Clock, Hour, Minute, Month, MonthDay, WeekDay} from './Clock';
+import {useState} from 'react';
 
 const Time1 = () => (
     <div css={{
@@ -24,31 +25,36 @@ const Time2 = () => (
     </div>
 );
 
-export const LockScreen = () => (
-    <Screen>
-        <div
-            css={{
-                position: 'relative',
-                width: '100%',
-                height: '100%',
-                color: 'rgba(255, 255, 255, 1)'
-            }}
-            onClick={() => {
+export const LockScreen = ({onClick = {} as () => void}) => {
+    const [color, setColor] = useState('rgba(255, 255, 255, 1)');
 
-            }}
-        >
-            <Time1/>
-            <Time2/>
-            <div css={{
-                position: 'absolute',
-                textAlign: 'center',
-                left: 0,
-                right: 0,
-                bottom: '5.5rem',
-                width: '100%'
-            }}>
-                Click anywhere to unlock
+    return (
+        <Screen>
+            <div
+                css={{
+                    position: 'relative',
+                    overflow: 'hidden',
+                    width: '100%',
+                    height: '100%',
+                    color: color,
+                    transition: 'color 0.25s'
+                }}
+                onClick={() => {
+                    setColor('rgba(255, 255, 255, 0)');
+                    setTimeout(onClick, 250);
+                }}
+            >
+                <Time1/>
+                <Time2/>
+                <div css={{
+                    position: 'absolute',
+                    textAlign: 'center',
+                    bottom: '3rem',
+                    width: '100%'
+                }}>
+                    Click anywhere to unlock
+                </div>
             </div>
-        </div>
-    </Screen>
-);
+        </Screen>
+    );
+};

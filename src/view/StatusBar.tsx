@@ -35,7 +35,7 @@ const Block = ({children = {} as ReactNode}) => (
     </span>
 );
 
-export const StatusBar = () => (
+export const StatusBar = ({showTime = true}) => (
     <div css={{
         boxSizing: 'border-box',
         width: '100%',
@@ -52,7 +52,7 @@ export const StatusBar = () => (
             <Block><Icon definition={faWifi}/></Block>
             <Block><Icon definition={faSignal}/></Block>
             <Block><Icon definition={faBatteryFull}/></Block>
-            <Block><Clock><Hour/>:<Minute/> <AMPM/></Clock></Block>
+            {showTime && <Block><Clock><Hour/>:<Minute/> <AMPM/></Clock></Block>}
         </RightArea>
     </div>
 );
