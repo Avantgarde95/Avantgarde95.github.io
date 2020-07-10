@@ -3,6 +3,7 @@
 import './Polyfill';
 
 import {Global, jsx} from '@emotion/core';
+import {useState} from 'react';
 import {render} from 'react-dom';
 import {HashRouter, useRoutes} from 'react-router-dom';
 import {StatusBar} from './view/StatusBar';
@@ -13,7 +14,6 @@ import {AboutApp} from './view/AboutApp';
 import {CVApp} from './view/CVApp';
 import {UnfinishedApp} from './view/UnfinishedApp';
 import {LockScreen} from './view/LockScreen';
-import {useState} from 'react';
 import {NavigationBar} from './view/NavigationBar';
 
 const DeviceRoutes = () => useRoutes([
@@ -57,7 +57,7 @@ const Device = () => {
             }}>
                 <StatusBar showTime={!isLocked}/>
                 {
-                    isLocked && <LockScreen onClick={() => {
+                    isLocked && <LockScreen onDisappear={() => {
                         setLock(false);
                     }}/>
                 }

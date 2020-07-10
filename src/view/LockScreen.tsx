@@ -25,7 +25,7 @@ const Time2 = () => (
     </div>
 );
 
-export const LockScreen = ({onClick = {} as () => void}) => {
+export const LockScreen = ({onDisappear = {} as () => void}) => {
     const [color, setColor] = useState('rgba(255, 255, 255, 1)');
 
     return (
@@ -41,7 +41,7 @@ export const LockScreen = ({onClick = {} as () => void}) => {
                 }}
                 onClick={() => {
                     setColor('rgba(255, 255, 255, 0)');
-                    setTimeout(onClick, 250);
+                    setTimeout(onDisappear, 250);
                 }}
             >
                 <Time1/>
