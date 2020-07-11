@@ -3,9 +3,9 @@
 import {jsx} from '@emotion/core';
 import {ReactNode} from 'react';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
-import {Icon} from './Icon';
+import {Icon} from '../device/Icon';
 
-const Background = require('../image/AboutAppBackground');
+const Background = require('./image/Paper');
 
 const Title = ({children = {} as ReactNode}) => (
     <div css={{

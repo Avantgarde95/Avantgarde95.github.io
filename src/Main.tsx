@@ -6,16 +6,16 @@ import {Global, jsx} from '@emotion/core';
 import {useState} from 'react';
 import {render} from 'react-dom';
 import {HashRouter, useRoutes} from 'react-router-dom';
-import {StatusBar} from './view/StatusBar';
-import {HomeScreen} from './view/HomeScreen';
-import {NotFoundScreen} from './view/NotFoundScreen';
-import {AppScreen} from './view/AppScreen';
-import {AboutApp} from './view/AboutApp';
-import {CVApp} from './view/CVApp';
-import {UnfinishedApp} from './view/UnfinishedApp';
-import {LockScreen} from './view/LockScreen';
-import {NavigationBar} from './view/NavigationBar';
-import {LabApp} from './view/LabApp';
+import {StatusBar} from './device/StatusBar';
+import {HomeScreen} from './device/HomeScreen';
+import {NotFoundScreen} from './device/NotFoundScreen';
+import {AppScreen} from './device/AppScreen';
+import {AboutApp} from './app/AboutApp';
+import {CVApp} from './app/CVApp';
+import {UnfinishedApp} from './app/UnfinishedApp';
+import {LockScreen} from './device/LockScreen';
+import {NavigationBar} from './device/NavigationBar';
+import {LabApp} from './app/LabApp';
 
 const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},

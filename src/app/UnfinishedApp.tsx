@@ -3,7 +3,7 @@
 import {jsx} from '@emotion/core';
 import {faWrench} from '@fortawesome/free-solid-svg-icons/faWrench';
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
-import {Icon} from './Icon';
+import {Icon} from '../device/Icon';
 
 export const UnfinishedApp = () => (
     <div css={{

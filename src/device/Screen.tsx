@@ -3,7 +3,7 @@
 import {jsx} from '@emotion/core';
 import {ReactNode} from 'react';
 
-const Background = require('../image/ScreenBackground');
+const Background = require('./image/Background');
 
 export const Screen = ({children = {} as ReactNode}) => (
     <div css={{
