@@ -5,7 +5,7 @@ import {ReactNode} from 'react';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {Icon} from '../device/Icon';
 
-const Background = require('./image/Paper');
+const Background = require('./image/Guitar');
 
 const Title = ({children = {} as ReactNode}) => (
     <div css={{
@@ -52,8 +52,9 @@ export const AboutApp = () => (
         width: '100%',
         height: '100%',
         padding: '1.5rem',
-        background: `url(${Background}) repeat`,
-        color: '#000000'
+        color: '#ffffff',
+        textShadow: '0 0 3px #008cf9, 0 0 5px #00f9f5',
+        background: `#000000 url(${Background}) no-repeat center`
     }}>
         <div css={{
             fontWeight: 'bold',
@@ -62,12 +63,6 @@ export const AboutApp = () => (
         }}>
             Hunmin Park
         </div>
-        <Title>Education</Title>
-        <List>
-            <Item>2018 ~ Present: M.S., School of Computing (전산학부), KAIST</Item>
-            <Item>2013 ~ 2018: B.S., School of Computing (전산학부) and Department of Mathematical Sciences (수리과학과),
-                KAIST</Item>
-        </List>
         <Title>Interests (Computer)</Title>
         <List>
             <Item>Real-time global illumination</Item>
