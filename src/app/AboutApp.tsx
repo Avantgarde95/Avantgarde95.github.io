@@ -1,11 +1,32 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {ReactNode} from 'react';
+import {createContext, Fragment, ReactNode, useContext, useState} from 'react';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {Icon} from '../device/Icon';
 
 const Background = require('./image/Guitar');
+
+const LanguageContext = createContext({
+    currentLanguage: 'English',
+    changeLanguage: (newLanguage: string) => {
+    }
+});
+
+const Language = ({children = {} as ReactNode}) => {
+    const [language, setLanguage] = useState('English');
+
+    return (
+        <LanguageContext.Provider value={{
+            currentLanguage: language,
+            changeLanguage: (newLanguage: string) => {
+                setLanguage(newLanguage);
+            }
+        }}>
+            {children}
+        </LanguageContext.Provider>
+    );
+};
 
 const Name = ({children = {} as ReactNode}) => (
     <div css={{
@@ -17,28 +38,47 @@ const Name = ({children = {} as ReactNode}) => (
     </div>
 );
 
-const Language = ({language = '', children = {} as ReactNode}) => (
-    <button
-        css={{
-            cursor: 'pointer',
-            width: '5.7rem',
-            margin: 0,
-            lineHeight: '1.5rem',
-            color: '#ffffff',
-            textShadow: '0 0 2px #0090ff, 0 0 4px #00f9f5',
-            boxShadow: '0 0 2px #0090ff, 0 0 4px #00f9f5',
-            background: 'none',
-            border: 'solid 1px #ffffff',
-            borderRadius: 0,
-            '&:hover, &:active, &:focus': {
-                border: 'solid 1px #0090ff',
-                color: '#0090ff'
-            }
-        }}
-        title={language}
-    >
-        {children}
-    </button>
+const LanguageButton = ({language = '', children = {} as ReactNode}) => {
+    const changeLanguage = useContext(LanguageContext).changeLanguage;
+
+    return (
+        <button
+            css={{
+                cursor: 'pointer',
+                width: '5.7rem',
+                margin: 0,
+                lineHeight: '1.5rem',
+                color: '#ffffff',
+                textShadow: '0 0 2px #0090ff, 0 0 4px #00f9f5',
+                boxShadow: '0 0 2px #0090ff, 0 0 4px #00f9f5',
+                background: 'none',
+                border: 'solid 1px #ffffff',
+                borderRadius: 0,
+                '&:hover, &:active, &:focus': {
+                    border: 'solid 1px #0090ff',
+                    color: '#0090ff'
+                }
+            }}
+            title={language}
+            onClick={() => {
+                changeLanguage(language);
+            }}
+        >
+            {children}
+        </button>
+    );
+};
+
+const Korean = ({children = {} as ReactNode}) => (
+    <Fragment>
+        {useContext(LanguageContext).currentLanguage === 'Korean' && children}
+    </Fragment>
+);
+
+const English = ({children = {} as ReactNode}) => (
+    <Fragment>
+        {useContext(LanguageContext).currentLanguage === 'English' && children}
+    </Fragment>
 );
 
 const Title = ({children = {} as ReactNode}) => (
@@ -100,38 +140,49 @@ export const AboutApp = () => (
         textShadow: '0 0 2px #0090ff, 0 0 4px #00f9f5',
         background: `#000000 url(${Background}) no-repeat center`
     }}>
-        <Name>
-            Hunmin Park
-        </Name>
-        <div css={{
-            marginBottom: '1.5rem'
-        }}>
-            <Language language={'Korean'}>한국어</Language>
-            <Language language={'English'}>English</Language>
-        </div>
-        <Title>Interests (Computer)</Title>
-        <List>
-            <Item>Real-time global illumination</Item>
-            <Item>Collaborative 3D modeling</Item>
-            <Item>Augmented reality</Item>
-        </List>
-        <Title>Interests (Music)</Title>
-        <List>
-            <Item>Piano, guitar</Item>
-            <Item>Heavy metal (nu metal, metalcore, djent), jazz, classical</Item>
-        </List>
-        <Title>Links</Title>
-        <List>
-            <Item>
-                Email:&nbsp;
-                <Link url={'mailto:95phm@kaist.ac.kr'}>95phm@kaist.ac.kr</Link>
-            </Item>
-            <Item>
-                SNS:&nbsp;
-                <Link url={'https://www.youtube.com/user/Scottparkmusic'}>YouTube</Link>,&nbsp;
-                <Link url={'https://www.facebook.com/s.ramanujan'}>Facebook</Link>,&nbsp;
-                <Link url={'https://www.instagram.com/hunminpark95'}>Instagram</Link>
-            </Item>
-        </List>
+        <Language>
+            <Name>
+                Hunmin Park
+            </Name>
+            <div css={{
+                marginBottom: '1.5rem'
+            }}>
+                <LanguageButton language={'Korean'}>한국어</LanguageButton>
+                <LanguageButton language={'English'}>English</LanguageButton>
+            </div>
+            <Title>
+                <Korean>관심사 (컴퓨터)</Korean>
+                <English>Interests (Computer)</English>
+            </Title>
+            <List>
+                <Item>Real-time global illumination</Item>
+                <Item>Collaborative 3D modeling</Item>
+                <Item>Augmented reality</Item>
+            </List>
+            <Title>
+                <Korean>관심사 (음악)</Korean>
+                <English>Interests (Music)</English>
+            </Title>
+            <List>
+                <Item>Piano, guitar</Item>
+                <Item>Heavy metal (nu metal, metalcore, djent), jazz, classical</Item>
+            </List>
+            <Title>
+                <Korean>링크</Korean>
+                <English>Links</English>
+            </Title>
+            <List>
+                <Item>
+                    Email:&nbsp;
+                    <Link url={'mailto:95phm@kaist.ac.kr'}>95phm@kaist.ac.kr</Link>
+                </Item>
+                <Item>
+                    SNS:&nbsp;
+                    <Link url={'https://www.youtube.com/user/Scottparkmusic'}>YouTube</Link>,&nbsp;
+                    <Link url={'https://www.facebook.com/s.ramanujan'}>Facebook</Link>,&nbsp;
+                    <Link url={'https://www.instagram.com/hunminpark95'}>Instagram</Link>
+                </Item>
+            </List>
+        </Language>
     </div>
 );
