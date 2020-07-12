@@ -7,6 +7,40 @@ import {Icon} from '../device/Icon';
 
 const Background = require('./image/Guitar');
 
+const Name = ({children = {} as ReactNode}) => (
+    <div css={{
+        fontWeight: 'bold',
+        fontSize: '1.8rem',
+        marginBottom: '1.3rem'
+    }}>
+        {children}
+    </div>
+);
+
+const Language = ({language = '', children = {} as ReactNode}) => (
+    <button
+        css={{
+            cursor: 'pointer',
+            width: '5.7rem',
+            margin: 0,
+            lineHeight: '1.5rem',
+            color: '#ffffff',
+            textShadow: '0 0 2px #0090ff, 0 0 4px #00f9f5',
+            boxShadow: '0 0 2px #0090ff, 0 0 4px #00f9f5',
+            background: 'none',
+            border: 'solid 1px #ffffff',
+            borderRadius: 0,
+            '&:hover, &:active, &:focus': {
+                border: 'solid 1px #0090ff',
+                color: '#0090ff'
+            }
+        }}
+        title={language}
+    >
+        {children}
+    </button>
+);
+
 const Title = ({children = {} as ReactNode}) => (
     <div css={{
         font: '1.5rem',
@@ -40,7 +74,17 @@ const Item = ({children = {} as ReactNode}) => (
 );
 
 const Link = ({url = '', children = {} as ReactNode}) => (
-    <a target={'_blank'} rel={'noopener noreferrer'} href={url}>
+    <a
+        css={{
+            color: '#00f9f5',
+            '&:hover, &:active': {
+                color: '#0090ff'
+            }
+        }}
+        target={'_blank'}
+        rel={'noopener noreferrer'}
+        href={url}
+    >
         {children}
     </a>
 );
@@ -53,15 +97,17 @@ export const AboutApp = () => (
         height: '100%',
         padding: '1.5rem',
         color: '#ffffff',
-        textShadow: '0 0 3px #008cf9, 0 0 5px #00f9f5',
+        textShadow: '0 0 2px #0090ff, 0 0 4px #00f9f5',
         background: `#000000 url(${Background}) no-repeat center`
     }}>
-        <div css={{
-            fontWeight: 'bold',
-            fontSize: '1.8rem',
-            marginBottom: '1.3rem'
-        }}>
+        <Name>
             Hunmin Park
+        </Name>
+        <div css={{
+            marginBottom: '1.5rem'
+        }}>
+            <Language language={'Korean'}>한국어</Language>
+            <Language language={'English'}>English</Language>
         </div>
         <Title>Interests (Computer)</Title>
         <List>
