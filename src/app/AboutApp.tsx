@@ -93,7 +93,8 @@ const Title = ({children = {} as ReactNode}) => (
 const List = ({children = {} as ReactNode}) => (
     <ul css={{
         listStyle: 'none',
-        paddingLeft: 0
+        paddingLeft: 0,
+        marginBottom: '1.5rem'
     }}>
         {children}
     </ul>
@@ -141,9 +142,7 @@ export const AboutApp = () => (
         background: `#000000 url(${Background}) no-repeat center`
     }}>
         <Language>
-            <Name>
-                Hunmin Park
-            </Name>
+            <Name>Hunmin Park</Name>
             <div css={{
                 marginBottom: '1.5rem'
             }}>
@@ -151,21 +150,59 @@ export const AboutApp = () => (
                 <LanguageButton language={'English'}>English</LanguageButton>
             </div>
             <Title>
+                <Korean>소개</Korean>
+                <English>About</English>
+            </Title>
+            <List>
+                <Item>
+                    <Korean>반가워요! 컴퓨터와 음악에 관심이 있습니다 :)</Korean>
+                    <English>Welcome! I'm interested in computers and music :)</English>
+                </Item>
+            </List>
+            <Title>
                 <Korean>관심사 (컴퓨터)</Korean>
                 <English>Interests (Computer)</English>
             </Title>
             <List>
-                <Item>Real-time global illumination</Item>
-                <Item>Collaborative 3D modeling</Item>
-                <Item>Augmented reality</Item>
+                <Item>
+                    <Korean>컴퓨터 그래픽스(CG), 특히 실시간 렌더링, 3D 모델링, 증강현실(AR), 가상현실(VR)에 관심이 있습니다.</Korean>
+                    <English>I'm interested in computer graphics, especially real-time rendeing, 3D modeling, augmented
+                        reality(AR), and virtual reality(VR).</English>
+                </Item>
+                <Item>
+                    <Korean>
+                        언젠가 CG 기술을 활용하여 멋진 게임을 제작해보고 싶네요 :)
+                    </Korean>
+                    <English>
+                        I want to make a great game using CG technology someday :)
+                    </English>
+                </Item>
             </List>
             <Title>
                 <Korean>관심사 (음악)</Korean>
                 <English>Interests (Music)</English>
             </Title>
             <List>
-                <Item>Piano, guitar</Item>
-                <Item>Heavy metal (nu metal, metalcore, djent), jazz, classical</Item>
+                <Item>
+                    <Korean>
+                        취미로 피아노와 기타를 연주합니다.
+                        가끔씩 작곡/편곡에도 도전합니다.
+                    </Korean>
+                    <English>
+                        I play piano and guitar as a hobby.
+                        Sometimes I also try to compose and arrange music.
+                    </English>
+                </Item>
+                <Item>
+                    <Korean>
+                        헤비메탈, 재즈, 클래식 음악을 즐겨 듣습니다.
+                        다른 장르의 음악들도 종종 들어요.
+                    </Korean>
+                    <English>
+                        I like hearing heavy metal, jazz, and classical music.
+                        I also listen to music from other genres.
+                    </English>
+                </Item>
             </List>
             <Title>
                 <Korean>링크</Korean>
@@ -173,14 +210,27 @@ export const AboutApp = () => (
             </Title>
             <List>
                 <Item>
-                    Email:&nbsp;
+                    <Korean>이메일</Korean>
+                    <English>Email</English>
+                    :&nbsp;
                     <Link url={'mailto:95phm@kaist.ac.kr'}>95phm@kaist.ac.kr</Link>
                 </Item>
                 <Item>
                     SNS:&nbsp;
-                    <Link url={'https://www.youtube.com/user/Scottparkmusic'}>YouTube</Link>,&nbsp;
-                    <Link url={'https://www.facebook.com/s.ramanujan'}>Facebook</Link>,&nbsp;
-                    <Link url={'https://www.instagram.com/hunminpark95'}>Instagram</Link>
+                    <Link url={'https://www.youtube.com/user/Scottparkmusic'}>
+                        <Korean>유튜브</Korean>
+                        <English>YouTube</English>
+                    </Link>
+                    ,&nbsp;
+                    <Link url={'https://www.facebook.com/s.ramanujan'}>
+                        <Korean>페이스북</Korean>
+                        <English>Facebook</English>
+                    </Link>
+                    ,&nbsp;
+                    <Link url={'https://www.instagram.com/hunminpark95'}>
+                        <Korean>인스타그램</Korean>
+                        <English>Instagram</English>
+                    </Link>
                 </Item>
             </List>
         </Language>
