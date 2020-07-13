@@ -137,6 +137,35 @@ const Link = ({url = '', children = {} as ReactNode}) => (
     </a>
 );
 
+const Gallery = ({images = [{src: '', alt: ''}]}) => (
+    <div css={{
+        overflowX: 'auto',
+        overflowY: 'hidden',
+        whiteSpace: 'nowrap',
+        marginLeft: '1px',
+        marginRight: '1px',
+        marginBottom: '1.5rem'
+    }}>
+        {images.map(({src, alt}) => (
+            <img
+                css={{
+                    width: '11rem',
+                    height: '11rem',
+                    marginRight: '0.7rem',
+                    boxShadow: '0 0 2px #0090ff, 0 0 4px #00e9f9',
+                    border: 'solid 1px #ffffff',
+                    '&:last-child': {
+                        marginRight: 0
+                    }
+                }}
+                src={src}
+                alt={alt}
+                title={alt}
+            />
+        ))}
+    </div>
+);
+
 export const AboutApp = () => (
     <div css={{
         overflowY: 'auto',
@@ -178,13 +207,18 @@ export const AboutApp = () => (
                 </Item>
                 <Item>
                     <Korean>
-                        언젠가 CG 기술을 활용하여 멋진 게임을 제작해보고 싶네요 :)
+                        언젠가 CG를 활용하여 멋진 게임을 제작해보고 싶네요 :)
                     </Korean>
                     <English>
-                        I want to make a great game using CG technology someday :)
+                        I want to make a great game using CG someday :)
                     </English>
                 </Item>
             </List>
+            <Gallery images={[
+                {src: require('./image/OpenGL'), alt: 'Real-time rendering (Rasterization)'},
+                {src: require('./image/RayTracing'), alt: 'Real-time rendering (Ray tracing)'},
+                {src: require('./image/HoloLens'), alt: 'Augmented reality (Microsoft HoloLens)'}
+            ]}/>
             <Title>
                 <Korean>관심사 (음악)</Korean>
                 <English>Interests (Music)</English>
@@ -211,6 +245,11 @@ export const AboutApp = () => (
                     </English>
                 </Item>
             </List>
+            <Gallery images={[
+                {src: require('./image/Telecaster'), alt: 'My guitar'},
+                {src: require('./image/Concert'), alt: 'My concert'},
+                {src: require('./image/Sheet'), alt: 'My music'}
+            ]}/>
             <Title>
                 <Korean>링크</Korean>
                 <English>Links</English>
