@@ -49,14 +49,14 @@ const LanguageButton = ({language = '', children = {} as ReactNode}) => {
                 margin: 0,
                 lineHeight: '1.5rem',
                 color: '#ffffff',
-                textShadow: '0 0 2px #0090ff, 0 0 4px #00f9f5',
-                boxShadow: '0 0 2px #0090ff, 0 0 4px #00f9f5',
+                textShadow: '0 0 2px #0090ff, 0 0 4px #00e9f9',
+                boxShadow: '0 0 2px #0090ff, 0 0 4px #00e9f9',
                 background: 'none',
                 border: 'solid 1px #ffffff',
                 borderRadius: 0,
                 '&:hover, &:active, &:focus': {
-                    border: 'solid 1px #0090ff',
-                    color: '#0090ff'
+                    border: 'solid 1px #00e9f9',
+                    color: '#00e9f9'
                 }
             }}
             title={language}
@@ -124,7 +124,7 @@ const Item = ({children = {} as ReactNode}) => (
 const Link = ({url = '', children = {} as ReactNode}) => (
     <a
         css={{
-            color: '#00f9f5',
+            color: '#00e9f9',
             '&:hover, &:active': {
                 color: '#0090ff'
             }
@@ -145,7 +145,7 @@ export const AboutApp = () => (
         height: '100%',
         padding: '1.5rem',
         color: '#ffffff',
-        textShadow: '0 0 2px #0090ff, 0 0 4px #00f9f5',
+        textShadow: '0 0 2px #0090ff, 0 0 4px #00e9f9',
         background: `#000000 url(${Background}) no-repeat center`
     }}>
         <Language>
