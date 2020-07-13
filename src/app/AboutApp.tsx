@@ -102,15 +102,22 @@ const List = ({children = {} as ReactNode}) => (
 
 const Item = ({children = {} as ReactNode}) => (
     <li>
-        <span css={{
+        <div css={{
+            display: 'inline-block',
             marginLeft: '0.5rem',
-            marginRight: '0.7rem',
+            width: '1.5rem',
             height: '0.9rem',
             fontSize: '0.6rem'
         }}>
             <Icon definition={faStar}/>
-        </span>
-        {children}
+        </div>
+        <div css={{
+            display: 'inline-block',
+            verticalAlign: 'top',
+            width: 'calc(100% - 2rem)'
+        }}>
+            {children}
+        </div>
     </li>
 );
 
