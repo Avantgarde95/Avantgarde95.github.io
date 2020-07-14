@@ -15,14 +15,14 @@ import {CVApp} from './app/CVApp';
 import {UnfinishedApp} from './app/UnfinishedApp';
 import {LockScreen} from './device/LockScreen';
 import {NavigationBar} from './device/NavigationBar';
-import {LabApp} from './app/LabApp';
+import {ProjectsApp} from './app/ProjectsApp';
 
 const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
     {path: '/About', element: <AppScreen><AboutApp/></AppScreen>},
     {path: '/CV', element: <AppScreen><CVApp/></AppScreen>},
     {path: '/Blog', element: <AppScreen><UnfinishedApp/></AppScreen>},
-    {path: '/Lab', element: <AppScreen><LabApp/></AppScreen>},
+    {path: '/Project', element: <AppScreen><ProjectsApp/></AppScreen>},
     {path: '/Game', element: <AppScreen><UnfinishedApp/></AppScreen>},
     {path: '*', element: <NotFoundScreen/>}
 ]);

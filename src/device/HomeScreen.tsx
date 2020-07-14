@@ -5,9 +5,9 @@ import {ReactNode} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {faIdCard} from '@fortawesome/free-solid-svg-icons/faIdCard';
 import {faFileAlt} from '@fortawesome/free-solid-svg-icons/faFileAlt';
-import {faFlask} from '@fortawesome/free-solid-svg-icons/faFlask';
 import {faNewspaper} from '@fortawesome/free-solid-svg-icons/faNewspaper';
 import {faGamepad} from '@fortawesome/free-solid-svg-icons/faGamepad';
+import {faLaptopCode} from '@fortawesome/free-solid-svg-icons/faLaptopCode';
 import {Screen} from './Screen';
 import {Icon} from './Icon';
 
@@ -97,10 +97,10 @@ const Placeholder = (
 );
 
 const apps = [
-    {name: 'About', path: '/About', icon: faIdCard, color: '#afb029'},
-    {name: 'CV', path: '/CV', icon: faFileAlt, color: '#8d9e9d'},
+    {name: 'About', path: '/About', icon: faIdCard, color: '#007aeb'},
+    {name: 'CV', path: '/CV', icon: faFileAlt, color: '#aaaaaa'},
     {name: 'Blog', path: '/Blog', icon: faNewspaper, color: '#677963'},
-    {name: 'Lab', path: '/Lab', icon: faFlask, color: '#876766'},
+    {name: 'Projects', path: '/Project', icon: faLaptopCode, color: '#876766'},
     {name: 'Games', path: '/Game', icon: faGamepad, color: '#444957'}
 ];
 
