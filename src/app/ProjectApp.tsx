@@ -132,18 +132,20 @@ export const ProjectApp = () => (
         textShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
         background: `#000000 url(${Background}) no-repeat center`
     }}>
-        <Name>Projects</Name>
-        <div css={{
-            marginBottom: '1.5rem'
-        }}>
-            <LanguageButton language={'Korean'}>한국어</LanguageButton>
-            <LanguageButton language={'English'}>English</LanguageButton>
-        </div>
-        <Screenshot src={require('./image/ArchiPi4Web')} alt={'archipi-web'}/>
-        <Paragraph>
-            <Title url={'https://github.com/Avantgarde95/archipi-web'}>archipi-web (ArchiPi4Web)</Title>
-            <Korean>설명</Korean>
-            <English>Description</English>
-        </Paragraph>
+        <Language>
+            <Name>Projects</Name>
+            <div css={{
+                marginBottom: '1.5rem'
+            }}>
+                <LanguageButton language={'Korean'}>한국어</LanguageButton>
+                <LanguageButton language={'English'}>English</LanguageButton>
+            </div>
+            <Screenshot src={require('./image/ArchiPi4Web')} alt={'archipi-web'}/>
+            <Paragraph>
+                <Title url={'https://github.com/Avantgarde95/archipi-web'}>archipi-web (ArchiPi4Web)</Title>
+                <Korean>설명</Korean>
+                <English>Description</English>
+            </Paragraph>
+        </Language>
     </div>
 );
