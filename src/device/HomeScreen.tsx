@@ -97,11 +97,11 @@ const Placeholder = (
 );
 
 const apps = [
-    {name: 'About', path: '/About', icon: faIdCard, color: '#007aeb'},
-    {name: 'CV', path: '/CV', icon: faFileAlt, color: '#aaaaaa'},
-    {name: 'Blog', path: '/Blog', icon: faNewspaper, color: '#677963'},
-    {name: 'Projects', path: '/Project', icon: faLaptopCode, color: '#876766'},
-    {name: 'Games', path: '/Game', icon: faGamepad, color: '#444957'}
+    {name: 'About', path: '/about', icon: faIdCard, color: '#007aeb'},
+    {name: 'CV', path: '/cv', icon: faFileAlt, color: '#aaaaaa'},
+    {name: 'Blog', path: '/blog', icon: faNewspaper, color: '#677963'},
+    {name: 'Projects', path: '/project', icon: faLaptopCode, color: '#876766'},
+    {name: 'Games', path: '/game', icon: faGamepad, color: '#444957'}
 ];
 
 export const HomeScreen = (

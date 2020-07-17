@@ -19,11 +19,11 @@ import {ProjectsApp} from './app/ProjectsApp';
 
 const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
-    {path: '/About', element: <AppScreen><AboutApp/></AppScreen>},
-    {path: '/CV', element: <AppScreen><CVApp/></AppScreen>},
-    {path: '/Blog', element: <AppScreen><UnfinishedApp/></AppScreen>},
-    {path: '/Project', element: <AppScreen><ProjectsApp/></AppScreen>},
-    {path: '/Game', element: <AppScreen><UnfinishedApp/></AppScreen>},
+    {path: '/about', element: <AppScreen><AboutApp/></AppScreen>},
+    {path: '/cv', element: <AppScreen><CVApp/></AppScreen>},
+    {path: '/blog', element: <AppScreen><UnfinishedApp/></AppScreen>},
+    {path: '/project', element: <AppScreen><ProjectsApp/></AppScreen>},
+    {path: '/game', element: <AppScreen><UnfinishedApp/></AppScreen>},
     {path: '*', element: <NotFoundScreen/>}
 ]);
 
