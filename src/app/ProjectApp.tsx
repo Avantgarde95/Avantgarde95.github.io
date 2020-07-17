@@ -4,7 +4,7 @@ import {jsx} from '@emotion/core';
 
 const Background = require('./image/Coffee');
 
-export const ProjectsApp = () => (
+export const ProjectApp = () => (
     <div css={{
         width: '100%',
         height: '100%',
