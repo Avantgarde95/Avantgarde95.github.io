@@ -87,29 +87,34 @@ const Project = ({children = {} as ReactNode}) => (
     </div>
 );
 
-const Gallery = ({images = [{src: '', alt: ''}]}) => (
+const Gallery = ({images = [{src: '', name: ''}]}) => (
     <div css={{}}>
-        {images.map(({src, alt}) => (
-            <div css={{
-                display: 'inline-block',
+        {images.map(({src, name}) => (
+            <button css={{
+                title: name,
+                cursor: 'pointer',
                 textAlign: 'center',
                 width: '16rem',
                 height: '12rem',
                 marginRight: '1.5rem',
                 marginBottom: '1.5rem',
+                fontSize: '2rem',
+                color: 'rgba(255, 255, 255, 0)',
                 boxShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
                 border: 'solid 1px #ffffff',
-                backgroundColor: '#000000'
+                backgroundImage: `url(${src})`,
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundColor: '#000000',
+                '&:hover, &:active, &:focus': {
+                    border: 'solid 1px #f9ab0d',
+                    color: '#ffffff',
+                    textShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d'
+                }
             }}>
-                <img
-                    css={{
-                        height: '100%'
-                    }}
-                    src={src}
-                    alt={alt}
-                    title={alt}
-                />
-            </div>
+                {name}
+            </button>
         ))}
     </div>
 );
@@ -183,13 +188,13 @@ export const ProjectApp = () => (
                 <LanguageButton language={'English'}>English</LanguageButton>
             </div>
             <Gallery images={[
-                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
-                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
-                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
-                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
-                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
-                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
-                {src: require('./image/Image2Term'), alt: 'Image2Term'}
+                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
+                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
+                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
+                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
+                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
+                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
+                {src: require('./image/Image2Term'), name: 'Image2Term'}
             ]}/>
         </Language>
     </div>
