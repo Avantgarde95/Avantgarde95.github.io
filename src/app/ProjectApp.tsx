@@ -79,11 +79,47 @@ const English = ({children = {} as ReactNode}) => (
     </Fragment>
 );
 
+const Project = ({children = {} as ReactNode}) => (
+    <div css={{
+        width: '100%'
+    }}>
+        {children}
+    </div>
+);
+
+const Gallery = ({images = [{src: '', alt: ''}]}) => (
+    <div css={{}}>
+        {images.map(({src, alt}) => (
+            <div css={{
+                display: 'inline-block',
+                textAlign: 'center',
+                width: '16rem',
+                height: '12rem',
+                marginRight: '1.5rem',
+                marginBottom: '1.5rem',
+                boxShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
+                border: 'solid 1px #ffffff',
+                backgroundColor: '#000000'
+            }}>
+                <img
+                    css={{
+                        height: '100%'
+                    }}
+                    src={src}
+                    alt={alt}
+                    title={alt}
+                />
+            </div>
+        ))}
+    </div>
+);
+
 const Screenshot = ({src = '', alt = ''}) => (
     <img
         css={{
             width: '20rem',
-            marginRight: '1.3rem',
+            marginRight: '1.5rem',
+            marginBottom: '1.5rem',
             boxShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
             border: 'solid 1px #ffffff'
         }}
@@ -96,7 +132,13 @@ const Screenshot = ({src = '', alt = ''}) => (
 const Paragraph = ({children = {} as ReactNode}) => (
     <div css={{
         display: 'inline-block',
-        verticalAlign: 'top'
+        verticalAlign: 'top',
+        wordBreak: 'break-all',
+        width: '25rem',
+        marginBottom: '1.5rem',
+        '@media screen and (max-width: 48rem)': {
+            width: '100%'
+        }
     }}>
         {children}
     </div>
@@ -140,12 +182,15 @@ export const ProjectApp = () => (
                 <LanguageButton language={'Korean'}>한국어</LanguageButton>
                 <LanguageButton language={'English'}>English</LanguageButton>
             </div>
-            <Screenshot src={require('./image/ArchiPi4Web')} alt={'archipi-web'}/>
-            <Paragraph>
-                <Title url={'https://github.com/Avantgarde95/archipi-web'}>archipi-web (ArchiPi4Web)</Title>
-                <Korean>설명</Korean>
-                <English>Description</English>
-            </Paragraph>
+            <Gallery images={[
+                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
+                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
+                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
+                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
+                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
+                {src: require('./image/ArchiPi4Web'), alt: 'archipi-web'},
+                {src: require('./image/Image2Term'), alt: 'Image2Term'}
+            ]}/>
         </Language>
     </div>
 );
