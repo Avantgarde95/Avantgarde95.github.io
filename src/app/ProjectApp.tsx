@@ -81,9 +81,11 @@ const English = ({children = {} as ReactNode}) => (
 
 const Gallery = ({images = [{src: '', name: ''}]}) => (
     <div css={{
+        display: 'inline-block',
         position: 'relative',
         width: '22rem',
-        height: '100%'
+        height: '100%',
+        marginRight: '1rem'
     }}>
         <div css={{
             position: 'absolute',
@@ -124,18 +126,23 @@ const Gallery = ({images = [{src: '', name: ''}]}) => (
     </div>
 );
 
-const Paragraph = ({children = {} as ReactNode}) => (
+const Project = ({children = {} as ReactNode}) => (
     <div css={{
         display: 'inline-block',
-        verticalAlign: 'top',
-        wordBreak: 'break-all',
-        width: '25rem',
-        marginBottom: '1.5rem',
-        '@media screen and (max-width: 48rem)': {
-            width: '100%'
-        }
+        position: 'relative',
+        width: 'calc(100% - 23rem)',
+        height: '100%'
     }}>
-        {children}
+        <div css={{
+            position: 'absolute',
+            overflowY: 'auto',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
+        }}>
+            {children}
+        </div>
     </div>
 );
 
@@ -156,6 +163,14 @@ const Title = ({url = '', children = {} as ReactNode}) => (
     >
         {children}
     </a>
+);
+
+const Description = ({children = {} as ReactNode}) => (
+    <div css={{
+        width: '100%'
+    }}>
+        {children}
+    </div>
 );
 
 export const ProjectApp = () => (
@@ -191,6 +206,17 @@ export const ProjectApp = () => (
                     {src: require('./image/Image2Term'), name: 'Image2Term'},
                     {src: require('./image/ArchiPi4Web'), name: 'archipi-web'}
                 ]}/>
+                <Project>
+                    <Title url={'https://github.com/Avantgarde95/PaintTalk'}>PaintTalk</Title>
+                    <Description>
+                        <Korean>
+                            자연어를 이용한 그림 그리기
+                        </Korean>
+                        <English>
+                            Draw a picture by using natural language
+                        </English>
+                    </Description>
+                </Project>
             </div>
         </Language>
     </div>
