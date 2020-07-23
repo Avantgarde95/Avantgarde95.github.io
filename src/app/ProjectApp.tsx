@@ -79,59 +79,49 @@ const English = ({children = {} as ReactNode}) => (
     </Fragment>
 );
 
-const Project = ({children = {} as ReactNode}) => (
-    <div css={{
-        width: '100%'
-    }}>
-        {children}
-    </div>
-);
-
 const Gallery = ({images = [{src: '', name: ''}]}) => (
-    <div css={{}}>
-        {images.map(({src, name}) => (
-            <button css={{
-                title: name,
-                cursor: 'pointer',
-                textAlign: 'center',
-                width: '16rem',
-                height: '12rem',
-                marginRight: '1.5rem',
-                marginBottom: '1.5rem',
-                fontSize: '2rem',
-                color: 'rgba(255, 255, 255, 0)',
-                boxShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
-                border: 'solid 1px #ffffff',
-                backgroundImage: `url(${src})`,
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundColor: '#000000',
-                '&:hover, &:active, &:focus': {
-                    border: 'solid 1px #f9ab0d',
-                    color: '#ffffff',
-                    textShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d'
-                }
-            }}>
-                {name}
-            </button>
-        ))}
+    <div css={{
+        position: 'relative',
+        width: '22rem',
+        height: '100%'
+    }}>
+        <div css={{
+            position: 'absolute',
+            overflowY: 'auto',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
+        }}>
+            {images.map(({src, name}) => (
+                <button css={{
+                    title: name,
+                    display: 'block',
+                    cursor: 'pointer',
+                    textAlign: 'center',
+                    width: '20rem',
+                    height: '15rem',
+                    marginBottom: '1.5rem',
+                    fontSize: '2rem',
+                    color: 'rgba(255, 255, 255, 0)',
+                    boxShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
+                    border: 'solid 1px #ffffff',
+                    backgroundImage: `url(${src})`,
+                    backgroundSize: 'contain',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    backgroundColor: '#000000',
+                    '&:hover, &:active, &:focus': {
+                        border: 'solid 1px #f9ab0d',
+                        color: '#ffffff',
+                        textShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d'
+                    }
+                }}>
+                    {name}
+                </button>
+            ))}
+        </div>
     </div>
-);
-
-const Screenshot = ({src = '', alt = ''}) => (
-    <img
-        css={{
-            width: '20rem',
-            marginRight: '1.5rem',
-            marginBottom: '1.5rem',
-            boxShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
-            border: 'solid 1px #ffffff'
-        }}
-        src={src}
-        alt={alt}
-        title={alt}
-    />
 );
 
 const Paragraph = ({children = {} as ReactNode}) => (
@@ -170,7 +160,7 @@ const Title = ({url = '', children = {} as ReactNode}) => (
 
 export const ProjectApp = () => (
     <div css={{
-        overflowY: 'auto',
+        display: 'table',
         boxSizing: 'border-box',
         width: '100%',
         height: '100%',
@@ -180,22 +170,28 @@ export const ProjectApp = () => (
         background: `#000000 url(${Background}) no-repeat center`
     }}>
         <Language>
-            <Name>Projects</Name>
             <div css={{
-                marginBottom: '1.5rem'
+                display: 'table-row',
+                height: 0
             }}>
-                <LanguageButton language={'Korean'}>한국어</LanguageButton>
-                <LanguageButton language={'English'}>English</LanguageButton>
+                <Name>Projects</Name>
+                <div css={{
+                    marginBottom: '1.5rem'
+                }}>
+                    <LanguageButton language={'Korean'}>한국어</LanguageButton>
+                    <LanguageButton language={'English'}>English</LanguageButton>
+                </div>
             </div>
-            <Gallery images={[
-                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
-                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
-                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
-                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
-                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
-                {src: require('./image/ArchiPi4Web'), name: 'archipi-web'},
-                {src: require('./image/Image2Term'), name: 'Image2Term'}
-            ]}/>
+            <div css={{
+                display: 'table-row',
+                height: '100%'
+            }}>
+                <Gallery images={[
+                    {src: require('./image/PaintTalk'), name: 'PaintTalk'},
+                    {src: require('./image/Image2Term'), name: 'Image2Term'},
+                    {src: require('./image/ArchiPi4Web'), name: 'archipi-web'}
+                ]}/>
+            </div>
         </Language>
     </div>
 );
