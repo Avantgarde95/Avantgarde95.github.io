@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import {css, jsx} from '@emotion/core';
-import {createContext, Fragment, ReactNode, useContext, useState} from 'react';
+import {createContext, Fragment, ReactNode, useContext, useEffect, useState} from 'react';
 
 const Background = require('./image/Coffee');
 
@@ -344,6 +344,10 @@ const projects = [
 ];
 
 export const ProjectApp = () => {
+    useEffect(() => {
+        document.title = 'Projects';
+    });
+
     const wideScreenQuery = '@media screen and (min-width: 769px)';
 
     return (

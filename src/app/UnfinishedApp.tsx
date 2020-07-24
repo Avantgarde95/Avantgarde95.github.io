@@ -1,19 +1,25 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
+import {useEffect} from 'react';
 import {faWrench} from '@fortawesome/free-solid-svg-icons/faWrench';
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
 import {Icon} from '../device/Icon';
 
-export const UnfinishedApp = () => (
-    <div css={{
-        display: 'table',
-        textAlign: 'center',
-        width: '100%',
-        height: '100%',
-        color: '#ffffff',
-        backgroundColor: '#202020'
-    }}>
+export const UnfinishedApp = () => {
+    useEffect(() => {
+        document.title = 'Under construction!';
+    });
+
+    return (
+        <div css={{
+            display: 'table',
+            textAlign: 'center',
+            width: '100%',
+            height: '100%',
+            color: '#ffffff',
+            backgroundColor: '#202020'
+        }}>
         <span css={{
             display: 'table-cell',
             verticalAlign: 'middle'
@@ -31,5 +37,6 @@ export const UnfinishedApp = () => (
                 <Icon definition={faWrench}/>
             </span>
         </span>
-    </div>
-);
+        </div>
+    );
+};

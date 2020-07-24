@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import {css, jsx} from '@emotion/core';
-import {ReactNode} from 'react';
+import {ReactNode, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {faIdCard} from '@fortawesome/free-solid-svg-icons/faIdCard';
 import {faFileAlt} from '@fortawesome/free-solid-svg-icons/faFileAlt';
@@ -135,29 +135,35 @@ export const HomeScreen = (
         appHeight = 8,
         maxAppsPerLine = 5
     }
-) => (
-    <Screen>
-        <div css={{
-            textAlign: 'center',
-            width: '100%',
-            height: '100%'
-        }}>
+) => {
+    useEffect(() => {
+        document.title = 'Home';
+    });
+
+    return (
+        <Screen>
             <div css={{
-                display: 'inline-block',
-                maxWidth: `${appWidth * maxAppsPerLine}rem`
+                textAlign: 'center',
+                width: '100%',
+                height: '100%'
             }}>
-                {apps.map(app => (
-                    <App width={appWidth} height={appHeight}>
-                        <Button title={app.name} path={app.path} color={app.color}>
-                            <Icon definition={app.icon}/>
-                        </Button>
-                        <Name>{app.name}</Name>
-                    </App>
-                ))}
-                {Array.apply(null, Array(maxAppsPerLine)).map(() => (
-                    <Placeholder width={appWidth} height={appHeight}/>
-                ))}
+                <div css={{
+                    display: 'inline-block',
+                    maxWidth: `${appWidth * maxAppsPerLine}rem`
+                }}>
+                    {apps.map(app => (
+                        <App width={appWidth} height={appHeight}>
+                            <Button title={app.name} path={app.path} color={app.color}>
+                                <Icon definition={app.icon}/>
+                            </Button>
+                            <Name>{app.name}</Name>
+                        </App>
+                    ))}
+                    {Array.apply(null, Array(maxAppsPerLine)).map(() => (
+                        <Placeholder width={appWidth} height={appHeight}/>
+                    ))}
+                </div>
             </div>
-        </div>
-    </Screen>
-);
+        </Screen>
+    );
+};

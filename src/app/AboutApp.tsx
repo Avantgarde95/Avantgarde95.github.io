@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {createContext, Fragment, ReactNode, useContext, useState} from 'react';
+import {createContext, Fragment, ReactNode, useContext, useEffect, useState} from 'react';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {Icon} from '../device/Icon';
 
@@ -166,108 +166,115 @@ const Gallery = ({images = [{src: '', alt: ''}]}) => (
     </div>
 );
 
-export const AboutApp = () => (
-    <div css={{
-        overflowY: 'auto',
-        boxSizing: 'border-box',
-        width: '100%',
-        height: '100%',
-        padding: '1.5rem',
-        color: '#ffffff',
-        textShadow: '0 0 2px #0090ff, 0 0 4px #00e9f9',
-        background: `#000000 url(${Background}) no-repeat center`
-    }}>
-        <LanguageProvider>
-            <Name>Hunmin Park</Name>
-            <div css={{
-                marginBottom: '1.5rem'
-            }}>
-                <LanguageButton language={'Korean'}>한국어</LanguageButton>
-                <LanguageButton language={'English'}>English</LanguageButton>
-            </div>
-            <Title>
-                <Korean>소개</Korean>
-                <English>About</English>
-            </Title>
-            <List>
-                <Item>
-                    <Korean>반가워요! 컴퓨터와 음악에 관심이 있습니다 :)</Korean>
-                    <English>Welcome! I'm interested in computers and music :)</English>
-                </Item>
-            </List>
-            <Title>
-                <Korean>관심사 (컴퓨터)</Korean>
-                <English>Interests (Computer)</English>
-            </Title>
-            <List>
-                <Item>
-                    <Korean>컴퓨터 그래픽스(CG), 특히 실시간 렌더링, 3D 모델링, 증강현실(AR), 가상현실(VR)에 관심이 있습니다.</Korean>
-                    <English>I'm interested in computer graphics, especially real-time rendeing, 3D modeling, augmented
-                        reality(AR), and virtual reality(VR).</English>
-                </Item>
-                <Item>
-                    <Korean>
-                        언젠가 CG를 활용하여 멋진 게임을 제작해보고 싶네요 :)
-                    </Korean>
-                    <English>
-                        I want to make a great game using CG someday :)
-                    </English>
-                </Item>
-            </List>
-            <Gallery images={[
-                {src: require('./image/OpenGL'), alt: 'Real-time rendering (Rasterization)'},
-                {src: require('./image/RayTracing'), alt: 'Real-time rendering (Ray tracing)'},
-                {src: require('./image/HoloLens'), alt: 'Augmented reality (Microsoft HoloLens)'}
-            ]}/>
-            <Title>
-                <Korean>관심사 (음악)</Korean>
-                <English>Interests (Music)</English>
-            </Title>
-            <List>
-                <Item>
-                    <Korean>
-                        취미로 피아노와 기타를 연주합니다.
-                        가끔씩 작곡/편곡에도 도전합니다.
-                    </Korean>
-                    <English>
-                        I play piano and guitar as a hobby.
-                        Sometimes I also try to compose and arrange music.
-                    </English>
-                </Item>
-                <Item>
-                    <Korean>
-                        헤비메탈, 재즈, 클래식 음악을 즐겨 듣습니다.
-                        다른 장르의 음악들도 종종 들어요.
-                    </Korean>
-                    <English>
-                        I like hearing heavy metal, jazz, and classical music.
-                        I also listen to music from other genres.
-                    </English>
-                </Item>
-            </List>
-            <Gallery images={[
-                {src: require('./image/Telecaster'), alt: 'My guitar'},
-                {src: require('./image/Concert'), alt: 'My concert'},
-                {src: require('./image/Sheet'), alt: 'My music'}
-            ]}/>
-            <Title>
-                <Korean>연락처</Korean>
-                <English>Contacts</English>
-            </Title>
-            <List>
-                <Item>
-                    <Korean>이메일 1</Korean>
-                    <English>Email 1</English>
-                    :&nbsp;
-                    <Link url={'mailto:95phm@kaist.ac.kr'}>95phm@kaist.ac.kr</Link>
-                </Item>
-                <Item>
-                    <Korean>이메일 2</Korean>
-                    <English>Email 2</English>
-                    :&nbsp;
-                    <Link url={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</Link>
-                </Item>
-            </List>
-        </LanguageProvider>
-    </div>
-);
+export const AboutApp = () => {
+    useEffect(() => {
+        document.title = 'About';
+    });
+
+    return (
+        <div css={{
+            overflowY: 'auto',
+            boxSizing: 'border-box',
+            width: '100%',
+            height: '100%',
+            padding: '1.5rem',
+            color: '#ffffff',
+            textShadow: '0 0 2px #0090ff, 0 0 4px #00e9f9',
+            background: `#000000 url(${Background}) no-repeat center`
+        }}>
+            <LanguageProvider>
+                <Name>Hunmin Park</Name>
+                <div css={{
+                    marginBottom: '1.5rem'
+                }}>
+                    <LanguageButton language={'Korean'}>한국어</LanguageButton>
+                    <LanguageButton language={'English'}>English</LanguageButton>
+                </div>
+                <Title>
+                    <Korean>소개</Korean>
+                    <English>About</English>
+                </Title>
+                <List>
+                    <Item>
+                        <Korean>반가워요! 컴퓨터와 음악에 관심이 있습니다 :)</Korean>
+                        <English>Welcome! I'm interested in computers and music :)</English>
+                    </Item>
+                </List>
+                <Title>
+                    <Korean>관심사 (컴퓨터)</Korean>
+                    <English>Interests (Computer)</English>
+                </Title>
+                <List>
+                    <Item>
+                        <Korean>컴퓨터 그래픽스(CG), 특히 실시간 렌더링, 3D 모델링, 증강현실(AR), 가상현실(VR)에 관심이 있습니다.</Korean>
+                        <English>I'm interested in computer graphics, especially real-time rendeing, 3D modeling,
+                            augmented
+                            reality(AR), and virtual reality(VR).</English>
+                    </Item>
+                    <Item>
+                        <Korean>
+                            언젠가 CG를 활용하여 멋진 게임을 제작해보고 싶네요 :)
+                        </Korean>
+                        <English>
+                            I want to make a great game using CG someday :)
+                        </English>
+                    </Item>
+                </List>
+                <Gallery images={[
+                    {src: require('./image/OpenGL'), alt: 'Real-time rendering (Rasterization)'},
+                    {src: require('./image/RayTracing'), alt: 'Real-time rendering (Ray tracing)'},
+                    {src: require('./image/HoloLens'), alt: 'Augmented reality (Microsoft HoloLens)'}
+                ]}/>
+                <Title>
+                    <Korean>관심사 (음악)</Korean>
+                    <English>Interests (Music)</English>
+                </Title>
+                <List>
+                    <Item>
+                        <Korean>
+                            취미로 피아노와 기타를 연주합니다.
+                            가끔씩 작곡/편곡에도 도전합니다.
+                        </Korean>
+                        <English>
+                            I play piano and guitar as a hobby.
+                            Sometimes I also try to compose and arrange music.
+                        </English>
+                    </Item>
+                    <Item>
+                        <Korean>
+                            헤비메탈, 재즈, 클래식 음악을 즐겨 듣습니다.
+                            다른 장르의 음악들도 종종 들어요.
+                        </Korean>
+                        <English>
+                            I like hearing heavy metal, jazz, and classical music.
+                            I also listen to music from other genres.
+                        </English>
+                    </Item>
+                </List>
+                <Gallery images={[
+                    {src: require('./image/Telecaster'), alt: 'My guitar'},
+                    {src: require('./image/Concert'), alt: 'My concert'},
+                    {src: require('./image/Sheet'), alt: 'My music'}
+                ]}/>
+                <Title>
+                    <Korean>연락처</Korean>
+                    <English>Contacts</English>
+                </Title>
+                <List>
+                    <Item>
+                        <Korean>이메일 1</Korean>
+                        <English>Email 1</English>
+                        :&nbsp;
+                        <Link url={'mailto:95phm@kaist.ac.kr'}>95phm@kaist.ac.kr</Link>
+                    </Item>
+                    <Item>
+                        <Korean>이메일 2</Korean>
+                        <English>Email 2</English>
+                        :&nbsp;
+                        <Link url={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</Link>
+                    </Item>
+                </List>
+            </LanguageProvider>
+        </div>
+    );
+};
