@@ -79,21 +79,31 @@ const English = ({children = {} as ReactNode}) => (
     </Fragment>
 );
 
-const Gallery = ({images = [{src: '', name: ''}]}) => (
+const Gallery = ({mobileQuery = '', images = [{src: '', name: ''}]}) => (
     <div css={{
         display: 'inline-block',
         position: 'relative',
+        float: 'left',
         width: '22rem',
         height: '100%',
-        marginRight: '1rem'
+        marginRight: '1rem',
+        [mobileQuery]: {
+            float: 'none',
+            width: '100%',
+            height: '17rem',
+            marginRight: 0
+        }
     }}>
         <div css={{
             position: 'absolute',
-            overflowY: 'auto',
+            overflow: 'auto',
             top: 0,
             right: 0,
             bottom: 0,
-            left: 0
+            left: 0,
+            [mobileQuery]: {
+                whiteSpace: 'nowrap'
+            }
         }}>
             {images.map(({src, name}) => (
                 <button css={{
@@ -103,7 +113,7 @@ const Gallery = ({images = [{src: '', name: ''}]}) => (
                     textAlign: 'center',
                     width: '20rem',
                     height: '15rem',
-                    marginBottom: '1.5rem',
+                    marginBottom: '1rem',
                     fontSize: '2rem',
                     color: 'rgba(255, 255, 255, 0)',
                     boxShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
@@ -117,6 +127,11 @@ const Gallery = ({images = [{src: '', name: ''}]}) => (
                         border: 'solid 1px #f9ab0d',
                         color: '#ffffff',
                         textShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d'
+                    },
+                    [mobileQuery]: {
+                        display: 'inline-block',
+                        marginRight: '1rem',
+                        marginBottom: 0
                     }
                 }}>
                     {name}
@@ -126,16 +141,23 @@ const Gallery = ({images = [{src: '', name: ''}]}) => (
     </div>
 );
 
-const Project = ({children = {} as ReactNode}) => (
+const Project = ({mobileQuery = '', children = {} as ReactNode}) => (
     <div css={{
         display: 'inline-block',
         position: 'relative',
+        float: 'right',
         width: 'calc(100% - 23rem)',
-        height: '100%'
+        height: '100%',
+        [mobileQuery]: {
+            float: 'none',
+            width: '100%',
+            height: 'calc(100% - 18rem)',
+            marginBottom: '1rem'
+        }
     }}>
         <div css={{
             position: 'absolute',
-            overflowY: 'auto',
+            overflow: 'auto',
             top: 0,
             right: 0,
             bottom: 0,
@@ -173,51 +195,55 @@ const Description = ({children = {} as ReactNode}) => (
     </div>
 );
 
-export const ProjectApp = () => (
-    <div css={{
-        display: 'table',
-        boxSizing: 'border-box',
-        width: '100%',
-        height: '100%',
-        padding: '1.5rem',
-        color: '#ffffff',
-        textShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
-        background: `#000000 url(${Background}) no-repeat center`
-    }}>
-        <Language>
-            <div css={{
-                display: 'table-row',
-                height: 0
-            }}>
-                <Name>Projects</Name>
+export const ProjectApp = () => {
+    const mobileQuery = '@media screen and (max-width: 768px)';
+
+    return (
+        <div css={{
+            display: 'table',
+            boxSizing: 'border-box',
+            width: '100%',
+            height: '100%',
+            padding: '1.5rem',
+            color: '#ffffff',
+            textShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
+            background: `#000000 url(${Background}) no-repeat center`
+        }}>
+            <Language>
                 <div css={{
-                    marginBottom: '1.5rem'
+                    display: 'table-row',
+                    height: 0
                 }}>
-                    <LanguageButton language={'Korean'}>한국어</LanguageButton>
-                    <LanguageButton language={'English'}>English</LanguageButton>
+                    <Name>Projects</Name>
+                    <div css={{
+                        marginBottom: '1.5rem'
+                    }}>
+                        <LanguageButton language={'Korean'}>한국어</LanguageButton>
+                        <LanguageButton language={'English'}>English</LanguageButton>
+                    </div>
                 </div>
-            </div>
-            <div css={{
-                display: 'table-row',
-                height: '100%'
-            }}>
-                <Gallery images={[
-                    {src: require('./image/PaintTalk'), name: 'PaintTalk'},
-                    {src: require('./image/Image2Term'), name: 'Image2Term'},
-                    {src: require('./image/ArchiPi4Web'), name: 'archipi-web'}
-                ]}/>
-                <Project>
-                    <Title url={'https://github.com/Avantgarde95/PaintTalk'}>PaintTalk</Title>
-                    <Description>
-                        <Korean>
-                            자연어를 이용한 그림 그리기
-                        </Korean>
-                        <English>
-                            Draw a picture by using natural language
-                        </English>
-                    </Description>
-                </Project>
-            </div>
-        </Language>
-    </div>
-);
+                <div css={{
+                    display: 'table-row',
+                    height: '100%'
+                }}>
+                    <Project mobileQuery={mobileQuery}>
+                        <Title url={'https://github.com/Avantgarde95/PaintTalk'}>PaintTalk</Title>
+                        <Description>
+                            <Korean>
+                                자연어를 이용한 그림 그리기
+                            </Korean>
+                            <English>
+                                Draw a picture by using natural language
+                            </English>
+                        </Description>
+                    </Project>
+                    <Gallery mobileQuery={mobileQuery} images={[
+                        {src: require('./image/PaintTalk'), name: 'PaintTalk'},
+                        {src: require('./image/Image2Term'), name: 'Image2Term'},
+                        {src: require('./image/ArchiPi4Web'), name: 'archipi-web'}
+                    ]}/>
+                </div>
+            </Language>
+        </div>
+    );
+};
