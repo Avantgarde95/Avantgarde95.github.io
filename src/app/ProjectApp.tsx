@@ -267,6 +267,36 @@ const projects = [
         )
     },
     {
+        name: 'CGLab',
+        url: 'https://github.com/Avantgarde95/CGLab',
+        image: require('./image/CGLab'),
+        description: (
+            <Fragment>
+                <Korean>
+                    간단한 OpenGL 예제들 (KAIST CS580 프로젝트들)
+                </Korean>
+                <English>
+                    Simple OpenGL examples (KAIST CS580 projects)
+                </English>
+            </Fragment>
+        )
+    },
+    {
+        name: 'LiKo',
+        url: 'https://github.com/Avantgarde95/LiKo',
+        image: require('./image/LiKo'),
+        description: (
+            <Fragment>
+                <Korean>
+                    한국어를 배워보자! (KAIST CS374 팀 프로젝트)
+                </Korean>
+                <English>
+                    Let's learn Korean! (KAIST CS374 team project)
+                </English>
+            </Fragment>
+        )
+    },
+    {
         name: 'archipi-web',
         url: 'https://github.com/Avantgarde95/archipi-web',
         image: require('./image/ArchiPi4Web'),
@@ -281,6 +311,36 @@ const projects = [
             </Fragment>
         )
     },
+    {
+        name: 'Mandelbrot',
+        url: 'https://github.com/Avantgarde95/Mandelbrot',
+        image: require('./image/Mandelbrot'),
+        description: (
+            <Fragment>
+                <Korean>
+                    만델브로트 프랙탈 생성기
+                </Korean>
+                <English>
+                    Mandelbrot fractal generator
+                </English>
+            </Fragment>
+        )
+    },
+    {
+        name: 'Lucky',
+        url: 'https://github.com/Avantgarde95/Lucky',
+        image: require('./image/Lucky'),
+        description: (
+            <Fragment>
+                <Korean>
+                    당신의 오늘의 운세를 예측해 드립니다.
+                </Korean>
+                <English>
+                    I'll predict your luck today.
+                </English>
+            </Fragment>
+        )
+    }
 ];
 
 export const ProjectApp = () => {
