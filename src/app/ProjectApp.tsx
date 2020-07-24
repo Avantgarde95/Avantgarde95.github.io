@@ -79,41 +79,42 @@ const English = ({children = {} as ReactNode}) => (
     </Fragment>
 );
 
-const Gallery = ({mobileQuery = '', images = [{src: '', name: ''}]}) => (
+const Gallery = ({wideScreenQuery = '', images = [{src: '', name: ''}]}) => (
     <div css={{
         display: 'inline-block',
         position: 'relative',
-        float: 'left',
-        width: '22rem',
-        height: '100%',
-        marginRight: '1rem',
-        [mobileQuery]: {
-            float: 'none',
-            width: '100%',
-            height: '17rem',
-            marginRight: 0
+        width: '100%',
+        height: '17rem',
+        marginRight: 0,
+        [wideScreenQuery]: {
+            float: 'left',
+            width: '22rem',
+            height: '100%',
+            marginRight: '1rem'
         }
     }}>
         <div css={{
             position: 'absolute',
             overflow: 'auto',
+            whiteSpace: 'nowrap',
             top: 0,
             right: 0,
             bottom: 0,
             left: 0,
-            [mobileQuery]: {
-                whiteSpace: 'nowrap'
+            [wideScreenQuery]: {
+                whiteSpace: 'normal'
             }
         }}>
             {images.map(({src, name}) => (
                 <button css={{
                     title: name,
-                    display: 'block',
+                    display: 'inline-block',
                     cursor: 'pointer',
                     textAlign: 'center',
                     width: '20rem',
                     height: '15rem',
-                    marginBottom: '1rem',
+                    marginRight: '1rem',
+                    marginBottom: 0,
                     fontSize: '2rem',
                     color: 'rgba(255, 255, 255, 0)',
                     boxShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
@@ -128,10 +129,10 @@ const Gallery = ({mobileQuery = '', images = [{src: '', name: ''}]}) => (
                         color: '#ffffff',
                         textShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d'
                     },
-                    [mobileQuery]: {
-                        display: 'inline-block',
-                        marginRight: '1rem',
-                        marginBottom: 0
+                    [wideScreenQuery]: {
+                        display: 'block',
+                        marginRight: 0,
+                        marginBottom: '1rem'
                     }
                 }}>
                     {name}
@@ -141,18 +142,17 @@ const Gallery = ({mobileQuery = '', images = [{src: '', name: ''}]}) => (
     </div>
 );
 
-const Project = ({mobileQuery = '', children = {} as ReactNode}) => (
+const Project = ({wideScreenQuery = '', children = {} as ReactNode}) => (
     <div css={{
         display: 'inline-block',
         position: 'relative',
-        float: 'right',
-        width: 'calc(100% - 23rem)',
-        height: '100%',
-        [mobileQuery]: {
-            float: 'none',
-            width: '100%',
-            height: 'calc(100% - 18rem)',
-            marginBottom: '1rem'
+        width: '100%',
+        height: 'calc(100% - 18rem)',
+        marginBottom: '1rem',
+        [wideScreenQuery]: {
+            float: 'right',
+            width: 'calc(100% - 23rem)',
+            height: '100%'
         }
     }}>
         <div css={{
@@ -196,7 +196,7 @@ const Description = ({children = {} as ReactNode}) => (
 );
 
 export const ProjectApp = () => {
-    const mobileQuery = '@media screen and (max-width: 768px)';
+    const wideScreenQuery = '@media screen and (min-width: 769px)';
 
     return (
         <div css={{
@@ -226,7 +226,7 @@ export const ProjectApp = () => {
                     display: 'table-row',
                     height: '100%'
                 }}>
-                    <Project mobileQuery={mobileQuery}>
+                    <Project wideScreenQuery={wideScreenQuery}>
                         <Title url={'https://github.com/Avantgarde95/PaintTalk'}>PaintTalk</Title>
                         <Description>
                             <Korean>
@@ -237,7 +237,7 @@ export const ProjectApp = () => {
                             </English>
                         </Description>
                     </Project>
-                    <Gallery mobileQuery={mobileQuery} images={[
+                    <Gallery wideScreenQuery={wideScreenQuery} images={[
                         {src: require('./image/PaintTalk'), name: 'PaintTalk'},
                         {src: require('./image/Image2Term'), name: 'Image2Term'},
                         {src: require('./image/ArchiPi4Web'), name: 'archipi-web'}
