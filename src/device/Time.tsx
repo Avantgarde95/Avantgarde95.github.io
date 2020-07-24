@@ -54,7 +54,7 @@ function getCurrentTime() {
     } as Time;
 }
 
-const ClockContext = createContext({
+const TimeContext = createContext({
     year: 0,
     month: 0,
     monthDay: 0,
@@ -63,7 +63,7 @@ const ClockContext = createContext({
     minute: 0
 } as Time);
 
-export const Clock = ({children = {} as ReactNode}) => {
+export const TimeProvider = ({children = {} as ReactNode}) => {
     const [time, setTime] = useState(getCurrentTime());
 
     useEffect(() => {
@@ -77,44 +77,44 @@ export const Clock = ({children = {} as ReactNode}) => {
     });
 
     return (
-        <ClockContext.Provider value={time}>
+        <TimeContext.Provider value={time}>
             {children}
-        </ClockContext.Provider>
+        </TimeContext.Provider>
     );
 };
 
 export const Hour = () => {
-    const hour = useContext(ClockContext).hour % 12;
+    const hour = useContext(TimeContext).hour % 12;
 
     return <Fragment>{`${(hour === 0) ? 12 : hour}`}</Fragment>;
 };
 
 export const Minute = () => {
-    const {minute} = useContext(ClockContext);
+    const {minute} = useContext(TimeContext);
 
     return <Fragment>{`${fillZero(minute, 2)}`}</Fragment>;
 };
 
 export const Month = () => {
-    const {month} = useContext(ClockContext);
+    const {month} = useContext(TimeContext);
 
     return <Fragment>{monthNames[month]}</Fragment>;
 };
 
 export const MonthDay = () => {
-    const {monthDay} = useContext(ClockContext);
+    const {monthDay} = useContext(TimeContext);
 
     return <Fragment>{`${monthDay + 1}`}</Fragment>;
 };
 
 export const WeekDay = () => {
-    const {weekDay} = useContext(ClockContext);
+    const {weekDay} = useContext(TimeContext);
 
     return <Fragment>{dayNames[weekDay]}</Fragment>;
 };
 
 export const AMPM = () => {
-    const {hour} = useContext(ClockContext);
+    const {hour} = useContext(TimeContext);
 
     return <Fragment>{hour >= 12 ? 'PM' : 'AM'}</Fragment>
 };

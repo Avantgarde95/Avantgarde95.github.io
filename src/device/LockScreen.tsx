@@ -2,7 +2,7 @@
 
 import {jsx} from '@emotion/core';
 import {Screen} from './Screen';
-import {Clock, Hour, Minute, Month, MonthDay, WeekDay} from './Clock';
+import {Hour, Minute, Month, MonthDay, TimeProvider, WeekDay} from './Time';
 import {useState} from 'react';
 
 const Time1 = () => (
@@ -12,7 +12,7 @@ const Time1 = () => (
         marginTop: '3rem',
         fontSize: '3rem'
     }}>
-        <Clock><Hour/>:<Minute/></Clock>
+        <TimeProvider><Hour/>:<Minute/></TimeProvider>
     </div>
 );
 
@@ -21,7 +21,7 @@ const Time2 = () => (
         textAlign: 'center',
         width: '100%'
     }}>
-        <Clock><WeekDay/>, <Month/> <MonthDay/></Clock>
+        <TimeProvider><WeekDay/>, <Month/> <MonthDay/></TimeProvider>
     </div>
 );
 
