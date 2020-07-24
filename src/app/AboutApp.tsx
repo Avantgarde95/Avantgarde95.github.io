@@ -13,7 +13,7 @@ const LanguageContext = createContext({
     }
 });
 
-const Language = ({children = {} as ReactNode}) => {
+const LanguageProvider = ({children = {} as ReactNode}) => {
     const [language, setLanguage] = useState('English');
 
     return (
@@ -177,7 +177,7 @@ export const AboutApp = () => (
         textShadow: '0 0 2px #0090ff, 0 0 4px #00e9f9',
         background: `#000000 url(${Background}) no-repeat center`
     }}>
-        <Language>
+        <LanguageProvider>
             <Name>Hunmin Park</Name>
             <div css={{
                 marginBottom: '1.5rem'
@@ -279,6 +279,6 @@ export const AboutApp = () => (
                     </Link>
                 </Item>
             </List>
-        </Language>
+        </LanguageProvider>
     </div>
 );

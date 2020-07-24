@@ -211,7 +211,7 @@ const Project = ({wideScreenQuery = '', components = [] as ReactNode[]}) => {
 const ProjectName = ({url = '', children = {} as ReactNode}) => (
     <a
         css={{
-            display: 'block',
+            display: 'table',
             marginBottom: '0.5rem',
             fontSize: '1.5rem',
             color: '#f9ab0d',
