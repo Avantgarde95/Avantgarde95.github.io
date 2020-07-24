@@ -251,32 +251,21 @@ export const AboutApp = () => (
                 {src: require('./image/Sheet'), alt: 'My music'}
             ]}/>
             <Title>
-                <Korean>링크</Korean>
-                <English>Links</English>
+                <Korean>연락처</Korean>
+                <English>Contacts</English>
             </Title>
             <List>
                 <Item>
-                    <Korean>이메일</Korean>
-                    <English>Email</English>
+                    <Korean>이메일 1</Korean>
+                    <English>Email 1</English>
                     :&nbsp;
                     <Link url={'mailto:95phm@kaist.ac.kr'}>95phm@kaist.ac.kr</Link>
                 </Item>
                 <Item>
-                    SNS:&nbsp;
-                    <Link url={'https://www.youtube.com/user/Scottparkmusic'}>
-                        <Korean>유튜브</Korean>
-                        <English>YouTube</English>
-                    </Link>
-                    ,&nbsp;
-                    <Link url={'https://www.facebook.com/s.ramanujan'}>
-                        <Korean>페이스북</Korean>
-                        <English>Facebook</English>
-                    </Link>
-                    ,&nbsp;
-                    <Link url={'https://www.instagram.com/hunminpark95'}>
-                        <Korean>인스타그램</Korean>
-                        <English>Instagram</English>
-                    </Link>
+                    <Korean>이메일 2</Korean>
+                    <English>Email 2</English>
+                    :&nbsp;
+                    <Link url={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</Link>
                 </Item>
             </List>
         </LanguageProvider>

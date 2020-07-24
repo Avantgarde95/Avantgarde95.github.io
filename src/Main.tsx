@@ -23,7 +23,6 @@ const DeviceRoutes = () => useRoutes([
     {path: '/cv', element: <AppScreen><CVApp/></AppScreen>},
     {path: '/blog', element: <AppScreen><UnfinishedApp/></AppScreen>},
     {path: '/project', element: <AppScreen><ProjectApp/></AppScreen>},
-    {path: '/game', element: <AppScreen><UnfinishedApp/></AppScreen>},
     {path: '*', element: <NotFoundScreen/>}
 ]);
 
