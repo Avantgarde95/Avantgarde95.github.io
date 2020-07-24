@@ -148,6 +148,7 @@ const Project = ({wideScreenQuery = '', children = {} as ReactNode}) => (
         position: 'relative',
         width: '100%',
         height: 'calc(100% - 18rem)',
+        minHeight: '8rem',
         marginBottom: '1rem',
         [wideScreenQuery]: {
             float: 'right',
