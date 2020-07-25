@@ -378,23 +378,23 @@ export const ProjectApp = () => {
             background: `#000000 url(${Background}) no-repeat center`
         }}>
             <LanguageProvider>
-                <ProjectProvider>
+                <div css={{
+                    display: 'table-row',
+                    height: 0
+                }}>
+                    <Name>Projects</Name>
                     <div css={{
-                        display: 'table-row',
-                        height: 0
+                        marginBottom: '1.5rem'
                     }}>
-                        <Name>Projects</Name>
-                        <div css={{
-                            marginBottom: '1.5rem'
-                        }}>
-                            <LanguageButton language={'Korean'}>한국어</LanguageButton>
-                            <LanguageButton language={'English'}>English</LanguageButton>
-                        </div>
+                        <LanguageButton language={'Korean'}>한국어</LanguageButton>
+                        <LanguageButton language={'English'}>English</LanguageButton>
                     </div>
-                    <div css={{
-                        display: 'table-row',
-                        height: '100%'
-                    }}>
+                </div>
+                <div css={{
+                    display: 'table-row',
+                    height: '100%'
+                }}>
+                    <ProjectProvider>
                         <Project
                             buttonWidth={buttonWidth}
                             buttonHeight={buttonHeight}
@@ -414,8 +414,8 @@ export const ProjectApp = () => {
                                 {src: project.image, name: project.name}
                             ))}
                         />
-                    </div>
-                </ProjectProvider>
+                    </ProjectProvider>
+                </div>
             </LanguageProvider>
         </div>
     );
