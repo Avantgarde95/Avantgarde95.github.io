@@ -124,6 +124,7 @@ const Item = ({children = {} as ReactNode}) => (
 const Link = ({url = '', children = {} as ReactNode}) => (
     <a
         css={{
+            wordBreak: 'break-all',
             color: '#00e9f9',
             '&:hover, &:active': {
                 color: '#0090ff'

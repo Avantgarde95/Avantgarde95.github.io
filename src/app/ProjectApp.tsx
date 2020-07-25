@@ -226,6 +226,7 @@ const ProjectName = ({url = '', children = {} as ReactNode}) => (
     <a
         css={{
             display: 'table',
+            wordBreak: 'break-all',
             marginBottom: '0.5rem',
             fontSize: '1.5rem',
             color: '#f9ab0d',
