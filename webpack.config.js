@@ -19,6 +19,11 @@ module.exports = (env, argv) => {
             path: getAbsolutePath(outDir),
             filename: '[name].[contenthash].js'
         },
+        optimization: {
+            splitChunks: {
+                chunks: 'all'
+            }
+        },
         resolve: {
             alias: {
                 'react': 'preact/compat',
