@@ -147,6 +147,8 @@ const Gallery = (
             position: 'relative',
             width: '100%',
             height: `${buttonHeight + 2}rem`,
+            // XXX: Dirty fix for preventing the height from being zero in IE 10.
+            minHeight: `${buttonHeight + 2}rem`,
             marginRight: 0,
             [wideScreenQuery]: {
                 float: 'left',
