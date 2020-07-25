@@ -200,7 +200,7 @@ const Project = (
             position: 'relative',
             width: '100%',
             height: `calc(100% - ${buttonHeight + 3}rem)`,
-            minHeight: '8rem',
+            minHeight: '6rem',
             marginBottom: '1rem',
             [wideScreenQuery]: {
                 float: 'right',
@@ -365,7 +365,7 @@ export const ProjectApp = () => {
 
     const buttonWidth = 16;
     const buttonHeight = 12;
-    const wideScreenQuery = '@media screen and (min-width: 769px)';
+    const wideScreenQuery = '@media (min-width: 769px)';
 
     return (
         <div css={{
