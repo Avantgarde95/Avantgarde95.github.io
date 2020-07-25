@@ -149,8 +149,8 @@ const Gallery = ({images = [{src: '', alt: ''}]}) => (
         {images.map(({src, alt}) => (
             <img
                 css={{
-                    width: '11rem',
-                    height: '11rem',
+                    width: '12rem',
+                    height: '12rem',
                     marginRight: '0.7rem',
                     boxShadow: '0 0 2px #0090ff, 0 0 4px #00e9f9',
                     border: 'solid 1px #ffffff',

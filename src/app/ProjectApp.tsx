@@ -100,7 +100,14 @@ const ProjectProvider = ({children = {} as ReactNode}) => {
     );
 };
 
-const Gallery = ({wideScreenQuery = '', images = [{src: '', name: ''}]}) => {
+const Gallery = (
+    {
+        buttonWidth = 0,
+        buttonHeight = 0,
+        wideScreenQuery = '',
+        images = [{src: '', name: ''}]
+    }
+) => {
     const changeProjectIndex = useContext(ProjectContext).changeProjectIndex;
 
     const buttonStyle = css(
@@ -109,8 +116,8 @@ const Gallery = ({wideScreenQuery = '', images = [{src: '', name: ''}]}) => {
             display: 'inline-block',
             cursor: 'pointer',
             textAlign: 'center',
-            width: '20rem',
-            height: '15rem',
+            width: `${buttonWidth}rem`,
+            height: `${buttonHeight}rem`,
             marginRight: '1rem',
             marginBottom: 0,
             fontSize: '2rem',
@@ -139,11 +146,11 @@ const Gallery = ({wideScreenQuery = '', images = [{src: '', name: ''}]}) => {
             display: 'inline-block',
             position: 'relative',
             width: '100%',
-            height: '17rem',
+            height: `${buttonHeight + 2}rem`,
             marginRight: 0,
             [wideScreenQuery]: {
                 float: 'left',
-                width: '22rem',
+                width: `${buttonWidth + 2}rem`,
                 height: '100%',
                 marginRight: '1rem'
             }
@@ -177,7 +184,14 @@ const Gallery = ({wideScreenQuery = '', images = [{src: '', name: ''}]}) => {
     );
 };
 
-const Project = ({wideScreenQuery = '', components = [] as ReactNode[]}) => {
+const Project = (
+    {
+        buttonWidth = 0,
+        buttonHeight = 0,
+        wideScreenQuery = '',
+        components = [] as ReactNode[]
+    }
+) => {
     const currentProjectIndex = useContext(ProjectContext).currentProjectIndex;
 
     return (
@@ -185,12 +199,12 @@ const Project = ({wideScreenQuery = '', components = [] as ReactNode[]}) => {
             display: 'inline-block',
             position: 'relative',
             width: '100%',
-            height: 'calc(100% - 18rem)',
+            height: `calc(100% - ${buttonHeight + 3}rem)`,
             minHeight: '8rem',
             marginBottom: '1rem',
             [wideScreenQuery]: {
                 float: 'right',
-                width: 'calc(100% - 23rem)',
+                width: `calc(100% - ${buttonWidth + 3}rem)`,
                 height: '100%'
             }
         }}>
@@ -348,6 +362,8 @@ export const ProjectApp = () => {
         document.title = 'Projects';
     });
 
+    const buttonWidth = 16;
+    const buttonHeight = 12;
     const wideScreenQuery = '@media screen and (min-width: 769px)';
 
     return (
@@ -380,6 +396,8 @@ export const ProjectApp = () => {
                         height: '100%'
                     }}>
                         <Project
+                            buttonWidth={buttonWidth}
+                            buttonHeight={buttonHeight}
                             wideScreenQuery={wideScreenQuery}
                             components={projects.map(project => (
                                 <Fragment>
@@ -389,6 +407,8 @@ export const ProjectApp = () => {
                             ))}
                         />
                         <Gallery
+                            buttonWidth={buttonWidth}
+                            buttonHeight={buttonHeight}
                             wideScreenQuery={wideScreenQuery}
                             images={projects.map(project => (
                                 {src: project.image, name: project.name}
