@@ -24,7 +24,7 @@ const DeviceRoutes = () => useRoutes([
     {path: '/blog', element: <AppScreen><UnfinishedApp/></AppScreen>},
     {path: '/project', element: <AppScreen><ProjectApp/></AppScreen>},
     {path: '*', element: <NotFoundScreen/>}
-]);
+], '/mypage');
 
 const Device = () => {
     const [isLocked, setLock] = useState(true);
