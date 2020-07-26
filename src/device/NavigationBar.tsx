@@ -43,7 +43,7 @@ export const NavigationBar = () => {
         }}>
             <Cell>
                 <button css={buttonStyle} title={'Back'} onClick={() => {
-                    navigate('..');
+                    navigate(-1);
                 }}>
                     <Icon definition={faArrowLeft}/>
                 </button>

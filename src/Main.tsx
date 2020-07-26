@@ -19,10 +19,10 @@ import {ProjectApp} from './app/ProjectApp';
 
 const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
-    {path: '/about', element: <AppScreen><AboutApp/></AppScreen>},
-    {path: '/cv', element: <AppScreen><CVApp/></AppScreen>},
-    {path: '/blog', element: <AppScreen><UnfinishedApp/></AppScreen>},
-    {path: '/project', element: <AppScreen><ProjectApp/></AppScreen>},
+    {path: 'about', element: <AppScreen><AboutApp/></AppScreen>},
+    {path: 'cv', element: <AppScreen><CVApp/></AppScreen>},
+    {path: 'blog', element: <AppScreen><UnfinishedApp/></AppScreen>},
+    {path: 'project', element: <AppScreen><ProjectApp/></AppScreen>},
     {path: '*', element: <NotFoundScreen/>}
 ], process.env.PUBLIC_URL);
 

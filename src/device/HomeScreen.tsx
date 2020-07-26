@@ -42,7 +42,7 @@ const Button = (
         }
     });
 
-    if (path[0] === '/') {
+    if (!path.startsWith('http')) {
         return (
             <button
                 css={[buttonStyle, {
@@ -120,10 +120,10 @@ const Placeholder = (
 );
 
 const apps = [
-    {name: 'About', path: '/about', icon: faIdCard, color: '#007aeb'},
-    {name: 'CV', path: '/cv', icon: faFileAlt, color: '#aaaaaa'},
-    {name: 'Projects', path: '/project', icon: faLaptopCode, color: '#876766'},
-    {name: 'Blog', path: '/blog', icon: faNewspaper, color: '#677963'},
+    {name: 'About', path: 'about', icon: faIdCard, color: '#007aeb'},
+    {name: 'CV', path: 'cv', icon: faFileAlt, color: '#aaaaaa'},
+    {name: 'Projects', path: 'project', icon: faLaptopCode, color: '#876766'},
+    {name: 'Blog', path: 'blog', icon: faNewspaper, color: '#677963'},
     {name: 'YouTube', path: 'https://www.youtube.com/user/Scottparkmusic', icon: faYoutube, color: '#ff0000'},
     {name: 'Facebook', path: 'https://www.facebook.com/s.ramanujan', icon: faFacebookSquare, color: '#3b5998'},
     {name: 'Instagram', path: 'https://www.instagram.com/hunminpark95', icon: faInstagram, color: '#c13584'}
