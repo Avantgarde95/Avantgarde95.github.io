@@ -5,7 +5,7 @@ import './Polyfill';
 import {Global, jsx} from '@emotion/core';
 import {useState} from 'react';
 import {render} from 'react-dom';
-import {HashRouter, useRoutes} from 'react-router-dom';
+import {BrowserRouter, useRoutes} from 'react-router-dom';
 import {StatusBar} from './device/StatusBar';
 import {HomeScreen} from './device/HomeScreen';
 import {NotFoundScreen} from './device/NotFoundScreen';
@@ -30,7 +30,7 @@ const Device = () => {
     const [isLocked, setLock] = useState(true);
 
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Global styles={{
                 html: {
                     width: '100%',
@@ -64,7 +64,7 @@ const Device = () => {
                 {!isLocked && <DeviceRoutes/>}
                 {!isLocked && <NavigationBar/>}
             </div>
-        </HashRouter>
+        </BrowserRouter>
     );
 };
 

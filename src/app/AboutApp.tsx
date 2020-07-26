@@ -167,6 +167,18 @@ const Gallery = ({images = [{src: '', alt: ''}]}) => (
     </div>
 );
 
+const computerImages = [
+    {src: require('./image/OpenGL'), alt: 'Real-time rendering (Rasterization)'},
+    {src: require('./image/RayTracing'), alt: 'Real-time rendering (Ray tracing)'},
+    {src: require('./image/HoloLens'), alt: 'Augmented reality (Microsoft HoloLens)'}
+];
+
+const musicImages = [
+    {src: require('./image/Telecaster'), alt: 'My guitar'},
+    {src: require('./image/Concert'), alt: 'My concert'},
+    {src: require('./image/Sheet'), alt: 'My music'}
+];
+
 export const AboutApp = () => {
     useEffect(() => {
         document.title = 'About';
@@ -221,11 +233,7 @@ export const AboutApp = () => {
                         </English>
                     </Item>
                 </List>
-                <Gallery images={[
-                    {src: require('./image/OpenGL'), alt: 'Real-time rendering (Rasterization)'},
-                    {src: require('./image/RayTracing'), alt: 'Real-time rendering (Ray tracing)'},
-                    {src: require('./image/HoloLens'), alt: 'Augmented reality (Microsoft HoloLens)'}
-                ]}/>
+                <Gallery images={computerImages}/>
                 <Title>
                     <Korean>관심사 (음악)</Korean>
                     <English>Interests (Music)</English>
@@ -252,11 +260,7 @@ export const AboutApp = () => {
                         </English>
                     </Item>
                 </List>
-                <Gallery images={[
-                    {src: require('./image/Telecaster'), alt: 'My guitar'},
-                    {src: require('./image/Concert'), alt: 'My concert'},
-                    {src: require('./image/Sheet'), alt: 'My music'}
-                ]}/>
+                <Gallery images={musicImages}/>
                 <Title>
                     <Korean>연락처</Korean>
                     <English>Contacts</English>
