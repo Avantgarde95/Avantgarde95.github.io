@@ -1,8 +1,8 @@
 const path = require('path');
-const {homepage} = require('./package');
 const {DefinePlugin} = require('webpack');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {homepage} = require('./package');
 
 function getAbsolutePath(...paths) {
     return path.resolve(__dirname, ...paths);
