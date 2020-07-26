@@ -202,7 +202,7 @@ const Project = (
             position: 'relative',
             width: '100%',
             height: `calc(100% - ${buttonHeight + 3}rem)`,
-            minHeight: '6rem',
+            minHeight: '7rem',
             marginBottom: '1rem',
             [wideScreenQuery]: {
                 float: 'right',

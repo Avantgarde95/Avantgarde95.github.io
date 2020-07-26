@@ -1,4 +1,6 @@
 const path = require('path');
+const {homepage} = require('./package');
+const {DefinePlugin} = require('webpack');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -47,6 +49,9 @@ module.exports = (env, argv) => {
             ]
         },
         plugins: [
+            new DefinePlugin({
+                'process.env.PUBLIC_URL': isDebugMode ? JSON.stringify('') : JSON.stringify(homepage)
+            }),
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
                 template: getAbsolutePath(srcDir, 'index.html'),
