@@ -1,8 +1,6 @@
 const path = require('path');
-const {DefinePlugin} = require('webpack');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {homepage} = require('./package');
 
 function getAbsolutePath(...paths) {
     return path.resolve(__dirname, ...paths);
@@ -49,9 +47,6 @@ module.exports = (env, argv) => {
             ]
         },
         plugins: [
-            new DefinePlugin({
-                'process.env.PUBLIC_URL': isDebugMode ? JSON.stringify('') : JSON.stringify(homepage)
-            }),
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
                 template: getAbsolutePath(srcDir, 'index.html'),

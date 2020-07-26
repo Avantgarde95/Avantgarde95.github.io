@@ -1,5 +1,4 @@
 {
-    "homepage": "https://avantgarde95.github.io/mypage",
     "dependencies": {
         "preact": "^10.4.4",
         "@emotion/core": "^10.0.28",
