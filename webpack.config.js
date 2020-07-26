@@ -9,7 +9,7 @@ function getAbsolutePath(...paths) {
 module.exports = (env, argv) => {
     const isDebugMode = !argv || argv.mode === 'development';
     const srcDir = 'src';
-    const outDir = 'docs';
+    const outDir = 'dist';
 
     return {
         mode: 'development',
@@ -17,6 +17,7 @@ module.exports = (env, argv) => {
         devtool: isDebugMode ? 'inline-source-map' : false,
         output: {
             path: getAbsolutePath(outDir),
+            publicPath: outDir + '/',
             filename: '[name].[contenthash].js'
         },
         optimization: {
@@ -50,7 +51,7 @@ module.exports = (env, argv) => {
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
                 template: getAbsolutePath(srcDir, 'index.html'),
-                filename: getAbsolutePath(outDir, 'index.html')
+                filename: getAbsolutePath('index.html')
             })
         ]
     };

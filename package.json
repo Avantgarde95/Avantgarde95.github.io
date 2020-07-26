@@ -25,6 +25,6 @@
     "scripts": {
         "debug": "webpack --watch --mode=development",
         "build": "webpack --mode=production",
-        "server": "servor docs"
+        "server": "servor"
     }
 }
