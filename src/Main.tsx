@@ -16,6 +16,7 @@ import {UnfinishedApp} from './app/UnfinishedApp';
 import {LockScreen} from './device/LockScreen';
 import {NavigationBar} from './device/NavigationBar';
 import {ProjectApp} from './app/ProjectApp';
+import {MusicApp} from './app/MusicApp';
 
 const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
@@ -23,6 +24,7 @@ const DeviceRoutes = () => useRoutes([
     {path: 'cv', element: <AppScreen><CVApp/></AppScreen>},
     {path: 'blog', element: <AppScreen><UnfinishedApp/></AppScreen>},
     {path: 'project', element: <AppScreen><ProjectApp/></AppScreen>},
+    {path: 'music', element: <AppScreen><MusicApp/></AppScreen>},
     {path: '*', element: <NotFoundScreen/>}
 ]);
 

@@ -10,6 +10,7 @@ import {faLaptopCode} from '@fortawesome/free-solid-svg-icons/faLaptopCode';
 import {faYoutube} from '@fortawesome/free-brands-svg-icons/faYoutube';
 import {faInstagram} from '@fortawesome/free-brands-svg-icons/faInstagram';
 import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
+import {faMusic} from '@fortawesome/free-solid-svg-icons/faMusic';
 import {Screen} from './Screen';
 import {Icon} from './Icon';
 
@@ -123,6 +124,7 @@ const apps = [
     {name: 'About', path: 'about', icon: faIdCard, color: '#007aeb'},
     {name: 'CV', path: 'cv', icon: faFileAlt, color: '#aaaaaa'},
     {name: 'Projects', path: 'project', icon: faLaptopCode, color: '#876766'},
+    {name: 'Musics', path: 'music', icon: faMusic, color: '#1cb81d'},
     {name: 'Blog', path: 'blog', icon: faNewspaper, color: '#677963'},
     {name: 'YouTube', path: 'https://www.youtube.com/user/Scottparkmusic', icon: faYoutube, color: '#ff0000'},
     {name: 'Facebook', path: 'https://www.facebook.com/s.ramanujan', icon: faFacebookSquare, color: '#3b5998'},
