@@ -21,11 +21,11 @@ const Name = ({children = {} as ReactNode}) => (
 
 const LanguageButton = ({language = '', children = {} as ReactNode}) => {
     const {changeLanguage} = useContext(LanguageContext);
-    const {textButtonStyle} = useContext(ThemeContext);
+    const {textStyle, boxStyle, highlightStyle} = useContext(ThemeContext);
 
     return (
         <button
-            css={[textButtonStyle, {
+            css={[textStyle, boxStyle, highlightStyle, {
                 cursor: 'pointer',
                 width: '5.7rem',
                 margin: 0,
@@ -99,7 +99,7 @@ const Link = ({url = '', children = {} as ReactNode}) => (
 );
 
 const Gallery = ({images = [{src: '', alt: ''}]}) => {
-    const {imageStyle} = useContext(ThemeContext);
+    const {boxStyle} = useContext(ThemeContext);
 
     return (
         <div css={{
@@ -112,7 +112,7 @@ const Gallery = ({images = [{src: '', alt: ''}]}) => {
         }}>
             {images.map(({src, alt}) => (
                 <img
-                    css={[imageStyle, {
+                    css={[boxStyle, {
                         width: '12rem',
                         height: '12rem',
                         marginRight: '0.7rem',

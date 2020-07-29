@@ -19,11 +19,11 @@ const Name = ({children = {} as ReactNode}) => (
 
 const LanguageButton = ({language = '', children = {} as ReactNode}) => {
     const {changeLanguage} = useContext(LanguageContext);
-    const {textButtonStyle} = useContext(ThemeContext);
+    const {textStyle, boxStyle, highlightStyle} = useContext(ThemeContext);
 
     return (
         <button
-            css={[textButtonStyle, {
+            css={[textStyle, boxStyle, highlightStyle, {
                 cursor: 'pointer',
                 width: '5.7rem',
                 margin: 0,
@@ -67,7 +67,7 @@ const Gallery = (
         images = [{src: '', name: ''}]
     }
 ) => {
-    const {imageButtonStyle} = useContext(ThemeContext);
+    const {boxStyle, highlightStyle} = useContext(ThemeContext);
     const {changeProjectIndex} = useContext(ProjectContext);
 
     return (
@@ -100,7 +100,7 @@ const Gallery = (
             }}>
                 {images.map(({src, name}, index) => (
                     <button
-                        css={[imageButtonStyle, {
+                        css={[boxStyle, highlightStyle, {
                             title: name,
                             display: 'inline-block',
                             cursor: 'pointer',
@@ -110,6 +110,7 @@ const Gallery = (
                             marginRight: '1rem',
                             marginBottom: 0,
                             fontSize: '2rem',
+                            color: 'rgba(0, 0, 0, 0)',
                             backgroundSize: 'contain',
                             backgroundRepeat: 'no-repeat',
                             backgroundPosition: 'center',

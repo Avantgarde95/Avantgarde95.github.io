@@ -7,10 +7,9 @@ export const ThemeContext = createContext({} as {
     defaultColor: string,
     lightColor: string,
     darkColor: string,
+    boxStyle: SerializedStyles,
     textStyle: SerializedStyles,
-    textButtonStyle: SerializedStyles,
-    imageStyle: SerializedStyles,
-    imageButtonStyle: SerializedStyles
+    highlightStyle: SerializedStyles
 });
 
 export const ThemeProvider = (
@@ -29,32 +28,17 @@ export const ThemeProvider = (
             color: defaultColor,
             textShadow: `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`,
         }),
-        textButtonStyle: css({
-            color: defaultColor,
-            textShadow: `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`,
+        boxStyle: css({
             boxShadow: `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`,
-            background: 'none',
-            border: `solid 1px ${defaultColor}`,
-            borderRadius: 0,
-            '&:hover, &:active, &:focus': {
-                border: `solid 1px ${lightColor}`,
-                color: lightColor
-            }
-        }),
-        imageStyle: css({
-            boxShadow: `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`,
-            border: `solid 1px ${defaultColor}`,
-        }),
-        imageButtonStyle: css({
-            boxShadow: `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`,
-            color: 'rgba(0, 0, 0, 0)',
-            border: `solid 1px ${defaultColor}`,
             backgroundColor: 'rgba(0, 0, 0, 0)',
+            border: `solid 1px ${defaultColor}`,
+            borderRadius: 0
+        }),
+        highlightStyle: css({
             '&:hover, &:active, &:focus': {
-                color: defaultColor,
-                border: `solid 1px ${lightColor}`,
-                textShadow: `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`,
-            },
+                color: lightColor,
+                border: `solid 1px ${lightColor}`
+            }
         })
     }}>
         {children}
