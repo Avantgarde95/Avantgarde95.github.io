@@ -43,7 +43,7 @@ module.exports = (env, argv) => {
                 },
                 {
                     test: /\.(png|jpg|svg)$/,
-                    use: {loader: 'url-loader', options: {esModule: false, limit: 8192}}
+                    use: {loader: 'url-loader', options: {esModule: false, limit: 2048}}
                 },
             ]
         },
