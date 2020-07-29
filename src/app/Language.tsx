@@ -8,7 +8,12 @@ export const LanguageContext = createContext({} as {
     changeLanguage: (newLanguage: string) => any
 });
 
-export const LanguageProvider = ({defaultLanguage = 'English', children = {} as ReactNode}) => {
+export const LanguageProvider = (
+    {
+        defaultLanguage = 'English',
+        children = {} as ReactNode
+    }
+) => {
     const [language, setLanguage] = useState(defaultLanguage);
 
     return (

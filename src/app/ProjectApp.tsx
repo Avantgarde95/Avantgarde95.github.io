@@ -17,7 +17,7 @@ const Name = ({children = {} as ReactNode}) => (
 );
 
 const LanguageButton = ({language = '', children = {} as ReactNode}) => {
-    const changeLanguage = useContext(LanguageContext).changeLanguage;
+    const {changeLanguage} = useContext(LanguageContext);
 
     return (
         <button
@@ -75,7 +75,7 @@ const Gallery = (
         images = [{src: '', name: ''}]
     }
 ) => {
-    const changeProjectIndex = useContext(ProjectContext).changeProjectIndex;
+    const {changeProjectIndex} = useContext(ProjectContext);
 
     const buttonStyle = css(
         {
@@ -161,7 +161,7 @@ const Project = (
         components = [] as ReactNode[]
     }
 ) => {
-    const currentProjectIndex = useContext(ProjectContext).currentProjectIndex;
+    const {currentProjectIndex} = useContext(ProjectContext);
 
     return (
         <div css={{
