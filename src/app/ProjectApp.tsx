@@ -1,8 +1,9 @@
 /** @jsx jsx */
 
-import {css, jsx} from '@emotion/core';
+import {jsx} from '@emotion/core';
 import {createContext, Fragment, ReactNode, useContext, useEffect, useState} from 'react';
 import {English, Korean, LanguageContext, LanguageProvider} from './Language';
+import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Coffee');
 
@@ -18,25 +19,16 @@ const Name = ({children = {} as ReactNode}) => (
 
 const LanguageButton = ({language = '', children = {} as ReactNode}) => {
     const {changeLanguage} = useContext(LanguageContext);
+    const {textButtonStyle} = useContext(ThemeContext);
 
     return (
         <button
-            css={{
+            css={[textButtonStyle, {
                 cursor: 'pointer',
                 width: '5.7rem',
                 margin: 0,
-                lineHeight: '1.5rem',
-                color: '#ffffff',
-                textShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
-                boxShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
-                background: 'none',
-                border: 'solid 1px #ffffff',
-                borderRadius: 0,
-                '&:hover, &:active, &:focus': {
-                    border: 'solid 1px #f9ab0d',
-                    color: '#f9ab0d'
-                }
-            }}
+                lineHeight: '1.5rem'
+            }]}
             title={language}
             onClick={() => {
                 changeLanguage(language);
@@ -75,38 +67,8 @@ const Gallery = (
         images = [{src: '', name: ''}]
     }
 ) => {
+    const {imageButtonStyle} = useContext(ThemeContext);
     const {changeProjectIndex} = useContext(ProjectContext);
-
-    const buttonStyle = css(
-        {
-            title: name,
-            display: 'inline-block',
-            cursor: 'pointer',
-            textAlign: 'center',
-            width: `${buttonWidth}rem`,
-            height: `${buttonHeight}rem`,
-            marginRight: '1rem',
-            marginBottom: 0,
-            fontSize: '2rem',
-            color: 'rgba(255, 255, 255, 0)',
-            boxShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
-            border: 'solid 1px #ffffff',
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundColor: '#000000',
-            '&:hover, &:active, &:focus': {
-                border: 'solid 1px #f9ab0d',
-                color: '#ffffff',
-                textShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d'
-            },
-            [wideScreenQuery]: {
-                display: 'block',
-                marginRight: 0,
-                marginBottom: '1rem'
-            }
-        }
-    );
 
     return (
         <div css={{
@@ -138,8 +100,25 @@ const Gallery = (
             }}>
                 {images.map(({src, name}, index) => (
                     <button
-                        css={[buttonStyle, {
-                            backgroundImage: `url(${src})`
+                        css={[imageButtonStyle, {
+                            title: name,
+                            display: 'inline-block',
+                            cursor: 'pointer',
+                            textAlign: 'center',
+                            width: `${buttonWidth}rem`,
+                            height: `${buttonHeight}rem`,
+                            marginRight: '1rem',
+                            marginBottom: 0,
+                            fontSize: '2rem',
+                            backgroundSize: 'contain',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center',
+                            backgroundImage: `url(${src})`,
+                            [wideScreenQuery]: {
+                                display: 'block',
+                                marginRight: 0,
+                                marginBottom: '1rem'
+                            }
                         }]}
                         onClick={() => {
                             changeProjectIndex(index);
@@ -492,66 +471,73 @@ const projects = [
     }
 ];
 
-export const ProjectApp = () => {
-    useEffect(() => {
-        document.title = 'Projects';
-    });
-
+const Content = () => {
+    const {textStyle} = useContext(ThemeContext);
     const buttonWidth = 16;
     const buttonHeight = 12;
     const wideScreenQuery = '@media (min-width: 769px)';
 
     return (
-        <div css={{
+        <div css={[textStyle, {
             display: 'table',
             boxSizing: 'border-box',
             width: '100%',
             height: '100%',
             padding: '1.5rem',
-            color: '#ffffff',
-            textShadow: '0 0 2px #d9890d, 0 0 4px #f9ab0d',
             background: `#000000 url(${Background}) no-repeat center`
-        }}>
-            <LanguageProvider>
+        }]}>
+            <div css={{
+                display: 'table-row',
+                height: 0
+            }}>
+                <Name>Projects</Name>
                 <div css={{
-                    display: 'table-row',
-                    height: 0
+                    marginBottom: '1.5rem'
                 }}>
-                    <Name>Projects</Name>
-                    <div css={{
-                        marginBottom: '1.5rem'
-                    }}>
-                        <LanguageButton language={'Korean'}>한국어</LanguageButton>
-                        <LanguageButton language={'English'}>English</LanguageButton>
-                    </div>
+                    <LanguageButton language={'Korean'}>한국어</LanguageButton>
+                    <LanguageButton language={'English'}>English</LanguageButton>
                 </div>
-                <div css={{
-                    display: 'table-row',
-                    height: '100%'
-                }}>
-                    <ProjectProvider>
-                        <Project
-                            buttonWidth={buttonWidth}
-                            buttonHeight={buttonHeight}
-                            wideScreenQuery={wideScreenQuery}
-                            components={projects.map(project => (
-                                <Fragment>
-                                    <ProjectName url={project.url}>{project.name}</ProjectName>
-                                    <ProjectDescription>{project.description}</ProjectDescription>
-                                </Fragment>
-                            ))}
-                        />
-                        <Gallery
-                            buttonWidth={buttonWidth}
-                            buttonHeight={buttonHeight}
-                            wideScreenQuery={wideScreenQuery}
-                            images={projects.map(project => (
-                                {src: project.image, name: project.name}
-                            ))}
-                        />
-                    </ProjectProvider>
-                </div>
-            </LanguageProvider>
+            </div>
+            <div css={{
+                display: 'table-row',
+                height: '100%'
+            }}>
+                <Project
+                    buttonWidth={buttonWidth}
+                    buttonHeight={buttonHeight}
+                    wideScreenQuery={wideScreenQuery}
+                    components={projects.map(project => (
+                        <Fragment>
+                            <ProjectName url={project.url}>{project.name}</ProjectName>
+                            <ProjectDescription>{project.description}</ProjectDescription>
+                        </Fragment>
+                    ))}
+                />
+                <Gallery
+                    buttonWidth={buttonWidth}
+                    buttonHeight={buttonHeight}
+                    wideScreenQuery={wideScreenQuery}
+                    images={projects.map(project => (
+                        {src: project.image, name: project.name}
+                    ))}
+                />
+            </div>
         </div>
+    );
+};
+
+export const ProjectApp = () => {
+    useEffect(() => {
+        document.title = 'Projects';
+    });
+
+    return (
+        <ThemeProvider lightColor={'#f9ab0d'} darkColor={'#d9890d'}>
+            <LanguageProvider>
+                <ProjectProvider>
+                    <Content/>
+                </ProjectProvider>
+            </LanguageProvider>
+        </ThemeProvider>
     );
 };

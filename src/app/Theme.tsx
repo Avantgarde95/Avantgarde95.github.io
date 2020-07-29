@@ -9,7 +9,8 @@ export const ThemeContext = createContext({} as {
     darkColor: string,
     textStyle: SerializedStyles,
     textButtonStyle: SerializedStyles,
-    imageStyle: SerializedStyles
+    imageStyle: SerializedStyles,
+    imageButtonStyle: SerializedStyles
 });
 
 export const ThemeProvider = (
@@ -43,6 +44,17 @@ export const ThemeProvider = (
         imageStyle: css({
             boxShadow: `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`,
             border: `solid 1px ${defaultColor}`,
+        }),
+        imageButtonStyle: css({
+            boxShadow: `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`,
+            color: 'rgba(0, 0, 0, 0)',
+            border: `solid 1px ${defaultColor}`,
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            '&:hover, &:active, &:focus': {
+                color: defaultColor,
+                border: `solid 1px ${lightColor}`,
+                textShadow: `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`,
+            },
         })
     }}>
         {children}
