@@ -1,32 +1,12 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {createContext, Fragment, ReactNode, useContext, useEffect, useState} from 'react';
+import {ReactNode, useContext, useEffect} from 'react';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {Icon} from '../device/Icon';
+import {English, Korean, LanguageContext, LanguageProvider} from './Language';
 
 const Background = require('./image/Guitar');
-
-const LanguageContext = createContext({
-    currentLanguage: 'English',
-    changeLanguage: (newLanguage: string) => {
-    }
-});
-
-const LanguageProvider = ({children = {} as ReactNode}) => {
-    const [language, setLanguage] = useState('English');
-
-    return (
-        <LanguageContext.Provider value={{
-            currentLanguage: language,
-            changeLanguage: (newLanguage: string) => {
-                setLanguage(newLanguage);
-            }
-        }}>
-            {children}
-        </LanguageContext.Provider>
-    );
-};
 
 const Name = ({children = {} as ReactNode}) => (
     <div css={{
@@ -68,18 +48,6 @@ const LanguageButton = ({language = '', children = {} as ReactNode}) => {
         </button>
     );
 };
-
-const Korean = ({children = {} as ReactNode}) => (
-    <Fragment>
-        {useContext(LanguageContext).currentLanguage === 'Korean' && children}
-    </Fragment>
-);
-
-const English = ({children = {} as ReactNode}) => (
-    <Fragment>
-        {useContext(LanguageContext).currentLanguage === 'English' && children}
-    </Fragment>
-);
 
 const Title = ({children = {} as ReactNode}) => (
     <div css={{

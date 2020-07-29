@@ -2,29 +2,9 @@
 
 import {css, jsx} from '@emotion/core';
 import {createContext, Fragment, ReactNode, useContext, useEffect, useState} from 'react';
+import {English, Korean, LanguageContext, LanguageProvider} from './Language';
 
 const Background = require('./image/Coffee');
-
-const LanguageContext = createContext({
-    currentLanguage: 'English',
-    changeLanguage: (newLanguage: string) => {
-    }
-});
-
-const LanguageProvider = ({children = {} as ReactNode}) => {
-    const [language, setLanguage] = useState('English');
-
-    return (
-        <LanguageContext.Provider value={{
-            currentLanguage: language,
-            changeLanguage: (newLanguage: string) => {
-                setLanguage(newLanguage);
-            }
-        }}>
-            {children}
-        </LanguageContext.Provider>
-    );
-};
 
 const Name = ({children = {} as ReactNode}) => (
     <div css={{
@@ -67,22 +47,9 @@ const LanguageButton = ({language = '', children = {} as ReactNode}) => {
     );
 };
 
-const Korean = ({children = {} as ReactNode}) => (
-    <Fragment>
-        {useContext(LanguageContext).currentLanguage === 'Korean' && children}
-    </Fragment>
-);
-
-const English = ({children = {} as ReactNode}) => (
-    <Fragment>
-        {useContext(LanguageContext).currentLanguage === 'English' && children}
-    </Fragment>
-);
-
-const ProjectContext = createContext({
-    currentProjectIndex: 0,
-    changeProjectIndex: (projectIndex: number) => {
-    }
+const ProjectContext = createContext({} as {
+    currentProjectIndex: number,
+    changeProjectIndex: (projectIndex: number) => any
 });
 
 const ProjectProvider = ({children = {} as ReactNode}) => {
