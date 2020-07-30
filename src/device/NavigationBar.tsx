@@ -17,8 +17,8 @@ const Cell = ({children = {} as ReactNode}) => (
     </span>
 );
 
-const KoreanFlag = require('./image/KoreanFlag');
-const EnglishFlag = require('./image/EnglishFlag');
+const InKorean = require('./image/InKorean');
+const InEnglish = require('./image/InEnglish');
 
 export const NavigationBar = () => {
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ export const NavigationBar = () => {
     });
 
     const languageButtonStyle = css([buttonStyle, {
-        backgroundSize: 'auto 1.5rem',
+        backgroundSize: 'auto 1.8rem',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center'
     }]);
@@ -67,9 +67,9 @@ export const NavigationBar = () => {
                 <English>
                     <button
                         css={[languageButtonStyle, {
-                            backgroundImage: `url(${KoreanFlag})`
+                            backgroundImage: `url(${InEnglish})`
                         }]}
-                        title={'Korean'}
+                        title={'To Korean'}
                         onClick={() => {
                             changeLanguage('Korean');
                         }}
@@ -78,9 +78,9 @@ export const NavigationBar = () => {
                 <Korean>
                     <button
                         css={[languageButtonStyle, {
-                            backgroundImage: `url(${EnglishFlag})`
+                            backgroundImage: `url(${InKorean})`
                         }]}
-                        title={'English'}
+                        title={'To English'}
                         onClick={() => {
                             changeLanguage('English');
                         }}
