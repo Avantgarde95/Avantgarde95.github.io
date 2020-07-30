@@ -4,7 +4,7 @@ import {jsx} from '@emotion/core';
 import {ReactNode, useContext, useEffect} from 'react';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {Icon} from '../device/Icon';
-import {English, Korean, LanguageContext, LanguageProvider} from './Language';
+import {English, Korean} from './Language';
 import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Guitar');
@@ -18,28 +18,6 @@ const Name = ({children = {} as ReactNode}) => (
         {children}
     </div>
 );
-
-const LanguageButton = ({language = '', children = {} as ReactNode}) => {
-    const {changeLanguage} = useContext(LanguageContext);
-    const {textStyle, boxStyle, highlightStyle} = useContext(ThemeContext);
-
-    return (
-        <button
-            css={[textStyle, boxStyle, highlightStyle, {
-                cursor: 'pointer',
-                width: '5.7rem',
-                margin: 0,
-                lineHeight: '1.5rem'
-            }]}
-            title={language}
-            onClick={() => {
-                changeLanguage(language);
-            }}
-        >
-            {children}
-        </button>
-    );
-};
 
 const Title = ({children = {} as ReactNode}) => (
     <div css={{
@@ -154,12 +132,6 @@ const Content = () => {
             background: `#000000 url(${Background}) no-repeat center`
         }]}>
             <Name>Hunmin Park</Name>
-            <div css={{
-                marginBottom: '1.5rem'
-            }}>
-                <LanguageButton language={'Korean'}>한국어</LanguageButton>
-                <LanguageButton language={'English'}>English</LanguageButton>
-            </div>
             <Title>
                 <Korean>소개</Korean>
                 <English>About</English>
@@ -247,9 +219,7 @@ export const AboutApp = () => {
 
     return (
         <ThemeProvider lightColor={'#00e9f9'} darkColor={'#0090ff'}>
-            <LanguageProvider>
-                <Content/>
-            </LanguageProvider>
+            <Content/>
         </ThemeProvider>
     );
 };

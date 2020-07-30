@@ -16,6 +16,7 @@ import {UnfinishedApp} from './app/UnfinishedApp';
 import {LockScreen} from './device/LockScreen';
 import {NavigationBar} from './device/NavigationBar';
 import {ProjectApp} from './app/ProjectApp';
+import {LanguageProvider} from './app/Language';
 
 const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
@@ -56,14 +57,16 @@ const Device = () => {
                 padding: 0,
                 backgroundColor: '#000000'
             }}>
-                <StatusBar showTime={!isLocked}/>
-                {
-                    isLocked && <LockScreen onDisappear={() => {
-                        setLock(false);
-                    }}/>
-                }
-                {!isLocked && <DeviceRoutes/>}
-                {!isLocked && <NavigationBar/>}
+                <LanguageProvider>
+                    <StatusBar showTime={!isLocked}/>
+                    {
+                        isLocked && <LockScreen onDisappear={() => {
+                            setLock(false);
+                        }}/>
+                    }
+                    {!isLocked && <DeviceRoutes/>}
+                    {!isLocked && <NavigationBar/>}
+                </LanguageProvider>
             </div>
         </BrowserRouter>
     );

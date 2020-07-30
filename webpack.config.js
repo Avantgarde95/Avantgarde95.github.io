@@ -32,7 +32,7 @@ module.exports = (env, argv) => {
             },
             extensions: [
                 '.ts', '.tsx', '.js',
-                '.png', '.jpg', 'svg'
+                '.png', '.jpg', '.svg'
             ]
         },
         module: {

@@ -11,6 +11,7 @@ import {faYoutube} from '@fortawesome/free-brands-svg-icons/faYoutube';
 import {faInstagram} from '@fortawesome/free-brands-svg-icons/faInstagram';
 import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
 import {faMusic} from '@fortawesome/free-solid-svg-icons/faMusic';
+import {faGithub} from '@fortawesome/free-brands-svg-icons/faGithub';
 import {Screen} from './Screen';
 import {Icon} from './Icon';
 
@@ -126,6 +127,7 @@ const apps = [
     {name: 'Projects', path: 'project', icon: faLaptopCode, color: '#876766'},
     {name: 'Musics', path: 'music', icon: faMusic, color: '#1cb81d'},
     {name: 'Blog', path: 'blog', icon: faNewspaper, color: '#677963'},
+    {name: 'GitHub', path: 'http://github.com/Avantgarde95', icon: faGithub, color: '#211f1f'},
     {name: 'YouTube', path: 'https://www.youtube.com/user/Scottparkmusic', icon: faYoutube, color: '#ff0000'},
     {name: 'Facebook', path: 'https://www.facebook.com/s.ramanujan', icon: faFacebookSquare, color: '#3b5998'},
     {name: 'Instagram', path: 'https://www.instagram.com/hunminpark95', icon: faInstagram, color: '#c13584'}

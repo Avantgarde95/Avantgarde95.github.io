@@ -2,7 +2,7 @@
 
 import {jsx} from '@emotion/core';
 import {createContext, Fragment, ReactNode, useContext, useEffect, useState} from 'react';
-import {English, Korean, LanguageContext, LanguageProvider} from './Language';
+import {English, Korean} from './Language';
 import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Coffee');
@@ -16,28 +16,6 @@ const Name = ({children = {} as ReactNode}) => (
         {children}
     </div>
 );
-
-const LanguageButton = ({language = '', children = {} as ReactNode}) => {
-    const {changeLanguage} = useContext(LanguageContext);
-    const {textStyle, boxStyle, highlightStyle} = useContext(ThemeContext);
-
-    return (
-        <button
-            css={[textStyle, boxStyle, highlightStyle, {
-                cursor: 'pointer',
-                width: '5.7rem',
-                margin: 0,
-                lineHeight: '1.5rem'
-            }]}
-            title={language}
-            onClick={() => {
-                changeLanguage(language);
-            }}
-        >
-            {children}
-        </button>
-    );
-};
 
 const ProjectContext = createContext({} as {
     currentProjectIndex: number,
@@ -492,12 +470,6 @@ const Content = () => {
                 height: 0
             }}>
                 <Name>Projects</Name>
-                <div css={{
-                    marginBottom: '1.5rem'
-                }}>
-                    <LanguageButton language={'Korean'}>한국어</LanguageButton>
-                    <LanguageButton language={'English'}>English</LanguageButton>
-                </div>
             </div>
             <div css={{
                 display: 'table-row',
@@ -534,11 +506,9 @@ export const ProjectApp = () => {
 
     return (
         <ThemeProvider lightColor={'#f9ab0d'} darkColor={'#d9890d'}>
-            <LanguageProvider>
-                <ProjectProvider>
-                    <Content/>
-                </ProjectProvider>
-            </LanguageProvider>
+            <ProjectProvider>
+                <Content/>
+            </ProjectProvider>
         </ThemeProvider>
     );
 };
