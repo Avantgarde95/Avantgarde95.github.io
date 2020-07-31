@@ -2,7 +2,7 @@
 
 import {jsx} from '@emotion/core';
 import {createContext, Fragment, ReactNode, useContext, useEffect, useState} from 'react';
-import {English, Korean} from './Language';
+import {English, Korean} from '../common/Language';
 import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Coffee');

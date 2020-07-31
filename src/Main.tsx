@@ -8,7 +8,6 @@ import {render} from 'react-dom';
 import {BrowserRouter, useRoutes} from 'react-router-dom';
 import {StatusBar} from './device/StatusBar';
 import {HomeScreen} from './device/HomeScreen';
-import {NotFoundScreen} from './device/NotFoundScreen';
 import {AppScreen} from './device/AppScreen';
 import {AboutApp} from './app/AboutApp';
 import {CVApp} from './app/CVApp';
@@ -16,7 +15,8 @@ import {UnfinishedApp} from './app/UnfinishedApp';
 import {LockScreen} from './device/LockScreen';
 import {NavigationBar} from './device/NavigationBar';
 import {ProjectApp} from './app/ProjectApp';
-import {LanguageProvider} from './app/Language';
+import {LanguageProvider} from './common/Language';
+import {NotFoundApp} from './app/NotFoundApp';
 
 const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
@@ -25,7 +25,7 @@ const DeviceRoutes = () => useRoutes([
     {path: 'blog', element: <AppScreen><UnfinishedApp/></AppScreen>},
     {path: 'project', element: <AppScreen><ProjectApp/></AppScreen>},
     {path: 'music', element: <AppScreen><UnfinishedApp/></AppScreen>},
-    {path: '*', element: <NotFoundScreen/>}
+    {path: '*', element: <AppScreen><NotFoundApp/></AppScreen>}
 ]);
 
 const Device = () => {

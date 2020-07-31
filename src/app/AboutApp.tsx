@@ -4,7 +4,7 @@ import {jsx} from '@emotion/core';
 import {ReactNode, useContext, useEffect} from 'react';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {Icon} from '../device/Icon';
-import {English, Korean} from './Language';
+import {English, Korean} from '../common/Language';
 import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Guitar');

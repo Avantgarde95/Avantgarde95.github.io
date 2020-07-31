@@ -5,6 +5,7 @@ import {useEffect} from 'react';
 import {faWrench} from '@fortawesome/free-solid-svg-icons/faWrench';
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
 import {Icon} from '../device/Icon';
+import {English, Korean} from '../common/Language';
 
 export const UnfinishedApp = () => {
     useEffect(() => {
@@ -28,7 +29,12 @@ export const UnfinishedApp = () => {
                 marginBottom: '2rem',
                 fontSize: '1.5rem'
             }}>
-                Under construction! Click <Icon definition={faHome}/> to return.
+                <Korean>
+                    제작중입니다! <Icon definition={faHome}/>을 눌러 돌아가세요.
+                </Korean>
+                <English>
+                    Under construction! Click <Icon definition={faHome}/> to return.
+                </English>
             </span>
             <br/>
             <span css={{
