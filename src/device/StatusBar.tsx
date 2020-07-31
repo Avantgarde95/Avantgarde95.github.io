@@ -7,6 +7,7 @@ import {faSignal} from '@fortawesome/free-solid-svg-icons/faSignal';
 import {faBatteryFull} from '@fortawesome/free-solid-svg-icons/faBatteryFull';
 import {Icon} from './Icon';
 import {AMPM, Hour, Minute, TimeProvider} from './Time';
+import {English, Korean} from '../common/Language';
 
 const LeftArea = ({children = {} as ReactNode}) => (
     <div css={{
@@ -46,7 +47,10 @@ export const StatusBar = ({showTime = true}) => (
         color: '#ffffff'
     }}>
         <LeftArea>
-            <Block>MyPhone</Block>
+            <Block>
+                <Korean>마이폰</Korean>
+                <English>MyPhone</English>
+            </Block>
         </LeftArea>
         <RightArea>
             <Block><Icon definition={faWifi}/></Block>

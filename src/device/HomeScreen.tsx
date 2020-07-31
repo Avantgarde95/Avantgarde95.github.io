@@ -14,6 +14,7 @@ import {faMusic} from '@fortawesome/free-solid-svg-icons/faMusic';
 import {faGithub} from '@fortawesome/free-brands-svg-icons/faGithub';
 import {Screen} from './Screen';
 import {Icon} from './Icon';
+import {English, Korean} from '../common/Language';
 
 const Button = (
     {
@@ -122,15 +123,69 @@ const Placeholder = (
 );
 
 const apps = [
-    {name: 'About', path: 'about', icon: faIdCard, color: '#007aeb'},
-    {name: 'CV', path: 'cv', icon: faFileAlt, color: '#aaaaaa'},
-    {name: 'Projects', path: 'project', icon: faLaptopCode, color: '#876766'},
-    {name: 'Musics', path: 'music', icon: faMusic, color: '#1cb81d'},
-    {name: 'Blog', path: 'blog', icon: faNewspaper, color: '#677963'},
-    {name: 'GitHub', path: 'http://github.com/Avantgarde95', icon: faGithub, color: '#211f1f'},
-    {name: 'YouTube', path: 'https://www.youtube.com/user/Scottparkmusic', icon: faYoutube, color: '#ff0000'},
-    {name: 'Facebook', path: 'https://www.facebook.com/s.ramanujan', icon: faFacebookSquare, color: '#3b5998'},
-    {name: 'Instagram', path: 'https://www.instagram.com/hunminpark95', icon: faInstagram, color: '#c13584'}
+    {
+        koreanName: '소개',
+        englishName: 'About',
+        path: 'about',
+        icon: faIdCard,
+        color: '#007aeb'
+    },
+    {
+        koreanName: '이력',
+        englishName: 'CV',
+        path: 'cv',
+        icon: faFileAlt,
+        color: '#aaaaaa'
+    },
+    {
+        koreanName: '프로젝트',
+        englishName: 'Projects',
+        path: 'project',
+        icon: faLaptopCode,
+        color: '#876766'
+    },
+    {
+        koreanName: '음악',
+        englishName: 'Musics',
+        path: 'music',
+        icon: faMusic,
+        color: '#1cb81d'
+    },
+    {
+        koreanName: '블로그',
+        englishName: 'Blog',
+        path: 'blog',
+        icon: faNewspaper,
+        color: '#677963'
+    },
+    {
+        koreanName: '깃허브',
+        englishName: 'GitHub',
+        path: 'http://github.com/Avantgarde95',
+        icon: faGithub,
+        color: '#211f1f'
+    },
+    {
+        koreanName: '유튜브',
+        englishName: 'YouTube',
+        path: 'https://www.youtube.com/user/Scottparkmusic',
+        icon: faYoutube,
+        color: '#ff0000'
+    },
+    {
+        koreanName: '페이스북',
+        englishName: 'Facebook',
+        path: 'https://www.facebook.com/s.ramanujan',
+        icon: faFacebookSquare,
+        color: '#3b5998'
+    },
+    {
+        koreanName: '인스타그램',
+        englishName: 'Instagram',
+        path: 'https://www.instagram.com/hunminpark95',
+        icon: faInstagram,
+        color: '#c13584'
+    }
 ];
 
 export const HomeScreen = (
@@ -157,10 +212,13 @@ export const HomeScreen = (
                 }}>
                     {apps.map(app => (
                         <App width={appWidth} height={appHeight}>
-                            <Button title={app.name} path={app.path} color={app.color}>
+                            <Button title={app.englishName} path={app.path} color={app.color}>
                                 <Icon definition={app.icon}/>
                             </Button>
-                            <Name>{app.name}</Name>
+                            <Name>
+                                <Korean>{app.koreanName}</Korean>
+                                <English>{app.englishName}</English>
+                            </Name>
                         </App>
                     ))}
                     {Array.apply(null, Array(maxAppsPerLine)).map(() => (

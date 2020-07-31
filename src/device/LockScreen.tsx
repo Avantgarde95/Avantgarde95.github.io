@@ -4,6 +4,7 @@ import {jsx} from '@emotion/core';
 import {useState} from 'react';
 import {Screen} from './Screen';
 import {Hour, Minute, Month, MonthDay, TimeProvider, WeekDay} from './Time';
+import {English, Korean} from '../common/Language';
 
 export const LockScreen = ({onDisappear = {} as () => void}) => {
     const [color, setColor] = useState('rgba(255, 255, 255, 1)');
@@ -51,7 +52,12 @@ export const LockScreen = ({onDisappear = {} as () => void}) => {
                         bottom: '3rem'
                     }
                 }}>
-                    Click anywhere to unlock
+                    <Korean>
+                        클릭해서 잠금해제
+                    </Korean>
+                    <English>
+                        Click anywhere to unlock
+                    </English>
                 </div>
             </div>
         </Screen>
