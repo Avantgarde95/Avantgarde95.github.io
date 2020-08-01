@@ -161,7 +161,7 @@ const apps = [
     {
         koreanName: '깃허브',
         englishName: 'GitHub',
-        path: 'http://github.com/Avantgarde95',
+        path: 'https://github.com/Avantgarde95',
         icon: faGithub,
         color: '#211f1f'
     },

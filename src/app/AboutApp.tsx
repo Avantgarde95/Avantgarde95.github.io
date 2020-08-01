@@ -9,16 +9,6 @@ import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Guitar');
 
-const Name = ({children = {} as ReactNode}) => (
-    <div css={{
-        fontWeight: 'bold',
-        fontSize: '1.8rem',
-        marginBottom: '1.3rem'
-    }}>
-        {children}
-    </div>
-);
-
 const Title = ({children = {} as ReactNode}) => (
     <div css={{
         font: '1.5rem',
@@ -131,17 +121,21 @@ const Content = () => {
             padding: '1.5rem',
             background: `#000000 url(${Background}) no-repeat center`
         }]}>
-            <Name>Hunmin Park</Name>
-            <Title>
+            <div css={{
+                fontWeight: 'bold',
+                fontSize: '1.8rem',
+                lineHeight: 1,
+                marginBottom: '1.5rem'
+            }}>
                 <Korean>소개</Korean>
                 <English>About</English>
-            </Title>
-            <List>
-                <Item>
-                    <Korean>반가워요! 컴퓨터와 음악에 관심이 있습니다 :)</Korean>
-                    <English>Welcome! I'm interested in computers and music :)</English>
-                </Item>
-            </List>
+            </div>
+            <div css={{
+                marginBottom: '1.5rem'
+            }}>
+                <Korean>반가워요! 컴퓨터와 음악에 관심이 있습니다 :)</Korean>
+                <English>Welcome! I'm interested in computers and music :)</English>
+            </div>
             <Title>
                 <Korean>관심사 (컴퓨터)</Korean>
                 <English>Interests (Computer)</English>

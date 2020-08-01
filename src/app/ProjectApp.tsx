@@ -7,16 +7,6 @@ import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Coffee');
 
-const Name = ({children = {} as ReactNode}) => (
-    <div css={{
-        fontWeight: 'bold',
-        fontSize: '1.8rem',
-        marginBottom: '1.3rem'
-    }}>
-        {children}
-    </div>
-);
-
 const ProjectContext = createContext({} as {
     currentProjectIndex: number,
     changeProjectIndex: (projectIndex: number) => any
@@ -36,6 +26,23 @@ const ProjectProvider = ({children = {} as ReactNode}) => {
         </ProjectContext.Provider>
     );
 };
+
+const Link = ({url = '', children = {} as ReactNode}) => (
+    <a
+        css={{
+            wordBreak: 'break-all',
+            color: '#f9ab0d',
+            '&:hover, &:active': {
+                color: '#d9890d'
+            }
+        }}
+        target={'_blank'}
+        rel={'noopener noreferrer'}
+        href={url}
+    >
+        {children}
+    </a>
+);
 
 const Gallery = (
     {
@@ -469,7 +476,21 @@ const Content = () => {
                 display: 'table-row',
                 height: 0
             }}>
-                <Name>Projects</Name>
+                <div css={{
+                    fontWeight: 'bold',
+                    fontSize: '1.8rem',
+                    lineHeight: 1,
+                    marginBottom: '1.5rem'
+                }}>
+                    <Korean>프로젝트</Korean>
+                    <English>Projects</English>
+                </div>
+                <div css={{
+                    marginBottom: '1.5rem'
+                }}>
+                    <Korean>모든 프로젝트들을 보려면 <Link url={'https://github.com/Avantgarde95'}>깃허브</Link>를 방문해주세요.</Korean>
+                    <English>To see the all projects, visit <Link url={'https://github.com/Avantgarde95'}>GitHub</Link>.</English>
+                </div>
             </div>
             <div css={{
                 display: 'table-row',
