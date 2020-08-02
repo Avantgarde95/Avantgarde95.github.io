@@ -24,9 +24,7 @@ export const App = (
     const {currentLanguage} = useContext(LanguageContext);
 
     useEffect(() => {
-        const title = (currentLanguage === 'Korean')
-            ? koreanTitle
-            : ((currentLanguage === 'English') ? englishTitle : '');
+        const title = (currentLanguage === 'Korean') ? koreanTitle : englishTitle;
 
         if (title.length > 0) {
             document.title = title;

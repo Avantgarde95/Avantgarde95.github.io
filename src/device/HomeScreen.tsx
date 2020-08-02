@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import {css, jsx} from '@emotion/core';
-import {ReactNode, useEffect} from 'react';
+import {ReactNode, useContext, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {faIdCard} from '@fortawesome/free-solid-svg-icons/faIdCard';
 import {faFileAlt} from '@fortawesome/free-solid-svg-icons/faFileAlt';
@@ -14,7 +14,7 @@ import {faMusic} from '@fortawesome/free-solid-svg-icons/faMusic';
 import {faGithub} from '@fortawesome/free-brands-svg-icons/faGithub';
 import {Screen} from './Screen';
 import {Icon} from './Icon';
-import {English, Korean} from '../common/Language';
+import {English, Korean, LanguageContext} from '../common/Language';
 
 const Button = (
     {
@@ -195,8 +195,10 @@ export const HomeScreen = (
         maxAppsPerLine = 5
     }
 ) => {
+    const {currentLanguage} = useContext(LanguageContext);
+
     useEffect(() => {
-        document.title = 'Home';
+        document.title = (currentLanguage === 'Korean') ? '홈' : 'Home';
     });
 
     return (
