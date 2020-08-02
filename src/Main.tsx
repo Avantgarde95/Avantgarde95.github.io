@@ -64,7 +64,7 @@ const Device = () => {
                         }}/>
                     }
                     {!isLocked && <DeviceRoutes/>}
-                    {!isLocked && <NavigationBar/>}
+                    <NavigationBar showNavigators={!isLocked}/>
                 </LanguageProvider>
             </div>
         </BrowserRouter>

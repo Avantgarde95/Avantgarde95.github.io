@@ -11,7 +11,8 @@ import {English, Korean, LanguageContext} from '../common/Language';
 const Cell = ({children = {} as ReactNode}) => (
     <span css={{
         display: 'table-cell',
-        textAlign: 'center'
+        textAlign: 'center',
+        width: '4rem'
     }}>
         {children}
     </span>
@@ -20,7 +21,7 @@ const Cell = ({children = {} as ReactNode}) => (
 const InKorean = require('./image/InKorean');
 const InEnglish = require('./image/InEnglish');
 
-export const NavigationBar = () => {
+export const NavigationBar = ({showNavigators = true}) => {
     const navigate = useNavigate();
     const {changeLanguage} = useContext(LanguageContext);
 
@@ -53,7 +54,7 @@ export const NavigationBar = () => {
             width: '100%'
         }}>
             <Cell>
-                <button
+                {showNavigators && <button
                     css={buttonStyle}
                     title={'Back'}
                     onClick={() => {
@@ -61,7 +62,7 @@ export const NavigationBar = () => {
                     }}
                 >
                     <Icon definition={faArrowLeft}/>
-                </button>
+                </button>}
             </Cell>
             <Cell>
                 <English>
@@ -88,7 +89,7 @@ export const NavigationBar = () => {
                 </Korean>
             </Cell>
             <Cell>
-                <button
+                {showNavigators && <button
                     css={buttonStyle}
                     title={'Home'}
                     onClick={() => {
@@ -96,7 +97,7 @@ export const NavigationBar = () => {
                     }}
                 >
                     <Icon definition={faHome}/>
-                </button>
+                </button>}
             </Cell>
         </div>
     );
