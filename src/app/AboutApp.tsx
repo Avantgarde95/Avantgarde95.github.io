@@ -1,11 +1,12 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {ReactNode, useContext, useEffect} from 'react';
+import {ReactNode, useContext} from 'react';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {Icon} from '../device/Icon';
 import {English, Korean} from '../common/Language';
 import {ThemeContext, ThemeProvider} from './Theme';
+import {App} from './App';
 
 const Background = require('./image/Guitar');
 
@@ -206,14 +207,10 @@ const Content = () => {
     );
 };
 
-export const AboutApp = () => {
-    useEffect(() => {
-        document.title = 'About';
-    });
-
-    return (
+export const AboutApp = () => (
+    <App koreanTitle={'소개'} englishTitle={'About'}>
         <ThemeProvider lightColor={'#00e9f9'} darkColor={'#0090ff'}>
             <Content/>
         </ThemeProvider>
-    );
-};
+    </App>
+);

@@ -1,18 +1,14 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {useEffect} from 'react';
 import {faWrench} from '@fortawesome/free-solid-svg-icons/faWrench';
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
 import {Icon} from '../device/Icon';
 import {English, Korean} from '../common/Language';
+import {App} from './App';
 
-export const UnfinishedApp = () => {
-    useEffect(() => {
-        document.title = 'Under construction!';
-    });
-
-    return (
+export const UnfinishedApp = () => (
+    <App koreanTitle={'제작중입니다!'} englishTitle={'Under construction!'}>
         <div css={{
             display: 'table',
             textAlign: 'center',
@@ -44,5 +40,5 @@ export const UnfinishedApp = () => {
             </span>
         </span>
         </div>
-    );
-};
+    </App>
+);

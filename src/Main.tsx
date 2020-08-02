@@ -8,7 +8,6 @@ import {render} from 'react-dom';
 import {BrowserRouter, useRoutes} from 'react-router-dom';
 import {StatusBar} from './device/StatusBar';
 import {HomeScreen} from './device/HomeScreen';
-import {AppScreen} from './device/AppScreen';
 import {AboutApp} from './app/AboutApp';
 import {CVApp} from './app/CVApp';
 import {UnfinishedApp} from './app/UnfinishedApp';
@@ -20,12 +19,12 @@ import {NotFoundApp} from './app/NotFoundApp';
 
 const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
-    {path: 'about', element: <AppScreen><AboutApp/></AppScreen>},
-    {path: 'cv', element: <AppScreen><CVApp/></AppScreen>},
-    {path: 'blog', element: <AppScreen><UnfinishedApp/></AppScreen>},
-    {path: 'project', element: <AppScreen><ProjectApp/></AppScreen>},
-    {path: 'music', element: <AppScreen><UnfinishedApp/></AppScreen>},
-    {path: '*', element: <AppScreen><NotFoundApp/></AppScreen>}
+    {path: 'about', element: <AboutApp/>},
+    {path: 'cv', element: <CVApp/>},
+    {path: 'blog', element: <UnfinishedApp/>},
+    {path: 'project', element: <ProjectApp/>},
+    {path: 'music', element: <UnfinishedApp/>},
+    {path: '*', element: <NotFoundApp/>}
 ]);
 
 const Device = () => {

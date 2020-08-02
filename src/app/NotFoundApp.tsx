@@ -1,18 +1,14 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {useEffect} from 'react';
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
 import {faSadTear} from '@fortawesome/free-solid-svg-icons/faSadTear';
 import {Icon} from '../device/Icon';
 import {English, Korean} from '../common/Language';
+import {App} from './App';
 
-export const NotFoundApp = () => {
-    useEffect(() => {
-        document.title = 'Under construction!';
-    });
-
-    return (
+export const NotFoundApp = () => (
+    <App koreanTitle={'페이지를 찾을 수 없습니다!'} englishTitle={'Page not found!'}>
         <div css={{
             display: 'table',
             textAlign: 'center',
@@ -44,5 +40,5 @@ export const NotFoundApp = () => {
             </span>
         </span>
         </div>
-    );
-};
+    </App>
+);

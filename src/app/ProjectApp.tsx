@@ -1,9 +1,10 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {createContext, Fragment, ReactNode, useContext, useEffect, useState} from 'react';
+import {createContext, Fragment, ReactNode, useContext, useState} from 'react';
 import {English, Korean} from '../common/Language';
 import {ThemeContext, ThemeProvider} from './Theme';
+import {App} from './App';
 
 const Background = require('./image/Coffee');
 
@@ -520,16 +521,12 @@ const Content = () => {
     );
 };
 
-export const ProjectApp = () => {
-    useEffect(() => {
-        document.title = 'Projects';
-    });
-
-    return (
+export const ProjectApp = () => (
+    <App koreanTitle={'프로젝트'} englishTitle={'Projects'}>
         <ThemeProvider lightColor={'#f9ab0d'} darkColor={'#d9890d'}>
             <ProjectProvider>
                 <Content/>
             </ProjectProvider>
         </ThemeProvider>
-    );
-};
+    </App>
+);

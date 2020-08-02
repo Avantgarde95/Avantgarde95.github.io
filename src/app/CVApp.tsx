@@ -1,14 +1,10 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {useEffect} from 'react';
+import {App} from './App';
 
-export const CVApp = () => {
-    useEffect(() => {
-        document.title = 'CV';
-    });
-
-    return (
+export const CVApp = () => (
+    <App koreanTitle={'이력'} englishTitle={'CV'}>
         <iframe
             css={{
                 border: 'none',
@@ -20,5 +16,5 @@ export const CVApp = () => {
             width={'100%'}
             height={'100%'}
         />
-    );
-};
+    </App>
+);
