@@ -53,7 +53,7 @@ const Gallery = (
         images = [{src: '', name: ''}]
     }
 ) => {
-    const {boxStyle, highlightStyle} = useContext(ThemeContext);
+    const {textStyle, boxStyle, highlightStyle} = useContext(ThemeContext);
     const {changeProjectIndex} = useContext(ProjectContext);
 
     return (
@@ -101,6 +101,7 @@ const Gallery = (
                             backgroundRepeat: 'no-repeat',
                             backgroundPosition: 'center',
                             backgroundImage: `url(${src})`,
+                            '&:hover, &:active, &:focus': textStyle,
                             [wideScreenQuery]: {
                                 display: 'block',
                                 marginRight: 0,
