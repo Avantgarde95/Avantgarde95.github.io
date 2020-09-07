@@ -21,7 +21,6 @@ const DeviceRoutes = () => useRoutes([
     {path: '/', element: <HomeScreen/>},
     {path: 'about', element: <AboutApp/>},
     {path: 'cv', element: <CVApp/>},
-    {path: 'blog', element: <UnfinishedApp/>},
     {path: 'project', element: <ProjectApp/>},
     {path: 'music', element: <UnfinishedApp/>},
     {path: '*', element: <NotFoundApp/>}

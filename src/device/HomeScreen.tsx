@@ -154,7 +154,7 @@ const apps = [
     {
         koreanName: '블로그',
         englishName: 'Blog',
-        path: 'blog',
+        path: 'https://hunminpark95.wordpress.com',
         icon: faNewspaper,
         color: '#677963'
     },
