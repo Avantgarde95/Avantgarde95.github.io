@@ -155,7 +155,7 @@ const Content = () => {
                 </Item>
                 <Item>
                     <Korean>
-                        웹개발에도 관심이 있습니다.
+                        웹 개발에도 관심이 있습니다.
                     </Korean>
                     <English>
                         I'm also interested in web development.
