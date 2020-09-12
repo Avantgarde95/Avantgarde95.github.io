@@ -143,17 +143,22 @@ const Content = () => {
             </Title>
             <List>
                 <Item>
-                    <Korean>컴퓨터 그래픽스(CG), 특히 실시간 렌더링, 3D 모델링, 증강현실(AR), 가상현실(VR)에 관심이 있습니다.</Korean>
-                    <English>I'm interested in computer graphics, especially real-time rendeing, 3D modeling,
-                        augmented
-                        reality(AR), and virtual reality(VR).</English>
+                    <Korean>
+                        컴퓨터 그래픽스(CG), 특히 실시간 렌더링, 3D 모델링,
+                        증강현실(AR), 가상현실(VR)에 관심이 있습니다.
+                    </Korean>
+                    <English>
+                        I'm interested in computer graphics,
+                        especially real-time rendering, 3D modeling,
+                        augmented reality(AR), and virtual reality(VR).
+                    </English>
                 </Item>
                 <Item>
                     <Korean>
-                        언젠가 CG를 활용하여 멋진 게임을 제작해보고 싶네요 :)
+                        웹개발에도 관심이 있습니다.
                     </Korean>
                     <English>
-                        I want to make a great game using CG someday :)
+                        I'm also interested in web development.
                     </English>
                 </Item>
             </List>
