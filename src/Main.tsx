@@ -114,4 +114,10 @@ const Device = () => {
     );
 };
 
+const temporaryElements = document.getElementsByClassName('Temporary');
+
+for (let i = 0; i < temporaryElements.length; i++) {
+    temporaryElements[i]?.parentNode?.removeChild(temporaryElements[i]);
+}
+
 render(<Device/>, document.body);
