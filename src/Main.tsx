@@ -7,14 +7,14 @@ import {Component, ErrorInfo, ReactNode, useState} from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter, useRoutes} from 'react-router-dom';
 import {StatusBar} from './device/StatusBar';
+import {LockScreen} from './device/LockScreen';
+import {NavigationBar} from './device/NavigationBar';
+import {LanguageProvider} from './common/Language';
+import {AlertApp} from './app/AlertApp';
 import {HomeScreen} from './device/HomeScreen';
 import {AboutApp} from './app/AboutApp';
 import {CVApp} from './app/CVApp';
-import {LockScreen} from './device/LockScreen';
-import {NavigationBar} from './device/NavigationBar';
 import {ProjectApp} from './app/ProjectApp';
-import {LanguageProvider} from './common/Language';
-import {AlertApp} from './app/AlertApp';
 
 const UnfinishedApp = () => (
     <AlertApp
@@ -37,17 +37,17 @@ const ErrorApp = () => (
     />
 );
 
-// TODO: Insert this in the proper position(s).
 class ErrorHandler extends Component<{ children: ReactNode }, { hasError: boolean }> {
-    constructor({children = {} as ReactNode}) {
+    constructor({children = {}}) {
         super({children});
         this.state = {hasError: false};
     }
 
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        console.warn(error.toString());
-        console.warn(errorInfo.componentStack);
-        this.setState({hasError: true});
+        this.setState({hasError: true}, () => {
+            console.error(error?.toString());
+            console.error(errorInfo?.componentStack);
+        });
     }
 
     render() {
@@ -55,14 +55,11 @@ class ErrorHandler extends Component<{ children: ReactNode }, { hasError: boolea
     }
 }
 
-const DeviceRoutes = () => useRoutes([
-    {path: '/', element: <HomeScreen/>},
-    {path: 'about', element: <AboutApp/>},
-    {path: 'cv', element: <CVApp/>},
-    {path: 'project', element: <ProjectApp/>},
-    {path: 'music', element: <UnfinishedApp/>},
-    {path: '*', element: <NotFoundApp/>}
-]);
+const SafeRoutes = (
+    {routes = [] as { path: string, element: ReactNode }[]}
+) => useRoutes(routes.map(({path, element}, index) => (
+    {path: path, element: <ErrorHandler key={index}>{element}</ErrorHandler>}
+)));
 
 const Device = () => {
     const [isLocked, setLock] = useState(true);
@@ -100,7 +97,16 @@ const Device = () => {
                             setLock(false);
                         }}/>
                     )}
-                    {!isLocked && <DeviceRoutes/>}
+                    {!isLocked && (
+                        <SafeRoutes routes={[
+                            {path: '/', element: <HomeScreen/>},
+                            {path: 'about', element: <AboutApp/>},
+                            {path: 'cv', element: <CVApp/>},
+                            {path: 'project', element: <ProjectApp/>},
+                            {path: 'music', element: <UnfinishedApp/>},
+                            {path: '*', element: <NotFoundApp/>}
+                        ]}/>
+                    )}
                     <NavigationBar showNavigators={!isLocked}/>
                 </LanguageProvider>
             </div>
