@@ -3,24 +3,21 @@
 import {jsx} from '@emotion/core';
 import {createContext, Fragment, ReactNode, useContext, useState} from 'react';
 
+export type Language = 'Korean' | 'English';
+
 export const LanguageContext = createContext({} as {
-    currentLanguage: string,
-    changeLanguage: (newLanguage: string) => any
+    currentLanguage: Language,
+    changeLanguage: (value: Language) => any
 });
 
-export const LanguageProvider = (
-    {
-        defaultLanguage = 'English',
-        children = {} as ReactNode
-    }
-) => {
-    const [language, setLanguage] = useState(defaultLanguage);
+export const LanguageProvider = ({children = {} as ReactNode}) => {
+    const [language, setLanguage] = useState<Language>('English');
 
     return (
         <LanguageContext.Provider value={{
             currentLanguage: language,
-            changeLanguage: (newLanguage: string) => {
-                setLanguage(newLanguage);
+            changeLanguage: (value: Language) => {
+                setLanguage(value);
             }
         }}>
             {children}
