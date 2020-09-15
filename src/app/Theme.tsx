@@ -1,35 +1,26 @@
 /** @jsx jsx */
 
-import {css, jsx, SerializedStyles} from '@emotion/core';
-import {createContext, ReactNode} from 'react';
+import {css, jsx} from '@emotion/core';
 
-export const ThemeContext = createContext({} as {
-    defaultColor: string,
-    lightColor: string,
-    darkColor: string,
-    boxStyle: SerializedStyles,
-    textStyle: SerializedStyles,
-    highlightStyle: SerializedStyles
-});
-
-export const ThemeProvider = (
+export function generateTheme(
     {
         defaultColor = '#ffffff',
         lightColor = '#ffffff',
-        darkColor = '#ffffff',
-        children = {} as ReactNode
+        darkColor = '#ffffff'
     }
-) => (
-    <ThemeContext.Provider value={{
+) {
+    const neon = `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`;
+
+    return {
         defaultColor: defaultColor,
         lightColor: lightColor,
         darkColor: darkColor,
         textStyle: css({
             color: defaultColor,
-            textShadow: `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`,
+            textShadow: neon,
         }),
         boxStyle: css({
-            boxShadow: `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`,
+            boxShadow: neon,
             backgroundColor: 'rgba(0, 0, 0, 0)',
             border: `solid 1px ${defaultColor}`,
             borderRadius: 0
@@ -40,7 +31,5 @@ export const ThemeProvider = (
                 border: `solid 1px ${lightColor}`
             }
         })
-    }}>
-        {children}
-    </ThemeContext.Provider>
-);
+    };
+}
