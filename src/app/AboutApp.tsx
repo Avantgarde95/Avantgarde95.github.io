@@ -1,19 +1,14 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {ReactNode} from 'react';
+import {ReactNode, useContext} from 'react';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {Icon} from '../device/Icon';
 import {English, Korean} from '../common/Language';
-import {generateTheme} from './Theme';
 import {App} from './App';
+import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Guitar');
-
-const theme = generateTheme({
-    lightColor: '#00e9f9',
-    darkColor: '#0090ff'
-});
 
 const Title = ({children = {} as ReactNode}) => (
     <div css={{
@@ -72,32 +67,36 @@ const Link = ({url = '', children = {} as ReactNode}) => (
     </a>
 );
 
-const Gallery = ({images = [{src: '', alt: ''}]}) => (
-    <div css={{
-        overflowX: 'auto',
-        overflowY: 'hidden',
-        whiteSpace: 'nowrap',
-        marginLeft: '1px',
-        marginRight: '1px',
-        marginBottom: '1.5rem'
-    }}>
-        {images.map(({src, alt}) => (
-            <img
-                css={[theme.boxStyle, {
-                    width: '12rem',
-                    height: '12rem',
-                    marginRight: '0.7rem',
-                    '&:last-child': {
-                        marginRight: 0
-                    }
-                }]}
-                src={src}
-                alt={alt}
-                title={alt}
-            />
-        ))}
-    </div>
-);
+const Gallery = ({images = [{src: '', alt: ''}]}) => {
+    const theme = useContext(ThemeContext);
+
+    return (
+        <div css={{
+            overflowX: 'auto',
+            overflowY: 'hidden',
+            whiteSpace: 'nowrap',
+            marginLeft: '1px',
+            marginRight: '1px',
+            marginBottom: '1.5rem'
+        }}>
+            {images.map(({src, alt}) => (
+                <img
+                    css={[theme.boxStyle, {
+                        width: '12rem',
+                        height: '12rem',
+                        marginRight: '0.7rem',
+                        '&:last-child': {
+                            marginRight: 0
+                        }
+                    }]}
+                    src={src}
+                    alt={alt}
+                    title={alt}
+                />
+            ))}
+        </div>
+    );
+};
 
 const computerImages = [
     {src: require('./image/OpenGL'), alt: 'Real-time rendering (Rasterization)'},
@@ -111,8 +110,10 @@ const musicImages = [
     {src: require('./image/Sheet'), alt: 'My music'}
 ];
 
-export const AboutApp = () => (
-    <App koreanTitle={'소개'} englishTitle={'About'}>
+const Content = () => {
+    const theme = useContext(ThemeContext);
+
+    return (
         <div css={[theme.textStyle, {
             overflowY: 'auto',
             boxSizing: 'border-box',
@@ -208,5 +209,13 @@ export const AboutApp = () => (
                 </Item>
             </List>
         </div>
+    );
+};
+
+export const AboutApp = () => (
+    <App koreanTitle={'소개'} englishTitle={'About'}>
+        <ThemeProvider lightColor={'#00e9f9'} darkColor={'#0090ff'}>
+            <Content/>
+        </ThemeProvider>
     </App>
 );

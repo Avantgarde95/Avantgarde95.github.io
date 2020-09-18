@@ -1,18 +1,13 @@
 /** @jsx jsx */
 
 import {css, jsx} from '@emotion/core';
-import {Fragment, ReactNode, useState} from 'react';
+import {Fragment, ReactNode, useContext, useState} from 'react';
 import {English, Korean} from '../common/Language';
-import {generateTheme} from './Theme';
 import {App} from './App';
 import {projects} from './Projects';
+import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Coffee');
-
-const theme = generateTheme({
-    lightColor: '#f9ab0d',
-    darkColor: '#d9890d'
-});
 
 const Link = ({url = '', children = {} as ReactNode}) => (
     <a
@@ -60,6 +55,7 @@ const ProjectDescription = ({children = {} as ReactNode}) => (
 );
 
 const ProjectGallery = () => {
+    const theme = useContext(ThemeContext);
     const [projectIndex, setProjectIndex] = useState(0);
     const project = projects[projectIndex];
 
@@ -161,8 +157,10 @@ const ProjectGallery = () => {
     );
 };
 
-export const ProjectApp = () => (
-    <App koreanTitle={'프로젝트'} englishTitle={'Projects'}>
+const Content = () => {
+    const theme = useContext(ThemeContext);
+
+    return (
         <div css={[theme.textStyle, {
             display: 'table',
             boxSizing: 'border-box',
@@ -200,5 +198,13 @@ export const ProjectApp = () => (
                 <ProjectGallery/>
             </div>
         </div>
+    );
+};
+
+export const ProjectApp = () => (
+    <App koreanTitle={'프로젝트'} englishTitle={'Projects'}>
+        <ThemeProvider lightColor={'#f9ab0d'} darkColor={'#d9890d'}>
+            <Content/>
+        </ThemeProvider>
     </App>
 );
