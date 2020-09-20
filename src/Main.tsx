@@ -104,6 +104,7 @@ const Device = () => {
                             {path: 'cv', element: <CVApp/>},
                             {path: 'project', element: <ProjectApp/>},
                             {path: 'music', element: <UnfinishedApp/>},
+                            {path: 'blog', element: <UnfinishedApp/>},
                             {path: '*', element: <NotFoundApp/>}
                         ]}/>
                     )}
