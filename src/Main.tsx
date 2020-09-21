@@ -2,7 +2,7 @@
 
 import './Polyfill';
 
-import {Global, jsx} from '@emotion/core';
+import {jsx} from '@emotion/core';
 import {Component, ErrorInfo, ReactNode, useState} from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter, useRoutes} from 'react-router-dom';
@@ -67,22 +67,6 @@ const Device = () => {
 
     return (
         <BrowserRouter>
-            <Global styles={{
-                html: {
-                    width: '100%',
-                    height: '100%',
-                    margin: 0,
-                    padding: 0,
-                    fontSize: '16px',
-                    fontFamily: 'sans-serif'
-                },
-                body: {
-                    width: '100%',
-                    height: '100%',
-                    margin: 0,
-                    padding: 0
-                }
-            }}/>
             <div css={{
                 overflowY: 'hidden',
                 width: '100%',

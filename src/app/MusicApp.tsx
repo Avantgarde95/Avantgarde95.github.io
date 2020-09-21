@@ -28,7 +28,7 @@ const Link = ({url = '', children = {} as ReactNode}) => {
             {children}
         </a>
     );
-}
+};
 
 const Video = ({id = ''}) => {
     const theme = useContext(ThemeContext);
@@ -59,7 +59,7 @@ const Video = ({id = ''}) => {
             </div>
         </div>
     );
-}
+};
 
 const Content = () => {
     const theme = useContext(ThemeContext);

@@ -69,7 +69,7 @@ const Link = ({url = '', children = {} as ReactNode}) => {
             {children}
         </a>
     );
-}
+};
 
 const Gallery = ({images = [{src: '', alt: ''}]}) => {
     const theme = useContext(ThemeContext);

@@ -28,7 +28,7 @@ const Link = ({url = '', children = {} as ReactNode}) => {
             {children}
         </a>
     );
-}
+};
 
 const ProjectName = ({url = '', children = {} as ReactNode}) => (
     <a
