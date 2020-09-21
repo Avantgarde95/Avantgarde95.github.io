@@ -15,6 +15,7 @@ import {HomeScreen} from './device/HomeScreen';
 import {AboutApp} from './app/AboutApp';
 import {CVApp} from './app/CVApp';
 import {ProjectApp} from './app/ProjectApp';
+import {MusicApp} from './app/MusicApp';
 
 const UnfinishedApp = () => (
     <AlertApp
@@ -103,7 +104,7 @@ const Device = () => {
                             {path: 'about', element: <AboutApp/>},
                             {path: 'cv', element: <CVApp/>},
                             {path: 'project', element: <ProjectApp/>},
-                            {path: 'music', element: <UnfinishedApp/>},
+                            {path: 'music', element: <MusicApp/>},
                             {path: 'blog', element: <UnfinishedApp/>},
                             {path: '*', element: <NotFoundApp/>}
                         ]}/>
