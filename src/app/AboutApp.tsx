@@ -50,22 +50,26 @@ const Item = ({children = {} as ReactNode}) => (
     </li>
 );
 
-const Link = ({url = '', children = {} as ReactNode}) => (
-    <a
-        css={{
-            wordBreak: 'break-all',
-            color: '#00e9f9',
-            '&:hover, &:active': {
-                color: '#0090ff'
-            }
-        }}
-        target={'_blank'}
-        rel={'noopener noreferrer'}
-        href={url}
-    >
-        {children}
-    </a>
-);
+const Link = ({url = '', children = {} as ReactNode}) => {
+    const theme = useContext(ThemeContext);
+
+    return (
+        <a
+            css={{
+                wordBreak: 'break-all',
+                color: theme.lightColor,
+                '&:hover, &:active': {
+                    color: theme.darkColor
+                }
+            }}
+            target={'_blank'}
+            rel={'noopener noreferrer'}
+            href={url}
+        >
+            {children}
+        </a>
+    );
+}
 
 const Gallery = ({images = [{src: '', alt: ''}]}) => {
     const theme = useContext(ThemeContext);

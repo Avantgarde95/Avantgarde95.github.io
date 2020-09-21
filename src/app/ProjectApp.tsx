@@ -9,22 +9,26 @@ import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Coffee');
 
-const Link = ({url = '', children = {} as ReactNode}) => (
-    <a
-        css={{
-            wordBreak: 'break-all',
-            color: '#f9ab0d',
-            '&:hover, &:active': {
-                color: '#d9890d'
-            }
-        }}
-        target={'_blank'}
-        rel={'noopener noreferrer'}
-        href={url}
-    >
-        {children}
-    </a>
-);
+const Link = ({url = '', children = {} as ReactNode}) => {
+    const theme = useContext(ThemeContext);
+
+    return (
+        <a
+            css={{
+                wordBreak: 'break-all',
+                color: theme.lightColor,
+                '&:hover, &:active': {
+                    color: theme.darkColor
+                }
+            }}
+            target={'_blank'}
+            rel={'noopener noreferrer'}
+            href={url}
+        >
+            {children}
+        </a>
+    );
+}
 
 const ProjectName = ({url = '', children = {} as ReactNode}) => (
     <a
