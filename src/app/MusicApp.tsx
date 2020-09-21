@@ -66,6 +66,7 @@ const Content = () => {
 
     return (
         <div css={[theme.textStyle, {
+            overflowY: 'auto',
             boxSizing: 'border-box',
             width: '100%',
             height: '100%',
