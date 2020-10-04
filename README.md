@@ -1,16 +1,15 @@
 # mypage
 
 ### About
-My website!
-
-### Concept
-Designed similar to the home screen of a smartphone
-
-##### Smart phone
-![Smartphone](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/Smartphone.jpg)
-
-##### Screenshot
-![Screenshot](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/Screenshot.png)
+- My website!
+- The home screen is designed similar to the home screen of a smartphone
+  ##### Smartphone
+  ![Smartphone](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/Smartphone.jpg)
+  ##### Screenshot
+  ![HomeScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/HomeScreen.png)
+- Each app is designed with a 'neon' concept
+  ##### Screenshot
+  ![AppScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/AppScreen.png)
 
 ### Technologies
 ##### [React.js](https://reactjs.org/) ([Preact.js](https://preactjs.com/))
