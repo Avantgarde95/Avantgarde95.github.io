@@ -26,6 +26,9 @@
 - For constructing the dynamic styles
 - And re-using the styles
 
+#### [Luminous](https://github.com/imgix/luminous)
+- For attaching the 'lightbox' to each image
+
 #### [Webpack](https://webpack.js.org/)
 - For handling the imports and compiling the code
 
