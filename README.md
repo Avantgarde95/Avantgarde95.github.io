@@ -1,4 +1,5 @@
 # mypage
+My website!
 
 ### Concept
 The home screen is designed similar to the home screen of a smartphone
@@ -24,6 +25,8 @@ The website supports Korean and English. Press the language button to change the
 
 #### 'About' app
 ![AboutApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/AboutApp.png)
+
+![AboutAppLightbox](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/AboutAppLightbox.png)
 
 #### 'CV' app
 ![CVApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/CVApp.png)
