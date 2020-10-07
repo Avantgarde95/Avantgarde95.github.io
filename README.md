@@ -1,15 +1,38 @@
 # mypage
 
-### About
-- My website!
-- The home screen is designed similar to the home screen of a smartphone
-  #### Smartphone
-  ![Smartphone](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/Smartphone.png)
-  #### Screenshot
-  ![HomeScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/HomeScreen.png)
-- Each app is designed with a 'neon' concept
-  #### Screenshot
-  ![AppScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/AppScreen.png)
+### Concept
+The home screen is designed similar to the home screen of a smartphone
+  
+![Smartphone](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/Smartphone.png)
+
+![HomeScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/HomeScreen.png)
+
+Each app is designed with a 'neon' concept
+
+![AboutApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/AboutApp.png)
+
+The website supports Korean and English. Press the language button to change the language.
+
+![HomeScreenKorean](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/HomeScreenKorean.png)
+
+### Screenshots
+#### Lock screen
+![LockScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/LockScreen.png)
+
+#### Home screen 
+![HomeScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/HomeScreen.png)
+
+#### 'About' app
+![AboutApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/AboutApp.png)
+
+#### 'CV' app
+![CVApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/CVApp.png)
+
+#### 'Project' app
+![ProjectApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/ProjectApp.png)
+
+#### 'Music' app
+![MusicApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/MusicApp.png)
 
 ### Technologies
 #### [React.js](https://reactjs.org/) ([Preact.js](https://preactjs.com/))
