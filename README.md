@@ -1,14 +1,14 @@
 # mypage
 My website!
 
-### Concept
-The home screen is designed similar to the home screen of a smartphone
+### About
+The home screen is designed similar to the home screen of a smartphone.
   
 ![Smartphone](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/Smartphone.png)
 
 ![HomeScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/HomeScreen.png)
 
-Each app is designed with a 'neon' concept
+Each app is designed with a 'neon' concept.
 
 ![AboutApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/AboutApp.png)
 
@@ -44,7 +44,7 @@ The website supports Korean and English. Press the language button to change the
 - Use [context](https://reactjs.org/docs/context.html) for managing the global states such as language and theme.
 
 #### [React Router](https://reacttraining.com/blog/react-router-v6-pre/)
-- For navigating the 'apps'.
+- For navigating the 'apps'
 - Root(`/`): Home screen
 - Child routes(`/about`, `/project`, ...): Each app
 
