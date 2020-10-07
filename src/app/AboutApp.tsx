@@ -1,12 +1,14 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {ReactNode, useContext} from 'react';
+import {createRef, ReactNode, useContext, useEffect} from 'react';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {Icon} from '../device/Icon';
 import {English, Korean} from '../common/Language';
 import {App} from './App';
 import {ThemeContext, ThemeProvider} from './Theme';
+
+const Luminous = require('luminous-lightbox').Luminous;
 
 const Background = require('./image/Guitar');
 
@@ -71,36 +73,49 @@ const Link = ({url = '', children = {} as ReactNode}) => {
     );
 };
 
-const Gallery = ({images = [{src: '', alt: ''}]}) => {
+const Image = ({src = '', alt = ''}) => {
     const theme = useContext(ThemeContext);
+    const ref = createRef<HTMLImageElement>();
+
+    useEffect(() => {
+        const element = ref.current;
+
+        if (element !== null) {
+            new Luminous(element, {sourceAttribute: 'src', caption: alt});
+        }
+    });
 
     return (
-        <div css={{
-            overflowX: 'auto',
-            overflowY: 'hidden',
-            whiteSpace: 'nowrap',
-            marginLeft: '1px',
-            marginRight: '1px',
-            marginBottom: '1.5rem'
-        }}>
-            {images.map(({src, alt}) => (
-                <img
-                    css={[theme.boxStyle, {
-                        width: '12rem',
-                        height: '12rem',
-                        marginRight: '0.7rem',
-                        '&:last-child': {
-                            marginRight: 0
-                        }
-                    }]}
-                    src={src}
-                    alt={alt}
-                    title={alt}
-                />
-            ))}
-        </div>
+        <img
+            css={[theme.boxStyle, {
+                cursor: 'zoom-in',
+                width: '12rem',
+                height: '12rem',
+                marginRight: '0.7rem',
+                '&:last-child': {
+                    marginRight: 0
+                }
+            }]}
+            ref={ref}
+            src={src}
+            alt={alt}
+            title={alt}
+        />
     );
 };
+
+const Gallery = ({images = [{src: '', alt: ''}]}) => (
+    <div css={{
+        overflowX: 'auto',
+        overflowY: 'hidden',
+        whiteSpace: 'nowrap',
+        marginLeft: '1px',
+        marginRight: '1px',
+        marginBottom: '1.5rem'
+    }}>
+        {images.map(({src, alt}) => <Image src={src} alt={alt}/>)}
+    </div>
+);
 
 const computerImages = [
     {src: require('./image/OpenGL'), alt: 'Real-time rendering (Rasterization)'},
