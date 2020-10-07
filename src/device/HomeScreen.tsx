@@ -154,7 +154,7 @@ const apps = [
     {
         koreanName: '블로그',
         englishName: 'Blog',
-        path: 'blog',
+        path: 'https://Avantgarde95.github.io/blog',
         icon: faNewspaper,
         color: '#677963'
     },
