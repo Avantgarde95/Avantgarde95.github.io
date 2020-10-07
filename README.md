@@ -1,6 +1,8 @@
 # mypage
 My website!
 
+P.S I'm currently developing [my blog](https://avantgarde95.github.io/blog/) at the [separate repository](https://github.com/Avantgarde95/blog).
+
 ### About
 The home screen is designed similar to the home screen of a smartphone.
   
