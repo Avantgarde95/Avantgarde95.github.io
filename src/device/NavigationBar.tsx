@@ -93,7 +93,7 @@ export const NavigationBar = ({showNavigators = true}) => {
                     css={buttonStyle}
                     title={'Home'}
                     onClick={() => {
-                        navigate('/', {replace: true});
+                        navigate('/');
                     }}
                 >
                     <Icon definition={faHome}/>
