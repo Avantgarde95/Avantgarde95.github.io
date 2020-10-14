@@ -4,7 +4,7 @@ import {css, jsx} from '@emotion/core';
 import {Fragment, ReactNode, useContext, useState} from 'react';
 import {English, Korean} from '../common/Language';
 import {App} from './App';
-import {allProjects, Project} from './Projects';
+import {allProjects, Project} from './Project';
 import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Coffee');
