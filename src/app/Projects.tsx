@@ -1,10 +1,17 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {Fragment} from 'react';
+import {Fragment, ReactNode} from 'react';
 import {English, Korean} from '../common/Language';
 
-export const projects = [
+export interface Project {
+    name: string;
+    url: string;
+    image: string;
+    description: ReactNode
+}
+
+export const allProjects: Project[] = [
     {
         name: 'C3DMB',
         url: 'https://github.com/Avantgarde95/C3DMB',

@@ -4,7 +4,7 @@ import {css, jsx} from '@emotion/core';
 import {Fragment, ReactNode, useContext, useState} from 'react';
 import {English, Korean} from '../common/Language';
 import {App} from './App';
-import {projects} from './Projects';
+import {allProjects, Project} from './Projects';
 import {ThemeContext, ThemeProvider} from './Theme';
 
 const Background = require('./image/Coffee');
@@ -58,7 +58,7 @@ const ProjectDescription = ({children = {} as ReactNode}) => (
     </div>
 );
 
-const ProjectGallery = () => {
+const ProjectGallery = ({projects = [] as Project[]}) => {
     const theme = useContext(ThemeContext);
     const [projectIndex, setProjectIndex] = useState(0);
     const project = projects[projectIndex];
@@ -199,7 +199,7 @@ const Content = () => {
                 display: 'table-row',
                 height: '100%'
             }}>
-                <ProjectGallery/>
+                <ProjectGallery projects={allProjects}/>
             </div>
         </div>
     );
