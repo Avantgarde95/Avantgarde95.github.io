@@ -1,4 +1,4 @@
-export const musics = [
+export const allMusics = [
     'gOeEcsSS6uU',
     'BU-U7i0CqOI',
     'kg8j4JQVabQ',

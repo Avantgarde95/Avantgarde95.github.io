@@ -5,7 +5,7 @@ import {ReactNode, useContext} from 'react';
 import {App} from './App';
 import {ThemeContext, ThemeProvider} from './Theme';
 import {English, Korean} from '../common/Language';
-import {musics} from './Musics';
+import {allMusics} from './Music';
 
 const Background = require('./image/EighthNotes');
 
@@ -95,7 +95,7 @@ const Content = () => {
                     url={'https://www.youtube.com/user/Scottparkmusic'}>YouTube</Link>.
                 </English>
             </div>
-            {musics.map(id => <Video id={id}/>)}
+            {allMusics.map(id => <Video id={id}/>)}
         </div>
     );
 };
