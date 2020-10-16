@@ -3,7 +3,7 @@
 import {css, jsx, SerializedStyles} from '@emotion/core';
 import {createContext, ReactNode} from 'react';
 
-interface Theme {
+export interface Theme {
     defaultColor: string;
     lightColor: string;
     darkColor: string;
