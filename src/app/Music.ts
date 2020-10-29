@@ -1,4 +1,8 @@
 export const allMusics = [
+    'jgkiT8_qRNw',
+    '-_5xyia2_6g',
+    'xpt_CteDTn8',
+    'pX1-GgGFRW4',
     'gOeEcsSS6uU',
     'BU-U7i0CqOI',
     'kg8j4JQVabQ',
