@@ -1,11 +1,14 @@
 /** @jsx jsx */
 
 import {jsx} from '@emotion/core';
-import {ReactNode, useContext} from 'react';
+import {ReactNode, useContext, useState} from 'react';
+import {faArrowAltCircleLeft} from '@fortawesome/free-regular-svg-icons/faArrowAltCircleLeft';
+import {faArrowAltCircleRight} from '@fortawesome/free-regular-svg-icons/faArrowAltCircleRight';
 import {App} from './App';
 import {ThemeContext, ThemeProvider} from './Theme';
 import {English, Korean} from '../common/Language';
 import {allMusics} from './Music';
+import {Icon} from '../device/Icon';
 
 const Background = require('./image/EighthNotes');
 
@@ -35,27 +38,83 @@ const Video = ({id = ''}) => {
 
     return (
         <div css={{
-            width: '100%',
-            maxWidth: '640px',
-            marginBottom: '1.5rem'
+            position: 'relative',
+            height: 0,
+            paddingBottom: '56.25%'
         }}>
+            <iframe
+                css={[theme.boxStyle, theme.highlightStyle, {
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%'
+                }]}
+                frameBorder={0}
+                allowFullScreen={true}
+                src={`https://www.youtube.com/embed/${id}`}
+            />
+        </div>
+    );
+};
+
+const Gallery = ({ids = [] as string[]}) => {
+    const theme = useContext(ThemeContext);
+    const [index, setIndex] = useState(0);
+    const disablePreviousButton = index <= 0;
+    const disableNextButton = index >= ids.length - 1;
+
+    return (
+        <div css={{
+            width: '100%',
+            maxWidth: '640px'
+        }}>
+            <Video id={ids[index]}/>
             <div css={{
-                position: 'relative',
-                height: 0,
-                paddingBottom: '56.25%'
+                marginTop: '1rem'
             }}>
-                <iframe
-                    css={[theme.boxStyle, theme.highlightStyle, {
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%'
-                    }]}
-                    frameBorder={0}
-                    allowFullScreen={true}
-                    src={`https://www.youtube.com/embed/${id}`}
-                />
+                <button
+                    css={{
+                        float: 'left',
+                        cursor: 'pointer',
+                        fontSize: '2rem',
+                        border: 'none',
+                        color: disablePreviousButton ? '#444444' : theme.defaultColor,
+                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                        '&:hover, &:active, &:focus': disablePreviousButton ? {} : {
+                            color: theme.lightColor
+                        }
+                    }}
+                    disabled={disablePreviousButton}
+                    onClick={() => {
+                        if (!disablePreviousButton) {
+                            setIndex(index - 1);
+                        }
+                    }}
+                >
+                    <Icon definition={faArrowAltCircleLeft}/>
+                </button>
+                <button
+                    css={{
+                        float: 'right',
+                        cursor: 'pointer',
+                        fontSize: '2rem',
+                        border: 'none',
+                        color: disableNextButton ? '#444444' : theme.defaultColor,
+                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                        '&:hover, &:active, &:focus': disableNextButton ? {} : {
+                            color: theme.lightColor
+                        }
+                    }}
+                    disabled={disableNextButton}
+                    onClick={() => {
+                        if (!disableNextButton) {
+                            setIndex(index + 1);
+                        }
+                    }}
+                >
+                    <Icon definition={faArrowAltCircleRight}/>
+                </button>
             </div>
         </div>
     );
@@ -95,7 +154,7 @@ const Content = () => {
                     url={'https://www.youtube.com/user/Scottparkmusic'}>YouTube</Link>.
                 </English>
             </div>
-            {allMusics.map(id => <Video id={id}/>)}
+            <Gallery ids={allMusics}/>
         </div>
     );
 };
