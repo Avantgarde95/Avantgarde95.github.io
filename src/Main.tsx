@@ -3,7 +3,7 @@
 import './Polyfill';
 
 import {jsx} from '@emotion/core';
-import {Component, ErrorInfo, ReactNode, useState} from 'react';
+import {Component, ErrorInfo, ReactNode, useEffect, useState} from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter, useRoutes} from 'react-router-dom';
 import {StatusBar} from './device/StatusBar';
@@ -37,6 +37,14 @@ const ErrorApp = () => (
         englishMessage={'Got an error!'}
     />
 );
+
+const Redirector = ({path = ''}) => {
+    useEffect(() => {
+        window.location.href = path;
+    });
+
+    return null;
+};
 
 class ErrorHandler extends Component<{ children: ReactNode }, { hasError: boolean }> {
     constructor({children = {}}) {
@@ -89,6 +97,7 @@ const Device = () => {
                             {path: 'cv', element: <CVApp/>},
                             {path: 'project', element: <ProjectApp/>},
                             {path: 'music', element: <MusicApp/>},
+                            {path: 'c3dmb', element: <Redirector path={'https://avantgarde95.github.io/C3DMB'}/>},
                             {path: '*', element: <NotFoundApp/>}
                         ]}/>
                     )}
