@@ -14,6 +14,7 @@ export const LockScreen = ({onDisappear = {} as () => void}) => {
         <Screen>
             <div
                 css={{
+                    cursor: 'pointer',
                     position: 'relative',
                     overflow: 'hidden',
                     width: '100%',
