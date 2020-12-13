@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -31,15 +32,17 @@ module.exports = (env, argv) => {
                 'react': 'preact/compat',
                 'react-dom': 'preact/compat'
             },
-            extensions: ['.ts', '.tsx', '.js', '.png', '.jpg', '.svg']
+            extensions: ['.ts', '.tsx', '.js', '.css', '.png', '.jpg', '.svg']
         },
         module: {
             rules: [
                 {test: /\.tsx?$/, use: 'ts-loader'},
+                {test: /\.css$/, use: [MiniCSSExtractPlugin.loader, 'css-loader']},
                 {test: /\.(png|jpg|svg)$/, use: {loader: 'url-loader', options: {esModule: false, limit: 2048}}}
             ]
         },
         plugins: [
+            new MiniCSSExtractPlugin(),
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
                 template: getAbsolutePath(srcDir, 'index.html'),

@@ -88,7 +88,7 @@ const Image = ({src = '', alt = ''}) => {
     return (
         <img
             css={[theme.boxStyle, theme.highlightStyle, {
-                cursor: 'zoom-in',
+                cursor: 'pointer',
                 width: '12rem',
                 height: '12rem',
                 marginRight: '0.7rem',

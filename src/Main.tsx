@@ -17,6 +17,8 @@ import {CVApp} from './app/CVApp';
 import {ProjectApp} from './app/ProjectApp';
 import {MusicApp} from './app/MusicApp';
 
+import './Luminous';
+
 const UnfinishedApp = () => (
     <AlertApp
         koreanMessage={'제작중입니다!'}
