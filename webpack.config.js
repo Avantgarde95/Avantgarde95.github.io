@@ -15,6 +15,7 @@ module.exports = (env, argv) => {
         mode: 'development',
         entry: getAbsolutePath(srcDir, 'Main.tsx'),
         devtool: isDebugMode ? 'inline-source-map' : false,
+        target: ['web', 'es3'],
         output: {
             path: getAbsolutePath(outDir),
             publicPath: outDir + '/',
@@ -30,21 +31,12 @@ module.exports = (env, argv) => {
                 'react': 'preact/compat',
                 'react-dom': 'preact/compat'
             },
-            extensions: [
-                '.ts', '.tsx', '.js',
-                '.png', '.jpg', '.svg'
-            ]
+            extensions: ['.ts', '.tsx', '.js', '.png', '.jpg', '.svg']
         },
         module: {
             rules: [
-                {
-                    test: /\.tsx?$/,
-                    use: {loader: 'ts-loader'}
-                },
-                {
-                    test: /\.(png|jpg|svg)$/,
-                    use: {loader: 'url-loader', options: {esModule: false, limit: 2048}}
-                },
+                {test: /\.tsx?$/, use: 'ts-loader'},
+                {test: /\.(png|jpg|svg)$/, use: {loader: 'url-loader', options: {esModule: false, limit: 2048}}}
             ]
         },
         plugins: [
