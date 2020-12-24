@@ -3,11 +3,10 @@
 import './Polyfill';
 
 import {jsx} from '@emotion/core';
-import {Component, ErrorInfo, ReactNode, useEffect, useState} from 'react';
+import {Component, ErrorInfo, ReactNode, useEffect} from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter, useRoutes} from 'react-router-dom';
 import {StatusBar} from './device/StatusBar';
-import {LockScreen} from './device/LockScreen';
 import {NavigationBar} from './device/NavigationBar';
 import {LanguageProvider} from './common/Language';
 import {AlertApp} from './app/AlertApp';
@@ -72,43 +71,32 @@ const SafeRoutes = (
     {path: path, element: <ErrorHandler key={index}>{element}</ErrorHandler>}
 )));
 
-const Device = () => {
-    const [isLocked, setLock] = useState(true);
-
-    return (
-        <BrowserRouter>
-            <div css={{
-                overflowY: 'hidden',
-                width: '100%',
-                height: '100%',
-                margin: 0,
-                padding: 0,
-                backgroundColor: '#000000'
-            }}>
-                <LanguageProvider>
-                    <StatusBar showTime={!isLocked}/>
-                    {isLocked && (
-                        <LockScreen onDisappear={() => {
-                            setLock(false);
-                        }}/>
-                    )}
-                    {!isLocked && (
-                        <SafeRoutes routes={[
-                            {path: '/', element: <HomeScreen/>},
-                            {path: 'about', element: <AboutApp/>},
-                            {path: 'cv', element: <CVApp/>},
-                            {path: 'project', element: <ProjectApp/>},
-                            {path: 'music', element: <MusicApp/>},
-                            {path: 'c3dmb', element: <Redirector path={'https://avantgarde95.github.io/C3DMB'}/>},
-                            {path: '*', element: <NotFoundApp/>}
-                        ]}/>
-                    )}
-                    <NavigationBar showNavigators={!isLocked}/>
-                </LanguageProvider>
-            </div>
-        </BrowserRouter>
-    );
-};
+const Device = () => (
+    <BrowserRouter>
+        <div css={{
+            overflowY: 'hidden',
+            width: '100%',
+            height: '100%',
+            margin: 0,
+            padding: 0,
+            backgroundColor: '#000000'
+        }}>
+            <LanguageProvider>
+                <StatusBar showTime={true}/>
+                <SafeRoutes routes={[
+                    {path: '/', element: <HomeScreen/>},
+                    {path: 'about', element: <AboutApp/>},
+                    {path: 'cv', element: <CVApp/>},
+                    {path: 'project', element: <ProjectApp/>},
+                    {path: 'music', element: <MusicApp/>},
+                    {path: 'c3dmb', element: <Redirector path={'https://avantgarde95.github.io/C3DMB'}/>},
+                    {path: '*', element: <NotFoundApp/>}
+                ]}/>
+                <NavigationBar showNavigators={true}/>
+            </LanguageProvider>
+        </div>
+    </BrowserRouter>
+);
 
 const temporaryElements = document.getElementsByClassName('Temporary');
 

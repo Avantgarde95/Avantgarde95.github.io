@@ -23,10 +23,6 @@ The website supports Korean and English. Press the language button to change the
 
 ### Screenshots
 
-#### Lock screen
-
-![LockScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/LockScreen.png)
-
 #### Home screen
 
 ![HomeScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/HomeScreen.png)
