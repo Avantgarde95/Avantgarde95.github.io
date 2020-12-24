@@ -118,5 +118,59 @@
         "description": "Mandelbrot generator, made for fun",
         "repositoryURL": "https://github.com/Avantgarde95/Mandelbrot",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Mandelbrot/master/Screenshot.png"
+    },
+    {
+        "name": "MorseSimulator",
+        "description": "Simple Morse code simulator in python",
+        "repositoryURL": "https://github.com/Avantgarde95/MorseSimulator",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/MorseSimulator/master/Screenshot.png"
+    },
+    {
+        "name": "PaintTalk",
+        "description": "Draw a picture by using natural language",
+        "repositoryURL": "https://github.com/Avantgarde95/PaintTalk",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PaintTalk/master/extra/TreeDemo.png"
+    },
+    {
+        "name": "PathFinder",
+        "description": "Simple implementation of path-finder which uses genetic algorithm.",
+        "repositoryURL": "https://github.com/Avantgarde95/PathFinder",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PathFinder/master/Screenshot.png"
+    },
+    {
+        "name": "pyMalbolge",
+        "description": "Malbolge interpreter in python",
+        "repositoryURL": "https://github.com/Avantgarde95/pyMalbolge",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/pyMalbolge/master/Screenshot.png"
+    },
+    {
+        "name": "PySIC",
+        "description": "A simple programming language I made for studying PL.",
+        "repositoryURL": "https://github.com/Avantgarde95/PySIC",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PySIC/master/Screenshot.png"
+    },
+    {
+        "name": "SimpleLang",
+        "description": "a SIMPLE LANGuage - Simple toy language I made for studying",
+        "repositoryURL": "https://github.com/Avantgarde95/SimpleLang",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/SimpleLang/master/Screenshot.png"
+    },
+    {
+        "name": "TeX2Hwp",
+        "description": "TeX-to-Hwp converter written in Java (Proof-of-concept GUI app)",
+        "repositoryURL": "https://github.com/Avantgarde95/TeX2Hwp",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/TeX2Hwp/master/Screenshot.png"
+    },
+    {
+        "name": "WhereToGoNow",
+        "description": "KAIST CS408 Computer science project",
+        "repositoryURL": "https://github.com/Avantgarde95/WhereToGoNow",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/WhereToGoNow/master/Screenshot.png"
+    },
+    {
+        "name": "Whitespace",
+        "description": "Write Whitespace code by using human-readable code.",
+        "repositoryURL": "https://github.com/Avantgarde95/Whitespace",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Whitespace/master/Screenshot.png"
     }
 ]

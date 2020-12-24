@@ -15,7 +15,12 @@ const excludedProjects = [
     'DeutschOracle',
     'JythonSieve',
     'MiniSat4Win',
-    'CppIntro'
+    'CppIntro',
+    'MyHaskell',
+    'SchoolLaTeX',
+    'slre',
+    'webpack-es6-sass-setup',
+    'Windows'
 ];
 
 const alternativeProjectNames = {
@@ -30,10 +35,11 @@ const alternativeProjectImagePaths = {
     'ArchiPi': 'Screenshot7.png',
     'asciirain': 'image/Screenshot.png',
     'asciisnow': 'image/Screenshot.png',
-    'guitarsayo': 'Screenshot.jpg'
+    'guitarsayo': 'Screenshot.jpg',
+    'PaintTalk': 'extra/TreeDemo.png'
 };
 
-fetch('https://api.github.com/users/Avantgarde95/repos', {
+fetch('https://api.github.com/users/Avantgarde95/repos?per_page=100', {
     method: 'get',
     headers: {'Content-Type': 'application/json'}
 }).then(response => {
