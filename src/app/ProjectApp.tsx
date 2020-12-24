@@ -153,8 +153,13 @@ const ProjectGallery = ({projects = [] as Project[]}) => {
                     bottom: 0,
                     left: 0
                 }}>
-                    <ProjectName url={project.url}>{project.name}</ProjectName>
-                    <ProjectDescription>{project.description}</ProjectDescription>
+                    <ProjectName url={project.url}>
+                        {project.name}
+                    </ProjectName>
+                    <ProjectDescription>
+                        <Korean>{project.description.korean}</Korean>
+                        <English>{project.description.english}</English>
+                    </ProjectDescription>
                 </div>
             </div>
         </Fragment>
