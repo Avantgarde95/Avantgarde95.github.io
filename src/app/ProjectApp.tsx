@@ -4,10 +4,17 @@ import {css, jsx} from '@emotion/core';
 import {Fragment, ReactNode, useContext, useState} from 'react';
 import {English, Korean} from '../common/Language';
 import {App} from './App';
-import {allProjects, Project} from './Project';
 import {ThemeContext, ThemeProvider} from './Theme';
 
+interface Project {
+    name: string;
+    description: string;
+    repositoryURL: string;
+    imageURL: string;
+}
+
 const Background = require('./image/Coffee');
+const Projects: Project[] = require('./Projects');
 
 const Link = ({url = '', children = {} as ReactNode}) => {
     const theme = useContext(ThemeContext);
@@ -117,11 +124,11 @@ const ProjectGallery = ({projects = [] as Project[]}) => {
                         whiteSpace: 'normal'
                     }
                 }}>
-                    {projects.map(({image, name}, index) => (
+                    {projects.map(({imageURL, name}, index) => (
                         <button
                             css={[buttonStyle, {
                                 title: name,
-                                backgroundImage: `url(${image})`
+                                backgroundImage: `url(${imageURL})`
                             }]}
                             onClick={() => {
                                 setProjectIndex(index);
@@ -153,13 +160,8 @@ const ProjectGallery = ({projects = [] as Project[]}) => {
                     bottom: 0,
                     left: 0
                 }}>
-                    <ProjectName url={project.url}>
-                        {project.name}
-                    </ProjectName>
-                    <ProjectDescription>
-                        <Korean>{project.description.korean}</Korean>
-                        <English>{project.description.english}</English>
-                    </ProjectDescription>
+                    <ProjectName url={project.repositoryURL}>{project.name}</ProjectName>
+                    <ProjectDescription>{project.description}</ProjectDescription>
                 </div>
             </div>
         </Fragment>
@@ -204,7 +206,7 @@ const Content = () => {
                 display: 'table-row',
                 height: '100%'
             }}>
-                <ProjectGallery projects={allProjects}/>
+                <ProjectGallery projects={Projects}/>
             </div>
         </div>
     );

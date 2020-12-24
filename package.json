@@ -11,6 +11,7 @@
         "@fortawesome/free-brands-svg-icons": "^5.15.1"
     },
     "devDependencies": {
+        "node-fetch": "^2.6.1",
         "webpack": "^5.10.1",
         "webpack-cli": "^4.2.0",
         "servor": "^4.0.2",
@@ -29,6 +30,7 @@
     "scripts": {
         "debug": "webpack --watch --mode=development",
         "build": "webpack --mode=production",
-        "server": "servor"
+        "server": "servor",
+        "update": "node Update"
     }
 }

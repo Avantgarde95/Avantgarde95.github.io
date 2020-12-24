@@ -1,0 +1,152 @@
+[
+    {
+        "name": "ArchiPi",
+        "description": "Simulation of Archimedes' polygonal algorithm",
+        "repositoryURL": "https://github.com/Avantgarde95/ArchiPi",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/ArchiPi/master/Screenshot.png"
+    },
+    {
+        "name": "archipi-web",
+        "description": "Archimedes' method for approximating π. Created for celebrating π day! (2019.03.14)",
+        "repositoryURL": "https://github.com/Avantgarde95/archipi-web",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/archipi-web/master/Screenshot.png"
+    },
+    {
+        "name": "asciirain",
+        "description": "Rain of the characters",
+        "repositoryURL": "https://github.com/Avantgarde95/asciirain",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciirain/master/Screenshot.png"
+    },
+    {
+        "name": "asciisnow",
+        "description": "Snow of the characters",
+        "repositoryURL": "https://github.com/Avantgarde95/asciisnow",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciisnow/master/Screenshot.png"
+    },
+    {
+        "name": "MyPage",
+        "description": null,
+        "repositoryURL": "https://github.com/Avantgarde95/Avantgarde95.github.io",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Avantgarde95.github.io/master/Screenshot.png"
+    },
+    {
+        "name": "blog",
+        "description": null,
+        "repositoryURL": "https://github.com/Avantgarde95/blog",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/blog/master/Screenshot.png"
+    },
+    {
+        "name": "C3DMB",
+        "description": "Code for 'Collaborative 3D modeling system based on blockchain'",
+        "repositoryURL": "https://github.com/Avantgarde95/C3DMB",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/C3DMB/master/Screenshot.png"
+    },
+    {
+        "name": "CGLab",
+        "description": "KAIST CS580 Computer graphics projects",
+        "repositoryURL": "https://github.com/Avantgarde95/CGLab",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/CGLab/master/Screenshot.png"
+    },
+    {
+        "name": "CppIntro",
+        "description": "Example codes and my solutions for \"Introduction to Programming with C++\" (2nd edition)",
+        "repositoryURL": "https://github.com/Avantgarde95/CppIntro",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/CppIntro/master/Screenshot.png"
+    },
+    {
+        "name": "DailyBread-old",
+        "description": "DailyBread viewer in python (Old version)",
+        "repositoryURL": "https://github.com/Avantgarde95/DailyBread-old",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/DailyBread-old/master/Screenshot.png"
+    },
+    {
+        "name": "DeutschOracle",
+        "description": null,
+        "repositoryURL": "https://github.com/Avantgarde95/DeutschOracle",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/DeutschOracle/master/Screenshot.png"
+    },
+    {
+        "name": "DuktapeTest",
+        "description": "Example of running Typescript code natively by using Webpack and Duktape",
+        "repositoryURL": "https://github.com/Avantgarde95/DuktapeTest",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/DuktapeTest/master/Screenshot.png"
+    },
+    {
+        "name": "Gauss",
+        "description": "Implementation of Gaussian elimination in Pthread / OpenMP",
+        "repositoryURL": "https://github.com/Avantgarde95/Gauss",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Gauss/master/Screenshot.png"
+    },
+    {
+        "name": "guitarsayo",
+        "description": "악기 구매 도우미",
+        "repositoryURL": "https://github.com/Avantgarde95/guitarsayo",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/guitarsayo/master/Screenshot.png"
+    },
+    {
+        "name": "HandyClock",
+        "description": "Simple clock written in python",
+        "repositoryURL": "https://github.com/Avantgarde95/HandyClock",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HandyClock/master/Screenshot.png"
+    },
+    {
+        "name": "HQ9",
+        "description": "Simple implementation of HQ9+ in python",
+        "repositoryURL": "https://github.com/Avantgarde95/HQ9",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HQ9/master/Screenshot.png"
+    },
+    {
+        "name": "Image2Term",
+        "description": "Draw an image on the terminal.",
+        "repositoryURL": "https://github.com/Avantgarde95/Image2Term",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Image2Term/master/Screenshot.png"
+    },
+    {
+        "name": "JythonSieve",
+        "description": "Simple app for testing Jython + Swing",
+        "repositoryURL": "https://github.com/Avantgarde95/JythonSieve",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/JythonSieve/master/Screenshot.png"
+    },
+    {
+        "name": "Blowing Bubble",
+        "description": "KAIST-CS482 (2016), Interactive Computer Graphics, Team 4",
+        "repositoryURL": "https://github.com/Avantgarde95/kaist_cs482_2016_team4",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/kaist_cs482_2016_team4/master/Screenshot.png"
+    },
+    {
+        "name": "LangtonAnt",
+        "description": "Simple simulation of (multi-color) Langton's ant (in python)",
+        "repositoryURL": "https://github.com/Avantgarde95/LangtonAnt",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LangtonAnt/master/Screenshot.png"
+    },
+    {
+        "name": "LiKo",
+        "description": "KAIST CS374 Team Project",
+        "repositoryURL": "https://github.com/Avantgarde95/LiKo",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LiKo/master/Screenshot.png"
+    },
+    {
+        "name": "Lucky",
+        "description": null,
+        "repositoryURL": "https://github.com/Avantgarde95/Lucky",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Lucky/master/Screenshot.png"
+    },
+    {
+        "name": "LucyViewer",
+        "description": "Simple Embree ray tracing demo: Lucy 3D model viewer",
+        "repositoryURL": "https://github.com/Avantgarde95/LucyViewer",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LucyViewer/master/Screenshot.png"
+    },
+    {
+        "name": "Mandelbrot",
+        "description": "Mandelbrot generator, made for fun",
+        "repositoryURL": "https://github.com/Avantgarde95/Mandelbrot",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Mandelbrot/master/Screenshot.png"
+    },
+    {
+        "name": "MiniSat4Win",
+        "description": "Windows build of minisat",
+        "repositoryURL": "https://github.com/Avantgarde95/MiniSat4Win",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/MiniSat4Win/master/Screenshot.png"
+    }
+]

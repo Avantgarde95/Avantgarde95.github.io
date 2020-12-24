@@ -32,7 +32,7 @@ module.exports = (env, argv) => {
                 'react': 'preact/compat',
                 'react-dom': 'preact/compat'
             },
-            extensions: ['.ts', '.tsx', '.js', '.css', '.png', '.jpg', '.svg']
+            extensions: ['.ts', '.tsx', '.js', '.css', '.json', '.png', '.jpg', '.svg']
         },
         module: {
             rules: [
