@@ -14,7 +14,8 @@ const excludedProjects = [
     'DuktapeTest',
     'DeutschOracle',
     'JythonSieve',
-    'MiniSat4Win'
+    'MiniSat4Win',
+    'CppIntro'
 ];
 
 const alternativeProjectNames = {
@@ -23,7 +24,13 @@ const alternativeProjectNames = {
 };
 
 const alternativeProjectImagePaths = {
-    'Avantgarde95.github.io': 'image/AboutApp.png'
+    'Avantgarde95.github.io': 'image/AboutApp.png',
+    'LiKo': 'TestExample.png',
+    'LangtonAnt': 'ScreenshotSimple.png',
+    'ArchiPi': 'Screenshot7.png',
+    'asciirain': 'image/Screenshot.png',
+    'asciisnow': 'image/Screenshot.png',
+    'guitarsayo': 'Screenshot.jpg'
 };
 
 fetch('https://api.github.com/users/Avantgarde95/repos', {

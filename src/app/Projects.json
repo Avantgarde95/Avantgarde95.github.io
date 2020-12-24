@@ -3,7 +3,7 @@
         "name": "ArchiPi",
         "description": "Simulation of Archimedes' polygonal algorithm",
         "repositoryURL": "https://github.com/Avantgarde95/ArchiPi",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/ArchiPi/master/Screenshot.png"
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/ArchiPi/master/Screenshot7.png"
     },
     {
         "name": "archipi-web",
@@ -15,13 +15,13 @@
         "name": "asciirain",
         "description": "Rain of the characters",
         "repositoryURL": "https://github.com/Avantgarde95/asciirain",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciirain/master/Screenshot.png"
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciirain/master/image/Screenshot.png"
     },
     {
         "name": "asciisnow",
         "description": "Snow of the characters",
         "repositoryURL": "https://github.com/Avantgarde95/asciisnow",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciisnow/master/Screenshot.png"
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciisnow/master/image/Screenshot.png"
     },
     {
         "name": "MyPage",
@@ -48,14 +48,8 @@
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/CGLab/master/Screenshot.png"
     },
     {
-        "name": "CppIntro",
-        "description": "Example codes and my solutions for \"Introduction to Programming with C++\" (2nd edition)",
-        "repositoryURL": "https://github.com/Avantgarde95/CppIntro",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/CppIntro/master/Screenshot.png"
-    },
-    {
         "name": "DailyBread-old",
-        "description": "DailyBread viewer in python (Old version)",
+        "description": "DailyBread viewer in python",
         "repositoryURL": "https://github.com/Avantgarde95/DailyBread-old",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/DailyBread-old/master/Screenshot.png"
     },
@@ -69,7 +63,7 @@
         "name": "guitarsayo",
         "description": "악기 구매 도우미",
         "repositoryURL": "https://github.com/Avantgarde95/guitarsayo",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/guitarsayo/master/Screenshot.png"
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/guitarsayo/master/Screenshot.jpg"
     },
     {
         "name": "HandyClock",
@@ -99,13 +93,13 @@
         "name": "LangtonAnt",
         "description": "Simple simulation of (multi-color) Langton's ant (in python)",
         "repositoryURL": "https://github.com/Avantgarde95/LangtonAnt",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LangtonAnt/master/Screenshot.png"
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LangtonAnt/master/ScreenshotSimple.png"
     },
     {
         "name": "LiKo",
         "description": "KAIST CS374 Team Project",
         "repositoryURL": "https://github.com/Avantgarde95/LiKo",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LiKo/master/Screenshot.png"
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LiKo/master/TestExample.png"
     },
     {
         "name": "Lucky",
@@ -115,7 +109,7 @@
     },
     {
         "name": "LucyViewer",
-        "description": "Simple Embree ray tracing demo: Lucy 3D model viewer",
+        "description": "Simple Embree ray tracing demo",
         "repositoryURL": "https://github.com/Avantgarde95/LucyViewer",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LucyViewer/master/Screenshot.png"
     },
