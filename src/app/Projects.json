@@ -25,13 +25,13 @@
     },
     {
         "name": "MyPage",
-        "description": null,
+        "description": "My website!",
         "repositoryURL": "https://github.com/Avantgarde95/Avantgarde95.github.io",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Avantgarde95.github.io/master/Screenshot.png"
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Avantgarde95.github.io/master/image/AboutApp.png"
     },
     {
         "name": "blog",
-        "description": null,
+        "description": "My blog!",
         "repositoryURL": "https://github.com/Avantgarde95/blog",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/blog/master/Screenshot.png"
     },
@@ -58,18 +58,6 @@
         "description": "DailyBread viewer in python (Old version)",
         "repositoryURL": "https://github.com/Avantgarde95/DailyBread-old",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/DailyBread-old/master/Screenshot.png"
-    },
-    {
-        "name": "DeutschOracle",
-        "description": null,
-        "repositoryURL": "https://github.com/Avantgarde95/DeutschOracle",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/DeutschOracle/master/Screenshot.png"
-    },
-    {
-        "name": "DuktapeTest",
-        "description": "Example of running Typescript code natively by using Webpack and Duktape",
-        "repositoryURL": "https://github.com/Avantgarde95/DuktapeTest",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/DuktapeTest/master/Screenshot.png"
     },
     {
         "name": "Gauss",
@@ -100,12 +88,6 @@
         "description": "Draw an image on the terminal.",
         "repositoryURL": "https://github.com/Avantgarde95/Image2Term",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Image2Term/master/Screenshot.png"
-    },
-    {
-        "name": "JythonSieve",
-        "description": "Simple app for testing Jython + Swing",
-        "repositoryURL": "https://github.com/Avantgarde95/JythonSieve",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/JythonSieve/master/Screenshot.png"
     },
     {
         "name": "Blowing Bubble",
@@ -142,11 +124,5 @@
         "description": "Mandelbrot generator, made for fun",
         "repositoryURL": "https://github.com/Avantgarde95/Mandelbrot",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Mandelbrot/master/Screenshot.png"
-    },
-    {
-        "name": "MiniSat4Win",
-        "description": "Windows build of minisat",
-        "repositoryURL": "https://github.com/Avantgarde95/MiniSat4Win",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/MiniSat4Win/master/Screenshot.png"
     }
 ]
