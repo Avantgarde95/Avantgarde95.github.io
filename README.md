@@ -79,7 +79,7 @@ The website supports Korean and English. Press the language button to change the
 ### How to build
 
 - Run `npm install` to install the dependencies.
-- Run `npm run update` to update the projects' information.
+- Run `npm run update` to update the projects and the musics.
 - Run `npm run debug` to build & debug the website.
 - Run `npm run build` to build & deploy the website.
 

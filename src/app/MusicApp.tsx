@@ -7,10 +7,10 @@ import {faArrowAltCircleRight} from '@fortawesome/free-regular-svg-icons/faArrow
 import {App} from './App';
 import {ThemeContext, ThemeProvider} from './Theme';
 import {English, Korean} from '../common/Language';
-import {allMusics} from './Music';
 import {Icon} from '../device/Icon';
 
 const Background = require('./image/EighthNotes');
+const Musics = require('./Musics');
 
 const Link = ({url = '', children = null as ReactNode}) => {
     const theme = useContext(ThemeContext);
@@ -33,6 +33,16 @@ const Link = ({url = '', children = null as ReactNode}) => {
     );
 };
 
+const Title = ({children = null as ReactNode}) => (
+    <div css={{
+        font: '1.5rem',
+        fontWeight: 'bold',
+        marginBottom: '1rem'
+    }}>
+        {children}
+    </div>
+);
+
 const Video = ({id = ''}) => {
     const theme = useContext(ThemeContext);
 
@@ -50,6 +60,7 @@ const Video = ({id = ''}) => {
                     width: '100%',
                     height: '100%'
                 }]}
+                key={id} // Force React to recreate iframe to prevent it from messing the browser history!
                 frameBorder={0}
                 allowFullScreen={true}
                 src={`https://www.youtube.com/embed/${id}`}
@@ -71,7 +82,9 @@ const Gallery = ({ids = [] as string[]}) => {
         }}>
             <Video id={ids[index]}/>
             <div css={{
-                marginTop: '1rem'
+                height: '3rem',
+                marginTop: '1rem',
+                marginBottom: '1rem'
             }}>
                 <button
                     css={{
@@ -154,7 +167,21 @@ const Content = () => {
                     url={'https://www.youtube.com/user/Scottparkmusic'}>YouTube</Link>.
                 </English>
             </div>
-            <Gallery ids={allMusics}/>
+            <Title>
+                <Korean>기타 연주들</Korean>
+                <English>My guitar playings</English>
+            </Title>
+            <Gallery ids={Musics.myGuitarPlayings}/>
+            <Title>
+                <Korean>피아노 연주들</Korean>
+                <English>My piano playings</English>
+            </Title>
+            <Gallery ids={Musics.myPianoPlayings}/>
+            <Title>
+                <Korean>작곡 / 편곡</Korean>
+                <English>Compositions / Arrangements</English>
+            </Title>
+            <Gallery ids={Musics.myPieces}/>
         </div>
     );
 };
