@@ -18,7 +18,7 @@ export const App = (
     {
         koreanTitle = '',
         englishTitle = '',
-        children = {} as ReactNode
+        children = null as ReactNode
     }
 ) => {
     const {currentLanguage} = useContext(LanguageContext);

@@ -48,7 +48,7 @@ const Redirector = ({path = ''}) => {
 };
 
 class ErrorHandler extends Component<{ children: ReactNode }, { hasError: boolean }> {
-    constructor({children = {}}) {
+    constructor({children = null}) {
         super({children});
         this.state = {hasError: false};
     }

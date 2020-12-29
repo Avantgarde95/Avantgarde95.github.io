@@ -10,7 +10,7 @@ export const LanguageContext = createContext({} as {
     changeLanguage: (value: Language) => any
 });
 
-export const LanguageProvider = ({children = {} as ReactNode}) => {
+export const LanguageProvider = ({children = null as ReactNode}) => {
     const [language, setLanguage] = useState<Language>('English');
 
     return (
@@ -25,13 +25,13 @@ export const LanguageProvider = ({children = {} as ReactNode}) => {
     );
 };
 
-export const Korean = ({children = {} as ReactNode}) => (
+export const Korean = ({children = null as ReactNode}) => (
     <Fragment>
         {useContext(LanguageContext).currentLanguage === 'Korean' && children}
     </Fragment>
 );
 
-export const English = ({children = {} as ReactNode}) => (
+export const English = ({children = null as ReactNode}) => (
     <Fragment>
         {useContext(LanguageContext).currentLanguage === 'English' && children}
     </Fragment>

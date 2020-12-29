@@ -12,7 +12,7 @@ const Luminous = require('luminous-lightbox').Luminous;
 
 const Background = require('./image/Guitar');
 
-const Title = ({children = {} as ReactNode}) => (
+const Title = ({children = null as ReactNode}) => (
     <div css={{
         font: '1.5rem',
         fontWeight: 'bold'
@@ -21,7 +21,7 @@ const Title = ({children = {} as ReactNode}) => (
     </div>
 );
 
-const List = ({children = {} as ReactNode}) => (
+const List = ({children = null as ReactNode}) => (
     <ul css={{
         listStyle: 'none',
         paddingLeft: 0,
@@ -31,7 +31,7 @@ const List = ({children = {} as ReactNode}) => (
     </ul>
 );
 
-const Item = ({children = {} as ReactNode}) => (
+const Item = ({children = null as ReactNode}) => (
     <li>
         <div css={{
             display: 'inline-block',
@@ -52,7 +52,7 @@ const Item = ({children = {} as ReactNode}) => (
     </li>
 );
 
-const Link = ({url = '', children = {} as ReactNode}) => {
+const Link = ({url = '', children = null as ReactNode}) => {
     const theme = useContext(ThemeContext);
 
     return (

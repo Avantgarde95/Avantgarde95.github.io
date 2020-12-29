@@ -5,7 +5,7 @@ import {ReactNode} from 'react';
 
 const Background = require('./image/Background');
 
-export const Screen = ({children = {} as ReactNode}) => (
+export const Screen = ({children = null as ReactNode}) => (
     <div css={{
         background: `#000000 url(${Background}) no-repeat center`,
         overflowY: 'auto',

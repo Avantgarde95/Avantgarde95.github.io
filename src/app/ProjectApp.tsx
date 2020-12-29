@@ -16,7 +16,7 @@ interface Project {
 const Background = require('./image/Coffee');
 const Projects: Project[] = require('./Projects');
 
-const Link = ({url = '', children = {} as ReactNode}) => {
+const Link = ({url = '', children = null as ReactNode}) => {
     const theme = useContext(ThemeContext);
 
     return (
@@ -37,7 +37,7 @@ const Link = ({url = '', children = {} as ReactNode}) => {
     );
 };
 
-const ProjectName = ({url = '', children = {} as ReactNode}) => (
+const ProjectName = ({url = '', children = null as ReactNode}) => (
     <a
         css={{
             display: 'table',
@@ -57,7 +57,7 @@ const ProjectName = ({url = '', children = {} as ReactNode}) => (
     </a>
 );
 
-const ProjectDescription = ({children = {} as ReactNode}) => (
+const ProjectDescription = ({children = null as ReactNode}) => (
     <div css={{
         width: '100%'
     }}>

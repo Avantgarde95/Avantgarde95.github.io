@@ -63,7 +63,7 @@ const TimeContext = createContext({
     minute: 0
 } as Time);
 
-export const TimeProvider = ({children = {} as ReactNode}) => {
+export const TimeProvider = ({children = null as ReactNode}) => {
     const [time, setTime] = useState(getCurrentTime());
 
     useEffect(() => {

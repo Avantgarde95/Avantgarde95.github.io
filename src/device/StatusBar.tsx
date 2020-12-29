@@ -9,7 +9,7 @@ import {Icon} from './Icon';
 import {AMPM, Hour, Minute, TimeProvider} from './Time';
 import {English, Korean} from '../common/Language';
 
-const LeftArea = ({children = {} as ReactNode}) => (
+const LeftArea = ({children = null as ReactNode}) => (
     <div css={{
         float: 'left',
         height: '100%'
@@ -18,7 +18,7 @@ const LeftArea = ({children = {} as ReactNode}) => (
     </div>
 );
 
-const RightArea = ({children = {} as ReactNode}) => (
+const RightArea = ({children = null as ReactNode}) => (
     <div css={{
         float: 'right',
         height: '100%'
@@ -27,7 +27,7 @@ const RightArea = ({children = {} as ReactNode}) => (
     </div>
 );
 
-const Block = ({children = {} as ReactNode}) => (
+const Block = ({children = null as ReactNode}) => (
     <span css={{
         marginLeft: '0.2rem',
         marginRight: '0.2rem'

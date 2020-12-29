@@ -12,7 +12,7 @@ import {Icon} from '../device/Icon';
 
 const Background = require('./image/EighthNotes');
 
-const Link = ({url = '', children = {} as ReactNode}) => {
+const Link = ({url = '', children = null as ReactNode}) => {
     const theme = useContext(ThemeContext);
 
     return (

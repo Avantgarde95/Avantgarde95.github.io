@@ -8,7 +8,7 @@ import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
 import {Icon} from './Icon';
 import {English, Korean, LanguageContext} from '../common/Language';
 
-const Cell = ({children = {} as ReactNode}) => (
+const Cell = ({children = null as ReactNode}) => (
     <span css={{
         display: 'table-cell',
         textAlign: 'center',

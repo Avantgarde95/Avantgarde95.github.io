@@ -19,7 +19,7 @@ export const ThemeProvider = (
         defaultColor = '#ffffff',
         lightColor = '#ffffff',
         darkColor = '#ffffff',
-        children = {} as ReactNode
+        children = null as ReactNode
     }
 ) => {
     const neon = `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`;

@@ -21,7 +21,7 @@ const Button = (
         title = '',
         path = '',
         color = '#ffffff',
-        children = {} as ReactNode
+        children = null as ReactNode
     }
 ) => {
     const navigate = useNavigate();
@@ -77,7 +77,7 @@ const Button = (
     }
 };
 
-const Name = ({children = {} as ReactNode}) => (
+const Name = ({children = null as ReactNode}) => (
     <div css={{
         textAlign: 'center',
         margin: '1rem auto auto auto',
@@ -91,7 +91,7 @@ const App = (
     {
         width = 0,
         height = 0,
-        children = {} as ReactNode
+        children = null as ReactNode
     }
 ) => (
     <div css={{
@@ -110,7 +110,7 @@ const Placeholder = (
     {
         width = 0,
         height = 0,
-        children = {} as ReactNode
+        children = null as ReactNode
     }
 ) => (
     <div css={{
