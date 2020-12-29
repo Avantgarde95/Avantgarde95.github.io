@@ -5,6 +5,7 @@ import {Fragment, ReactNode, useContext, useState} from 'react';
 import {English, Korean} from '../common/Language';
 import {App} from './App';
 import {ThemeContext, ThemeProvider} from './Theme';
+import {MediaContext} from '../common/Media';
 
 interface Project {
     name: string;
@@ -67,12 +68,12 @@ const ProjectDescription = ({children = null as ReactNode}) => (
 
 const ProjectGallery = ({projects = [] as Project[]}) => {
     const theme = useContext(ThemeContext);
+    const {wideScreenQuery} = useContext(MediaContext);
     const [projectIndex, setProjectIndex] = useState(0);
     const project = projects[projectIndex];
 
     const buttonWidth = 16;
     const buttonHeight = 12;
-    const wideScreenQuery = '@media (min-width: 769px)';
 
     const buttonStyle = css([theme.boxStyle, theme.highlightStyle, {
         display: 'inline-block',

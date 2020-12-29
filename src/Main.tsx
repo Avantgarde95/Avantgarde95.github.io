@@ -17,6 +17,7 @@ import {ProjectApp} from './app/ProjectApp';
 import {MusicApp} from './app/MusicApp';
 
 import './Luminous';
+import {MediaProvider} from './common/Media';
 
 const UnfinishedApp = () => (
     <AlertApp
@@ -82,17 +83,19 @@ const Device = () => (
             backgroundColor: '#000000'
         }}>
             <LanguageProvider>
-                <StatusBar showTime={true}/>
-                <SafeRoutes routes={[
-                    {path: '/', element: <HomeScreen/>},
-                    {path: 'about', element: <AboutApp/>},
-                    {path: 'cv', element: <CVApp/>},
-                    {path: 'project', element: <ProjectApp/>},
-                    {path: 'music', element: <MusicApp/>},
-                    {path: 'c3dmb', element: <Redirector path={'https://avantgarde95.github.io/C3DMB'}/>},
-                    {path: '*', element: <NotFoundApp/>}
-                ]}/>
-                <NavigationBar showNavigators={true}/>
+                <MediaProvider>
+                    <StatusBar showTime={true}/>
+                    <SafeRoutes routes={[
+                        {path: '/', element: <HomeScreen/>},
+                        {path: 'about', element: <AboutApp/>},
+                        {path: 'cv', element: <CVApp/>},
+                        {path: 'project', element: <ProjectApp/>},
+                        {path: 'music', element: <MusicApp/>},
+                        {path: 'c3dmb', element: <Redirector path={'https://avantgarde95.github.io/C3DMB'}/>},
+                        {path: '*', element: <NotFoundApp/>}
+                    ]}/>
+                    <NavigationBar showNavigators={true}/>
+                </MediaProvider>
             </LanguageProvider>
         </div>
     </BrowserRouter>
