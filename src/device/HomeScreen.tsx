@@ -12,6 +12,7 @@ import {faInstagram} from '@fortawesome/free-brands-svg-icons/faInstagram';
 import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
 import {faMusic} from '@fortawesome/free-solid-svg-icons/faMusic';
 import {faGithub} from '@fortawesome/free-brands-svg-icons/faGithub';
+import {faCode} from '@fortawesome/free-solid-svg-icons/faCode';
 import {Screen} from './Screen';
 import {Icon} from './Icon';
 import {English, Korean, LanguageContext} from '../common/Language';
@@ -157,6 +158,13 @@ const apps = [
         path: 'https://Avantgarde95.github.io/blog',
         icon: faNewspaper,
         color: '#677963'
+    },
+    {
+        koreanName: '코드',
+        englishName: 'Code',
+        path: 'https://github.com/Avantgarde95/Avantgarde95.github.io',
+        icon: faCode,
+        color: '#a4b353'
     },
     {
         koreanName: '깃허브',
