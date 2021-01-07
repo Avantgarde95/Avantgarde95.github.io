@@ -33,7 +33,7 @@ export const NavigationBar = ({showNavigators = true}) => {
         height: '2.5rem',
         border: 'none',
         lineHeight: '2.5rem',
-        fontSize: '1.5rem',
+        fontSize: '2rem',
         color: '#ffffff',
         backgroundColor: 'transparent',
         '&:hover, &:active, &:focus': {
@@ -42,7 +42,7 @@ export const NavigationBar = ({showNavigators = true}) => {
     });
 
     const languageButtonStyle = css([buttonStyle, {
-        backgroundSize: 'auto 1.8rem',
+        backgroundSize: 'auto 2rem',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center'
     }]);
