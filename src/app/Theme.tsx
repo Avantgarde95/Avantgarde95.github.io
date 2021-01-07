@@ -1,15 +1,14 @@
-/** @jsx jsx */
-
-import {css, jsx, SerializedStyles} from '@emotion/core';
+import * as React from 'react';
 import {createContext, ReactNode} from 'react';
+import {css} from '@emotion/css';
 
 export interface Theme {
     defaultColor: string;
     lightColor: string;
     darkColor: string;
-    textStyle: SerializedStyles;
-    boxStyle: SerializedStyles;
-    highlightStyle: SerializedStyles;
+    textStyle: string;
+    boxStyle: string;
+    highlightStyle: string;
 }
 
 export const ThemeContext = createContext({} as Theme);

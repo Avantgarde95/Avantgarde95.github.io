@@ -1,7 +1,6 @@
-/** @jsx jsx */
-
-import {jsx} from '@emotion/core';
+import * as React from 'react';
 import {createRef, ReactNode, useContext, useEffect} from 'react';
+import {css} from '@emotion/css';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {Icon} from '../device/Icon';
 import {English, Korean} from '../common/Language';
@@ -13,40 +12,40 @@ const Luminous = require('luminous-lightbox').Luminous;
 const Background = require('./image/Guitar');
 
 const Title = ({children = null as ReactNode}) => (
-    <div css={{
+    <div className={css({
         font: '1.5rem',
         fontWeight: 'bold'
-    }}>
+    })}>
         {children}
     </div>
 );
 
 const List = ({children = null as ReactNode}) => (
-    <ul css={{
+    <ul className={css({
         listStyle: 'none',
         paddingLeft: 0,
         marginBottom: '1.5rem'
-    }}>
+    })}>
         {children}
     </ul>
 );
 
 const Item = ({children = null as ReactNode}) => (
     <li>
-        <div css={{
+        <div className={css({
             display: 'inline-block',
             marginLeft: '0.5rem',
             width: '1.5rem',
             height: '0.9rem',
             fontSize: '0.6rem'
-        }}>
+        })}>
             <Icon definition={faStar}/>
         </div>
-        <div css={{
+        <div className={css({
             display: 'inline-block',
             verticalAlign: 'top',
             width: 'calc(100% - 2rem)'
-        }}>
+        })}>
             {children}
         </div>
     </li>
@@ -57,13 +56,13 @@ const Link = ({url = '', children = null as ReactNode}) => {
 
     return (
         <a
-            css={{
+            className={css({
                 wordBreak: 'break-all',
                 color: theme.lightColor,
                 '&:hover, &:active': {
                     color: theme.darkColor
                 }
-            }}
+            })}
             target={'_blank'}
             rel={'noopener noreferrer'}
             href={url}
@@ -87,7 +86,7 @@ const Image = ({src = '', alt = ''}) => {
 
     return (
         <img
-            css={[theme.boxStyle, theme.highlightStyle, {
+            className={css([theme.boxStyle, theme.highlightStyle, {
                 cursor: 'pointer',
                 width: '12rem',
                 height: '12rem',
@@ -95,7 +94,7 @@ const Image = ({src = '', alt = ''}) => {
                 '&:last-child': {
                     marginRight: 0
                 }
-            }]}
+            }])}
             ref={ref}
             src={src}
             alt={alt}
@@ -105,14 +104,14 @@ const Image = ({src = '', alt = ''}) => {
 };
 
 const Gallery = ({images = [{src: '', alt: ''}]}) => (
-    <div css={{
+    <div className={css({
         overflowX: 'auto',
         overflowY: 'hidden',
         whiteSpace: 'nowrap',
         marginLeft: '1px',
         marginRight: '1px',
         marginBottom: '1.5rem'
-    }}>
+    })}>
         {images.map(({src, alt}) => <Image src={src} alt={alt}/>)}
     </div>
 );
@@ -133,26 +132,26 @@ const Content = () => {
     const theme = useContext(ThemeContext);
 
     return (
-        <div css={[theme.textStyle, {
+        <div className={css([theme.textStyle, {
             overflowY: 'auto',
             boxSizing: 'border-box',
             width: '100%',
             height: '100%',
             padding: '1.5rem',
             background: `#000000 url(${Background}) no-repeat center`
-        }]}>
-            <div css={{
+        }])}>
+            <div className={css({
                 fontWeight: 'bold',
                 fontSize: '1.8rem',
                 lineHeight: 1,
                 marginBottom: '1.5rem'
-            }}>
+            })}>
                 <Korean>소개</Korean>
                 <English>About</English>
             </div>
-            <div css={{
+            <div className={css({
                 marginBottom: '1.5rem'
-            }}>
+            })}>
                 <Korean>반가워요! 컴퓨터와 음악에 관심이 있습니다 :)</Korean>
                 <English>Welcome! I'm interested in computers and music :)</English>
             </div>

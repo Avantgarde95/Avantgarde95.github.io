@@ -1,7 +1,6 @@
-/** @jsx jsx */
-
-import {css, jsx} from '@emotion/core';
+import * as React from 'react';
 import {Fragment, ReactNode, useContext, useState} from 'react';
+import {css} from '@emotion/css';
 import {English, Korean} from '../common/Language';
 import {App} from './App';
 import {ThemeContext, ThemeProvider} from './Theme';
@@ -22,13 +21,13 @@ const Link = ({url = '', children = null as ReactNode}) => {
 
     return (
         <a
-            css={{
+            className={css({
                 wordBreak: 'break-all',
                 color: theme.lightColor,
                 '&:hover, &:active': {
                     color: theme.darkColor
                 }
-            }}
+            })}
             target={'_blank'}
             rel={'noopener noreferrer'}
             href={url}
@@ -40,7 +39,7 @@ const Link = ({url = '', children = null as ReactNode}) => {
 
 const ProjectName = ({url = '', children = null as ReactNode}) => (
     <a
-        css={{
+        className={css({
             display: 'table',
             wordBreak: 'break-all',
             marginBottom: '0.5rem',
@@ -49,7 +48,7 @@ const ProjectName = ({url = '', children = null as ReactNode}) => (
             '&:hover, &:active': {
                 color: '#d9890d'
             }
-        }}
+        })}
         target={'_blank'}
         rel={'noopener noreferrer'}
         href={url}
@@ -59,9 +58,9 @@ const ProjectName = ({url = '', children = null as ReactNode}) => (
 );
 
 const ProjectDescription = ({children = null as ReactNode}) => (
-    <div css={{
+    <div className={css({
         width: '100%'
-    }}>
+    })}>
         {children}
     </div>
 );
@@ -98,7 +97,7 @@ const ProjectGallery = ({projects = [] as Project[]}) => {
 
     return (
         <Fragment>
-            <div css={{
+            <div className={css({
                 display: 'inline-block',
                 position: 'relative',
                 width: '100%',
@@ -112,8 +111,8 @@ const ProjectGallery = ({projects = [] as Project[]}) => {
                     height: '100%',
                     marginRight: '1rem'
                 }
-            }}>
-                <div css={{
+            })}>
+                <div className={css({
                     position: 'absolute',
                     overflow: 'auto',
                     whiteSpace: 'nowrap',
@@ -124,13 +123,13 @@ const ProjectGallery = ({projects = [] as Project[]}) => {
                     [wideScreenQuery]: {
                         whiteSpace: 'normal'
                     }
-                }}>
+                })}>
                     {projects.map(({imageURL, name}, index) => (
                         <button
-                            css={[buttonStyle, {
+                            className={css([buttonStyle, {
                                 title: name,
                                 backgroundImage: `url(${imageURL})`
-                            }]}
+                            }])}
                             onClick={() => {
                                 setProjectIndex(index);
                             }}
@@ -140,7 +139,7 @@ const ProjectGallery = ({projects = [] as Project[]}) => {
                     ))}
                 </div>
             </div>
-            <div css={{
+            <div className={css({
                 display: 'inline-block',
                 position: 'relative',
                 width: '100%',
@@ -152,15 +151,15 @@ const ProjectGallery = ({projects = [] as Project[]}) => {
                     width: `calc(100% - ${buttonWidth + 3}rem)`,
                     height: '100%'
                 }
-            }}>
-                <div css={{
+            })}>
+                <div className={css({
                     position: 'absolute',
                     overflow: 'auto',
                     top: 0,
                     right: 0,
                     bottom: 0,
                     left: 0
-                }}>
+                })}>
                     <ProjectName url={project.repositoryURL}>{project.name}</ProjectName>
                     <ProjectDescription>{project.description}</ProjectDescription>
                 </div>
@@ -173,40 +172,40 @@ const Content = () => {
     const theme = useContext(ThemeContext);
 
     return (
-        <div css={[theme.textStyle, {
+        <div className={css([theme.textStyle, {
             display: 'table',
             boxSizing: 'border-box',
             width: '100%',
             height: '100%',
             padding: '1.5rem',
             background: `#000000 url(${Background}) no-repeat center`
-        }]}>
-            <div css={{
+        }])}>
+            <div className={css({
                 display: 'table-row',
                 height: 0
-            }}>
-                <div css={{
+            })}>
+                <div className={css({
                     fontWeight: 'bold',
                     fontSize: '1.8rem',
                     lineHeight: 1,
                     marginBottom: '1.5rem'
-                }}>
+                })}>
                     <Korean>프로젝트</Korean>
                     <English>Projects</English>
                 </div>
-                <div css={{
+                <div className={css({
                     marginBottom: '1.5rem'
-                }}>
+                })}>
                     <Korean>모든 프로젝트들을 보려면 <Link url={'https://github.com/Avantgarde95'}>깃허브</Link>를
                         방문해주세요.</Korean>
                     <English>To see the all projects, visit <Link
                         url={'https://github.com/Avantgarde95'}>GitHub</Link>.</English>
                 </div>
             </div>
-            <div css={{
+            <div className={css({
                 display: 'table-row',
                 height: '100%'
-            }}>
+            })}>
                 <ProjectGallery projects={Projects}/>
             </div>
         </div>

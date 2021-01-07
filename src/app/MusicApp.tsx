@@ -1,7 +1,6 @@
-/** @jsx jsx */
-
-import {jsx} from '@emotion/core';
+import * as React from 'react';
 import {ReactNode, useContext, useState} from 'react';
+import {css} from '@emotion/css';
 import {faArrowAltCircleLeft} from '@fortawesome/free-regular-svg-icons/faArrowAltCircleLeft';
 import {faArrowAltCircleRight} from '@fortawesome/free-regular-svg-icons/faArrowAltCircleRight';
 import {App} from './App';
@@ -17,13 +16,13 @@ const Link = ({url = '', children = null as ReactNode}) => {
 
     return (
         <a
-            css={{
+            className={css({
                 wordBreak: 'break-all',
                 color: theme.lightColor,
                 '&:hover, &:active': {
                     color: theme.darkColor
                 }
-            }}
+            })}
             target={'_blank'}
             rel={'noopener noreferrer'}
             href={url}
@@ -34,11 +33,11 @@ const Link = ({url = '', children = null as ReactNode}) => {
 };
 
 const Title = ({children = null as ReactNode}) => (
-    <div css={{
+    <div className={css({
         font: '1.5rem',
         fontWeight: 'bold',
         marginBottom: '1rem'
-    }}>
+    })}>
         {children}
     </div>
 );
@@ -47,19 +46,19 @@ const Video = ({id = ''}) => {
     const theme = useContext(ThemeContext);
 
     return (
-        <div css={{
+        <div className={css({
             position: 'relative',
             height: 0,
             paddingBottom: '56.25%'
-        }}>
+        })}>
             <iframe
-                css={[theme.boxStyle, theme.highlightStyle, {
+                className={css([theme.boxStyle, theme.highlightStyle, {
                     position: 'absolute',
                     top: 0,
                     left: 0,
                     width: '100%',
                     height: '100%'
-                }]}
+                }])}
                 key={id} // Force React to recreate iframe to prevent it from messing the browser history!
                 frameBorder={0}
                 allowFullScreen={true}
@@ -76,18 +75,18 @@ const Gallery = ({ids = [] as string[]}) => {
     const disableNextButton = index >= ids.length - 1;
 
     return (
-        <div css={{
+        <div className={css({
             width: '100%',
             maxWidth: '640px'
-        }}>
+        })}>
             <Video id={ids[index]}/>
-            <div css={{
+            <div className={css({
                 height: '3rem',
                 marginTop: '1rem',
                 marginBottom: '1rem'
-            }}>
+            })}>
                 <button
-                    css={{
+                    className={css({
                         float: 'left',
                         cursor: 'pointer',
                         fontSize: '2rem',
@@ -97,7 +96,7 @@ const Gallery = ({ids = [] as string[]}) => {
                         '&:hover, &:active, &:focus': disablePreviousButton ? {} : {
                             color: theme.lightColor
                         }
-                    }}
+                    })}
                     disabled={disablePreviousButton}
                     onClick={() => {
                         if (!disablePreviousButton) {
@@ -108,7 +107,7 @@ const Gallery = ({ids = [] as string[]}) => {
                     <Icon definition={faArrowAltCircleLeft}/>
                 </button>
                 <button
-                    css={{
+                    className={css({
                         float: 'right',
                         cursor: 'pointer',
                         fontSize: '2rem',
@@ -118,7 +117,7 @@ const Gallery = ({ids = [] as string[]}) => {
                         '&:hover, &:active, &:focus': disableNextButton ? {} : {
                             color: theme.lightColor
                         }
-                    }}
+                    })}
                     disabled={disableNextButton}
                     onClick={() => {
                         if (!disableNextButton) {
@@ -137,26 +136,26 @@ const Content = () => {
     const theme = useContext(ThemeContext);
 
     return (
-        <div css={[theme.textStyle, {
+        <div className={css([theme.textStyle, {
             overflowY: 'auto',
             boxSizing: 'border-box',
             width: '100%',
             height: '100%',
             padding: '1.5rem',
             background: `#000000 url(${Background}) no-repeat center`
-        }]}>
-            <div css={{
+        }])}>
+            <div className={css({
                 fontWeight: 'bold',
                 fontSize: '1.8rem',
                 lineHeight: 1,
                 marginBottom: '1.5rem'
-            }}>
+            })}>
                 <Korean>음악</Korean>
                 <English>Musics</English>
             </div>
-            <div css={{
+            <div className={css({
                 marginBottom: '1.5rem'
-            }}>
+            })}>
                 <Korean>
                     영상들을 불러오는데에 시간이 걸리니 잠시 기다려주세요.
                     모든 영상들을 보려면 <Link url={'https://www.youtube.com/user/Scottparkmusic'}>유튜브</Link>를 방문해주세요.

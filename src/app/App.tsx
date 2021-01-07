@@ -1,7 +1,6 @@
-/** @jsx jsx */
-
-import {jsx, keyframes} from '@emotion/core';
+import * as React from 'react';
 import {ReactNode, useContext, useEffect} from 'react';
+import {css, keyframes} from '@emotion/css';
 import {Screen} from '../device/Screen';
 import {LanguageContext} from '../common/Language';
 
@@ -33,11 +32,11 @@ export const App = (
 
     return (
         <Screen>
-            <div css={{
+            <div className={css({
                 width: '100%',
                 height: '100%',
                 animation: `${openingAnimation} 0.15s`
-            }}>
+            })}>
                 {children}
             </div>
         </Screen>

@@ -1,19 +1,18 @@
-/** @jsx jsx */
-
-import {css, jsx} from '@emotion/core';
+import * as React from 'react';
 import {ReactNode, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
+import {css} from '@emotion/css';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
 import {Icon} from './Icon';
 import {English, Korean, LanguageContext} from '../common/Language';
 
 const Cell = ({children = null as ReactNode}) => (
-    <span css={{
+    <span className={css({
         display: 'table-cell',
         textAlign: 'center',
         width: '4rem'
-    }}>
+    })}>
         {children}
     </span>
 );
@@ -49,13 +48,13 @@ export const NavigationBar = ({showNavigators = true}) => {
     }]);
 
     return (
-        <div css={{
+        <div className={css({
             display: 'table',
             width: '100%'
-        }}>
+        })}>
             <Cell>
                 {showNavigators && <button
-                    css={buttonStyle}
+                    className={buttonStyle}
                     title={'Back'}
                     onClick={() => {
                         navigate(-1);
@@ -67,9 +66,9 @@ export const NavigationBar = ({showNavigators = true}) => {
             <Cell>
                 <English>
                     <button
-                        css={[languageButtonStyle, {
+                        className={css([languageButtonStyle, {
                             backgroundImage: `url(${InEnglish})`
-                        }]}
+                        }])}
                         title={'To Korean'}
                         onClick={() => {
                             changeLanguage('Korean');
@@ -78,9 +77,9 @@ export const NavigationBar = ({showNavigators = true}) => {
                 </English>
                 <Korean>
                     <button
-                        css={[languageButtonStyle, {
+                        className={css([languageButtonStyle, {
                             backgroundImage: `url(${InKorean})`
-                        }]}
+                        }])}
                         title={'To English'}
                         onClick={() => {
                             changeLanguage('English');
@@ -90,7 +89,7 @@ export const NavigationBar = ({showNavigators = true}) => {
             </Cell>
             <Cell>
                 {showNavigators && <button
-                    css={buttonStyle}
+                    className={buttonStyle}
                     title={'Home'}
                     onClick={() => {
                         navigate('/');

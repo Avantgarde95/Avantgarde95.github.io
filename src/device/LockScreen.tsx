@@ -1,7 +1,6 @@
-/** @jsx jsx */
-
-import {jsx} from '@emotion/core';
+import * as React from 'react';
 import {useState} from 'react';
+import {css} from '@emotion/css';
 import {Screen} from './Screen';
 import {Hour, Minute, Month, MonthDay, TimeProvider, WeekDay} from './Time';
 import {English, Korean} from '../common/Language';
@@ -13,7 +12,7 @@ export const LockScreen = ({onDisappear = {} as () => void}) => {
     return (
         <Screen>
             <div
-                css={{
+                className={css({
                     cursor: 'pointer',
                     position: 'relative',
                     overflow: 'hidden',
@@ -21,13 +20,13 @@ export const LockScreen = ({onDisappear = {} as () => void}) => {
                     height: '100%',
                     color: color,
                     transition: 'color 0.25s'
-                }}
+                })}
                 onClick={() => {
                     setColor('rgba(255, 255, 255, 0)');
                     setTimeout(onDisappear, 250);
                 }}
             >
-                <div css={{
+                <div className={css({
                     textAlign: 'center',
                     width: '100%',
                     marginTop: '1rem',
@@ -35,16 +34,16 @@ export const LockScreen = ({onDisappear = {} as () => void}) => {
                     [longScreenQuery]: {
                         marginTop: '3rem',
                     }
-                }}>
+                })}>
                     <TimeProvider><Hour/>:<Minute/></TimeProvider>
                 </div>
-                <div css={{
+                <div className={css({
                     textAlign: 'center',
                     width: '100%'
-                }}>
+                })}>
                     <TimeProvider><WeekDay/>, <Month/> <MonthDay/></TimeProvider>
                 </div>
-                <div css={{
+                <div className={css({
                     position: 'absolute',
                     textAlign: 'center',
                     bottom: '1rem',
@@ -52,7 +51,7 @@ export const LockScreen = ({onDisappear = {} as () => void}) => {
                     [longScreenQuery]: {
                         bottom: '3rem'
                     }
-                }}>
+                })}>
                     <Korean>
                         클릭해서 잠금해제
                     </Korean>

@@ -1,8 +1,7 @@
-/** @jsx jsx */
-
-import {css, jsx} from '@emotion/core';
+import * as React from 'react';
 import {ReactNode, useContext, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
+import {css} from '@emotion/css';
 import {faIdCard} from '@fortawesome/free-solid-svg-icons/faIdCard';
 import {faFileAlt} from '@fortawesome/free-solid-svg-icons/faFileAlt';
 import {faNewspaper} from '@fortawesome/free-solid-svg-icons/faNewspaper';
@@ -49,9 +48,9 @@ const Button = (
     if (!path.startsWith('http')) {
         return (
             <button
-                css={[buttonStyle, {
+                className={css([buttonStyle, {
                     color: color
-                }]}
+                }])}
                 title={title}
                 onClick={() => {
                     navigate(path);
@@ -63,9 +62,9 @@ const Button = (
     } else {
         return (
             <a
-                css={[buttonStyle, {
+                className={css([buttonStyle, {
                     color: color
-                }]}
+                }])}
                 title={title}
                 tabIndex={0}
                 target={'_blank'}
@@ -79,11 +78,11 @@ const Button = (
 };
 
 const Name = ({children = null as ReactNode}) => (
-    <div css={{
+    <div className={css({
         textAlign: 'center',
         margin: '1rem auto auto auto',
         color: '#ffffff'
-    }}>
+    })}>
         {children}
     </div>
 );
@@ -95,14 +94,14 @@ const App = (
         children = null as ReactNode
     }
 ) => (
-    <div css={{
+    <div className={css({
         display: 'inline-block',
         boxSizing: 'border-box',
         width: `${width}rem`,
         height: `${height}rem`,
         paddingTop: '1rem',
         webkitTapHighlightColor: 'rgba(255, 255, 255, 0)'
-    }}>
+    })}>
         {children}
     </div>
 );
@@ -114,11 +113,11 @@ const Placeholder = (
         children = null as ReactNode
     }
 ) => (
-    <div css={{
+    <div className={css({
         display: 'inline-block',
         width: `${width}rem`,
         height: `${height}rem`
-    }}>
+    })}>
         {children}
     </div>
 );
@@ -211,15 +210,15 @@ export const HomeScreen = (
 
     return (
         <Screen>
-            <div css={{
+            <div className={css({
                 textAlign: 'center',
                 width: '100%',
                 height: '100%'
-            }}>
-                <div css={{
+            })}>
+                <div className={css({
                     display: 'inline-block',
                     maxWidth: `${appWidth * maxAppsPerLine}rem`
-                }}>
+                })}>
                     {apps.map(app => (
                         <App width={appWidth} height={appHeight}>
                             <Button title={app.englishName} path={app.path} color={app.color}>

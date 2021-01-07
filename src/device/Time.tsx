@@ -1,7 +1,5 @@
-/** @jsx jsx */
-
-import {jsx} from '@emotion/core';
-import {createContext, Fragment, ReactNode, useContext, useEffect, useState} from 'react';
+import * as React from 'react';
+import {createContext, ReactNode, useContext, useEffect, useState} from 'react';
 
 const monthNames = [
     'January',
@@ -86,35 +84,35 @@ export const TimeProvider = ({children = null as ReactNode}) => {
 export const Hour = () => {
     const hour = useContext(TimeContext).hour % 12;
 
-    return <Fragment>{`${(hour === 0) ? 12 : hour}`}</Fragment>;
+    return <>{`${(hour === 0) ? 12 : hour}`}</>;
 };
 
 export const Minute = () => {
     const {minute} = useContext(TimeContext);
 
-    return <Fragment>{`${fillZero(minute, 2)}`}</Fragment>;
+    return <>{`${fillZero(minute, 2)}`}</>;
 };
 
 export const Month = () => {
     const {month} = useContext(TimeContext);
 
-    return <Fragment>{monthNames[month]}</Fragment>;
+    return <>{monthNames[month]}</>;
 };
 
 export const MonthDay = () => {
     const {monthDay} = useContext(TimeContext);
 
-    return <Fragment>{`${monthDay + 1}`}</Fragment>;
+    return <>{`${monthDay + 1}`}</>;
 };
 
 export const WeekDay = () => {
     const {weekDay} = useContext(TimeContext);
 
-    return <Fragment>{dayNames[weekDay]}</Fragment>;
+    return <>{dayNames[weekDay]}</>;
 };
 
 export const AMPM = () => {
     const {hour} = useContext(TimeContext);
 
-    return <Fragment>{hour >= 12 ? 'PM' : 'AM'}</Fragment>
+    return <>{hour >= 12 ? 'PM' : 'AM'}</>
 };

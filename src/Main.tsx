@@ -1,11 +1,10 @@
-/** @jsx jsx */
-
 import './Polyfill';
 
-import {jsx} from '@emotion/core';
+import * as React from 'react';
 import {Component, ErrorInfo, ReactNode, useEffect} from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter, useRoutes} from 'react-router-dom';
+import {css} from '@emotion/css';
 import {StatusBar} from './device/StatusBar';
 import {NavigationBar} from './device/NavigationBar';
 import {LanguageProvider} from './common/Language';
@@ -15,16 +14,18 @@ import {AboutApp} from './app/AboutApp';
 import {CVApp} from './app/CVApp';
 import {ProjectApp} from './app/ProjectApp';
 import {MusicApp} from './app/MusicApp';
-
-import './Luminous';
 import {MediaProvider} from './common/Media';
 
+import './Luminous.css';
+
+/*
 const UnfinishedApp = () => (
     <AlertApp
         koreanMessage={'제작중입니다!'}
         englishMessage={'Under construction!'}
     />
 );
+*/
 
 const NotFoundApp = () => (
     <AlertApp
@@ -74,14 +75,14 @@ const SafeRoutes = (
 
 const Device = () => (
     <BrowserRouter>
-        <div css={{
+        <div className={css({
             overflowY: 'hidden',
             width: '100%',
             height: '100%',
             margin: 0,
             padding: 0,
             backgroundColor: '#000000'
-        }}>
+        })}>
             <LanguageProvider>
                 <MediaProvider>
                     <StatusBar showTime={true}/>
