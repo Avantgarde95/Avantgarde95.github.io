@@ -104,8 +104,8 @@ const Device = () => (
 
 const temporaryElements = document.getElementsByClassName('Temporary');
 
-for (let i = 0; i < temporaryElements.length; i++) {
-    temporaryElements[i]?.parentNode?.removeChild(temporaryElements[i]);
+while (temporaryElements.length > 0) {
+    temporaryElements[0]?.parentNode?.removeChild(temporaryElements[0]);
 }
 
 render(<Device/>, document.body);
