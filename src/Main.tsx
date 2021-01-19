@@ -16,8 +16,6 @@ import {ProjectApp} from './app/ProjectApp';
 import {MusicApp} from './app/MusicApp';
 import {MediaProvider} from './common/Media';
 
-import './Luminous.css';
-
 /*
 const UnfinishedApp = () => (
     <AlertApp

@@ -1,0 +1,1 @@
+declare module 'luminous-lightbox';
