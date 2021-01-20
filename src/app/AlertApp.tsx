@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {css} from '@emotion/css';
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
-import {Icon} from '../device/Icon';
+import {Icon} from '../common/Icon';
 import {English, Korean} from '../common/Language';
 import {App} from './App';
 

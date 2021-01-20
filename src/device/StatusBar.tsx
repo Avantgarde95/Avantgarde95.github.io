@@ -4,7 +4,7 @@ import {css} from '@emotion/css';
 import {faWifi} from '@fortawesome/free-solid-svg-icons/faWifi';
 import {faSignal} from '@fortawesome/free-solid-svg-icons/faSignal';
 import {faBatteryFull} from '@fortawesome/free-solid-svg-icons/faBatteryFull';
-import {Icon} from './Icon';
+import {Icon} from '../common/Icon';
 import {AMPM, Hour, Minute, TimeProvider} from './Time';
 
 const LeftArea = ({children = null as ReactNode}) => (

@@ -6,7 +6,7 @@ import {faArrowAltCircleRight} from '@fortawesome/free-regular-svg-icons/faArrow
 import {App} from './App';
 import {ThemeContext, ThemeProvider} from './Theme';
 import {English, Korean} from '../common/Language';
-import {Icon} from '../device/Icon';
+import {Icon} from '../common/Icon';
 
 const Background = require('./image/EighthNotes');
 const Musics = require('./Musics');

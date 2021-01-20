@@ -4,7 +4,7 @@ import {css} from '@emotion/css';
 import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
 import {Luminous} from 'luminous-lightbox';
 import 'luminous-lightbox/dist/luminous-basic.min.css';
-import {Icon} from '../device/Icon';
+import {Icon} from '../common/Icon';
 import {English, Korean} from '../common/Language';
 import {App} from './App';
 import {ThemeContext, ThemeProvider} from './Theme';

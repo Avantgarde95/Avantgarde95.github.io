@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom';
 import {css} from '@emotion/css';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
-import {Icon} from './Icon';
+import {Icon} from '../common/Icon';
 import {English, Korean, LanguageContext} from '../common/Language';
 
 const Cell = ({children = null as ReactNode}) => (

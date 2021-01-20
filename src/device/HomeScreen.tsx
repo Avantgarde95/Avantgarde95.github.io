@@ -13,7 +13,7 @@ import {faMusic} from '@fortawesome/free-solid-svg-icons/faMusic';
 import {faGithub} from '@fortawesome/free-brands-svg-icons/faGithub';
 import {faCode} from '@fortawesome/free-solid-svg-icons/faCode';
 import {Screen} from './Screen';
-import {Icon} from './Icon';
+import {Icon} from '../common/Icon';
 import {English, Korean, LanguageContext} from '../common/Language';
 
 const Button = (
