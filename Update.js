@@ -2,6 +2,20 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 const Secret = require('./Secret.json');
 
+/*
+ * Secret.json
+ *
+ * {
+ *     "github": {
+ *         "id": ...,
+ *         "key": ...
+ *     }
+ *     "youtube": {
+ *         "key": ...
+ *     }
+ * }
+ */
+
 function getValue(object, key, defaultValue) {
     return object.hasOwnProperty(key) ? object[key] : defaultValue;
 }
@@ -12,6 +26,10 @@ function createURL(baseURL, parameterMap) {
         .join('&');
 
     return baseURL + '?' + query;
+}
+
+function toBase64(value) {
+    return Buffer.from(value).toString('base64');
 }
 
 async function updateProjects() {
@@ -49,11 +67,14 @@ async function updateProjects() {
         'PaintTalk': 'extra/TreeDemo.png'
     };
 
-    const response = await fetch(createURL('https://api.github.com/users/Avantgarde95/repos', {
+    const response = await fetch(createURL(`https://api.github.com/users/${Secret.github.id}/repos`, {
         per_page: 100
     }), {
         method: 'get',
-        headers: {'Content-Type': 'application/json'}
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Basic ${toBase64(Secret.github.id + ':' + Secret.github.key)}`
+        }
     });
 
     const allProjects = await response.json();
@@ -62,8 +83,8 @@ async function updateProjects() {
         .map(({name, description}) => ({
             name: getValue(alternativeProjectNames, name, name),
             description: description,
-            repositoryURL: `https://github.com/Avantgarde95/${name}`,
-            imageURL: `https://raw.githubusercontent.com/Avantgarde95/${name}/master/${getValue(alternativeProjectImagePaths, name, 'Screenshot.png')}`
+            repositoryURL: `https://github.com/${Secret.github.id}/${name}`,
+            imageURL: `https://raw.githubusercontent.com/${Secret.github.id}/${name}/master/${getValue(alternativeProjectImagePaths, name, 'Screenshot.png')}`
         }));
 
     fs.writeFileSync('./src/app/Projects.json', JSON.stringify(projects, null, 4));
@@ -75,7 +96,7 @@ async function getVideos(playlistId) {
         playlistId: playlistId,
         part: 'snippet',
         maxResults: 50,
-        key: Secret.youtubeAPIKey
+        key: Secret.youtube.key
     }), {
         method: 'get',
         headers: {'Content-Type': 'application/json'}
