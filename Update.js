@@ -75,7 +75,7 @@ async function updateProjects() {
     const allProjects = await request(`https://api.github.com/users/Avantgarde95/repos`, {
         per_page: 100
     }, {
-        'Authorization': `Basic ${toBase64(Secret.github.id + ':' + Secret.github.key)}`
+        //'Authorization': `Basic ${toBase64(Secret.github.id + ':' + Secret.github.key)}`
     });
 
     const projects = allProjects.filter(({name}) => !excludedProjects.includes(name))

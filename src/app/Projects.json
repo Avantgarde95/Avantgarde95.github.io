@@ -72,6 +72,12 @@
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HandyClock/master/Screenshot.png"
     },
     {
+        "name": "HoloLight",
+        "description": null,
+        "repositoryURL": "https://github.com/Avantgarde95/HoloLight",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HoloLight/master/Screenshot.png"
+    },
+    {
         "name": "HQ9",
         "description": "Simple implementation of HQ9+ in python",
         "repositoryURL": "https://github.com/Avantgarde95/HQ9",
