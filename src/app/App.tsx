@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {ReactNode, useContext, useEffect} from 'react';
-import {css, keyframes} from '@emotion/css';
-import {Screen} from '../device/Screen';
-import {LanguageContext} from '../common/Language';
+import { ReactNode, useContext, useEffect } from 'react';
+import { css, keyframes } from '@emotion/css';
+import { Screen } from '../device/Screen';
+import { LanguageContext } from '../common/Language';
 
 const openingAnimation = keyframes({
     from: {
@@ -20,7 +20,7 @@ export const App = (
         children = null as ReactNode
     }
 ) => {
-    const {currentLanguage} = useContext(LanguageContext);
+    const { currentLanguage } = useContext(LanguageContext);
 
     useEffect(() => {
         const title = (currentLanguage === 'Korean') ? koreanTitle : englishTitle;

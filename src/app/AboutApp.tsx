@@ -1,17 +1,17 @@
 import * as React from 'react';
-import {createRef, ReactNode, useContext, useEffect} from 'react';
-import {css} from '@emotion/css';
-import {faStar} from '@fortawesome/free-solid-svg-icons/faStar';
-import {Luminous} from 'luminous-lightbox';
+import { createRef, ReactNode, useContext, useEffect } from 'react';
+import { css } from '@emotion/css';
+import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
+import { Luminous } from 'luminous-lightbox';
 import 'luminous-lightbox/dist/luminous-basic.min.css';
-import {Icon} from '../common/Icon';
-import {English, Korean} from '../common/Language';
-import {App} from './App';
-import {ThemeContext, ThemeProvider} from './Theme';
+import { Icon } from '../common/Icon';
+import { English, Korean } from '../common/Language';
+import { App } from './App';
+import { ThemeContext, ThemeProvider } from './Theme';
 
 const Background = require('./image/Guitar');
 
-const Title = ({children = null as ReactNode}) => (
+const Title = ({ children = null as ReactNode }) => (
     <div className={css({
         font: '1.5rem',
         fontWeight: 'bold'
@@ -20,7 +20,7 @@ const Title = ({children = null as ReactNode}) => (
     </div>
 );
 
-const List = ({children = null as ReactNode}) => (
+const List = ({ children = null as ReactNode }) => (
     <ul className={css({
         listStyle: 'none',
         paddingLeft: 0,
@@ -30,7 +30,7 @@ const List = ({children = null as ReactNode}) => (
     </ul>
 );
 
-const Item = ({children = null as ReactNode}) => (
+const Item = ({ children = null as ReactNode }) => (
     <li>
         <div className={css({
             display: 'inline-block',
@@ -39,7 +39,7 @@ const Item = ({children = null as ReactNode}) => (
             height: '0.9rem',
             fontSize: '0.6rem'
         })}>
-            <Icon definition={faStar}/>
+            <Icon definition={faStar} />
         </div>
         <div className={css({
             display: 'inline-block',
@@ -51,7 +51,7 @@ const Item = ({children = null as ReactNode}) => (
     </li>
 );
 
-const Link = ({url = '', children = null as ReactNode}) => {
+const Link = ({ url = '', children = null as ReactNode }) => {
     const theme = useContext(ThemeContext);
 
     return (
@@ -72,7 +72,7 @@ const Link = ({url = '', children = null as ReactNode}) => {
     );
 };
 
-const Image = ({src = '', alt = ''}) => {
+const Image = ({ src = '', alt = '' }) => {
     const theme = useContext(ThemeContext);
     const ref = createRef<HTMLImageElement>();
 
@@ -80,7 +80,7 @@ const Image = ({src = '', alt = ''}) => {
         const element = ref.current;
 
         if (element !== null) {
-            new Luminous(element, {sourceAttribute: 'src', caption: alt});
+            new Luminous(element, { sourceAttribute: 'src', caption: alt });
         }
     });
 
@@ -103,7 +103,7 @@ const Image = ({src = '', alt = ''}) => {
     );
 };
 
-const Gallery = ({images = [{src: '', alt: ''}]}) => (
+const Gallery = ({ images = [{ src: '', alt: '' }] }) => (
     <div className={css({
         overflowX: 'auto',
         overflowY: 'hidden',
@@ -112,20 +112,20 @@ const Gallery = ({images = [{src: '', alt: ''}]}) => (
         marginRight: '1px',
         marginBottom: '1.5rem'
     })}>
-        {images.map(({src, alt}) => <Image src={src} alt={alt}/>)}
+        {images.map(({ src, alt }) => <Image src={src} alt={alt} />)}
     </div>
 );
 
 const computerImages = [
-    {src: require('./image/OpenGL'), alt: 'Real-time rendering (Rasterization)'},
-    {src: require('./image/RayTracing'), alt: 'Real-time rendering (Ray tracing)'},
-    {src: require('./image/HoloLens'), alt: 'Augmented reality (Microsoft HoloLens)'}
+    { src: require('./image/OpenGL'), alt: 'Real-time rendering (Rasterization)' },
+    { src: require('./image/RayTracing'), alt: 'Real-time rendering (Ray tracing)' },
+    { src: require('./image/HoloLens'), alt: 'Augmented reality (Microsoft HoloLens)' }
 ];
 
 const musicImages = [
-    {src: require('./image/Telecaster'), alt: 'My guitar'},
-    {src: require('./image/Concert'), alt: 'My concert'},
-    {src: require('./image/Sheet'), alt: 'My music'}
+    { src: require('./image/Telecaster'), alt: 'My guitar' },
+    { src: require('./image/Concert'), alt: 'My concert' },
+    { src: require('./image/Sheet'), alt: 'My music' }
 ];
 
 const Content = () => {
@@ -180,7 +180,7 @@ const Content = () => {
                     </English>
                 </Item>
             </List>
-            <Gallery images={computerImages}/>
+            <Gallery images={computerImages} />
             <Title>
                 <Korean>관심사 (음악)</Korean>
                 <English>Interests (Music)</English>
@@ -207,7 +207,7 @@ const Content = () => {
                     </English>
                 </Item>
             </List>
-            <Gallery images={musicImages}/>
+            <Gallery images={musicImages} />
             <Title>
                 <Korean>연락처</Korean>
                 <English>Contacts</English>
@@ -233,7 +233,7 @@ const Content = () => {
 export const AboutApp = () => (
     <App koreanTitle={'소개'} englishTitle={'About'}>
         <ThemeProvider lightColor={'#00e9f9'} darkColor={'#0090ff'}>
-            <Content/>
+            <Content />
         </ThemeProvider>
     </App>
 );

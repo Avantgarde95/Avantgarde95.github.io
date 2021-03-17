@@ -1,13 +1,13 @@
 import * as React from 'react';
-import {ReactNode} from 'react';
-import {css} from '@emotion/css';
-import {faWifi} from '@fortawesome/free-solid-svg-icons/faWifi';
-import {faSignal} from '@fortawesome/free-solid-svg-icons/faSignal';
-import {faBatteryFull} from '@fortawesome/free-solid-svg-icons/faBatteryFull';
-import {Icon} from '../common/Icon';
-import {AMPM, Hour, Minute, TimeProvider} from './Time';
+import { ReactNode } from 'react';
+import { css } from '@emotion/css';
+import { faWifi } from '@fortawesome/free-solid-svg-icons/faWifi';
+import { faSignal } from '@fortawesome/free-solid-svg-icons/faSignal';
+import { faBatteryFull } from '@fortawesome/free-solid-svg-icons/faBatteryFull';
+import { Icon } from '../common/Icon';
+import { AMPM, Hour, Minute, TimeProvider } from './Time';
 
-const LeftArea = ({children = null as ReactNode}) => (
+const LeftArea = ({ children = null as ReactNode }) => (
     <div className={css({
         float: 'left',
         height: '100%'
@@ -16,7 +16,7 @@ const LeftArea = ({children = null as ReactNode}) => (
     </div>
 );
 
-const RightArea = ({children = null as ReactNode}) => (
+const RightArea = ({ children = null as ReactNode }) => (
     <div className={css({
         float: 'right',
         height: '100%'
@@ -25,7 +25,7 @@ const RightArea = ({children = null as ReactNode}) => (
     </div>
 );
 
-const Block = ({children = null as ReactNode}) => (
+const Block = ({ children = null as ReactNode }) => (
     <span className={css({
         marginLeft: '0.2rem',
         marginRight: '0.2rem'
@@ -34,7 +34,7 @@ const Block = ({children = null as ReactNode}) => (
     </span>
 );
 
-export const StatusBar = ({showTime = true}) => (
+export const StatusBar = ({ showTime = true }) => (
     <div className={css({
         boxSizing: 'border-box',
         width: '100%',
@@ -50,10 +50,10 @@ export const StatusBar = ({showTime = true}) => (
             </Block>
         </LeftArea>
         <RightArea>
-            <Block><Icon definition={faWifi}/></Block>
-            <Block><Icon definition={faSignal}/></Block>
-            <Block><Icon definition={faBatteryFull}/></Block>
-            {showTime && <Block><TimeProvider><Hour/>:<Minute/> <AMPM/></TimeProvider></Block>}
+            <Block><Icon definition={faWifi} /></Block>
+            <Block><Icon definition={faSignal} /></Block>
+            <Block><Icon definition={faBatteryFull} /></Block>
+            {showTime && <Block><TimeProvider><Hour />:<Minute /> <AMPM /></TimeProvider></Block>}
         </RightArea>
     </div>
 );

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {createContext, ReactNode} from 'react';
+import { createContext, ReactNode } from 'react';
 
 export interface Media {
     wideScreenMinWidth: number;
@@ -9,7 +9,7 @@ export interface Media {
 
 export const MediaContext = createContext({} as Media);
 
-export const MediaProvider = ({wideScreenMinWidth = 769, children = null as ReactNode}) => (
+export const MediaProvider = ({ wideScreenMinWidth = 769, children = null as ReactNode }) => (
     <MediaContext.Provider value={{
         wideScreenMinWidth: wideScreenMinWidth,
         wideScreenQuery: `@media (min-width: ${wideScreenMinWidth}px)`,

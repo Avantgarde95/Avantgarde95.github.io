@@ -1,13 +1,13 @@
 import * as React from 'react';
-import {ReactNode, useContext} from 'react';
-import {useNavigate} from 'react-router-dom';
-import {css} from '@emotion/css';
-import {faArrowLeft} from '@fortawesome/free-solid-svg-icons/faArrowLeft';
-import {faHome} from '@fortawesome/free-solid-svg-icons/faHome';
-import {Icon} from '../common/Icon';
-import {English, Korean, LanguageContext} from '../common/Language';
+import { ReactNode, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { css } from '@emotion/css';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
+import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
+import { Icon } from '../common/Icon';
+import { English, Korean, LanguageContext } from '../common/Language';
 
-const Cell = ({children = null as ReactNode}) => (
+const Cell = ({ children = null as ReactNode }) => (
     <span className={css({
         display: 'table-cell',
         textAlign: 'center',
@@ -20,9 +20,9 @@ const Cell = ({children = null as ReactNode}) => (
 const InKorean = require('./image/InKorean');
 const InEnglish = require('./image/InEnglish');
 
-export const NavigationBar = ({showNavigators = true}) => {
+export const NavigationBar = ({ showNavigators = true }) => {
     const navigate = useNavigate();
-    const {changeLanguage} = useContext(LanguageContext);
+    const { changeLanguage } = useContext(LanguageContext);
 
     const buttonStyle = css({
         cursor: 'pointer',
@@ -60,7 +60,7 @@ export const NavigationBar = ({showNavigators = true}) => {
                         navigate(-1);
                     }}
                 >
-                    <Icon definition={faArrowLeft}/>
+                    <Icon definition={faArrowLeft} />
                 </button>}
             </Cell>
             <Cell>
@@ -95,7 +95,7 @@ export const NavigationBar = ({showNavigators = true}) => {
                         navigate('/');
                     }}
                 >
-                    <Icon definition={faHome}/>
+                    <Icon definition={faHome} />
                 </button>}
             </Cell>
         </div>

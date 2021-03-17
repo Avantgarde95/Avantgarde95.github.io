@@ -1,20 +1,20 @@
 import * as React from 'react';
-import {ReactNode, useContext, useEffect} from 'react';
-import {useNavigate} from 'react-router-dom';
-import {css} from '@emotion/css';
-import {faIdCard} from '@fortawesome/free-solid-svg-icons/faIdCard';
-import {faFileAlt} from '@fortawesome/free-solid-svg-icons/faFileAlt';
-import {faNewspaper} from '@fortawesome/free-solid-svg-icons/faNewspaper';
-import {faLaptopCode} from '@fortawesome/free-solid-svg-icons/faLaptopCode';
-import {faYoutube} from '@fortawesome/free-brands-svg-icons/faYoutube';
-import {faInstagram} from '@fortawesome/free-brands-svg-icons/faInstagram';
-import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
-import {faMusic} from '@fortawesome/free-solid-svg-icons/faMusic';
-import {faGithub} from '@fortawesome/free-brands-svg-icons/faGithub';
-import {faCode} from '@fortawesome/free-solid-svg-icons/faCode';
-import {Screen} from './Screen';
-import {Icon} from '../common/Icon';
-import {English, Korean, LanguageContext} from '../common/Language';
+import { ReactNode, useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { css } from '@emotion/css';
+import { faIdCard } from '@fortawesome/free-solid-svg-icons/faIdCard';
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons/faFileAlt';
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons/faLaptopCode';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
+import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
+import { faMusic } from '@fortawesome/free-solid-svg-icons/faMusic';
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
+import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
+import { Screen } from './Screen';
+import { Icon } from '../common/Icon';
+import { English, Korean, LanguageContext } from '../common/Language';
 
 const Button = (
     {
@@ -77,7 +77,7 @@ const Button = (
     }
 };
 
-const Name = ({children = null as ReactNode}) => (
+const Name = ({ children = null as ReactNode }) => (
     <div className={css({
         textAlign: 'center',
         margin: '1rem auto auto auto',
@@ -202,7 +202,7 @@ export const HomeScreen = (
         maxAppsPerLine = 5
     }
 ) => {
-    const {currentLanguage} = useContext(LanguageContext);
+    const { currentLanguage } = useContext(LanguageContext);
 
     useEffect(() => {
         document.title = (currentLanguage === 'Korean') ? '홈' : 'Home';
@@ -222,7 +222,7 @@ export const HomeScreen = (
                     {apps.map(app => (
                         <App width={appWidth} height={appHeight}>
                             <Button title={app.englishName} path={app.path} color={app.color}>
-                                <Icon definition={app.icon}/>
+                                <Icon definition={app.icon} />
                             </Button>
                             <Name>
                                 <Korean>{app.koreanName}</Korean>
@@ -231,7 +231,7 @@ export const HomeScreen = (
                         </App>
                     ))}
                     {Array.apply(null, Array(maxAppsPerLine)).map(() => (
-                        <Placeholder width={appWidth} height={appHeight}/>
+                        <Placeholder width={appWidth} height={appHeight} />
                     ))}
                 </div>
             </div>

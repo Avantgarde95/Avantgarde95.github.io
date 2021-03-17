@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {createContext, ReactNode, useContext, useEffect, useState} from 'react';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
 const monthNames = [
     'January',
@@ -61,7 +61,7 @@ const TimeContext = createContext({
     minute: 0
 } as Time);
 
-export const TimeProvider = ({children = null as ReactNode}) => {
+export const TimeProvider = ({ children = null as ReactNode }) => {
     const [time, setTime] = useState(getCurrentTime());
 
     useEffect(() => {
@@ -88,31 +88,31 @@ export const Hour = () => {
 };
 
 export const Minute = () => {
-    const {minute} = useContext(TimeContext);
+    const { minute } = useContext(TimeContext);
 
     return <>{`${fillZero(minute, 2)}`}</>;
 };
 
 export const Month = () => {
-    const {month} = useContext(TimeContext);
+    const { month } = useContext(TimeContext);
 
     return <>{monthNames[month]}</>;
 };
 
 export const MonthDay = () => {
-    const {monthDay} = useContext(TimeContext);
+    const { monthDay } = useContext(TimeContext);
 
     return <>{`${monthDay + 1}`}</>;
 };
 
 export const WeekDay = () => {
-    const {weekDay} = useContext(TimeContext);
+    const { weekDay } = useContext(TimeContext);
 
     return <>{dayNames[weekDay]}</>;
 };
 
 export const AMPM = () => {
-    const {hour} = useContext(TimeContext);
+    const { hour } = useContext(TimeContext);
 
     return <>{hour >= 12 ? 'PM' : 'AM'}</>
 };

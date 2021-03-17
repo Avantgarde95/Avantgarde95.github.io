@@ -27,7 +27,7 @@ async function request(url, parameterMap, headerMap) {
 
     const response = await fetch(url + '?' + query, {
         method: 'get',
-        headers: Object.assign({'Content-Type': 'application/json'}, headerMap)
+        headers: Object.assign({ 'Content-Type': 'application/json' }, headerMap)
     });
 
     return response.json();
@@ -78,8 +78,8 @@ async function updateProjects() {
         //'Authorization': `Basic ${toBase64(Secret.github.id + ':' + Secret.github.key)}`
     });
 
-    const projects = allProjects.filter(({name}) => !excludedProjects.includes(name))
-        .map(({name, description}) => ({
+    const projects = allProjects.filter(({ name }) => !excludedProjects.includes(name))
+        .map(({ name, description }) => ({
             name: getValue(alternativeProjectNames, name, name),
             description: description,
             repositoryURL: `https://github.com/Avantgarde95/${name}`,

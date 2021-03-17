@@ -1,10 +1,10 @@
 import * as React from 'react';
-import {Fragment, ReactNode, useContext, useState} from 'react';
-import {css} from '@emotion/css';
-import {English, Korean} from '../common/Language';
-import {App} from './App';
-import {ThemeContext, ThemeProvider} from './Theme';
-import {MediaContext} from '../common/Media';
+import { Fragment, ReactNode, useContext, useState } from 'react';
+import { css } from '@emotion/css';
+import { English, Korean } from '../common/Language';
+import { App } from './App';
+import { ThemeContext, ThemeProvider } from './Theme';
+import { MediaContext } from '../common/Media';
 
 interface Project {
     name: string;
@@ -16,7 +16,7 @@ interface Project {
 const Background = require('./image/Coffee');
 const Projects: Project[] = require('./Projects');
 
-const Link = ({url = '', children = null as ReactNode}) => {
+const Link = ({ url = '', children = null as ReactNode }) => {
     const theme = useContext(ThemeContext);
 
     return (
@@ -37,7 +37,7 @@ const Link = ({url = '', children = null as ReactNode}) => {
     );
 };
 
-const ProjectName = ({url = '', children = null as ReactNode}) => (
+const ProjectName = ({ url = '', children = null as ReactNode }) => (
     <a
         className={css({
             display: 'table',
@@ -57,7 +57,7 @@ const ProjectName = ({url = '', children = null as ReactNode}) => (
     </a>
 );
 
-const ProjectDescription = ({children = null as ReactNode}) => (
+const ProjectDescription = ({ children = null as ReactNode }) => (
     <div className={css({
         width: '100%'
     })}>
@@ -65,9 +65,9 @@ const ProjectDescription = ({children = null as ReactNode}) => (
     </div>
 );
 
-const ProjectGallery = ({projects = [] as Project[]}) => {
+const ProjectGallery = ({ projects = [] as Project[] }) => {
     const theme = useContext(ThemeContext);
-    const {wideScreenQuery} = useContext(MediaContext);
+    const { wideScreenQuery } = useContext(MediaContext);
     const [projectIndex, setProjectIndex] = useState(0);
     const project = projects[projectIndex];
 
@@ -124,7 +124,7 @@ const ProjectGallery = ({projects = [] as Project[]}) => {
                         whiteSpace: 'normal'
                     }
                 })}>
-                    {projects.map(({imageURL, name}, index) => (
+                    {projects.map(({ imageURL, name }, index) => (
                         <button
                             className={css([buttonStyle, {
                                 title: name,
@@ -206,7 +206,7 @@ const Content = () => {
                 display: 'table-row',
                 height: '100%'
             })}>
-                <ProjectGallery projects={Projects}/>
+                <ProjectGallery projects={Projects} />
             </div>
         </div>
     );
@@ -215,7 +215,7 @@ const Content = () => {
 export const ProjectApp = () => (
     <App koreanTitle={'프로젝트'} englishTitle={'Projects'}>
         <ThemeProvider lightColor={'#f9ab0d'} darkColor={'#d9890d'}>
-            <Content/>
+            <Content />
         </ThemeProvider>
     </App>
 );

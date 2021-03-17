@@ -1,11 +1,11 @@
 import * as React from 'react';
-import {useState} from 'react';
-import {css} from '@emotion/css';
-import {Screen} from './Screen';
-import {Hour, Minute, Month, MonthDay, TimeProvider, WeekDay} from './Time';
-import {English, Korean} from '../common/Language';
+import { useState } from 'react';
+import { css } from '@emotion/css';
+import { Screen } from './Screen';
+import { Hour, Minute, Month, MonthDay, TimeProvider, WeekDay } from './Time';
+import { English, Korean } from '../common/Language';
 
-export const LockScreen = ({onDisappear = {} as () => void}) => {
+export const LockScreen = ({ onDisappear = {} as () => void }) => {
     const [color, setColor] = useState('rgba(255, 255, 255, 1)');
     const longScreenQuery = '@media (min-height: 361px)';
 
@@ -35,13 +35,13 @@ export const LockScreen = ({onDisappear = {} as () => void}) => {
                         marginTop: '3rem',
                     }
                 })}>
-                    <TimeProvider><Hour/>:<Minute/></TimeProvider>
+                    <TimeProvider><Hour />:<Minute /></TimeProvider>
                 </div>
                 <div className={css({
                     textAlign: 'center',
                     width: '100%'
                 })}>
-                    <TimeProvider><WeekDay/>, <Month/> <MonthDay/></TimeProvider>
+                    <TimeProvider><WeekDay />, <Month /> <MonthDay /></TimeProvider>
                 </div>
                 <div className={css({
                     position: 'absolute',

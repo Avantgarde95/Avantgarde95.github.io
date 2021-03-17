@@ -1,17 +1,17 @@
 import * as React from 'react';
-import {ReactNode, useContext, useState} from 'react';
-import {css} from '@emotion/css';
-import {faArrowAltCircleLeft} from '@fortawesome/free-regular-svg-icons/faArrowAltCircleLeft';
-import {faArrowAltCircleRight} from '@fortawesome/free-regular-svg-icons/faArrowAltCircleRight';
-import {App} from './App';
-import {ThemeContext, ThemeProvider} from './Theme';
-import {English, Korean} from '../common/Language';
-import {Icon} from '../common/Icon';
+import { ReactNode, useContext, useState } from 'react';
+import { css } from '@emotion/css';
+import { faArrowAltCircleLeft } from '@fortawesome/free-regular-svg-icons/faArrowAltCircleLeft';
+import { faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons/faArrowAltCircleRight';
+import { App } from './App';
+import { ThemeContext, ThemeProvider } from './Theme';
+import { English, Korean } from '../common/Language';
+import { Icon } from '../common/Icon';
 
 const Background = require('./image/EighthNotes');
 const Musics = require('./Musics');
 
-const Link = ({url = '', children = null as ReactNode}) => {
+const Link = ({ url = '', children = null as ReactNode }) => {
     const theme = useContext(ThemeContext);
 
     return (
@@ -32,7 +32,7 @@ const Link = ({url = '', children = null as ReactNode}) => {
     );
 };
 
-const Title = ({children = null as ReactNode}) => (
+const Title = ({ children = null as ReactNode }) => (
     <div className={css({
         font: '1.5rem',
         fontWeight: 'bold',
@@ -42,7 +42,7 @@ const Title = ({children = null as ReactNode}) => (
     </div>
 );
 
-const Video = ({id = ''}) => {
+const Video = ({ id = '' }) => {
     const theme = useContext(ThemeContext);
 
     return (
@@ -68,7 +68,7 @@ const Video = ({id = ''}) => {
     );
 };
 
-const Gallery = ({ids = [] as string[]}) => {
+const Gallery = ({ ids = [] as string[] }) => {
     const theme = useContext(ThemeContext);
     const [index, setIndex] = useState(0);
     const disablePreviousButton = index <= 0;
@@ -79,7 +79,7 @@ const Gallery = ({ids = [] as string[]}) => {
             width: '100%',
             maxWidth: '640px'
         })}>
-            <Video id={ids[index]}/>
+            <Video id={ids[index]} />
             <div className={css({
                 height: '3rem',
                 marginTop: '1rem',
@@ -104,7 +104,7 @@ const Gallery = ({ids = [] as string[]}) => {
                         }
                     }}
                 >
-                    <Icon definition={faArrowAltCircleLeft}/>
+                    <Icon definition={faArrowAltCircleLeft} />
                 </button>
                 <button
                     className={css({
@@ -125,7 +125,7 @@ const Gallery = ({ids = [] as string[]}) => {
                         }
                     }}
                 >
-                    <Icon definition={faArrowAltCircleRight}/>
+                    <Icon definition={faArrowAltCircleRight} />
                 </button>
             </div>
         </div>
@@ -163,24 +163,24 @@ const Content = () => {
                 <English>
                     It takes some time to load the videos, so please wait a moment.
                     To see the all videos, visit <Link
-                    url={'https://www.youtube.com/user/Scottparkmusic'}>YouTube</Link>.
+                        url={'https://www.youtube.com/user/Scottparkmusic'}>YouTube</Link>.
                 </English>
             </div>
             <Title>
                 <Korean>기타 연주들</Korean>
                 <English>My guitar playings</English>
             </Title>
-            <Gallery ids={Musics.myGuitarPlayings}/>
+            <Gallery ids={Musics.myGuitarPlayings} />
             <Title>
                 <Korean>피아노 연주들</Korean>
                 <English>My piano playings</English>
             </Title>
-            <Gallery ids={Musics.myPianoPlayings}/>
+            <Gallery ids={Musics.myPianoPlayings} />
             <Title>
                 <Korean>작곡 / 편곡</Korean>
                 <English>Compositions / Arrangements</English>
             </Title>
-            <Gallery ids={Musics.myPieces}/>
+            <Gallery ids={Musics.myPieces} />
         </div>
     );
 };
@@ -188,7 +188,7 @@ const Content = () => {
 export const MusicApp = () => (
     <App koreanTitle={'음악'} englishTitle={'Musics'}>
         <ThemeProvider lightColor={'#77ff00'} darkColor={'#21d948'}>
-            <Content/>
+            <Content />
         </ThemeProvider>
     </App>
 );

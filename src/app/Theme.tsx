@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {createContext, ReactNode} from 'react';
-import {css} from '@emotion/css';
+import { createContext, ReactNode } from 'react';
+import { css } from '@emotion/css';
 
 export interface Theme {
     defaultColor: string;

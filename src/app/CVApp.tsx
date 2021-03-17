@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {css} from '@emotion/css';
-import {App} from './App';
+import { css } from '@emotion/css';
+import { App } from './App';
 
 export const CVApp = () => (
     <App koreanTitle={'이력'} englishTitle={'CV'}>
