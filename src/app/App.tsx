@@ -13,13 +13,12 @@ const openingAnimation = keyframes({
     }
 });
 
-export const App = (
-    {
-        koreanTitle = '',
-        englishTitle = '',
-        children = null as ReactNode
-    }
-) => {
+export const App = ({
+    koreanTitle = '',
+    englishTitle = '',
+    background = null as string | null,
+    children = null as ReactNode
+}) => {
     const { currentLanguage } = useContext(LanguageContext);
 
     useEffect(() => {
@@ -31,7 +30,7 @@ export const App = (
     });
 
     return (
-        <Screen>
+        <Screen background={background}>
             <div className={css({
                 width: '100%',
                 height: '100%',

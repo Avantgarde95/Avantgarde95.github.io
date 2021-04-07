@@ -141,8 +141,7 @@ const Content = () => {
             boxSizing: 'border-box',
             width: '100%',
             height: '100%',
-            padding: '1.5rem',
-            background: `#000000 url(${Background}) no-repeat center`
+            padding: '1.5rem'
         }])}>
             <div className={css({
                 fontWeight: 'bold',
@@ -186,7 +185,7 @@ const Content = () => {
 };
 
 export const MusicApp = () => (
-    <App koreanTitle={'음악'} englishTitle={'Musics'}>
+    <App koreanTitle={'음악'} englishTitle={'Musics'} background={Background}>
         <ThemeProvider lightColor={'#77ff00'} darkColor={'#21d948'}>
             <Content />
         </ThemeProvider>

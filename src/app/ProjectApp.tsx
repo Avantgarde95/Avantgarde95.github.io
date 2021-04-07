@@ -177,8 +177,7 @@ const Content = () => {
             boxSizing: 'border-box',
             width: '100%',
             height: '100%',
-            padding: '1.5rem',
-            background: `#000000 url(${Background}) no-repeat center`
+            padding: '1.5rem'
         }])}>
             <div className={css({
                 display: 'table-row',
@@ -213,7 +212,7 @@ const Content = () => {
 };
 
 export const ProjectApp = () => (
-    <App koreanTitle={'프로젝트'} englishTitle={'Projects'}>
+    <App koreanTitle={'프로젝트'} englishTitle={'Projects'} background={Background}>
         <ThemeProvider lightColor={'#f9ab0d'} darkColor={'#d9890d'}>
             <Content />
         </ThemeProvider>

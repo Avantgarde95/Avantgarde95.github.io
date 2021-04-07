@@ -1,15 +1,44 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
-import { css } from '@emotion/css';
+import { css, keyframes } from '@emotion/css';
 
-const Background = require('./image/Background');
+const DefaultBackground = require('./image/Background');
 
-export const Screen = ({ children = null as ReactNode }) => (
+const backgroundAnimation = keyframes({
+    '0%': {
+        opacity: 1
+    },
+    '50%': {
+        opacity: 0.2
+    },
+    '100%': {
+        opacity: 1
+    }
+});
+
+export const Screen = ({
+    background = null as string | null,
+    children = null as ReactNode
+}) => (
     <div className={css({
-        background: `#000000 url(${Background}) no-repeat center`,
+        position: 'relative',
+        zIndex: 0,
         overflowY: 'auto',
         width: '100%',
-        height: 'calc(100% - 4.5rem)'
+        height: 'calc(100% - 4.5rem)',
+        '&:after': {
+            content: '""',
+            zIndex: -1,
+            backgroundImage: `url(${(background === null) ? DefaultBackground : background})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            top: 0,
+            left: 0,
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            animation: `${backgroundAnimation} 5s infinite`
+        }
     })}>
         {children}
     </div>
