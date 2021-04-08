@@ -5,13 +5,14 @@ import { English, Korean } from '../common/Language';
 import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
 import { MediaContext } from '../common/Media';
+import { TimeProvider } from '../device/Time';
 
 interface Project {
     name: string;
     description: string;
     repositoryURL: string;
     imageURL: string;
-    languages: { [language: string]: number }
+    languageMap: { [language: string]: number }
 }
 
 const Background = require('./image/Coffee');
@@ -65,6 +66,40 @@ const ProjectDescription = ({ children = null as ReactNode }) => (
         {children}
     </div>
 );
+
+const ProjectLanguages = ({ languageMap = {} as { [language: string]: number } }) => {
+    const languages = Object.getOwnPropertyNames(languageMap);
+    let totalBytes = 0;
+    const languagePercentages: string[] = [];
+
+    languages.forEach(language => {
+        totalBytes += languageMap[language];
+    });
+
+    for (let i = 0; (i < 5) && (i < languages.length); i++) {
+        const percentage = languageMap[languages[i]] / totalBytes * 100.0;
+        languagePercentages.push(`${languages[i]}: ${Math.round(percentage * 100.0) / 100.0}%`);
+    }
+
+    if (languages.length > 5) {
+        let othersBytes = 0;
+
+        for (let i = 5; i < languages.length; i++) {
+            othersBytes += languageMap[languages[i]];
+        }
+
+        const percentage = othersBytes / totalBytes * 100.0;
+        languagePercentages.push(`Others: ${Math.round(percentage * 100.0) / 100.0}%`);
+    }
+
+    return (
+        <div className={css({
+            width: '100%'
+        })}>
+            ({languagePercentages.join(', ')})
+        </div>
+    );
+};
 
 const ProjectGallery = ({ projects = [] as Project[] }) => {
     const theme = useContext(ThemeContext);
@@ -163,6 +198,7 @@ const ProjectGallery = ({ projects = [] as Project[] }) => {
                 })}>
                     <ProjectName url={project.repositoryURL}>{project.name}</ProjectName>
                     <ProjectDescription>{project.description}</ProjectDescription>
+                    <ProjectLanguages languageMap={project.languageMap} />
                 </div>
             </div>
         </Fragment>

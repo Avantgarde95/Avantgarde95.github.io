@@ -77,7 +77,7 @@ async function updateProjects() {
     const allProjects = await request(`https://api.github.com/users/Avantgarde95/repos`, {
         per_page: 100
     }, {
-        //'Authorization': `Basic ${toBase64(Secret.github.id + ':' + Secret.github.key)}`
+        'Authorization': `Basic ${toBase64(Secret.github.id + ':' + Secret.github.key)}`
     });
 
     const projects = await Promise.all(
@@ -85,14 +85,17 @@ async function updateProjects() {
             .filter(({ name }) => !excludedProjects.includes(name))
             .map(async ({ name, description }) => {
                 const imagePath = getValue(alternativeProjectImagePaths, name, 'Screenshot.png');
-                const languages = await request(`https://api.github.com/repos/Avantgarde95/${name}/languages`, {}, {});
+
+                const languageMap = await request(`https://api.github.com/repos/Avantgarde95/${name}/languages`, {}, {
+                    'Authorization': `Basic ${toBase64(Secret.github.id + ':' + Secret.github.key)}`
+                });
 
                 return {
                     name: getValue(alternativeProjectNames, name, name),
                     description: description,
                     repositoryURL: `https://github.com/Avantgarde95/${name}`,
                     imageURL: `https://raw.githubusercontent.com/Avantgarde95/${name}/master/${imagePath}`,
-                    languages: languages
+                    languageMap: languageMap
                 };
             })
     );

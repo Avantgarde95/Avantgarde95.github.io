@@ -4,7 +4,7 @@
         "description": "Simulation of Archimedes' polygonal algorithm",
         "repositoryURL": "https://github.com/Avantgarde95/ArchiPi",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/ArchiPi/master/Screenshot7.png",
-        "languages": {
+        "languageMap": {
             "Python": 16942
         }
     },
@@ -13,7 +13,7 @@
         "description": "Archimedes' method for approximating π. Created for celebrating π day! (2019.03.14)",
         "repositoryURL": "https://github.com/Avantgarde95/archipi-web",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/archipi-web/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "JavaScript": 6653,
             "HTML": 4720,
             "CSS": 1551
@@ -24,7 +24,7 @@
         "description": "Rain of the characters",
         "repositoryURL": "https://github.com/Avantgarde95/asciirain",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciirain/master/image/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "JavaScript": 2907,
             "CSS": 677,
             "HTML": 627
@@ -35,7 +35,7 @@
         "description": "Snow of the characters",
         "repositoryURL": "https://github.com/Avantgarde95/asciisnow",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciisnow/master/image/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "JavaScript": 4841,
             "CSS": 677,
             "HTML": 627
@@ -46,7 +46,7 @@
         "description": "My website!",
         "repositoryURL": "https://github.com/Avantgarde95/Avantgarde95.github.io",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Avantgarde95.github.io/master/image/AboutApp.png",
-        "languages": {
+        "languageMap": {
             "TypeScript": 48246,
             "JavaScript": 6047,
             "HTML": 5391
@@ -57,7 +57,7 @@
         "description": "My blog!",
         "repositoryURL": "https://github.com/Avantgarde95/blog",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/blog/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "TypeScript": 31955,
             "JavaScript": 7205,
             "HTML": 5748,
@@ -69,7 +69,7 @@
         "description": "Code for 'Collaborative 3D modeling system based on blockchain'",
         "repositoryURL": "https://github.com/Avantgarde95/C3DMB",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/C3DMB/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "Kotlin": 49724,
             "Python": 5303,
             "Batchfile": 387
@@ -80,7 +80,7 @@
         "description": "KAIST CS580 Computer graphics projects",
         "repositoryURL": "https://github.com/Avantgarde95/CGLab",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/CGLab/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "C": 4898555,
             "C++": 2900395,
             "HTML": 2366034,
@@ -104,7 +104,7 @@
         "description": "DailyBread viewer in python",
         "repositoryURL": "https://github.com/Avantgarde95/DailyBread-old",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/DailyBread-old/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "Python": 67405
         }
     },
@@ -113,7 +113,7 @@
         "description": "Implementation of Gaussian elimination in Pthread / OpenMP",
         "repositoryURL": "https://github.com/Avantgarde95/Gauss",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Gauss/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "C": 11099,
             "C++": 2132,
             "Makefile": 1219,
@@ -125,7 +125,7 @@
         "description": "악기 구매 도우미",
         "repositoryURL": "https://github.com/Avantgarde95/guitarsayo",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/guitarsayo/master/Screenshot.jpg",
-        "languages": {
+        "languageMap": {
             "JavaScript": 6941,
             "HTML": 1349,
             "CSS": 995,
@@ -137,7 +137,7 @@
         "description": "Simple clock written in python",
         "repositoryURL": "https://github.com/Avantgarde95/HandyClock",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HandyClock/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "Python": 17499
         }
     },
@@ -146,7 +146,7 @@
         "description": null,
         "repositoryURL": "https://github.com/Avantgarde95/HoloLight",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HoloLight/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "C#": 3273422,
             "ShaderLab": 136783,
             "HLSL": 38282
@@ -157,7 +157,7 @@
         "description": "Simple implementation of HQ9+ in python",
         "repositoryURL": "https://github.com/Avantgarde95/HQ9",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HQ9/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "Python": 3343
         }
     },
@@ -166,7 +166,7 @@
         "description": "Draw an image on the terminal.",
         "repositoryURL": "https://github.com/Avantgarde95/Image2Term",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Image2Term/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "Python": 1795
         }
     },
@@ -175,7 +175,7 @@
         "description": "KAIST-CS482 (2016), Interactive Computer Graphics, Team 4",
         "repositoryURL": "https://github.com/Avantgarde95/kaist_cs482_2016_team4",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/kaist_cs482_2016_team4/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "Java": 1694761,
             "GLSL": 50135
         }
@@ -185,7 +185,7 @@
         "description": "Simple simulation of (multi-color) Langton's ant (in python)",
         "repositoryURL": "https://github.com/Avantgarde95/LangtonAnt",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LangtonAnt/master/ScreenshotSimple.png",
-        "languages": {
+        "languageMap": {
             "Python": 47808,
             "Makefile": 514
         }
@@ -195,7 +195,7 @@
         "description": "KAIST CS374 Team Project",
         "repositoryURL": "https://github.com/Avantgarde95/LiKo",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LiKo/master/TestExample.png",
-        "languages": {
+        "languageMap": {
             "JavaScript": 84587,
             "HTML": 19968,
             "CSS": 18008
@@ -206,7 +206,7 @@
         "description": null,
         "repositoryURL": "https://github.com/Avantgarde95/Lucky",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Lucky/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "Python": 5458
         }
     },
@@ -215,7 +215,7 @@
         "description": "Simple Embree ray tracing demo",
         "repositoryURL": "https://github.com/Avantgarde95/LucyViewer",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LucyViewer/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "HTML": 14820450,
             "C++": 2607223,
             "JavaScript": 285639,
@@ -231,9 +231,10 @@
         "description": "Mandelbrot generator, made for fun",
         "repositoryURL": "https://github.com/Avantgarde95/Mandelbrot",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Mandelbrot/master/Screenshot.png",
-        "languages": {
-            "message": "API rate limit exceeded for 220.94.163.22. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-            "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+        "languageMap": {
+            "C": 5578,
+            "Python": 3849,
+            "Makefile": 132
         }
     },
     {
@@ -241,7 +242,7 @@
         "description": "Simple Morse code simulator in python",
         "repositoryURL": "https://github.com/Avantgarde95/MorseSimulator",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/MorseSimulator/master/Screenshot.png",
-        "languages": {
+        "languageMap": {
             "Python": 20585
         }
     },
@@ -250,9 +251,9 @@
         "description": "Draw a picture by using natural language",
         "repositoryURL": "https://github.com/Avantgarde95/PaintTalk",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PaintTalk/master/extra/TreeDemo.png",
-        "languages": {
-            "message": "API rate limit exceeded for 220.94.163.22. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-            "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+        "languageMap": {
+            "Kotlin": 58971,
+            "Java": 12028
         }
     },
     {
@@ -260,9 +261,8 @@
         "description": "Simple implementation of path-finder which uses genetic algorithm.",
         "repositoryURL": "https://github.com/Avantgarde95/PathFinder",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PathFinder/master/Screenshot.png",
-        "languages": {
-            "message": "API rate limit exceeded for 220.94.163.22. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-            "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+        "languageMap": {
+            "Python": 28586
         }
     },
     {
@@ -270,9 +270,10 @@
         "description": "Malbolge interpreter in python",
         "repositoryURL": "https://github.com/Avantgarde95/pyMalbolge",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/pyMalbolge/master/Screenshot.png",
-        "languages": {
-            "message": "API rate limit exceeded for 220.94.163.22. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-            "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+        "languageMap": {
+            "C": 4739,
+            "Python": 2672,
+            "Makefile": 196
         }
     },
     {
@@ -280,9 +281,8 @@
         "description": "A simple programming language I made for studying PL.",
         "repositoryURL": "https://github.com/Avantgarde95/PySIC",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PySIC/master/Screenshot.png",
-        "languages": {
-            "message": "API rate limit exceeded for 220.94.163.22. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-            "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+        "languageMap": {
+            "Python": 18618
         }
     },
     {
@@ -290,9 +290,9 @@
         "description": "a SIMPLE LANGuage - Simple toy language I made for studying",
         "repositoryURL": "https://github.com/Avantgarde95/SimpleLang",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/SimpleLang/master/Screenshot.png",
-        "languages": {
-            "message": "API rate limit exceeded for 220.94.163.22. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-            "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+        "languageMap": {
+            "Python": 220159,
+            "Shell": 394
         }
     },
     {
@@ -300,9 +300,8 @@
         "description": "TeX-to-Hwp converter written in Java (Proof-of-concept GUI app)",
         "repositoryURL": "https://github.com/Avantgarde95/TeX2Hwp",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/TeX2Hwp/master/Screenshot.png",
-        "languages": {
-            "message": "API rate limit exceeded for 220.94.163.22. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-            "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+        "languageMap": {
+            "Java": 12156
         }
     },
     {
@@ -310,9 +309,10 @@
         "description": "KAIST CS408 Computer science project",
         "repositoryURL": "https://github.com/Avantgarde95/WhereToGoNow",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/WhereToGoNow/master/Screenshot.png",
-        "languages": {
-            "message": "API rate limit exceeded for 220.94.163.22. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-            "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+        "languageMap": {
+            "Python": 35783,
+            "JavaScript": 24803,
+            "HTML": 10361
         }
     },
     {
@@ -320,9 +320,9 @@
         "description": "Write Whitespace code by using human-readable code.",
         "repositoryURL": "https://github.com/Avantgarde95/Whitespace",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Whitespace/master/Screenshot.png",
-        "languages": {
-            "message": "API rate limit exceeded for 220.94.163.22. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-            "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+        "languageMap": {
+            "Python": 5303,
+            "Erlang": 2192
         }
     }
 ]
