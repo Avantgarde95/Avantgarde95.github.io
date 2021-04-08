@@ -53,7 +53,9 @@ async function updateProjects() {
         'SchoolLaTeX',
         'slre',
         'webpack-es6-sass-setup',
-        'Windows'
+        'Windows',
+        'SetTerm',
+        'ExtractMailFiles'
     ];
 
     const alternativeProjectNames = {
@@ -78,13 +80,22 @@ async function updateProjects() {
         //'Authorization': `Basic ${toBase64(Secret.github.id + ':' + Secret.github.key)}`
     });
 
-    const projects = allProjects.filter(({ name }) => !excludedProjects.includes(name))
-        .map(({ name, description }) => ({
-            name: getValue(alternativeProjectNames, name, name),
-            description: description,
-            repositoryURL: `https://github.com/Avantgarde95/${name}`,
-            imageURL: `https://raw.githubusercontent.com/Avantgarde95/${name}/master/${getValue(alternativeProjectImagePaths, name, 'Screenshot.png')}`
-        }));
+    const projects = await Promise.all(
+        allProjects
+            .filter(({ name }) => !excludedProjects.includes(name))
+            .map(async ({ name, description }) => {
+                const imagePath = getValue(alternativeProjectImagePaths, name, 'Screenshot.png');
+                const languages = await request(`https://api.github.com/repos/Avantgarde95/${name}/languages`, {}, {});
+
+                return {
+                    name: getValue(alternativeProjectNames, name, name),
+                    description: description,
+                    repositoryURL: `https://github.com/Avantgarde95/${name}`,
+                    imageURL: `https://raw.githubusercontent.com/Avantgarde95/${name}/master/${imagePath}`,
+                    languages: languages
+                };
+            })
+    );
 
     fs.writeFileSync('./src/app/Projects.json', JSON.stringify(projects, null, 4));
     console.log(`Got ${projects.length} projects from GitHub!`);

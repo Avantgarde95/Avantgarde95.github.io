@@ -11,6 +11,7 @@ interface Project {
     description: string;
     repositoryURL: string;
     imageURL: string;
+    languages: { [language: string]: number }
 }
 
 const Background = require('./image/Coffee');
