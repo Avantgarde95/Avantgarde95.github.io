@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ReactNode, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { css } from '@emotion/css';
+import { css, keyframes } from '@emotion/css';
 import { faIdCard } from '@fortawesome/free-solid-svg-icons/faIdCard';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons/faFileAlt';
 import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper';
@@ -87,6 +87,15 @@ const Name = ({ children = null as ReactNode }) => (
     </div>
 );
 
+const appAnimation = keyframes({
+    '0%': {
+        transform: 'scale(0.5)'
+    },
+    '100%': {
+        transform: 'scale(1.0)'
+    }
+});
+
 const App = (
     {
         width = 0,
@@ -100,7 +109,8 @@ const App = (
         width: `${width}rem`,
         height: `${height}rem`,
         paddingTop: '1rem',
-        webkitTapHighlightColor: 'rgba(255, 255, 255, 0)'
+        webkitTapHighlightColor: 'rgba(255, 255, 255, 0)',
+        animation: `${appAnimation} 0.3s`
     })}>
         {children}
     </div>
