@@ -34,8 +34,7 @@ const Link = ({ url = '', children = null as ReactNode }) => {
 
 const Title = ({ children = null as ReactNode }) => (
     <div className={css({
-        font: '1.5rem',
-        fontWeight: 'bold',
+        fontSize: '1.2rem',
         marginBottom: '1rem'
     })}>
         {children}
@@ -166,18 +165,24 @@ const Content = () => {
                 </English>
             </div>
             <Title>
-                <Korean>기타 연주들</Korean>
-                <English>My guitar playings</English>
+                <Link url={'https://www.youtube.com/watch?v=IcUeiHJpYms&list=PLosnnDHctFV1rm0K7jrSsQeCDBj04Eb70'}>
+                    <Korean>기타 연주들</Korean>
+                    <English>My guitar playings</English>
+                </Link>
             </Title>
             <Gallery ids={Musics.myGuitarPlayings} />
             <Title>
-                <Korean>피아노 연주들</Korean>
-                <English>My piano playings</English>
+                <Link url={'https://www.youtube.com/watch?v=UkFKk86VyOU&list=PLosnnDHctFV1_0yMUtQH830uaOg87c5J0'}>
+                    <Korean>피아노 연주들</Korean>
+                    <English>My piano playings</English>
+                </Link>
             </Title>
             <Gallery ids={Musics.myPianoPlayings} />
             <Title>
-                <Korean>작곡 / 편곡</Korean>
-                <English>Compositions / Arrangements</English>
+                <Link url={'https://www.youtube.com/watch?v=dLUGYHSSOGQ&list=PLosnnDHctFV1iZeOtf4AzJMc2K6RTMCC1'}>
+                    <Korean>작곡 / 편곡</Korean>
+                    <English>Compositions / Arrangements</English>
+                </Link>
             </Title>
             <Gallery ids={Musics.myPieces} />
         </div>
