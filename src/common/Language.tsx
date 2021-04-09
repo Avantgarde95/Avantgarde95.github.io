@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { createContext, ReactNode, useContext, useState } from 'react';
 
-export type Language = 'Korean' | 'English';
+const allLanguages = ['Korean', 'English'] as const;
+
+export type Language = typeof allLanguages[number];
 
 export const LanguageContext = createContext({} as {
     currentLanguage: Language,
@@ -9,13 +11,20 @@ export const LanguageContext = createContext({} as {
 });
 
 export const LanguageProvider = ({ children = null as ReactNode }) => {
-    const [language, setLanguage] = useState<Language>('English');
+    const storedLanguage = localStorage.getItem('language');
+
+    const defaultLanguage = ((storedLanguage === null) || (allLanguages as any).indexOf(storedLanguage) < 0)
+        ? 'English'
+        : storedLanguage;
+
+    const [language, setLanguage] = useState<Language>(defaultLanguage as Language);
 
     return (
         <LanguageContext.Provider value={{
             currentLanguage: language,
             changeLanguage: (value: Language) => {
                 setLanguage(value);
+                localStorage.setItem('language', value);
             }
         }}>
             {children}
