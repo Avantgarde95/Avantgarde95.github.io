@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { Fragment, ReactNode, useContext, useState } from 'react';
+import { ReactNode, useContext, useState } from 'react';
 import { css } from '@emotion/css';
 import { English, Korean } from '../common/Language';
 import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
 import { MediaContext } from '../common/Media';
-import { TimeProvider } from '../device/Time';
 
 interface Project {
     name: string;
@@ -132,7 +131,7 @@ const ProjectGallery = ({ projects = [] as Project[] }) => {
     }]);
 
     return (
-        <Fragment>
+        <>
             <div className={css({
                 display: 'inline-block',
                 position: 'relative',
@@ -201,7 +200,7 @@ const ProjectGallery = ({ projects = [] as Project[] }) => {
                     <ProjectLanguages languageMap={project.languageMap} />
                 </div>
             </div>
-        </Fragment>
+        </>
     );
 };
 

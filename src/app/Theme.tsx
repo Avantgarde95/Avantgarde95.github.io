@@ -13,14 +13,12 @@ export interface Theme {
 
 export const ThemeContext = createContext({} as Theme);
 
-export const ThemeProvider = (
-    {
-        defaultColor = '#ffffff',
-        lightColor = '#ffffff',
-        darkColor = '#ffffff',
-        children = null as ReactNode
-    }
-) => {
+export const ThemeProvider = ({
+    defaultColor = '#ffffff',
+    lightColor = '#ffffff',
+    darkColor = '#ffffff',
+    children = null as ReactNode
+}) => {
     const neon = `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`;
 
     return (
