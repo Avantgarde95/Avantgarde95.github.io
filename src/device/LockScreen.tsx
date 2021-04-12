@@ -1,29 +1,44 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { css } from '@emotion/css';
+import { css, cx, keyframes } from '@emotion/css';
 import { Screen } from './Screen';
 import { Hour, Minute, Month, MonthDay, TimeProvider, WeekDay } from './Time';
 import { English, Korean } from '../common/Language';
 
+const UnlockAnimation = keyframes({
+    '0%': {
+        color: 'rgba(255, 255, 255, 1)',
+        transform: 'scale(1.0)'
+    },
+    '100%': {
+        color: 'rgba(255, 255, 255, 0)',
+        transform: 'scale(0.5)'
+    }
+});
+
 export const LockScreen = ({ onDisappear = {} as () => void }) => {
-    const [color, setColor] = useState('rgba(255, 255, 255, 1)');
+    const [isLocked, setIsLocked] = useState(true);
     const longScreenQuery = '@media (min-height: 361px)';
 
     return (
         <Screen>
             <div
-                className={css({
-                    cursor: 'pointer',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    width: '100%',
-                    height: '100%',
-                    color: color,
-                    transition: 'color 0.25s'
-                })}
+                className={cx(
+                    css({
+                        cursor: 'pointer',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        width: '100%',
+                        height: '100%',
+                        color: '#ffffff'
+                    }),
+                    !isLocked && css({
+                        animation: `${UnlockAnimation} 0.5s 1`
+                    })
+                )}
                 onClick={() => {
-                    setColor('rgba(255, 255, 255, 0)');
-                    setTimeout(onDisappear, 250);
+                    setIsLocked(false);
+                    setTimeout(onDisappear, 500);
                 }}
             >
                 <div className={css({
