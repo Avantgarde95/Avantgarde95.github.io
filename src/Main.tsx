@@ -73,7 +73,8 @@ const SafeRoutes = (
 )));
 
 const Device = () => {
-    const [isLocked, setIsLocked] = useState(true);
+    const storedIsLocked = sessionStorage.getItem('isLocked');
+    const [isLocked, setIsLocked] = useState(storedIsLocked !== 'false');
 
     return (
         <BrowserRouter>
@@ -90,7 +91,9 @@ const Device = () => {
                         <StatusBar showTime={!isLocked} />
                         {isLocked && (
                             <LockScreen onDisappear={() => {
-                                setIsLocked(false);
+                                const value = false;
+                                setIsLocked(value);
+                                sessionStorage.setItem('isLocked', `${value}`);
                             }} />
                         )}
                         {!isLocked && <SafeRoutes routes={[
