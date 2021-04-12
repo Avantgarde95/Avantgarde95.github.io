@@ -5,6 +5,7 @@ import { English, Korean } from '../common/Language';
 import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
 import { MediaContext } from '../common/Media';
+import { Link } from './Common';
 
 interface Project {
     name: string;
@@ -17,45 +18,17 @@ interface Project {
 const Background = require('./image/Coffee');
 const Projects: Project[] = require('./Projects');
 
-const Link = ({ url = '', children = null as ReactNode }) => {
-    const theme = useContext(ThemeContext);
-
-    return (
-        <a
-            className={css({
-                wordBreak: 'break-all',
-                color: theme.lightColor,
-                '&:hover, &:active': {
-                    color: theme.darkColor
-                }
-            })}
-            target={'_blank'}
-            rel={'noopener noreferrer'}
-            href={url}
-        >
-            {children}
-        </a>
-    );
-};
-
 const ProjectName = ({ url = '', children = null as ReactNode }) => (
-    <a
+    <Link
         className={css({
             display: 'table',
-            wordBreak: 'break-all',
             marginBottom: '0.5rem',
-            fontSize: '1.5rem',
-            color: '#f9ab0d',
-            '&:hover, &:active': {
-                color: '#d9890d'
-            }
+            fontSize: '1.5rem'
         })}
-        target={'_blank'}
-        rel={'noopener noreferrer'}
-        href={url}
+        url={url}
     >
         {children}
-    </a>
+    </Link>
 );
 
 const ProjectDescription = ({ children = null as ReactNode }) => (

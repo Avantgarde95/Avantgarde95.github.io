@@ -7,38 +7,22 @@ import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
 import { English, Korean } from '../common/Language';
 import { Icon } from '../common/Icon';
+import { Link } from './Common';
 
 const Background = require('./image/EighthNotes');
 const Musics = require('./Musics');
 
-const Link = ({ url = '', children = null as ReactNode }) => {
-    const theme = useContext(ThemeContext);
-
-    return (
-        <a
-            className={css({
-                wordBreak: 'break-all',
-                color: theme.lightColor,
-                '&:hover, &:active': {
-                    color: theme.darkColor
-                }
-            })}
-            target={'_blank'}
-            rel={'noopener noreferrer'}
-            href={url}
-        >
-            {children}
-        </a>
-    );
-};
-
-const Title = ({ children = null as ReactNode }) => (
-    <div className={css({
-        fontSize: '1.2rem',
-        marginBottom: '1rem'
-    })}>
+const Title = ({ url = '', children = null as ReactNode }) => (
+    <Link
+        className={css({
+            display: 'inline-block',
+            fontSize: '1.2rem',
+            marginBottom: '1rem'
+        })}
+        url={url}
+    >
         {children}
-    </div>
+    </Link>
 );
 
 const Video = ({ id = '' }) => {
@@ -164,25 +148,19 @@ const Content = () => {
                         url={'https://www.youtube.com/user/Scottparkmusic'}>YouTube</Link>.
                 </English>
             </div>
-            <Title>
-                <Link url={'https://www.youtube.com/watch?v=IcUeiHJpYms&list=PLosnnDHctFV1rm0K7jrSsQeCDBj04Eb70'}>
-                    <Korean>기타 연주들</Korean>
-                    <English>My guitar playings</English>
-                </Link>
+            <Title url={'https://www.youtube.com/watch?v=IcUeiHJpYms&list=PLosnnDHctFV1rm0K7jrSsQeCDBj04Eb70'}>
+                <Korean>기타 연주들</Korean>
+                <English>My guitar playings</English>
             </Title>
             <Gallery ids={Musics.myGuitarPlayings} />
-            <Title>
-                <Link url={'https://www.youtube.com/watch?v=UkFKk86VyOU&list=PLosnnDHctFV1_0yMUtQH830uaOg87c5J0'}>
-                    <Korean>피아노 연주들</Korean>
-                    <English>My piano playings</English>
-                </Link>
+            <Title url={'https://www.youtube.com/watch?v=UkFKk86VyOU&list=PLosnnDHctFV1_0yMUtQH830uaOg87c5J0'}>
+                <Korean>피아노 연주들</Korean>
+                <English>My piano playings</English>
             </Title>
             <Gallery ids={Musics.myPianoPlayings} />
-            <Title>
-                <Link url={'https://www.youtube.com/watch?v=dLUGYHSSOGQ&list=PLosnnDHctFV1iZeOtf4AzJMc2K6RTMCC1'}>
-                    <Korean>작곡 / 편곡</Korean>
-                    <English>Compositions / Arrangements</English>
-                </Link>
+            <Title url={'https://www.youtube.com/watch?v=dLUGYHSSOGQ&list=PLosnnDHctFV1iZeOtf4AzJMc2K6RTMCC1'}>
+                <Korean>작곡 / 편곡</Korean>
+                <English>Compositions / Arrangements</English>
             </Title>
             <Gallery ids={Musics.myPieces} />
         </div>

@@ -8,6 +8,7 @@ import { Icon } from '../common/Icon';
 import { English, Korean } from '../common/Language';
 import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
+import { Link } from './Common';
 
 const Background = require('./image/Guitar');
 
@@ -50,27 +51,6 @@ const Item = ({ children = null as ReactNode }) => (
         </div>
     </li>
 );
-
-const Link = ({ url = '', children = null as ReactNode }) => {
-    const theme = useContext(ThemeContext);
-
-    return (
-        <a
-            className={css({
-                wordBreak: 'break-all',
-                color: theme.lightColor,
-                '&:hover, &:active': {
-                    color: theme.darkColor
-                }
-            })}
-            target={'_blank'}
-            rel={'noopener noreferrer'}
-            href={url}
-        >
-            {children}
-        </a>
-    );
-};
 
 const Image = ({ src = '', alt = '' }) => {
     const theme = useContext(ThemeContext);
