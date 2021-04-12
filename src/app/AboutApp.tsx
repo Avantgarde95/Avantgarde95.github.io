@@ -8,7 +8,7 @@ import { Icon } from '../common/Icon';
 import { English, Korean } from '../common/Language';
 import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
-import { Link } from './Common';
+import { Link, ImagePreview } from './Common';
 
 const Background = require('./image/Guitar');
 
@@ -52,36 +52,20 @@ const Item = ({ children = null as ReactNode }) => (
     </li>
 );
 
-const Image = ({ src = '', alt = '' }) => {
-    const theme = useContext(ThemeContext);
-    const ref = createRef<HTMLImageElement>();
-
-    useEffect(() => {
-        const element = ref.current;
-
-        if (element !== null) {
-            new Luminous(element, { sourceAttribute: 'src', caption: alt });
-        }
-    });
-
-    return (
-        <img
-            className={css([theme.boxStyle, theme.highlightStyle, {
-                cursor: 'pointer',
-                width: '12rem',
-                height: '12rem',
-                marginRight: '0.7rem',
-                '&:last-child': {
-                    marginRight: 0
-                }
-            }])}
-            ref={ref}
-            src={src}
-            alt={alt}
-            title={alt}
-        />
-    );
-};
+const GalleryItem = ({ src = '', alt = '' }) => (
+    <ImagePreview
+        className={css({
+            width: '12rem',
+            height: '12rem',
+            marginRight: '0.7rem',
+            '&:last-child': {
+                marginRight: 0
+            }
+        })}
+        src={src}
+        alt={alt}
+    />
+);
 
 const Gallery = ({ images = [{ src: '', alt: '' }] }) => (
     <div className={css({
@@ -92,7 +76,7 @@ const Gallery = ({ images = [{ src: '', alt: '' }] }) => (
         marginRight: '1px',
         marginBottom: '1.5rem'
     })}>
-        {images.map(({ src, alt }) => <Image src={src} alt={alt} />)}
+        {images.map(({ src, alt }) => <GalleryItem src={src} alt={alt} />)}
     </div>
 );
 
