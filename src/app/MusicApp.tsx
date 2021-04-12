@@ -7,7 +7,7 @@ import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
 import { English, Korean } from '../common/Language';
 import { Icon } from '../common/Icon';
-import { Link } from './Common';
+import { Link, YouTube } from './Common';
 import * as Musics from './Musics.json';
 import * as Background from './image/EighthNotes.png';
 
@@ -24,32 +24,6 @@ const Title = ({ url = '', children = null as ReactNode }) => (
     </Link>
 );
 
-const Video = ({ id = '' }) => {
-    const theme = useContext(ThemeContext);
-
-    return (
-        <div className={css({
-            position: 'relative',
-            height: 0,
-            paddingBottom: '56.25%'
-        })}>
-            <iframe
-                className={css([theme.boxStyle, theme.highlightStyle, {
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%'
-                }])}
-                key={id} // Force React to recreate iframe to prevent it from messing the browser history!
-                frameBorder={0}
-                allowFullScreen={true}
-                src={`https://www.youtube.com/embed/${id}`}
-            />
-        </div>
-    );
-};
-
 const Gallery = ({ ids = [] as string[] }) => {
     const theme = useContext(ThemeContext);
     const [index, setIndex] = useState(0);
@@ -61,7 +35,7 @@ const Gallery = ({ ids = [] as string[] }) => {
             width: '100%',
             maxWidth: '640px'
         })}>
-            <Video id={ids[index]} />
+            <YouTube id={ids[index]} />
             <div className={css({
                 height: '3rem',
                 marginTop: '1rem',
