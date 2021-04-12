@@ -6,6 +6,8 @@ import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
 import { MediaContext } from '../common/Media';
 import { Link } from './Common';
+import * as Projects from './Projects.json';
+import * as Background from './image/Coffee.png';
 
 interface Project {
     name: string;
@@ -14,9 +16,6 @@ interface Project {
     imageURL: string;
     languageMap: { [language: string]: number }
 }
-
-const Background = require('./image/Coffee');
-const Projects: Project[] = require('./Projects');
 
 const ProjectName = ({ url = '', children = null as ReactNode }) => (
     <Link

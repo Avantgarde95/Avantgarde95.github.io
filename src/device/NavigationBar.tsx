@@ -6,6 +6,8 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { Icon } from '../common/Icon';
 import { English, Korean, LanguageContext } from '../common/Language';
+import * as InKorean from './Image/InKorean.svg';
+import * as InEnglish from './Image/InEnglish.svg';
 
 const Cell = ({ children = null as ReactNode }) => (
     <span className={css({
@@ -16,9 +18,6 @@ const Cell = ({ children = null as ReactNode }) => (
         {children}
     </span>
 );
-
-const InKorean = require('./image/InKorean');
-const InEnglish = require('./image/InEnglish');
 
 export const NavigationBar = ({ showNavigators = true }) => {
     const navigate = useNavigate();

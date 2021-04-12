@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
 import { css, keyframes } from '@emotion/css';
-
-const DefaultBackground = require('./image/Background');
+import * as DefaultBackground from './image/Background.png';
 
 const backgroundAnimation = keyframes({
     '0%': {

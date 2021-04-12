@@ -1,16 +1,14 @@
 import * as React from 'react';
-import { createRef, ReactNode, useContext, useEffect } from 'react';
+import { ReactNode, useContext } from 'react';
 import { css } from '@emotion/css';
 import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
-import { Luminous } from 'luminous-lightbox';
 import 'luminous-lightbox/dist/luminous-basic.min.css';
 import { Icon } from '../common/Icon';
 import { English, Korean } from '../common/Language';
 import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
 import { Link, ImagePreview } from './Common';
-
-const Background = require('./image/Guitar');
+import * as Background from './image/Guitar.png';
 
 const Title = ({ children = null as ReactNode }) => (
     <div className={css({
@@ -81,15 +79,15 @@ const Gallery = ({ images = [{ src: '', alt: '' }] }) => (
 );
 
 const computerImages = [
-    { src: require('./image/OpenGL'), alt: 'Real-time rendering (Rasterization)' },
-    { src: require('./image/RayTracing'), alt: 'Real-time rendering (Ray tracing)' },
-    { src: require('./image/HoloLens'), alt: 'Augmented reality (Microsoft HoloLens)' }
+    { src: require('./image/OpenGL.png'), alt: 'Real-time rendering (Rasterization)' },
+    { src: require('./image/RayTracing.png'), alt: 'Real-time rendering (Ray tracing)' },
+    { src: require('./image/HoloLens.png'), alt: 'Augmented reality (Microsoft HoloLens)' }
 ];
 
 const musicImages = [
-    { src: require('./image/Telecaster'), alt: 'My guitar' },
-    { src: require('./image/Concert'), alt: 'My concert' },
-    { src: require('./image/Sheet'), alt: 'My music' }
+    { src: require('./image/Telecaster.jpg'), alt: 'My guitar' },
+    { src: require('./image/Concert.jpg'), alt: 'My concert' },
+    { src: require('./image/Sheet.png'), alt: 'My music' }
 ];
 
 const Content = () => {
