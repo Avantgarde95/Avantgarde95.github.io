@@ -175,14 +175,8 @@ const Content = () => {
             </Title>
             <List>
                 <Item>
-                    <Korean>이메일 1</Korean>
-                    <English>Email 1</English>
-                    :&nbsp;
-                    <Link url={'mailto:95phm@kaist.ac.kr'}>95phm@kaist.ac.kr</Link>
-                </Item>
-                <Item>
-                    <Korean>이메일 2</Korean>
-                    <English>Email 2</English>
+                    <Korean>이메일</Korean>
+                    <English>Email</English>
                     :&nbsp;
                     <Link url={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</Link>
                 </Item>
