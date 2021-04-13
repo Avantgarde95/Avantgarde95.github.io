@@ -32,42 +32,56 @@ const ProjectName = ({ url = '', children = null as ReactNode }) => (
 
 const ProjectDescription = ({ children = null as ReactNode }) => (
     <div className={css({
-        width: '100%'
+        width: '100%',
+        marginBottom: '0.5rem',
     })}>
         {children}
     </div>
 );
 
 const ProjectLanguages = ({ languageMap = {} as { [language: string]: number } }) => {
+    const theme = useContext(ThemeContext);
     const languages = Object.getOwnPropertyNames(languageMap);
     let totalBytes = 0;
-    const languagePercentages: string[] = [];
+    const languagePercentages: { language: string, percentage: number }[] = [];
 
     languages.forEach(language => {
         totalBytes += languageMap[language];
     });
 
-    for (let i = 0; (i < 5) && (i < languages.length); i++) {
-        const percentage = languageMap[languages[i]] / totalBytes * 100.0;
-        languagePercentages.push(`${languages[i]}: ${Math.round(percentage * 100.0) / 100.0}%`);
-    }
+    languages.slice(0, Math.min(5, languages.length)).forEach(language => {
+        const percentage = languageMap[language] / totalBytes * 100.0;
+        languagePercentages.push({ language: language, percentage: Math.round(percentage * 100.0) / 100.0 });
+    });
 
     if (languages.length > 5) {
-        let othersBytes = 0;
-
-        for (let i = 5; i < languages.length; i++) {
-            othersBytes += languageMap[languages[i]];
-        }
+        const othersBytes = [0, ...languages.slice(5)].reduce((result, language) =>
+            result as number + languageMap[language]
+        ) as number;
 
         const percentage = othersBytes / totalBytes * 100.0;
-        languagePercentages.push(`Others: ${Math.round(percentage * 100.0) / 100.0}%`);
+        languagePercentages.push({ language: 'Others', percentage: Math.round(percentage * 100.0) / 100.0 });
     }
 
     return (
         <div className={css({
+            whiteSpace: 'nowrap',
+            overflowX: 'auto',
             width: '100%'
         })}>
-            ({languagePercentages.join(', ')})
+            {languagePercentages.map(({ language, percentage }) => (
+                <div className={css({
+                    boxSizing: 'border-box',
+                    display: 'inline-block',
+                    minWidth: `${percentage}%`,
+                    textAlign: 'center',
+                    border: `1px solid ${theme.lightColor}`
+                })}>
+                    {language}
+                    <br />
+                    {percentage}%
+                </div>
+            ))}
         </div>
     );
 };
