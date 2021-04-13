@@ -7,7 +7,7 @@ export const Icon = ({ definition = {} as IconDefinition, className = '' }) => {
         <svg
             aria-hidden={true}
             focusable={false}
-            className={`${className} svg-inline--fa fa-${definition.iconName}`}
+            className={`${className} svg-inline--fa fa-${definition.iconName} fa-w-16`}
             role={'img'}
             xmlns={'http://www.w3.org/2000/svg'}
             viewBox={`0 0 ${definition.icon[0]} ${definition.icon[1]}`}
