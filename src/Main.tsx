@@ -85,7 +85,7 @@ const Device = () => (
             height: '100%',
             margin: 0,
             padding: 0,
-            backgroundColor: '#000000'
+            backgroundColor: '#222222'
         })}>
             <LanguageProvider>
                 <MediaProvider>
