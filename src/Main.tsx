@@ -3,7 +3,7 @@ import './Polyfill';
 import * as React from 'react';
 import { Component, ErrorInfo, ReactNode, useEffect } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, useRoutes } from 'react-router-dom';
+import { BrowserRouter, Outlet, useNavigate, useRoutes } from 'react-router-dom';
 import { css } from '@emotion/css';
 import { StatusBar } from './device/StatusBar';
 import { NavigationBar } from './device/NavigationBar';
@@ -40,11 +40,17 @@ const ErrorApp = () => (
 );
 
 const Redirector = ({ path = '' }) => {
-    useEffect(() => {
-        window.location.href = path;
-    });
+    const navigate = useNavigate();
 
-    return null;
+    useEffect(() => {
+        if (path.startsWith('http')) {
+            window.location.href = path;
+        } else {
+            navigate('../' + path, { replace: true });
+        }
+    }, []);
+
+    return <Outlet />;
 };
 
 class ErrorHandler extends Component<{ children: ReactNode }, { hasError: boolean }> {
@@ -89,7 +95,9 @@ const Device = () => (
                         { path: 'about', element: <AboutApp /> },
                         { path: 'cv', element: <CVApp /> },
                         { path: 'project', element: <ProjectApp /> },
+                        { path: 'projects', element: <Redirector path={'project'} /> },
                         { path: 'music', element: <MusicApp /> },
+                        { path: 'musics', element: <Redirector path={'music'} /> },
                         { path: 'c3dmb', element: <Redirector path={'https://avantgarde95.github.io/C3DMB'} /> },
                         { path: '*', element: <NotFoundApp /> }
                     ]} />
