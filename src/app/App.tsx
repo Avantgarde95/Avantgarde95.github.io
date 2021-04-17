@@ -5,10 +5,10 @@ import { Screen } from '../device/Screen';
 import { LanguageContext } from '../common/Language';
 
 const openingAnimation = keyframes({
-    from: {
-        opacity: 0.5
+    '0%': {
+        opacity: 0
     },
-    to: {
+    '100%': {
         opacity: 1
     }
 });
@@ -34,7 +34,7 @@ export const App = ({
             <div className={css({
                 width: '100%',
                 height: '100%',
-                animation: `${openingAnimation} 0.15s`
+                animation: `${openingAnimation} 0.5s`
             })}>
                 {children}
             </div>
