@@ -2,8 +2,10 @@ import * as React from 'react';
 import { ReactNode, createRef, useContext, useEffect } from 'react';
 import { css, cx } from '@emotion/css';
 import { Luminous } from 'luminous-lightbox';
+import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
 import 'luminous-lightbox/dist/luminous-basic.min.css';
 import { ThemeContext } from './Theme';
+import { Icon } from '../common/Icon';
 
 export const Link = ({
     url = '',
@@ -28,7 +30,7 @@ export const Link = ({
             rel={'noopener noreferrer'}
             href={url}
         >
-            {children}
+            {(children === null) ? url : children}
         </a>
     );
 };
@@ -86,3 +88,36 @@ export const YouTube = ({ id = '' }) => {
         </div>
     );
 };
+
+export const List = ({ children = null as ReactNode }) => (
+    <ul className={css({
+        listStyle: 'none',
+        paddingLeft: 0,
+        marginBottom: '1.5rem'
+    })}>
+        {children}
+    </ul>
+);
+
+export const ListItem = ({ children = null as ReactNode }) => (
+    <li className={css({
+        marginBottom: '0.5rem'
+    })}>
+        <div className={css({
+            display: 'inline-block',
+            marginLeft: '0.5rem',
+            width: '1.5rem',
+            height: '0.9rem',
+            fontSize: '0.6rem'
+        })}>
+            <Icon definition={faStar} />
+        </div>
+        <div className={css({
+            display: 'inline-block',
+            verticalAlign: 'top',
+            width: 'calc(100% - 2rem)'
+        })}>
+            {children}
+        </div>
+    </li>
+);

@@ -15,6 +15,7 @@ import { CVApp } from './app/CVApp';
 import { ProjectApp } from './app/ProjectApp';
 import { MusicApp } from './app/MusicApp';
 import { MediaProvider } from './common/Media';
+import { PortfolioApp } from './app/PortfolioApp';
 
 /*
 const UnfinishedApp = () => (
@@ -94,6 +95,7 @@ const Device = () => (
                         { path: '/', element: <HomeScreen /> },
                         { path: 'about', element: <AboutApp /> },
                         { path: 'cv', element: <CVApp /> },
+                        { path: 'portfolio', element: <PortfolioApp /> },
                         { path: 'project', element: <ProjectApp /> },
                         { path: 'projects', element: <Redirector path={'project'} /> },
                         { path: 'music', element: <MusicApp /> },
