@@ -16,8 +16,10 @@ const Project = ({ children = null as ReactNode }) => (
 
 const Title = ({ children = null as ReactNode }) => (
     <div className={css({
+        display: 'inline-block',
         fontSize: '1.5rem',
         fontWeight: 'bold',
+        marginTop: '1rem',
         marginBottom: '0.5rem'
     })}>
         {children}
@@ -43,6 +45,7 @@ const Paragraph = ({ children = null as ReactNode }) => (
 );
 
 const imageStyle = css({
+    display: 'block',
     maxWidth: '1024px',
     marginRight: '1rem',
     marginBottom: '1rem'
@@ -110,7 +113,6 @@ const MyPage = () => (
                 src={require('./image/MyPageLanguageContext.png')}
                 alt={'MyPage language context'}
             />
-            <br />
             <Link url={'https://reacttraining.com/blog/react-router-v6-pre/'}>React Router</Link>
             <List>
                 <ListItem>
@@ -133,7 +135,18 @@ const MyPage = () => (
                 src={require('./image/MyPageRouting.png')}
                 alt={'MyPage routing'}
             />
-            <br />
+            <Link url={'https://emotion.sh/'}>Emotion</Link>
+            <List>
+                <ListItem>
+                    <Korean>CSS 코드의 재사용과 동적인 스타일링을 위하여 사용하였습니다.</Korean>
+                    <English>I used the library for reuse of CSS code and dynamic styling.</English>
+                </ListItem>
+            </List>
+            <ImagePreview
+                className={imageStyle}
+                src={require('./image/MyPageCSS.png')}
+                alt={'MyPage Emotion usage'}
+            />
             <Link url={'https://github.com/node-fetch/node-fetch/'}>Node Fetch</Link>
             <List>
                 <ListItem>
