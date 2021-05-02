@@ -55,7 +55,8 @@ async function updateProjects() {
         'webpack-es6-sass-setup',
         'Windows',
         'SetTerm',
-        'ExtractMailFiles'
+        'ExtractMailFiles',
+        'jsoncpp'
     ];
 
     const alternativeProjectNames = {
@@ -100,7 +101,7 @@ async function updateProjects() {
             })
     );
 
-    fs.writeFileSync('./src/app/Projects.json', JSON.stringify(projects, null, 4));
+    fs.writeFileSync('./src/app/data/Projects.json', JSON.stringify(projects, null, 4));
     console.log(`Got ${projects.length} projects from GitHub!`);
 }
 
@@ -124,7 +125,7 @@ async function updateMusics() {
         myPieces: await getVideos('PLosnnDHctFV1iZeOtf4AzJMc2K6RTMCC1')
     };
 
-    fs.writeFileSync('./src/app/Musics.json', JSON.stringify(musics, null, 4));
+    fs.writeFileSync('./src/app/data/Musics.json', JSON.stringify(musics, null, 4));
 }
 
 (async () => {

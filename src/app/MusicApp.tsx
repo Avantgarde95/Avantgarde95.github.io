@@ -8,7 +8,7 @@ import { ThemeContext, ThemeProvider } from './Theme';
 import { English, Korean } from '../common/Language';
 import { Icon } from '../common/Icon';
 import { Link, YouTube } from './Common';
-import * as Musics from './Musics.json';
+import * as Musics from './data/Musics.json';
 import * as Background from './image/EighthNotes.png';
 
 const Title = ({ url = '', children = null as ReactNode }) => (

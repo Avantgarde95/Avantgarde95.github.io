@@ -6,7 +6,7 @@ import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
 import { MediaContext } from '../common/Media';
 import { Link } from './Common';
-import * as Projects from './Projects.json';
+import * as Projects from './data/Projects.json';
 import * as Background from './image/Coffee.png';
 
 interface Project {
