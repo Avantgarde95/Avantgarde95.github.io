@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ReactNode, useContext, useState } from 'react';
+import { ReactNode, useContext } from 'react';
 import { css } from '@emotion/css';
 import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
@@ -46,7 +46,7 @@ const Paragraph = ({ children = null as ReactNode }) => (
 
 const imageStyle = css({
     display: 'block',
-    maxWidth: '1024px',
+    maxWidth: '100%',
     marginRight: '1rem',
     marginBottom: '1rem'
 });
@@ -179,7 +179,8 @@ const Blog = () => (
 );
 
 const Content = () => {
-    const { textStyle } = useContext(ThemeContext);
+    const { lightColor, textStyle } = useContext(ThemeContext);
+    const onWideScreen = '@media (min-width: 769px)';
 
     return (
         <div className={css([textStyle, {
@@ -187,30 +188,43 @@ const Content = () => {
             boxSizing: 'border-box',
             width: '100%',
             height: '100%',
-            padding: '1.5rem'
+            [onWideScreen]: {
+                paddingTop: '1.5rem',
+                paddingBottom: '1.5rem'
+            }
         }])}>
-
             <div className={css({
-                fontSize: '1.5rem',
-                fontWeight: 'bold',
-                marginBottom: '0.5rem'
+                boxSizing: 'border-box',
+                maxWidth: '769px',
+                minHeight: '100%',
+                margin: '0 auto',
+                padding: '1.5rem',
+                [onWideScreen]: {
+                    border: `1px solid ${lightColor}`
+                }
             })}>
-                Hunmin Park's projects
+                <div className={css({
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
+                    marginBottom: '0.5rem'
+                })}>
+                    Hunmin Park's projects
+                </div>
+                <div className={css({
+                    marginBottom: '1rem'
+                })}>
+                    Online version: <Link url={'https://avantgarde95.github.io/portfolio'} />
+                </div>
+                <MyPage />
+                <Blog />
             </div>
-            <div className={css({
-                marginBottom: '1rem'
-            })}>
-                Online version: <Link url={'https://avantgarde95.github.io/portfolio'} />
-            </div>
-            <MyPage />
-            <Blog />
         </div>
     );
 };
 
 export const PortfolioApp = () => (
     <App koreanTitle={'포트폴리오'} englishTitle={'Portfolio'}>
-        <ThemeProvider lightColor={'#ffffff'} darkColor={'#dddddd'}>
+        <ThemeProvider lightColor={'#ffffff'} darkColor={'#dddddd'} useNeon={false}>
             <Content />
         </ThemeProvider>
     </App>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createContext, ReactNode } from 'react';
-import { css } from '@emotion/css';
+import { css, cx } from '@emotion/css';
 
 export interface Theme {
     defaultColor: string;
@@ -17,6 +17,7 @@ export const ThemeProvider = ({
     defaultColor = '#ffffff',
     lightColor = '#ffffff',
     darkColor = '#ffffff',
+    useNeon = true,
     children = null as ReactNode
 }) => {
     const neon = `0 0 2px ${darkColor}, 0 0 4px ${lightColor}`;
@@ -26,16 +27,24 @@ export const ThemeProvider = ({
             defaultColor: defaultColor,
             lightColor: lightColor,
             darkColor: darkColor,
-            textStyle: css({
-                color: defaultColor,
-                textShadow: neon,
-            }),
-            boxStyle: css({
-                boxShadow: neon,
-                backgroundColor: 'rgba(0, 0, 0, 0)',
-                border: `solid 1px ${defaultColor}`,
-                borderRadius: 0
-            }),
+            textStyle: cx([
+                css({
+                    color: defaultColor
+                }),
+                useNeon && css({
+                    textShadow: neon
+                })
+            ]),
+            boxStyle: cx([
+                css({
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    border: `solid 1px ${defaultColor}`,
+                    borderRadius: 0
+                }),
+                useNeon && css({
+                    boxShadow: neon
+                })
+            ]),
             highlightStyle: css({
                 '&:hover, &:active, &:focus': {
                     color: lightColor,
