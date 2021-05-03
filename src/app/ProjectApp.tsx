@@ -5,7 +5,7 @@ import { English, Korean } from '../common/Language';
 import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
 import { MediaContext } from '../common/Media';
-import { Link } from './Common';
+import { Link, RouterLink } from './Common';
 import * as Projects from './data/Projects.json';
 import * as Background from './image/Coffee.png';
 
@@ -190,6 +190,19 @@ const ProjectGallery = ({ projects = [] as Project[] }) => {
     );
 };
 
+const PortfolioLink = () => (
+    <RouterLink
+        className={css({
+            display: 'block',
+            marginBottom: '1rem'
+        })}
+        url={'portfolio'}
+    >
+        <Korean>웹 프로젝트 포트폴리오</Korean>
+        <English>Web projects portfolio</English>
+    </RouterLink>
+);
+
 const Content = () => {
     const theme = useContext(ThemeContext);
 
@@ -214,13 +227,16 @@ const Content = () => {
                     <Korean>프로젝트</Korean>
                     <English>Projects</English>
                 </div>
+                <PortfolioLink />
                 <div className={css({
                     marginBottom: '1.5rem'
                 })}>
-                    <Korean>모든 프로젝트들을 보려면 <Link url={'https://github.com/Avantgarde95'}>깃허브</Link>를
-                        방문해주세요.</Korean>
-                    <English>To see the all projects, visit <Link
-                        url={'https://github.com/Avantgarde95'}>GitHub</Link>.</English>
+                    <Korean>
+                        모든 프로젝트들을 보려면 <Link url={'https://github.com/Avantgarde95'}>깃허브</Link>를 방문해주세요.
+                    </Korean>
+                    <English>
+                        To see the all projects, visit <Link url={'https://github.com/Avantgarde95'}>GitHub</Link>.
+                    </English>
                 </div>
             </div>
             <div className={css({

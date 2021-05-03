@@ -9,7 +9,7 @@ import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookS
 import { faMusic } from '@fortawesome/free-solid-svg-icons/faMusic';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
-import { faFileCode } from '@fortawesome/free-solid-svg-icons/faFileCode';
+//import { faFileCode } from '@fortawesome/free-solid-svg-icons/faFileCode';
 
 export interface App {
     koreanName: string;
@@ -34,6 +34,7 @@ export const apps = [
         icon: faFileAlt,
         color: '#aaaaaa'
     },
+    /*
     {
         koreanName: '포트폴리오',
         englishName: 'Portfolio',
@@ -41,6 +42,7 @@ export const apps = [
         icon: faFileCode,
         color: '#444444'
     },
+    */
     {
         koreanName: '프로젝트',
         englishName: 'Projects',

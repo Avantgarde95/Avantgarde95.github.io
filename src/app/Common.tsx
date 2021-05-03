@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ReactNode, createRef, useContext, useEffect } from 'react';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import { css, cx } from '@emotion/css';
 import { Luminous } from 'luminous-lightbox';
 import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
@@ -32,6 +33,32 @@ export const Link = ({
         >
             {(children === null) ? url : children}
         </a>
+    );
+};
+
+export const RouterLink = ({
+    url = '',
+    className = '',
+    children = null as ReactNode
+}) => {
+    const theme = useContext(ThemeContext);
+
+    return (
+        <ReactRouterLink
+            className={cx(
+                css({
+                    wordBreak: 'break-all',
+                    color: theme.lightColor,
+                    '&:hover, &:active': {
+                        color: theme.darkColor
+                    }
+                }),
+                className
+            )}
+            to={url}
+        >
+            {(children === null) ? url : children}
+        </ReactRouterLink>
     );
 };
 

@@ -78,6 +78,28 @@ const SafeRoutes = (
     { path: path, element: <ErrorHandler key={index}>{element}</ErrorHandler> }
 )));
 
+const ProjectRoutes = () => (
+    <SafeRoutes routes={[
+        { path: '/', element: <ProjectApp /> },
+        { path: 'portfolio', element: <PortfolioApp /> },
+        { path: '*', element: <NotFoundApp /> }
+    ]} />
+);
+
+const DeviceRoutes = () => (
+    <SafeRoutes routes={[
+        { path: '/', element: <HomeScreen /> },
+        { path: 'about', element: <AboutApp /> },
+        { path: 'cv', element: <CVApp /> },
+        { path: 'projects/*', element: <ProjectRoutes /> },
+        { path: 'project/*', element: <ProjectRoutes /> },
+        { path: 'musics', element: <MusicApp /> },
+        { path: 'music', element: <MusicApp /> },
+        { path: 'c3dmb', element: <Redirector path={'https://avantgarde95.github.io/C3DMB'} /> },
+        { path: '*', element: <NotFoundApp /> }
+    ]} />
+);
+
 const Device = () => (
     <BrowserRouter>
         <div className={css({
@@ -91,18 +113,7 @@ const Device = () => (
             <LanguageProvider>
                 <MediaProvider>
                     <StatusBar showTime={true} />
-                    <SafeRoutes routes={[
-                        { path: '/', element: <HomeScreen /> },
-                        { path: 'about', element: <AboutApp /> },
-                        { path: 'cv', element: <CVApp /> },
-                        { path: 'portfolio', element: <PortfolioApp /> },
-                        { path: 'project', element: <ProjectApp /> },
-                        { path: 'projects', element: <Redirector path={'project'} /> },
-                        { path: 'music', element: <MusicApp /> },
-                        { path: 'musics', element: <Redirector path={'music'} /> },
-                        { path: 'c3dmb', element: <Redirector path={'https://avantgarde95.github.io/C3DMB'} /> },
-                        { path: '*', element: <NotFoundApp /> }
-                    ]} />
+                    <DeviceRoutes />
                     <NavigationBar showNavigators={true} />
                 </MediaProvider>
             </LanguageProvider>
