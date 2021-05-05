@@ -133,11 +133,9 @@ export const ListItem = ({ children = null as ReactNode }) => (
         <div className={css({
             display: 'inline-block',
             marginLeft: '0.5rem',
-            width: '1.5rem',
-            height: '0.9rem',
-            fontSize: '0.6rem'
+            width: '1.5rem'
         })}>
-            <Icon definition={faStar} />
+            <Icon size={10} definition={faStar} />
         </div>
         <div className={css({
             display: 'inline-block',

@@ -192,10 +192,6 @@ const ProjectGallery = ({ projects = [] as Project[] }) => {
 
 const PortfolioLink = () => (
     <RouterLink
-        className={css({
-            display: 'block',
-            marginBottom: '1rem'
-        })}
         url={'portfolio'}
     >
         <Korean>웹 프로젝트 포트폴리오</Korean>
@@ -227,7 +223,11 @@ const Content = () => {
                     <Korean>프로젝트</Korean>
                     <English>Projects</English>
                 </div>
-                <PortfolioLink />
+                <div className={css({
+                    marginBottom: '1rem'
+                })}>
+                    <PortfolioLink />
+                </div>
                 <div className={css({
                     marginBottom: '1.5rem'
                 })}>
