@@ -1,53 +1,19 @@
 import * as React from 'react';
 import { ReactNode, useContext } from 'react';
 import { css } from '@emotion/css';
-import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
 import 'luminous-lightbox/dist/luminous-basic.min.css';
-import { Icon } from '../common/Icon';
 import { English, Korean } from '../common/Language';
 import { App } from './App';
 import { ThemeContext, ThemeProvider } from './Theme';
-import { Link, ImagePreview } from './Common';
+import { Link, ImagePreview, List, ListItem } from './Common';
 import * as Background from './image/Guitar.png';
 
 const Title = ({ children = null as ReactNode }) => (
     <div className={css({
-        font: '1.5rem',
         fontWeight: 'bold'
     })}>
         {children}
     </div>
-);
-
-const List = ({ children = null as ReactNode }) => (
-    <ul className={css({
-        listStyle: 'none',
-        paddingLeft: 0,
-        marginBottom: '1.5rem'
-    })}>
-        {children}
-    </ul>
-);
-
-const Item = ({ children = null as ReactNode }) => (
-    <li>
-        <div className={css({
-            display: 'inline-block',
-            marginLeft: '0.5rem',
-            width: '1.5rem',
-            height: '0.9rem',
-            fontSize: '0.6rem'
-        })}>
-            <Icon definition={faStar} />
-        </div>
-        <div className={css({
-            display: 'inline-block',
-            verticalAlign: 'top',
-            width: 'calc(100% - 2rem)'
-        })}>
-            {children}
-        </div>
-    </li>
 );
 
 const GalleryItem = ({ src = '', alt = '' }) => (
@@ -121,7 +87,7 @@ const Content = () => {
                 <English>Interests (Computer)</English>
             </Title>
             <List>
-                <Item>
+                <ListItem>
                     <Korean>
                         컴퓨터 그래픽스(CG), 특히 실시간 렌더링, 3D 모델링,
                         증강현실(AR), 가상현실(VR)에 관심이 있습니다.
@@ -131,15 +97,15 @@ const Content = () => {
                         especially real-time rendering, 3D modeling,
                         augmented reality(AR), and virtual reality(VR).
                     </English>
-                </Item>
-                <Item>
+                </ListItem>
+                <ListItem>
                     <Korean>
                         웹 개발에도 관심이 있습니다.
                     </Korean>
                     <English>
                         I'm also interested in web development.
                     </English>
-                </Item>
+                </ListItem>
             </List>
             <Gallery images={computerImages} />
             <Title>
@@ -147,7 +113,7 @@ const Content = () => {
                 <English>Interests (Music)</English>
             </Title>
             <List>
-                <Item>
+                <ListItem>
                     <Korean>
                         취미로 피아노와 기타를 연주합니다.
                         가끔씩 작곡/편곡에도 도전합니다.
@@ -156,8 +122,8 @@ const Content = () => {
                         I play piano and guitar as a hobby.
                         Sometimes I also try to compose and arrange music.
                     </English>
-                </Item>
-                <Item>
+                </ListItem>
+                <ListItem>
                     <Korean>
                         헤비메탈, 재즈, 클래식 음악을 즐겨 듣습니다.
                         다른 장르의 음악들도 종종 들어요.
@@ -166,7 +132,7 @@ const Content = () => {
                         I like hearing heavy metal, jazz, and classical music.
                         I also listen to music from other genres.
                     </English>
-                </Item>
+                </ListItem>
             </List>
             <Gallery images={musicImages} />
             <Title>
@@ -174,12 +140,12 @@ const Content = () => {
                 <English>Contacts</English>
             </Title>
             <List>
-                <Item>
+                <ListItem>
                     <Korean>이메일</Korean>
                     <English>Email</English>
                     :&nbsp;
                     <Link url={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</Link>
-                </Item>
+                </ListItem>
             </List>
         </div>
     );

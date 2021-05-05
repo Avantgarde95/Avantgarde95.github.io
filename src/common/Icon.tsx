@@ -2,12 +2,12 @@ import * as React from 'react';
 import { IconDefinition } from '@fortawesome/fontawesome-common-types';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
-export const Icon = ({ definition = {} as IconDefinition, className = '' }) => {
+export const Icon = ({ definition = {} as IconDefinition, className = '', size = 16 }) => {
     return (
         <svg
             aria-hidden={true}
             focusable={false}
-            className={`${className} svg-inline--fa fa-${definition.iconName} fa-w-16`}
+            className={`${className} svg-inline--fa fa-${definition.iconName} fa-w-${size}`}
             role={'img'}
             xmlns={'http://www.w3.org/2000/svg'}
             viewBox={`0 0 ${definition.icon[0]} ${definition.icon[1]}`}

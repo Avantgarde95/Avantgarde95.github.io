@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { ReactNode, createRef, useContext, useEffect } from 'react';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import { css, cx } from '@emotion/css';
 import { Luminous } from 'luminous-lightbox';
+import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
 import 'luminous-lightbox/dist/luminous-basic.min.css';
 import { ThemeContext } from './Theme';
+import { Icon } from '../common/Icon';
 
 export const Link = ({
     url = '',
@@ -28,8 +31,34 @@ export const Link = ({
             rel={'noopener noreferrer'}
             href={url}
         >
-            {children}
+            {(children === null) ? url : children}
         </a>
+    );
+};
+
+export const RouterLink = ({
+    url = '',
+    className = '',
+    children = null as ReactNode
+}) => {
+    const theme = useContext(ThemeContext);
+
+    return (
+        <ReactRouterLink
+            className={cx(
+                css({
+                    wordBreak: 'break-all',
+                    color: theme.lightColor,
+                    '&:hover, &:active': {
+                        color: theme.darkColor
+                    }
+                }),
+                className
+            )}
+            to={url}
+        >
+            {(children === null) ? url : children}
+        </ReactRouterLink>
     );
 };
 
@@ -86,3 +115,34 @@ export const YouTube = ({ id = '' }) => {
         </div>
     );
 };
+
+export const List = ({ children = null as ReactNode }) => (
+    <ul className={css({
+        listStyle: 'none',
+        paddingLeft: 0,
+        marginBottom: '1.5rem'
+    })}>
+        {children}
+    </ul>
+);
+
+export const ListItem = ({ children = null as ReactNode }) => (
+    <li className={css({
+        marginBottom: '0.5rem'
+    })}>
+        <div className={css({
+            display: 'inline-block',
+            marginLeft: '0.5rem',
+            width: '1.5rem'
+        })}>
+            <Icon size={10} definition={faStar} />
+        </div>
+        <div className={css({
+            display: 'inline-block',
+            verticalAlign: 'top',
+            width: 'calc(100% - 2rem)'
+        })}>
+            {children}
+        </div>
+    </li>
+);
