@@ -47,8 +47,8 @@
         "repositoryURL": "https://github.com/Avantgarde95/Avantgarde95.github.io",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Avantgarde95.github.io/master/image/AboutApp.png",
         "languageMap": {
-            "TypeScript": 50725,
-            "JavaScript": 6525,
+            "TypeScript": 51511,
+            "JavaScript": 6554,
             "HTML": 5391
         }
     },
@@ -58,9 +58,9 @@
         "repositoryURL": "https://github.com/Avantgarde95/blog",
         "imageURL": "https://raw.githubusercontent.com/Avantgarde95/blog/master/Screenshot.png",
         "languageMap": {
-            "TypeScript": 38127,
+            "TypeScript": 38338,
             "JavaScript": 7017,
-            "HTML": 5206,
+            "HTML": 5234,
             "CSS": 1488
         }
     },
@@ -97,16 +97,6 @@
             "Lua": 5277,
             "Gnuplot": 642,
             "Batchfile": 172
-        }
-    },
-    {
-        "name": "cpp-practice",
-        "description": "Simple codes for my C++ study",
-        "repositoryURL": "https://github.com/Avantgarde95/cpp-practice",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/cpp-practice/master/Screenshot.png",
-        "languageMap": {
-            "C++": 12571,
-            "CMake": 554
         }
     },
     {
@@ -172,6 +162,15 @@
         }
     },
     {
+        "name": "html-birthday-card",
+        "description": "Simple birthday card in a HTML file",
+        "repositoryURL": "https://github.com/Avantgarde95/html-birthday-card",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/html-birthday-card/master/Screenshot.png",
+        "languageMap": {
+            "HTML": 5999
+        }
+    },
+    {
         "name": "Image2Term",
         "description": "Draw an image on the terminal.",
         "repositoryURL": "https://github.com/Avantgarde95/Image2Term",
@@ -198,6 +197,18 @@
         "languageMap": {
             "Python": 47808,
             "Makefile": 514
+        }
+    },
+    {
+        "name": "lets-react",
+        "description": "React tutorial written in React",
+        "repositoryURL": "https://github.com/Avantgarde95/lets-react",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/lets-react/master/Screenshot.png",
+        "languageMap": {
+            "TypeScript": 16433,
+            "SCSS": 5938,
+            "JavaScript": 1939,
+            "HTML": 460
         }
     },
     {

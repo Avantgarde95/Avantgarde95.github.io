@@ -56,7 +56,8 @@ async function updateProjects() {
         'Windows',
         'SetTerm',
         'ExtractMailFiles',
-        'jsoncpp'
+        'jsoncpp',
+        'cpp-practice'
     ];
 
     const alternativeProjectNames = {
