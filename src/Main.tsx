@@ -1,5 +1,9 @@
 import './Polyfill';
 
+if (process.env.NODE_ENV === 'development') {
+    require('preact/debug');
+}
+
 import * as React from 'react';
 import { Component, ErrorInfo, ReactNode, useEffect } from 'react';
 import { render } from 'react-dom';
@@ -74,7 +78,7 @@ class ErrorHandler extends Component<{ children: ReactNode }, { hasError: boolea
 const SafeRoutes = (
     { routes = [] as { path: string, element: ReactNode }[] }
 ) => useRoutes(routes.map(({ path, element }, index) => (
-    { path: path, element: <ErrorHandler key={index}>{element}</ErrorHandler> }
+    { path: path, element: <ErrorHandler key={`${index}-${path}`}>{element}</ErrorHandler> }
 )));
 
 const Device = () => (
