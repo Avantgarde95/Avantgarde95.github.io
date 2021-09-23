@@ -23,7 +23,7 @@ interface Time {
 /**
  * Get the current time.
  */
-function getCurrentTime() {
+function getCurrentTime(): Time {
     const date = new Date();
 
     return {
@@ -33,7 +33,7 @@ function getCurrentTime() {
         weekDay: date.getDay(),
         hour: date.getHours(),
         minute: date.getMinutes(),
-    } as Time;
+    };
 }
 
 const TimeContext = createContext({
