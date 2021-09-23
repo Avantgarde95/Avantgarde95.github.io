@@ -22,6 +22,7 @@ const scssRule = {
         {
             loader: 'css-loader', options: {
                 modules: {
+                    auto: filePath => !filePath.includes('node_modules'),
                     mode: 'local',
                     localIdentName: '[path][name]__[local]--[hash:base64:5]'
                 }
