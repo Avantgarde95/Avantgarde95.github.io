@@ -27,7 +27,7 @@ const scssRule = {
                 }
             }
         },
-        // SASS -> CSS.
+        // SCSS -> CSS.
         'sass-loader'
     ]
 };
