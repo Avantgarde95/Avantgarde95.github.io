@@ -2,6 +2,8 @@
 
 .statusBar {
     box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
 
     width: 100%;
     height: 2rem;
@@ -13,16 +15,17 @@
 }
 
 .left {
-    float: left;
     height: 100%;
 }
 
 .right {
-    float: right;
+    margin-left: auto;
     height: 100%;
 }
 
 .block {
+    display: inline-block;
+
     margin-left: 0.2rem;
     margin-right: 0.2rem;
 }

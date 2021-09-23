@@ -14,7 +14,7 @@ const serverPort = 8080;
 
 const tsRule = { use: 'ts-loader' };
 
-const scssRule = {
+const styleRule = {
     use: [
         // Code -> File.
         MiniCssExtractPlugin.loader,
@@ -32,6 +32,8 @@ const scssRule = {
         'sass-loader'
     ]
 };
+
+const imageRule = { type: 'asset/resource' };
 
 module.exports = (env, argv) => {
     const isDevelopmentMode = !argv || argv.mode === 'development';
@@ -57,7 +59,8 @@ module.exports = (env, argv) => {
         module: {
             rules: [
                 { test: /\.tsx?$/, ...tsRule },
-                { test: /\.(css|scss)$/, ...scssRule }
+                { test: /\.(css|scss)$/, ...styleRule },
+                { test: /\.(png|jpg|gif|svg)$/, ...imageRule }
             ]
         },
         plugins: [

@@ -1,6 +1,8 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import { StatusBar } from 'component/device/StatusBar';
+import { NavigationBar } from 'component/device/NavigationBar';
 import styles from 'style/device/Device.scss';
 
 /**
@@ -9,7 +11,11 @@ import styles from 'style/device/Device.scss';
  * ex. Narrow screen -> Virtual 'phone'
  */
 export const Device = () => (
-    <div className={styles.device}>
-        <StatusBar showTime />
-    </div>
+    <BrowserRouter>
+        <div className={styles.device}>
+            <StatusBar showTime />
+            <div className={styles.content} />
+            <NavigationBar showNavigators />
+        </div>
+    </BrowserRouter>
 );

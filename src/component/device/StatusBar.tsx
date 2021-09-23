@@ -10,7 +10,7 @@ import styles from 'style/device/StatusBar.scss';
 /**
  * StatusBar props.
  */
-interface StatusBarProps {
+interface Props {
     showTime: boolean;
 }
 
@@ -18,7 +18,7 @@ interface StatusBarProps {
  * Component which represents the bar at the top of the phone(tablet)'s screen.
  * ex. Wifi, battery, etc.
  */
-export const StatusBar = ({ showTime }: StatusBarProps) => (
+export const StatusBar = ({ showTime }: Props) => (
     <div className={styles.statusBar}>
         <div className={styles.left}>
             <div className={styles.block}>Hunmin Park</div>

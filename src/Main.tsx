@@ -1,3 +1,6 @@
+// We need to apply the polyfills before loading the libraries.
+import 'Polyfill';
+
 import React from 'react';
 import { render } from 'react-dom';
 

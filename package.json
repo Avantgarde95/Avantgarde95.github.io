@@ -6,7 +6,7 @@
     "dependencies": {
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-router-dom": "^6.0.0-beta.4",
+        "react-router-dom": "6.0.0-beta.0",
         "history": "^5.0.1",
         "luminous-lightbox": "^2.3.5",
         "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -48,7 +48,7 @@
         "@types/node": "^16.9.6"
     },
     "scripts": {
-        "serve": "concurrently \"tsm \\\"src/**/*.{css,scss}\\\"\" \"webpack serve --config ./config/webpack.config.js --mode=development --progress\"",
+        "serve": "concurrently \"tsm \\\"src/**/*.{css,scss}\\\" --watch\" \"webpack serve --config ./config/webpack.config.js --mode=development --progress\"",
         "build": "tsm \"src/**/*.{css,scss}\" && webpack --config ./config/webpack.config.js --mode=production --progress",
         "lint": "eslint --config ./config/eslint.config.js ./src/**/*.{js,ts,jsx,tsx}",
         "lint:fix": "eslint --config ./config/eslint.config.js --fix ./src/**/*.{js,ts,jsx,tsx}"
