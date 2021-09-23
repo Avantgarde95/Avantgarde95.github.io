@@ -10,6 +10,6 @@ import styles from 'style/device/Device.scss';
  */
 export const Device = () => (
     <div className={styles.device}>
-        <StatusBar showTime={true} />
+        <StatusBar showTime />
     </div>
 );

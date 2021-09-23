@@ -1,0 +1,6 @@
+{
+    "javascript.format.semicolons": "insert",
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "javascript.preferences.importModuleSpecifier": "non-relative",
+    "scssFormatter.singleQuote": true
+}

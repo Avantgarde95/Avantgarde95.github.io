@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconDefinition } from '@fortawesome/fontawesome-common-types';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 /**
@@ -16,16 +16,13 @@ interface Props {
  */
 export const Icon = ({ definition, className = '', size = 16 }: Props) => (
     <svg
-        aria-hidden={true}
+        aria-hidden
         focusable={false}
         className={`${className} svg-inline--fa fa-${definition.iconName} fa-w-${size}`}
         role={'img'}
         xmlns={'http://www.w3.org/2000/svg'}
         viewBox={`0 0 ${definition.icon[0]} ${definition.icon[1]}`}
     >
-        <path
-            fill={'currentColor'}
-            d={definition.icon[4] as string}
-        />
+        <path fill={'currentColor'} d={definition.icon[4] as string} />
     </svg>
 );

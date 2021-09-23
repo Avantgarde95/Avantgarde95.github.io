@@ -1,12 +1,11 @@
-import React from 'react';
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
 /**
  * Format the number to the given length by putting zeros at the left.
  * ex. value = 2, length = 3 -> '002'
  */
 function fillZero(value: number, length: number) {
-    return `${Math.pow(10, length) + value}`.slice(1);
+    return `${10 ** length + value}`.slice(1);
 }
 
 /**
@@ -33,7 +32,7 @@ function getCurrentTime() {
         monthDay: date.getDate() - 1,
         weekDay: date.getDay(),
         hour: date.getHours(),
-        minute: date.getMinutes()
+        minute: date.getMinutes(),
     } as Time;
 }
 
@@ -43,7 +42,7 @@ const TimeContext = createContext({
     monthDay: 0,
     weekDay: 0,
     hour: 0,
-    minute: 0
+    minute: 0,
 } as Time);
 
 /**
@@ -69,11 +68,7 @@ export const ClockProvider = ({ children = null }: ClockProviderProps) => {
         };
     });
 
-    return (
-        <TimeContext.Provider value={time}>
-            {children}
-        </TimeContext.Provider>
-    );
+    return <TimeContext.Provider value={time}>{children}</TimeContext.Provider>;
 };
 
 /**
@@ -82,7 +77,7 @@ export const ClockProvider = ({ children = null }: ClockProviderProps) => {
 export const Hour = () => {
     const hour = useContext(TimeContext).hour % 12;
 
-    return <>{`${(hour === 0) ? 12 : hour}`}</>;
+    return <>{`${hour === 0 ? 12 : hour}`}</>;
 };
 
 /**
@@ -105,7 +100,7 @@ const monthNames = [
     'August',
     'September',
     'November',
-    'December'
+    'December',
 ];
 
 /**
@@ -126,16 +121,7 @@ export const MonthDay = () => {
     return <>{`${monthDay + 1}`}</>;
 };
 
-const dayNames = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday'
-];
+const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 /**
  * Current week of day.

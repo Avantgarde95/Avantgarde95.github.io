@@ -1,5 +1,4 @@
-import React from 'react';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { faWifi } from '@fortawesome/free-solid-svg-icons/faWifi';
 import { faSignal } from '@fortawesome/free-solid-svg-icons/faSignal';
 import { faBatteryFull } from '@fortawesome/free-solid-svg-icons/faBatteryFull';
@@ -15,24 +14,15 @@ interface AreaProps {
     children?: ReactNode;
 }
 
-const Left = ({ children = null }: AreaProps) => (
-    <div className={styles.left}>
-        {children}
-    </div>
-);
+const Left = ({ children = null }: AreaProps) => <div className={styles.left}>{children}</div>;
 
-const Right = ({ children = null }: AreaProps) => (
-    <div className={styles.right}>
-        {children}
-    </div>
-);
+const Right = ({ children = null }: AreaProps) => <div className={styles.right}>{children}</div>;
 
-const Block = ({ children = null }: AreaProps) => (
-    <span className={styles.block}>
-        {children}
-    </span>
-);
+const Block = ({ children = null }: AreaProps) => <span className={styles.block}>{children}</span>;
 
+/**
+ *
+ */
 interface StatusBarProps {
     showTime: boolean;
 }
@@ -40,15 +30,25 @@ interface StatusBarProps {
 export const StatusBar = ({ showTime }: StatusBarProps) => (
     <div className={styles.statusBar}>
         <Left>
-            <Block>
-                Hunmin Park
-            </Block>
+            <Block>Hunmin Park</Block>
         </Left>
         <Right>
-            <Block><Icon definition={faWifi} /></Block>
-            <Block><Icon definition={faSignal} /></Block>
-            <Block><Icon definition={faBatteryFull} /></Block>
-            {showTime && <Block><ClockProvider><Hour />:<Minute /> <AMPM /></ClockProvider></Block>}
+            <Block>
+                <Icon definition={faWifi} />
+            </Block>
+            <Block>
+                <Icon definition={faSignal} />
+            </Block>
+            <Block>
+                <Icon definition={faBatteryFull} />
+            </Block>
+            {showTime && (
+                <Block>
+                    <ClockProvider>
+                        <Hour />:<Minute /> <AMPM />
+                    </ClockProvider>
+                </Block>
+            )}
         </Right>
     </div>
 );

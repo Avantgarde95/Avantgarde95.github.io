@@ -49,6 +49,8 @@
     },
     "scripts": {
         "serve": "concurrently \"tsm \\\"src/**/*.{css,scss}\\\"\" \"webpack serve --config ./config/webpack.config.js --mode=development --progress\"",
-        "build": "tsm \"src/**/*.{css,scss}\" && webpack --config ./config/webpack.config.js --mode=production --progress"
+        "build": "tsm \"src/**/*.{css,scss}\" && webpack --config ./config/webpack.config.js --mode=production --progress",
+        "lint": "eslint --config ./config/eslint.config.js ./src/**/*.{js,ts,jsx,tsx}",
+        "lint:fix": "eslint --config ./config/eslint.config.js --fix ./src/**/*.{js,ts,jsx,tsx}"
     }
 }

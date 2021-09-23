@@ -1,3 +1,5 @@
+@use '../Common';
+
 .statusBar {
     box-sizing: border-box;
 
@@ -7,7 +9,7 @@
     padding-right: 0.3rem;
     line-height: 2rem;
 
-    color: #ffffff;
+    color: Common.$white;
 }
 
 .left {
