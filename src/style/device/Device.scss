@@ -1,0 +1,11 @@
+@use "../Common";
+
+.device {
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: Common.$white;
+    background-color: Common.$black;
+}

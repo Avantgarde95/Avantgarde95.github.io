@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "target": "es3",
+        "sourceMap": true,
+        "strict": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        // This enables some imports such as "import React from 'react'".
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "paths": {
+            // For using absolute import.
+            "*": [
+                "src/*"
+            ],
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

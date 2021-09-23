@@ -11,3 +11,5 @@ Rewriting from the scratch...
   - ESLint + StyleLint + Git hook
   - Define the interfaces for the props
   - 1 component for 1 file
+- Replace Preact.js to React.js
+  - For using react-devtools
