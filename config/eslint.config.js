@@ -86,6 +86,7 @@ module.exports = {
         'react/require-default-props': 'off',
         'consistent-return': 'off',
         'default-case': 'off',
-        'no-param-reassign': 'off'
+        'no-param-reassign': 'off',
+        'import/no-extraneous-dependencies': 'off'
     }
 };

@@ -53,6 +53,10 @@ module.exports = (env, argv) => {
             }
         },
         resolve: {
+            alias: {
+                'react': 'preact/compat',
+                'react-dom': 'preact/compat'
+            },
             modules: ['node_modules', srcPath],
             extensions: ['.ts', '.tsx', '.js']
         },
