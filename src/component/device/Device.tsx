@@ -1,8 +1,7 @@
-import React from 'react';
-import { Provider } from 'react-redux';
+import React, { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { store } from 'store/Store';
+import { useTime } from 'store/Time';
 import { StatusBar } from 'component/device/StatusBar';
 import { NavigationBar } from 'component/device/NavigationBar';
 import styles from 'style/device/Device.scss';
@@ -13,15 +12,23 @@ import styles from 'style/device/Device.scss';
  * ex. Narrow screen -> Virtual 'phone'
  */
 export const Device = () => {
+    const { updateTime } = useTime();
+
+    useEffect(() => {
+        const clock = setInterval(() => {
+            updateTime();
+        }, 10000);
+
+        return clearInterval(clock);
+    }, [updateTime]);
+
     return (
-        <Provider store={store}>
-            <BrowserRouter>
-                <div className={styles.device}>
-                    <StatusBar showTime />
-                    <div className={styles.content} />
-                    <NavigationBar showNavigators />
-                </div>
-            </BrowserRouter>
-        </Provider>
+        <BrowserRouter>
+            <div className={styles.device}>
+                <StatusBar showTime />
+                <div className={styles.content} />
+                <NavigationBar showNavigators />
+            </div>
+        </BrowserRouter>
     );
 };

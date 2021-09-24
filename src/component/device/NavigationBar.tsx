@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
 
-import { Language, languageSlice } from 'store/Language';
-import { useStrictDispatch, useStrictSelector } from 'store/Store';
+import { Language, useLanguage } from 'store/Language';
 import { Icon } from 'component/common/Icon';
 import styles from 'style/device/NavigationBar.scss';
 import InKorean from 'image/device/InKorean.svg';
@@ -22,8 +21,7 @@ interface Props {
  */
 export const NavigationBar = ({ showNavigators }: Props) => {
     const navigate = useNavigate();
-    const currentLanguage = useStrictSelector(state => state.language.currentLanguage);
-    const dispatch = useStrictDispatch();
+    const { currentLanguage, setLanguage } = useLanguage();
 
     const nextLanguage: Language = currentLanguage === 'Korean' ? 'English' : 'Korean';
     const languageImage = currentLanguage === 'Korean' ? InKorean : InEnglish;
@@ -40,7 +38,7 @@ export const NavigationBar = ({ showNavigators }: Props) => {
                     title={`To ${nextLanguage}`}
                     aria-label={`To ${nextLanguage}`}
                     onClick={() => {
-                        dispatch(languageSlice.actions.setLanguage({ language: nextLanguage }));
+                        setLanguage(nextLanguage);
                     }}
                 />
             </div>

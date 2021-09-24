@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useStrictSelector } from 'store/Store';
+import { useTime } from 'store/Time';
 
 /**
  * Format the number to the given length by putting zeros at the left.
@@ -14,7 +14,7 @@ function fillZero(value: number, length: number) {
  * Current hour.
  */
 export const Hour = () => {
-    const currentTime = useStrictSelector(state => state.time.currentTime);
+    const { currentTime } = useTime();
 
     return <>{`${currentTime.hour === 0 ? 12 : currentTime.hour}`}</>;
 };
@@ -23,7 +23,7 @@ export const Hour = () => {
  * Current minute.
  */
 export const Minute = () => {
-    const currentTime = useStrictSelector(state => state.time.currentTime);
+    const { currentTime } = useTime();
 
     return <>{`${fillZero(currentTime.minute, 2)}`}</>;
 };
@@ -46,7 +46,7 @@ const monthNames = [
  * Current month.
  */
 export const Month = () => {
-    const currentTime = useStrictSelector(state => state.time.currentTime);
+    const { currentTime } = useTime();
 
     return <>{monthNames[currentTime.month]}</>;
 };
@@ -55,7 +55,7 @@ export const Month = () => {
  * Current day.
  */
 export const MonthDay = () => {
-    const currentTime = useStrictSelector(state => state.time.currentTime);
+    const { currentTime } = useTime();
 
     return <>{`${currentTime.monthDay + 1}`}</>;
 };
@@ -66,7 +66,7 @@ const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
  * Current week of day.
  */
 export const WeekDay = () => {
-    const currentTime = useStrictSelector(state => state.time.currentTime);
+    const { currentTime } = useTime();
 
     return <>{dayNames[currentTime.weekDay]}</>;
 };
@@ -75,7 +75,7 @@ export const WeekDay = () => {
  * Whether the current time is before noon or after noon.
  */
 export const AMPM = () => {
-    const currentTime = useStrictSelector(state => state.time.currentTime);
+    const { currentTime } = useTime();
 
     return <>{currentTime.hour >= 12 ? 'PM' : 'AM'}</>;
 };
