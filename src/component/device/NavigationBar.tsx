@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
-import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
+import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
 
 import { Language, languageSlice } from 'store/Language';
 import { useStrictDispatch, useStrictSelector } from 'store/Store';
@@ -31,20 +31,6 @@ export const NavigationBar = ({ showNavigators }: Props) => {
     return (
         <div className={styles.navigationBar}>
             <div className={styles.cell}>
-                {showNavigators && (
-                    <button
-                        className={styles.button}
-                        type={'button'}
-                        title={'Back'}
-                        onClick={() => {
-                            navigate(-1);
-                        }}
-                    >
-                        <Icon definition={faArrowLeft} />
-                    </button>
-                )}
-            </div>
-            <div className={styles.cell}>
                 <button
                     className={styles.languageButton}
                     style={{
@@ -68,7 +54,21 @@ export const NavigationBar = ({ showNavigators }: Props) => {
                             navigate('/');
                         }}
                     >
-                        <Icon definition={faHome} />
+                        <Icon definition={faSquare} />
+                    </button>
+                )}
+            </div>
+            <div className={styles.cell}>
+                {showNavigators && (
+                    <button
+                        className={styles.button}
+                        type={'button'}
+                        title={'Back'}
+                        onClick={() => {
+                            navigate(-1);
+                        }}
+                    >
+                        <Icon definition={faChevronLeft} />
                     </button>
                 )}
             </div>

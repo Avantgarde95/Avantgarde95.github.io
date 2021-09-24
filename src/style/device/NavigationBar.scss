@@ -20,10 +20,8 @@
     color: Common.$white;
     background-color: transparent;
 
-    &:hover,
-    &:active,
-    &:focus {
-        transform: scale(0.9);
+    &:hover {
+        transform: scale(0.8);
     }
 }
 
