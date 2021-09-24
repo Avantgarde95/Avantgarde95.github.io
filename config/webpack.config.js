@@ -5,40 +5,43 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const rootPath = path.resolve(__dirname, '..');
-const srcPath = path.join(rootPath, 'src');
-const outPath = path.join(rootPath, 'docs');
-
-const serverIP = '0.0.0.0';
-const localIP = '127.0.0.1';
-const serverPort = 8080;
-
-const tsRule = { use: 'ts-loader' };
-
-const svelteRule = {
-    use: {
-        loader: 'svelte-loader', options: {
-            preprocess: SveltePreprocess({ scss: true }),
-            emitCss: true
-        }
-    }
-};
-
-const styleRule = {
-    use: [
-        MiniCssExtractPlugin.loader,
-        {
-            loader: 'css-loader', options: {
-                url: false
-            }
-        }
-    ]
-};
-
-const imageRule = { type: 'asset/resource' };
-
 module.exports = (env, argv) => {
     const isDevelopmentMode = !argv || argv.mode === 'development';
+
+    const rootPath = path.resolve(__dirname, '..');
+    const srcPath = path.join(rootPath, 'src');
+    const outPath = path.join(rootPath, 'docs');
+
+    const serverIP = '0.0.0.0';
+    const localIP = '127.0.0.1';
+    const serverPort = 8080;
+
+    const tsRule = { use: 'ts-loader' };
+
+    const svelteRule = {
+        use: {
+            loader: 'svelte-loader', options: {
+                preprocess: SveltePreprocess({ scss: true }),
+                emitCss: true,
+                compilerOptions: {
+                    dev: isDevelopmentMode
+                }
+            }
+        }
+    };
+
+    const styleRule = {
+        use: [
+            MiniCssExtractPlugin.loader,
+            {
+                loader: 'css-loader', options: {
+                    url: false
+                }
+            }
+        ]
+    };
+
+    const imageRule = { type: 'asset/resource' };
 
     return {
         mode: 'development',
