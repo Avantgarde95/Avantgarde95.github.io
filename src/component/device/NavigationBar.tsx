@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 
-import { Language, languageActions } from 'store/Language';
+import { Language, languageSlice } from 'store/Language';
 import { useStrictDispatch, useStrictSelector } from 'store/Store';
 import { Icon } from 'component/common/Icon';
 import styles from 'style/device/NavigationBar.scss';
@@ -54,7 +54,7 @@ export const NavigationBar = ({ showNavigators }: Props) => {
                     title={`To ${nextLanguage}`}
                     aria-label={`To ${nextLanguage}`}
                     onClick={() => {
-                        dispatch({ type: languageActions.setLanguage, payload: { language: nextLanguage } });
+                        dispatch(languageSlice.actions.setLanguage({ language: nextLanguage }));
                     }}
                 />
             </div>

@@ -1,5 +1,7 @@
 /* eslint-disable */
 
+window.Symbol = require('es6-symbol');
+
 // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith.
 if (!String.prototype.startsWith) {
     String.prototype.startsWith = function (search, rawPos) {

@@ -85,6 +85,7 @@ module.exports = {
         // Allow using the optional properties instead of defaultProps. (https://github.com/yannickcr/eslint-plugin-react/issues/1433)
         'react/require-default-props': 'off',
         'consistent-return': 'off',
-        'default-case': 'off'
+        'default-case': 'off',
+        'no-param-reassign': 'off'
     }
 };

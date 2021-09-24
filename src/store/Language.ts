@@ -1,4 +1,4 @@
-import { StrictReducer } from 'store/Common';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 /**
  * Supported languages.
@@ -12,27 +12,19 @@ export interface LanguageState {
     currentLanguage: Language;
 }
 
-export const languageActions = {
-    setLanguage: 'language/SET_LANGUAGE',
-} as const;
-
-export const languageActionCreators = {
-    setLanguage: (language: Language) => ({
-        type: languageActions.setLanguage,
-        payload: { language },
-    }),
-} as const;
-
-const languageReducer: StrictReducer<LanguageState, typeof languageActionCreators> = (
-    state = { currentLanguage: 'Korean' },
-    action
-) => {
-    switch (action.type) {
-        case languageActions.setLanguage:
-            return { currentLanguage: action.payload.language };
-        default:
-            return state;
-    }
+const initialState: LanguageState = {
+    currentLanguage: 'Korean',
 };
 
-export default languageReducer;
+export const languageSlice = createSlice({
+    name: 'language',
+    initialState,
+    reducers: {
+        /**
+         * Change the language which will be used in the application.
+         */
+        setLanguage(state, action: PayloadAction<{ language: Language }>) {
+            state.currentLanguage = action.payload.language;
+        },
+    },
+});

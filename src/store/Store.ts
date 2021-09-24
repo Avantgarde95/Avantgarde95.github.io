@@ -1,17 +1,27 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { combineReducers, createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 
-import language from 'store/Language';
-import time from 'store/Time';
+import { languageSlice } from 'store/Language';
+import { timeSlice } from 'store/Time';
+import { isDevelopmentMode } from 'util/DebugUtils';
 
-const reducer = combineReducers({ language, time });
+/**
+ * Global Redux store.
+ */
+export const store = configureStore({
+    reducer: {
+        [languageSlice.name]: languageSlice.reducer,
+        [timeSlice.name]: timeSlice.reducer,
+    },
+    devTools: isDevelopmentMode(),
+});
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const global = window as any;
-
-// eslint-disable-next-line no-underscore-dangle
-export const store = createStore(reducer, global.__REDUX_DEVTOOLS_EXTENSION__ && global.__REDUX_DEVTOOLS_EXTENSION__());
-
+/**
+ * Type-safe wrapper of useDispatch().
+ */
 export const useStrictDispatch: () => typeof store.dispatch = useDispatch;
 
+/**
+ * Type-safe wrapper of useSelector().
+ */
 export const useStrictSelector: TypedUseSelectorHook<ReturnType<typeof store.getState>> = useSelector;

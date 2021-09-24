@@ -1,4 +1,4 @@
-import { StrictReducer } from 'store/Common';
+import { createSlice } from '@reduxjs/toolkit';
 
 /**
  * Representation of a moment.
@@ -35,26 +35,19 @@ export interface TimeState {
     currentTime: Time;
 }
 
-export const timeActions = {
-    updateTime: 'time/SET_TIME',
-} as const;
-
-export const timeActionCreators = {
-    updateTime: () => ({
-        type: timeActions.updateTime,
-    }),
-} as const;
-
-const timeReducers: StrictReducer<TimeState, typeof timeActionCreators> = (
-    state = { currentTime: getCurrentTime() },
-    action
-) => {
-    switch (action.type) {
-        case timeActions.updateTime:
-            return { currentTime: getCurrentTime() };
-        default:
-            return state;
-    }
+const initialState: TimeState = {
+    currentTime: getCurrentTime(),
 };
 
-export default timeReducers;
+export const timeSlice = createSlice({
+    name: 'time',
+    initialState,
+    reducers: {
+        /**
+         * Update time to the current time.
+         */
+        updateTime(state) {
+            state.currentTime = getCurrentTime();
+        },
+    },
+});
