@@ -3,7 +3,7 @@
     import { faSignal } from "@fortawesome/free-solid-svg-icons/faSignal";
     import { faBatteryFull } from "@fortawesome/free-solid-svg-icons/faBatteryFull";
 
-    import Icon from "component/Icon.svelte";
+    import Icon from "component/common/Icon.svelte";
     import { currentAMPM, currentHour, currentMinute } from "store/Time";
 
     export let showTime: boolean;
@@ -33,7 +33,7 @@
 </div>
 
 <style lang="scss">
-    @use "./Common";
+    @use "../common/Common";
 
     .statusBar {
         box-sizing: border-box;

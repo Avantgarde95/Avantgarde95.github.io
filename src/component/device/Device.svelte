@@ -1,6 +1,6 @@
 <script lang="ts">
-    import NavigationBar from "component/NavigationBar.svelte";
-    import StatusBar from "component/StatusBar.svelte";
+    import NavigationBar from "component/device/NavigationBar.svelte";
+    import StatusBar from "component/device/StatusBar.svelte";
 </script>
 
 <div class="device">
@@ -10,7 +10,7 @@
 </div>
 
 <style lang="scss">
-    @use "./Common";
+    @use "../common/Common";
 
     :global {
         html {

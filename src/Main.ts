@@ -1,4 +1,4 @@
-import Device from 'component/Device.svelte';
+import Device from 'component/device/Device.svelte';
 
 // Remove the temporary elements.
 const temporaryArea = document.querySelector('.Temporary');

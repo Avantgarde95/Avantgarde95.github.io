@@ -3,7 +3,7 @@
     import { faSquare } from "@fortawesome/free-regular-svg-icons/faSquare";
 
     import { currentLanguage, Language } from "store/Language";
-    import Icon from "component/Icon.svelte";
+    import Icon from "component/common/Icon.svelte";
     import InKorean from "image/device/InKorean.svg";
     import InEnglish from "image/device/InEnglish.svg";
 
@@ -46,7 +46,7 @@
 </div>
 
 <style lang="scss">
-    @use "./Common";
+    @use "../common/Common";
 
     .navigationBar {
         display: table;
