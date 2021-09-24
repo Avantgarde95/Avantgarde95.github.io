@@ -1,5 +1,6 @@
 const path = require('path');
 
+const SveltePreprocess = require('svelte-preprocess');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -14,22 +15,23 @@ const serverPort = 8080;
 
 const tsRule = { use: 'ts-loader' };
 
+const svelteRule = {
+    use: {
+        loader: 'svelte-loader', options: {
+            preprocess: SveltePreprocess({ scss: true }),
+            emitCss: true
+        }
+    }
+};
+
 const styleRule = {
     use: [
-        // Code -> File.
         MiniCssExtractPlugin.loader,
-        // CSS -> CSS module.
         {
             loader: 'css-loader', options: {
-                modules: {
-                    auto: filePath => !filePath.includes('node_modules'),
-                    mode: 'local',
-                    localIdentName: '[path][name]__[local]--[hash:base64:5]'
-                }
+                url: false
             }
-        },
-        // SCSS -> CSS.
-        'sass-loader'
+        }
     ]
 };
 
@@ -40,7 +42,7 @@ module.exports = (env, argv) => {
 
     return {
         mode: 'development',
-        entry: path.join(srcPath, 'Main.tsx'),
+        entry: path.join(srcPath, 'Main.ts'),
         devtool: isDevelopmentMode ? 'inline-source-map' : false,
         target: ['web', 'es3'],
         output: {
@@ -58,12 +60,13 @@ module.exports = (env, argv) => {
                 'react-dom': 'preact/compat'
             },
             modules: ['node_modules', srcPath],
-            extensions: ['.ts', '.tsx', '.js']
+            extensions: ['.ts', '.js', '.svelte']
         },
         module: {
             rules: [
-                { test: /\.tsx?$/, ...tsRule },
-                { test: /\.(css|scss)$/, ...styleRule },
+                { test: /\.ts$/, ...tsRule },
+                { test: /\.svelte$/, ...svelteRule },
+                { test: /\.css$/, ...styleRule },
                 { test: /\.(png|jpg|gif|svg)$/, ...imageRule }
             ]
         },

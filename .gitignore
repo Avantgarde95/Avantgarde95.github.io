@@ -6,9 +6,5 @@
 # Dependencies.
 node_modules
 
-# Type definitions generated from CSS/SCSS files.
-src/**/*.css.d.ts
-src/**/*.scss.d.ts
-
 # Private files.
 Secret.json
