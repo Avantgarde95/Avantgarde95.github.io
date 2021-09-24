@@ -4,7 +4,7 @@ import { faSignal } from '@fortawesome/free-solid-svg-icons/faSignal';
 import { faBatteryFull } from '@fortawesome/free-solid-svg-icons/faBatteryFull';
 
 import { Icon } from 'component/common/Icon';
-import { AMPM, Hour, Minute, ClockProvider } from 'component/device/Clock';
+import { AMPM, Hour, Minute } from 'component/device/Clock';
 import styles from 'style/device/StatusBar.scss';
 
 /**
@@ -35,9 +35,7 @@ export const StatusBar = ({ showTime }: Props) => (
             </div>
             {showTime && (
                 <div className={styles.block}>
-                    <ClockProvider>
-                        <Hour />:<Minute /> <AMPM />
-                    </ClockProvider>
+                    <Hour />:<Minute /> <AMPM />
                 </div>
             )}
         </div>

@@ -1,4 +1,6 @@
-import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import React from 'react';
+
+import { useStrictSelector } from 'store/Store';
 
 /**
  * Format the number to the given length by putting zeros at the left.
@@ -9,84 +11,21 @@ function fillZero(value: number, length: number) {
 }
 
 /**
- * Representation of a moment.
- */
-interface Time {
-    year: number;
-    month: number;
-    monthDay: number;
-    weekDay: number;
-    hour: number;
-    minute: number;
-}
-
-/**
- * Get the current time.
- */
-function getCurrentTime(): Time {
-    const date = new Date();
-
-    return {
-        year: date.getFullYear(),
-        month: date.getMonth(),
-        monthDay: date.getDate() - 1,
-        weekDay: date.getDay(),
-        hour: date.getHours(),
-        minute: date.getMinutes(),
-    };
-}
-
-const TimeContext = createContext({
-    year: 0,
-    month: 0,
-    monthDay: 0,
-    weekDay: 0,
-    hour: 0,
-    minute: 0,
-} as Time);
-
-/**
- * ClockProvider props.
- */
-interface ClockProviderProps {
-    children?: ReactNode;
-}
-
-/**
- * React provider which runs the timer and re-render the clock components.
- */
-export const ClockProvider = ({ children = null }: ClockProviderProps) => {
-    const [time, setTime] = useState(getCurrentTime());
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setTime(getCurrentTime);
-        }, 10000);
-
-        return () => {
-            clearInterval(interval);
-        };
-    });
-
-    return <TimeContext.Provider value={time}>{children}</TimeContext.Provider>;
-};
-
-/**
  * Current hour.
  */
 export const Hour = () => {
-    const hour = useContext(TimeContext).hour % 12;
+    const currentTime = useStrictSelector(state => state.time.currentTime);
 
-    return <>{`${hour === 0 ? 12 : hour}`}</>;
+    return <>{`${currentTime.hour === 0 ? 12 : currentTime.hour}`}</>;
 };
 
 /**
  * Current minute.
  */
 export const Minute = () => {
-    const { minute } = useContext(TimeContext);
+    const currentTime = useStrictSelector(state => state.time.currentTime);
 
-    return <>{`${fillZero(minute, 2)}`}</>;
+    return <>{`${fillZero(currentTime.minute, 2)}`}</>;
 };
 
 const monthNames = [
@@ -107,18 +46,18 @@ const monthNames = [
  * Current month.
  */
 export const Month = () => {
-    const { month } = useContext(TimeContext);
+    const currentTime = useStrictSelector(state => state.time.currentTime);
 
-    return <>{monthNames[month]}</>;
+    return <>{monthNames[currentTime.month]}</>;
 };
 
 /**
  * Current day.
  */
 export const MonthDay = () => {
-    const { monthDay } = useContext(TimeContext);
+    const currentTime = useStrictSelector(state => state.time.currentTime);
 
-    return <>{`${monthDay + 1}`}</>;
+    return <>{`${currentTime.monthDay + 1}`}</>;
 };
 
 const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -127,16 +66,16 @@ const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
  * Current week of day.
  */
 export const WeekDay = () => {
-    const { weekDay } = useContext(TimeContext);
+    const currentTime = useStrictSelector(state => state.time.currentTime);
 
-    return <>{dayNames[weekDay]}</>;
+    return <>{dayNames[currentTime.weekDay]}</>;
 };
 
 /**
  * Whether the current time is before noon or after noon.
  */
 export const AMPM = () => {
-    const { hour } = useContext(TimeContext);
+    const currentTime = useStrictSelector(state => state.time.currentTime);
 
-    return <>{hour >= 12 ? 'PM' : 'AM'}</>;
+    return <>{currentTime.hour >= 12 ? 'PM' : 'AM'}</>;
 };
