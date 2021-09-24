@@ -1,11 +1,12 @@
 <script lang="ts">
-    import NavigationBar from "component/device/NavigationBar.svelte";
+    import Screen from "component/common/Screen.svelte";
     import StatusBar from "component/device/StatusBar.svelte";
+    import NavigationBar from "component/device/NavigationBar.svelte";
 </script>
 
 <div class="device">
     <StatusBar showTime />
-    <div class="content" />
+    <Screen />
     <NavigationBar showNavigators />
 </div>
 
@@ -60,10 +61,5 @@
 
         color: Common.$white;
         background-color: Common.$black;
-    }
-
-    .content {
-        width: 100%;
-        flex: 1;
     }
 </style>
