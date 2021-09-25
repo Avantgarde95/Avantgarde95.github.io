@@ -1,3 +1,6 @@
+// Apply the polyfills for older browsers (ex. IE).
+import 'util/Polyfills';
+
 import Device from 'component/device/Device.svelte';
 
 // Remove the temporary elements.

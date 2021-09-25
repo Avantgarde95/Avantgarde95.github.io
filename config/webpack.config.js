@@ -16,32 +16,31 @@ module.exports = (env, argv) => {
     const localIP = '127.0.0.1';
     const serverPort = 8080;
 
-    const tsRule = { use: 'ts-loader' };
+    const js2js = {
+        loader: 'babel-loader', options: {
+            presets: ['@babel/preset-env']
+        }
+    };
 
-    const svelteRule = {
-        use: {
-            loader: 'svelte-loader', options: {
-                preprocess: SveltePreprocess({ scss: true }),
-                emitCss: true,
-                compilerOptions: {
-                    dev: isDevelopmentMode
-                }
+    const ts2js = 'ts-loader';
+
+    const svelte2js = {
+        loader: 'svelte-loader', options: {
+            preprocess: SveltePreprocess({ scss: true }),
+            emitCss: true,
+            compilerOptions: {
+                dev: isDevelopmentMode
             }
         }
     };
 
-    const styleRule = {
-        use: [
-            MiniCssExtractPlugin.loader,
-            {
-                loader: 'css-loader', options: {
-                    url: false
-                }
-            }
-        ]
+    const css2css = {
+        loader: 'css-loader', options: {
+            url: false
+        }
     };
 
-    const imageRule = { type: 'asset/resource' };
+    const css2file = MiniCssExtractPlugin.loader;
 
     return {
         mode: 'development',
@@ -67,10 +66,11 @@ module.exports = (env, argv) => {
         },
         module: {
             rules: [
-                { test: /\.ts$/, ...tsRule },
-                { test: /\.svelte$/, ...svelteRule },
-                { test: /\.css$/, ...styleRule },
-                { test: /\.(png|jpg|gif|svg)$/, ...imageRule }
+                { test: /\.m?js$/, include: [path.join(rootPath, 'src'), path.join(rootPath, 'node_modules/svelte')], use: [js2js] },
+                { test: /\.ts$/, use: [ts2js] },
+                { test: /\.svelte$/, use: [js2js, svelte2js] },
+                { test: /\.css$/, use: [css2file, css2css] },
+                { test: /\.(png|jpg|gif|svg)$/, type: 'asset/resource' }
             ]
         },
         plugins: [
