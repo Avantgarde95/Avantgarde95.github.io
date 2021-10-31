@@ -6,6 +6,7 @@ import 'core-js/es/object/assign';
 
 import React from 'react';
 import { render } from 'react-dom';
+import 'react-avant/lib/index.css';
 
 import { Device } from 'component/device/Device';
 import { isDevelopmentMode } from 'util/DebugUtils';

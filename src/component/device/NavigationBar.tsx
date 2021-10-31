@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Icon } from 'react-avant/lib/Icon';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
 
 import { Language, useLanguage } from 'store/Language';
-import { Icon } from 'component/common/Icon';
 import styles from 'style/device/NavigationBar.scss';
 import InKorean from 'image/device/InKorean.svg';
 import InEnglish from 'image/device/InEnglish.svg';

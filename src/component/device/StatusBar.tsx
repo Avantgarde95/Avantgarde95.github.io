@@ -1,9 +1,9 @@
 import React from 'react';
+import { Icon } from 'react-avant/lib/Icon';
 import { faWifi } from '@fortawesome/free-solid-svg-icons/faWifi';
 import { faSignal } from '@fortawesome/free-solid-svg-icons/faSignal';
 import { faBatteryFull } from '@fortawesome/free-solid-svg-icons/faBatteryFull';
 
-import { Icon } from 'component/common/Icon';
 import { AMPM, Hour, Minute } from 'component/device/Clock';
 import styles from 'style/device/StatusBar.scss';
 

@@ -13,7 +13,8 @@
         "@fortawesome/free-solid-svg-icons": "^5.15.4",
         "@fortawesome/free-regular-svg-icons": "^5.15.4",
         "@fortawesome/free-brands-svg-icons": "^5.15.4",
-        "core-js": "^3.19.0"
+        "core-js": "^3.19.0",
+        "react-avant": "Avantgarde95/react-avant"
     },
     "devDependencies": {
         "webpack": "^5.61.0",
