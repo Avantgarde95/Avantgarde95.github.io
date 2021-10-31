@@ -1,3 +1,12 @@
+const jsdocContexts = [
+    'FunctionDeclaration',
+    'MethodDefinition',
+    'ClassDeclaration',
+    'FunctionExpression',
+    'TSInterfaceDeclaration',
+    'TSTypeAliasDeclaration'
+];
+
 module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: [
@@ -32,10 +41,7 @@ module.exports = {
                     'FunctionExpression': true,
                     'ArrowFunctionExpression': false
                 },
-                'contexts': [
-                    'TSInterfaceDeclaration',
-                    'TSTypeAliasDeclaration'
-                ]
+                'contexts': jsdocContexts
             }
         ],
         'jsdoc/require-description': 'error',
@@ -45,13 +51,9 @@ module.exports = {
         'jsdoc/require-param-type': 'off',
         'jsdoc/require-param-description': 'error',
         'jsdoc/check-param-names': 'off',
-        'react/jsx-filename-extension': [1, {
-            extensions: ['.tsx']
-        }],
+        'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
         'import/prefer-default-export': 'off',
-        'import/no-extraneous-dependencies': ['error', {
-            devDependencies: true,
-        }],
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
         // Allow {} when setting the DOM attributes.
         'react/jsx-curly-brace-presence': 'off',
         'prettier/prettier': [
