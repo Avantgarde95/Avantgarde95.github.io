@@ -4,7 +4,8 @@ import { Icon } from 'react-avant/lib/Icon';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
 
-import { Language, useLanguage } from 'store/Language';
+import { useStoreDispatch, useStoreSelector } from 'store/Store';
+import { Language, languageSlice } from 'store/Language';
 import styles from 'style/device/NavigationBar.scss';
 import InKorean from 'image/device/InKorean.svg';
 import InEnglish from 'image/device/InEnglish.svg';
@@ -21,7 +22,8 @@ interface Props {
  */
 export const NavigationBar = ({ showNavigators }: Props) => {
     const navigate = useNavigate();
-    const { currentLanguage, setLanguage } = useLanguage();
+    const currentLanguage = useStoreSelector(state => state.language.currentLanguage);
+    const dispatch = useStoreDispatch();
 
     const nextLanguage: Language = currentLanguage === 'Korean' ? 'English' : 'Korean';
     const languageImage = currentLanguage === 'Korean' ? InKorean : InEnglish;
@@ -38,7 +40,7 @@ export const NavigationBar = ({ showNavigators }: Props) => {
                     title={`To ${nextLanguage}`}
                     aria-label={`To ${nextLanguage}`}
                     onClick={() => {
-                        setLanguage(nextLanguage);
+                        dispatch(languageSlice.actions.setLanguage({ language: nextLanguage }));
                     }}
                 />
             </div>

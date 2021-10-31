@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 /**
  * Supported languages.
@@ -8,12 +8,20 @@ export type Language = 'Korean' | 'English';
 /**
  * Store related to the current language.
  */
-export interface LanguageStore {
+export interface LanguageState {
     currentLanguage: Language;
-    setLanguage: (language: Language) => void;
 }
 
-export const useLanguage = create<LanguageStore>(set => ({
+const initialState: LanguageState = {
     currentLanguage: 'Korean',
-    setLanguage: language => set({ currentLanguage: language }),
-}));
+};
+
+export const languageSlice = createSlice({
+    name: 'language',
+    initialState,
+    reducers: {
+        setLanguage: (state, action: PayloadAction<{ language: Language }>) => {
+            state.currentLanguage = action.payload.language;
+        },
+    },
+});

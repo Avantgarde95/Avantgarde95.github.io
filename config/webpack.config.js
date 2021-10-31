@@ -75,7 +75,9 @@ module.exports = (env, argv) => {
         module: {
             rules: [
                 { test: /\.tsx?/, use: [ts2js] },
-                { test: /\.m?js$/, use: [js2js] },
+                // Exclude core-js from babel's targets.
+                // https://github.com/zloirock/core-js/issues/514
+                { test: /\.m?js$/, use: [js2js], exclude: path.join(rootPath, 'node_modules', 'core-js') },
                 { test: /\.(css|scss)$/, use: [css2file, css2css, sass2css] },
                 { test: /\.(png|jpg|gif|svg)$/, type: 'asset/resource' }
             ]

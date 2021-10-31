@@ -6,8 +6,9 @@
     "dependencies": {
         "preact": "^10.5.15",
         "react-router-dom": "^6.0.0-beta.8",
+        "react-redux": "^7.2.6",
         "history": "^5.0.1",
-        "zustand": "^3.6.2",
+        "@reduxjs/toolkit": "^1.6.2",
         "luminous-lightbox": "^2.3.5",
         "@fortawesome/fontawesome-svg-core": "^1.2.36",
         "@fortawesome/free-solid-svg-icons": "^5.15.4",

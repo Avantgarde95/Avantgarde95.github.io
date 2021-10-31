@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { useTime } from 'store/Time';
+import { useStoreSelector } from 'store/Store';
 
 /**
  * Format the number to the given length by putting zeros at the left.
@@ -14,7 +13,7 @@ function fillZero(value: number, length: number) {
  * Current hour.
  */
 export const Hour = () => {
-    const { currentTime } = useTime();
+    const currentTime = useStoreSelector(state => state.time.currentTime);
 
     return <>{`${currentTime.hour === 0 ? 12 : currentTime.hour}`}</>;
 };
@@ -23,7 +22,7 @@ export const Hour = () => {
  * Current minute.
  */
 export const Minute = () => {
-    const { currentTime } = useTime();
+    const currentTime = useStoreSelector(state => state.time.currentTime);
 
     return <>{`${fillZero(currentTime.minute, 2)}`}</>;
 };
@@ -46,7 +45,7 @@ const monthNames = [
  * Current month.
  */
 export const Month = () => {
-    const { currentTime } = useTime();
+    const currentTime = useStoreSelector(state => state.time.currentTime);
 
     return <>{monthNames[currentTime.month]}</>;
 };
@@ -55,7 +54,7 @@ export const Month = () => {
  * Current day.
  */
 export const MonthDay = () => {
-    const { currentTime } = useTime();
+    const currentTime = useStoreSelector(state => state.time.currentTime);
 
     return <>{`${currentTime.monthDay + 1}`}</>;
 };
@@ -66,7 +65,7 @@ const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
  * Current week of day.
  */
 export const WeekDay = () => {
-    const { currentTime } = useTime();
+    const currentTime = useStoreSelector(state => state.time.currentTime);
 
     return <>{dayNames[currentTime.weekDay]}</>;
 };
@@ -75,7 +74,7 @@ export const WeekDay = () => {
  * Whether the current time is before noon or after noon.
  */
 export const AMPM = () => {
-    const { currentTime } = useTime();
+    const currentTime = useStoreSelector(state => state.time.currentTime);
 
     return <>{currentTime.hour >= 12 ? 'PM' : 'AM'}</>;
 };

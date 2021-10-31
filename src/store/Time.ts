@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { createSlice } from '@reduxjs/toolkit';
 
 /**
  * Representation of a moment.
@@ -31,12 +31,20 @@ function getCurrentTime(): Time {
 /**
  * Store related to the current time.
  */
-export interface TimeStore {
+export interface TimeState {
     currentTime: Time;
-    updateTime: () => void;
 }
 
-export const useTime = create<TimeStore>(set => ({
+const initialState: TimeState = {
     currentTime: getCurrentTime(),
-    updateTime: () => set({ currentTime: getCurrentTime() }),
-}));
+};
+
+export const timeSlice = createSlice({
+    name: 'time',
+    initialState,
+    reducers: {
+        updateTime: state => {
+            state.currentTime = getCurrentTime();
+        },
+    },
+});
