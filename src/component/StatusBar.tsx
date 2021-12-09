@@ -4,6 +4,7 @@ import { faWifi } from '@fortawesome/free-solid-svg-icons/faWifi';
 import { faSignal } from '@fortawesome/free-solid-svg-icons/faSignal';
 import { faBatteryFull } from '@fortawesome/free-solid-svg-icons/faBatteryFull';
 
+import { AMPM, Hour, Minute } from 'component/Clock';
 import styles from 'style/StatusBar.module.scss';
 
 /**
@@ -34,7 +35,7 @@ export const StatusBar = ({ showTime }: Props) => (
             </div>
             {showTime && (
                 <div className={styles.block}>
-                    8:20 PM
+                    <Hour />:<Minute /> <AMPM />
                 </div>
             )}
         </div>

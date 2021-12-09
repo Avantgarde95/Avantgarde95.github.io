@@ -7,12 +7,14 @@
         "next": "^12.0.7",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
+        "react-redux": "^7.2.6",
+        "react-avant": "Avantgarde95/react-avant",
+        "@reduxjs/toolkit": "^1.6.2",
         "luminous-lightbox": "^2.3.5",
         "@fortawesome/fontawesome-svg-core": "^1.2.36",
         "@fortawesome/free-solid-svg-icons": "^5.15.4",
         "@fortawesome/free-regular-svg-icons": "^5.15.4",
-        "@fortawesome/free-brands-svg-icons": "^5.15.4",
-        "react-avant": "Avantgarde95/react-avant"
+        "@fortawesome/free-brands-svg-icons": "^5.15.4"
     },
     "devDependencies": {
         "typed-scss-modules": "^4.1.1",
@@ -35,11 +37,14 @@
     },
     "scripts": {
         "task:typing": "tsm \"src/**/*.module.{css,scss}\"",
-        "task:serve": "next -p 8080",
-        "task:build": "next build && next export -o docs",
+        "task:debug": "next dev -p 8080",
+        "task:serve": "next start -p 8080",
+        "task:build": "next build",
+        "task:export": "next export -o docs",
         "task:lint": "next lint",
-        "serve": "run-p \"task:typing\" \"task:serve\"",
-        "build": "run-s \"task:typing\" \"task:build\"",
+        "debug": "run-p \"task:typing\" \"task:debug\"",
+        "serve": "run-s \"task:typing\" \"task:build\" \"task:serve\"",
+        "export": "run-s \"task:typing\" \"task:build\" \"task:export\"",
         "lint": "run-s \"task:lint\"",
         "lint:fix": "run-s \"task:lint -- --fix\""
     }
