@@ -16,6 +16,7 @@
     },
     "devDependencies": {
         "typed-scss-modules": "^4.1.1",
+        "sass": "^1.44.0",
         "eslint-config-airbnb": "^19.0.2",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-import": "^2.25.3",
@@ -33,7 +34,7 @@
         "@types/node": "^16.11.12"
     },
     "scripts": {
-        "task:typing": "tsm \"src/**/*.{css,scss}\"",
+        "task:typing": "tsm \"src/**/*.module.{css,scss}\"",
         "task:serve": "next -p 8080",
         "task:build": "next build && next export -o docs",
         "task:lint": "next lint",
