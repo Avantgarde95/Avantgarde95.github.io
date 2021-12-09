@@ -1,23 +1,40 @@
 {
-    "compilerOptions": {
-        "module": "esnext",
-        "target": "es3",
-        "sourceMap": true,
-        "strict": true,
-        "jsx": "react",
-        "moduleResolution": "node",
-        // This enables some imports such as "import React from 'react'".
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "baseUrl": ".",
-        "paths": {
-            // For using absolute import.
-            "*": [
-                "src/*"
-            ],
-        }
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es5",
+    "sourceMap": true,
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    // This enables some imports such as "import React from 'react'".
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      // For using absolute import.
+      "*": [
+        "src/*"
+      ]
     },
-    "exclude": [
-        "node_modules"
-    ]
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
