@@ -53,9 +53,21 @@ module.exports = {
         'jsdoc/require-param-type': 'off',
         'jsdoc/require-param-description': 'error',
         'jsdoc/check-param-names': 'off',
-        'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
         'import/prefer-default-export': 'off',
-        'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+        'import/no-extraneous-dependencies': ['error', {
+            devDependencies: true
+        }],
+        // Allow omitting the file extensions when importing the files.
+        'import/extensions': ['error', 'ignorePackages', {
+            'js': 'never',
+            'jsx': 'never',
+            'ts': 'never',
+            'tsx': 'never'
+        }],
+        'import/no-extraneous-dependencies': 'off',
+        'react/jsx-filename-extension': [1, {
+            extensions: ['.tsx']
+        }],
         // Allow {} when setting the DOM attributes.
         'react/jsx-curly-brace-presence': 'off',
         'react/function-component-definition': [2, {
@@ -73,14 +85,6 @@ module.exports = {
             arrowParens: 'avoid',
             endOfLine: 'auto'
         }],
-        // Allow omitting the file extensions when importing the files.
-        'import/extensions': ['error', 'ignorePackages', {
-            'js': 'never',
-            'jsx': 'never',
-            'ts': 'never',
-            'tsx': 'never'
-        }],
-        'import/no-extraneous-dependencies': 'off',
         '@typescript-eslint/no-use-before-define': ['error']
     }
 };

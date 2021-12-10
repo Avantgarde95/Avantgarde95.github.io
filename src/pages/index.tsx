@@ -100,6 +100,11 @@ const apps: App[] = [
     },
 ];
 
+/**
+ * 'Home' page.
+ * It shows the grid of the app buttons which looks like a phone screen.
+ * (Maximum length a row: 5)
+ */
 const Page = () => {
     const currentLanguage = useStoreSelector(state => state.language.currentLanguage);
 
@@ -112,6 +117,7 @@ const Page = () => {
                         {currentLanguage === 'Korean' ? koreanName : englishName}
                     </div>
                 ))}
+                {/* Put some empty cells to align the buttons to the left. */}
                 {range(0, 5).map(i => (
                     <div key={i} className={styles.cell} />
                 ))}
