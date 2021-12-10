@@ -42,7 +42,7 @@
         "task:build": "next build",
         "task:export": "next export -o docs",
         "task:lint": "next lint",
-        "debug": "run-p \"task:typing\" \"task:debug\"",
+        "debug": "run-p \"task:typing -- --watch\" \"task:debug\"",
         "serve": "run-s \"task:typing\" \"task:build\" \"task:serve\"",
         "export": "run-s \"task:typing\" \"task:build\" \"task:export\"",
         "lint": "run-s \"task:lint\"",

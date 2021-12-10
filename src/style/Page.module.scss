@@ -1,6 +1,7 @@
 .page {
     display: flex;
     flex-direction: column;
+    overflow-y: hidden;
 
     width: 100%;
     height: 100%;

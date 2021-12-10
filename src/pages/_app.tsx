@@ -6,6 +6,7 @@ import 'react-avant/lib/index.css';
 import { store } from 'store/Store';
 import { timeSlice } from 'store/Time';
 import { StatusBar } from 'component/StatusBar';
+import { NavigationBar } from 'component/NavigationBar';
 import 'style/Global.scss';
 import styles from 'style/Page.module.scss';
 
@@ -23,6 +24,7 @@ const App = ({ Component, pageProps }: AppProps) => (
             <StatusBar showTime />
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Component {...pageProps} />
+            <NavigationBar showNavigators />
         </div>
     </Provider>
 );
