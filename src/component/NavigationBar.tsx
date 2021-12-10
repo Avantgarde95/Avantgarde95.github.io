@@ -24,7 +24,7 @@ export const NavigationBar = ({ showNavigators }: Props) => {
     const dispatch = useStoreDispatch();
 
     const nextLanguage: Language = currentLanguage === 'Korean' ? 'English' : 'Korean';
-    const languageSymbol = currentLanguage === 'Korean' ? '한' : 'A';
+    const languageSymbol = currentLanguage === 'Korean' ? '가' : 'A';
 
     const onClickLanguage = () => {
         dispatch(languageSlice.actions.setLanguage({ language: nextLanguage }));
