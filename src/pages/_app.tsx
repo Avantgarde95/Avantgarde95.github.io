@@ -6,10 +6,10 @@ import 'react-avant/lib/index.css';
 
 import { store } from 'store/Store';
 import { timeSlice } from 'store/Time';
-import { StatusBar } from 'component/StatusBar';
-import { NavigationBar } from 'component/NavigationBar';
-import 'style/Global.scss';
-import styles from 'style/Page.module.scss';
+import { StatusBar } from 'component/page/StatusBar';
+import { NavigationBar } from 'component/page/NavigationBar';
+import 'style/page/Global.scss';
+import styles from 'style/page/Page.module.scss';
 
 // Start the clock.
 setInterval(() => {

@@ -6,7 +6,7 @@ import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
 
 import { useStoreDispatch, useStoreSelector } from 'store/Store';
 import { Language, languageSlice } from 'store/Language';
-import styles from 'style/NavigationBar.module.scss';
+import styles from 'style/page/NavigationBar.module.scss';
 
 /**
  * NavigationBar props.

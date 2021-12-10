@@ -14,7 +14,7 @@ import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 import { useStoreSelector } from 'store/Store';
 import { AppButton } from 'component/home/AppButton';
 import { range } from 'util/MathUtils';
-import styles from 'style/Home.module.scss';
+import styles from 'style/home/Home.module.scss';
 
 /**
  * Data for constructing each AppButton.
