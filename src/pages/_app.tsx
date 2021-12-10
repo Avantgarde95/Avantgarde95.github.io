@@ -18,7 +18,7 @@ setInterval(() => {
 /**
  * Common component which wraps the current page.
  */
-const App = ({ Component, pageProps }: AppProps) => (
+const Device = ({ Component, pageProps }: AppProps) => (
     <Provider store={store}>
         <div className={styles.page}>
             <StatusBar showTime />
@@ -29,4 +29,4 @@ const App = ({ Component, pageProps }: AppProps) => (
     </Provider>
 );
 
-export default App;
+export default Device;

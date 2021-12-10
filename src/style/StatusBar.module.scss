@@ -1,5 +1,3 @@
-@use './Common';
-
 .statusBar {
     box-sizing: border-box;
     display: flex;
@@ -10,8 +8,6 @@
     padding-left: 0.3rem;
     padding-right: 0.3rem;
     line-height: 2rem;
-
-    color: Common.$white;
 }
 
 .left {
