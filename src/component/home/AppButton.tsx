@@ -9,6 +9,7 @@ import styles from 'style/home/AppButton.module.scss';
  * AppButton props.
  */
 interface Props {
+    title: string;
     path: string;
     icon: IconDefinition;
     color: string;
@@ -18,12 +19,13 @@ interface Props {
  * Link for opening an 'app' or an website.
  * It looks like an app button on the phone.
  */
-export const AppButton = ({ path, icon, color }: Props) => {
+export const AppButton = ({ title, path, icon, color }: Props) => {
     const openInNewTab = path.startsWith('http');
 
     return (
         <Link href={path}>
             <a
+                title={title}
                 className={styles.appButton}
                 style={{ color }}
                 target={openInNewTab ? '_blank' : undefined}

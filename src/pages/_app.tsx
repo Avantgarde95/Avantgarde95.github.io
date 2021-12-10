@@ -28,10 +28,10 @@ const App = ({ Component, pageProps }: AppProps) => (
             />
         </Head>
         <div className={styles.page}>
-            <StatusBar showTime />
+            <StatusBar />
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Component {...pageProps} />
-            <NavigationBar showNavigators />
+            <NavigationBar />
         </div>
     </Provider>
 );

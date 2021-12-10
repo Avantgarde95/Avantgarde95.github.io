@@ -9,16 +9,18 @@
     margin-top: auto;
 }
 
-@mixin baseButton {
+.button {
     cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-    transition: all 0.1s;
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s;
 
     width: 3rem;
     height: 2.5rem;
     border: none;
-    line-height: 2.5rem;
     font-size: 2rem;
 
     color: Common.$white;
@@ -29,14 +31,25 @@
     }
 }
 
-.button {
-    @include baseButton();
-}
+.language {
+    position: absolute;
 
-.languageButton {
-    @include baseButton();
+    top: 1rem;
+    left: 1rem;
+    width: 2rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: top 0.5s, left 0.5s;
 
-    background-size: auto 2rem;
-    background-repeat: no-repeat;
-    background-position: center;
+    color: Common.$gray;
+
+    &.isSelected {
+        z-index: 1;
+
+        top: 0;
+        left: 0;
+
+        color: Common.$white;
+    }
 }

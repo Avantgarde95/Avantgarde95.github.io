@@ -8,17 +8,10 @@ import { AMPM, Hour, Minute } from 'component/page/Clock';
 import styles from 'style/page/StatusBar.module.scss';
 
 /**
- * StatusBar props.
- */
-interface Props {
-    showTime: boolean;
-}
-
-/**
  * Component which represents the bar at the top of the phone(tablet)'s screen.
  * ex. Wifi, battery, etc.
  */
-export const StatusBar = ({ showTime }: Props) => (
+export const StatusBar = () => (
     <div className={styles.statusBar}>
         <div className={styles.left}>
             <div className={styles.block}>Hunmin Park</div>
@@ -33,11 +26,9 @@ export const StatusBar = ({ showTime }: Props) => (
             <div className={styles.block}>
                 <Icon definition={faBatteryFull} />
             </div>
-            {showTime && (
-                <div className={styles.block}>
-                    <Hour />:<Minute /> <AMPM />
-                </div>
-            )}
+            <div className={styles.block}>
+                <Hour />:<Minute /> <AMPM />
+            </div>
         </div>
     </div>
 );

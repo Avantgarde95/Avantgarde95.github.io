@@ -16,7 +16,7 @@ function fillZero(value: number, length: number) {
 export const Hour = () => {
     const currentTime = useStoreSelector(state => state.time.currentTime);
 
-    return <>{`${currentTime.hour === 0 ? 12 : currentTime.hour}`}</>;
+    return <>{`${currentTime.hour === 0 ? 12 : currentTime.hour % 12}`}</>;
 };
 
 /**

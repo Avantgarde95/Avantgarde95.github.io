@@ -1,6 +1,7 @@
 import React from 'react';
 import { Icon } from 'react-avant/lib/Icon';
 import { useRouter } from 'next/router';
+import classNames from 'classnames';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
 
@@ -9,25 +10,24 @@ import { Language, languageSlice } from 'store/Language';
 import styles from 'style/page/NavigationBar.module.scss';
 
 /**
- * NavigationBar props.
- */
-interface Props {
-    showNavigators: boolean;
-}
-
-/**
  * Component which represents the (virtual) buttons at the bottom of the phone(tablet).
  */
-export const NavigationBar = ({ showNavigators }: Props) => {
+export const NavigationBar = () => {
     const router = useRouter();
     const currentLanguage = useStoreSelector(state => state.language.currentLanguage);
     const dispatch = useStoreDispatch();
 
-    const nextLanguage: Language = currentLanguage === 'Korean' ? 'English' : 'Korean';
-    const languageSymbol = currentLanguage === 'Korean' ? '가' : 'A';
+    const languageSymbols: Array<[Language, string]> = [
+        ['Korean', '가'],
+        ['English', 'A'],
+    ];
 
     const onClickLanguage = () => {
-        dispatch(languageSlice.actions.setLanguage({ language: nextLanguage }));
+        dispatch(
+            languageSlice.actions.setLanguage({
+                language: currentLanguage === 'Korean' ? 'English' : 'Korean',
+            })
+        );
     };
 
     const onClickHome = () => {
@@ -41,34 +41,26 @@ export const NavigationBar = ({ showNavigators }: Props) => {
     return (
         <div className={styles.navigationBar}>
             <button
-                className={styles.languageButton}
+                className={styles.button}
                 type={'button'}
-                title={`To ${nextLanguage}`}
-                aria-label={`To ${nextLanguage}`}
+                title={'언어 변경 Change language'}
                 onClick={onClickLanguage}
             >
-                {languageSymbol}
+                {languageSymbols.map(([language, symbol]) => (
+                    <span
+                        key={language}
+                        className={classNames(styles.language, { [styles.isSelected]: currentLanguage === language })}
+                    >
+                        {symbol}
+                    </span>
+                ))}
             </button>
-            {showNavigators && (
-                <button
-                    className={styles.button}
-                    type={'button'}
-                    title={'Home'}
-                    onClick={onClickHome}
-                >
-                    <Icon definition={faSquare} />
-                </button>
-            )}
-            {showNavigators && (
-                <button
-                    className={styles.button}
-                    type={'button'}
-                    title={'Back'}
-                    onClick={onClickBack}
-                >
-                    <Icon definition={faChevronLeft} />
-                </button>
-            )}
+            <button className={styles.button} type={'button'} title={'홈 Home'} onClick={onClickHome}>
+                <Icon definition={faSquare} />
+            </button>
+            <button className={styles.button} type={'button'} title={'뒤로 Back'} onClick={onClickBack}>
+                <Icon definition={faChevronLeft} />
+            </button>
         </div>
     );
 };

@@ -12,6 +12,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 
 import { useStoreSelector } from 'store/Store';
+import { Language } from 'store/Language';
 import { AppButton } from 'component/home/AppButton';
 import { range } from 'util/MathUtils';
 import styles from 'style/home/Home.module.scss';
@@ -20,8 +21,7 @@ import styles from 'style/home/Home.module.scss';
  * Data for constructing each AppButton.
  */
 interface App {
-    koreanName: string;
-    englishName: string;
+    nameMap: Record<Language, string>;
     path: string;
     icon: IconDefinition;
     color: string;
@@ -29,71 +29,61 @@ interface App {
 
 const apps: App[] = [
     {
-        koreanName: '소개',
-        englishName: 'About',
+        nameMap: { Korean: '소개', English: 'About' },
         path: '/about',
         icon: faIdCard,
         color: '#007aeb',
     },
     {
-        koreanName: '이력',
-        englishName: 'CV',
+        nameMap: { Korean: '이력', English: 'CV' },
         path: '/cv',
         icon: faFileAlt,
         color: '#aaaaaa',
     },
     {
-        koreanName: '프로젝트',
-        englishName: 'Projects',
+        nameMap: { Korean: '프로젝트', English: 'Projects' },
         path: '/project',
         icon: faLaptopCode,
         color: '#876766',
     },
     {
-        koreanName: '음악',
-        englishName: 'Musics',
+        nameMap: { Korean: '음악', English: 'Musics' },
         path: '/music',
         icon: faMusic,
         color: '#1cb81d',
     },
     {
-        koreanName: '블로그',
-        englishName: 'Blog',
-        path: 'https://Avantgarde95.github.io/blog',
+        nameMap: { Korean: '블로그', English: 'Blog' },
+        path: '/blog',
         icon: faNewspaper,
         color: '#677963',
     },
     {
-        koreanName: '코드',
-        englishName: 'Code',
+        nameMap: { Korean: '코드', English: 'Code' },
         path: 'https://github.com/Avantgarde95/Avantgarde95.github.io',
         icon: faCode,
         color: '#a4b353',
     },
     {
-        koreanName: '깃허브',
-        englishName: 'GitHub',
+        nameMap: { Korean: '깃허브', English: 'GitHub' },
         path: 'https://github.com/Avantgarde95',
         icon: faGithub,
         color: '#211f1f',
     },
     {
-        koreanName: '유튜브',
-        englishName: 'YouTube',
+        nameMap: { Korean: '유튜브', English: 'YouTube' },
         path: 'https://www.youtube.com/user/Scottparkmusic',
         icon: faYoutube,
         color: '#ff0000',
     },
     {
-        koreanName: '페이스북',
-        englishName: 'Facebook',
+        nameMap: { Korean: '페이스북', English: 'Facebook' },
         path: 'https://www.facebook.com/s.ramanujan',
         icon: faFacebookSquare,
         color: '#3b5998',
     },
     {
-        koreanName: '인스타그램',
-        englishName: 'Instagram',
+        nameMap: { Korean: '인스타그램', English: 'Instagram' },
         path: 'https://www.instagram.com/hunminpark95',
         icon: faInstagram,
         color: '#c13584',
@@ -103,7 +93,7 @@ const apps: App[] = [
 /**
  * 'Home' page.
  * It shows the grid of the app buttons which looks like a phone screen.
- * (Maximum length a row: 5)
+ * (Maximum length of a row: 5)
  */
 const Page = () => {
     const currentLanguage = useStoreSelector(state => state.language.currentLanguage);
@@ -111,10 +101,10 @@ const Page = () => {
     return (
         <div className={styles.page}>
             <div className={styles.grid}>
-                {apps.map(({ koreanName, englishName, path, icon, color }) => (
+                {apps.map(({ nameMap, path, icon, color }) => (
                     <div key={path} className={styles.cell}>
-                        <AppButton path={path} icon={icon} color={color} />
-                        {currentLanguage === 'Korean' ? koreanName : englishName}
+                        <AppButton title={Object.values(nameMap).join(' ')} path={path} icon={icon} color={color} />
+                        {nameMap[currentLanguage]}
                     </div>
                 ))}
                 {/* Put some empty cells to align the buttons to the left. */}
