@@ -4,8 +4,8 @@ import { faWifi } from '@fortawesome/free-solid-svg-icons/faWifi';
 import { faSignal } from '@fortawesome/free-solid-svg-icons/faSignal';
 import { faBatteryFull } from '@fortawesome/free-solid-svg-icons/faBatteryFull';
 
-import { AMPM, Hour, Minute } from 'component/page/Clock';
-import styles from 'style/page/StatusBar.module.scss';
+import { AMPM, Hour, Minute } from 'component/device/Clock';
+import styles from 'style/device/StatusBar.module.scss';
 
 /**
  * Component which represents the bar at the top of the phone(tablet)'s screen.

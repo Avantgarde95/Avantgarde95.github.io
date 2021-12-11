@@ -7,7 +7,7 @@ import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
 
 import { useStoreDispatch, useStoreSelector } from 'store/Store';
 import { Language, languageSlice } from 'store/Language';
-import styles from 'style/page/NavigationBar.module.scss';
+import styles from 'style/device/NavigationBar.module.scss';
 
 /**
  * Component which represents the (virtual) buttons at the bottom of the phone(tablet).

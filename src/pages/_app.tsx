@@ -6,10 +6,10 @@ import 'react-avant/lib/index.css';
 
 import { store } from 'store/Store';
 import { timeSlice } from 'store/Time';
-import { StatusBar } from 'component/page/StatusBar';
-import { NavigationBar } from 'component/page/NavigationBar';
-import 'style/page/Global.scss';
-import styles from 'style/page/Page.module.scss';
+import { StatusBar } from 'component/device/StatusBar';
+import { NavigationBar } from 'component/device/NavigationBar';
+import 'style/device/Global.scss';
+import styles from 'style/device/Device.module.scss';
 
 // Start the clock.
 setInterval(() => {
@@ -17,9 +17,10 @@ setInterval(() => {
 }, 10000);
 
 /**
+ * Represents a 'device'. (ex. Virtual tablet & phone)
  * Common component which wraps the current page.
  */
-const App = ({ Component, pageProps }: AppProps) => (
+const Device = ({ Component, pageProps }: AppProps) => (
     <Provider store={store}>
         <Head>
             <link
@@ -27,7 +28,7 @@ const App = ({ Component, pageProps }: AppProps) => (
                 href={'https://fonts.googleapis.com/css2?family=Inconsolata&family=Noto+Sans+KR&display=swap'}
             />
         </Head>
-        <div className={styles.page}>
+        <div className={styles.device}>
             <StatusBar />
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             <Component {...pageProps} />
@@ -36,4 +37,4 @@ const App = ({ Component, pageProps }: AppProps) => (
     </Provider>
 );
 
-export default App;
+export default Device;
