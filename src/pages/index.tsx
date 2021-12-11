@@ -11,10 +11,10 @@ import { faMusic } from '@fortawesome/free-solid-svg-icons/faMusic';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 
-import { useStoreSelector } from 'store/Store';
 import { Language } from 'store/Language';
 import { Background } from 'component/home/Background';
 import { AppButton } from 'component/home/AppButton';
+import { AppName } from 'component/home/AppName';
 import { range } from 'util/MathUtils';
 import styles from 'style/home/Page.module.scss';
 
@@ -96,28 +96,24 @@ const apps: App[] = [
  * It shows the grid of the app buttons which looks like a phone screen.
  * (Maximum length of a row: 5)
  */
-const Page = () => {
-    const currentLanguage = useStoreSelector(state => state.language.currentLanguage);
-
-    return (
-        <div className={styles.page}>
-            <Background />
-            <div className={styles.content}>
-                <div className={styles.grid}>
-                    {apps.map(({ nameMap, path, icon, color }) => (
-                        <div key={path} className={styles.cell}>
-                            <AppButton title={Object.values(nameMap).join(' ')} path={path} icon={icon} color={color} />
-                            {nameMap[currentLanguage]}
-                        </div>
-                    ))}
-                    {/* Put some empty cells to align the buttons to the left. */}
-                    {range(0, 5).map(i => (
-                        <div key={i} className={styles.cell} />
-                    ))}
-                </div>
+const Page = () => (
+    <div className={styles.page}>
+        <Background />
+        <div className={styles.content}>
+            <div className={styles.grid}>
+                {apps.map(({ nameMap, path, icon, color }) => (
+                    <div key={path} className={styles.cell}>
+                        <AppButton title={Object.values(nameMap).join(' ')} path={path} icon={icon} color={color} />
+                        <AppName nameMap={nameMap} />
+                    </div>
+                ))}
+                {/* Put some empty cells to align the buttons to the left. */}
+                {range(0, 5).map(i => (
+                    <div key={i} className={styles.cell} />
+                ))}
             </div>
         </div>
-    );
-};
+    </div>
+);
 
 export default Page;
