@@ -9,3 +9,7 @@ $orange: #e87d3e;
 $purple: #9e86c8;
 $pink: #b05279;
 $blue: #6c99bb;
+
+@mixin neonSVG($darkColor, $lightColor) {
+    filter: drop-shadow(0 0 2px $darkColor) drop-shadow(0 0 4px $lightColor);
+}

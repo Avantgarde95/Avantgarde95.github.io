@@ -8,3 +8,12 @@
     margin: 0;
     padding: 0;
 }
+
+.content {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+
+    // Trick for preventing the child from creating an overflow to the flexbox.
+    min-height: 0;
+}

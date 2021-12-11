@@ -13,9 +13,10 @@ import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 
 import { useStoreSelector } from 'store/Store';
 import { Language } from 'store/Language';
+import { Background } from 'component/home/Background';
 import { AppButton } from 'component/home/AppButton';
 import { range } from 'util/MathUtils';
-import styles from 'style/home/Home.module.scss';
+import styles from 'style/home/Page.module.scss';
 
 /**
  * Data for constructing each AppButton.
@@ -100,17 +101,20 @@ const Page = () => {
 
     return (
         <div className={styles.page}>
-            <div className={styles.grid}>
-                {apps.map(({ nameMap, path, icon, color }) => (
-                    <div key={path} className={styles.cell}>
-                        <AppButton title={Object.values(nameMap).join(' ')} path={path} icon={icon} color={color} />
-                        {nameMap[currentLanguage]}
-                    </div>
-                ))}
-                {/* Put some empty cells to align the buttons to the left. */}
-                {range(0, 5).map(i => (
-                    <div key={i} className={styles.cell} />
-                ))}
+            <Background />
+            <div className={styles.content}>
+                <div className={styles.grid}>
+                    {apps.map(({ nameMap, path, icon, color }) => (
+                        <div key={path} className={styles.cell}>
+                            <AppButton title={Object.values(nameMap).join(' ')} path={path} icon={icon} color={color} />
+                            {nameMap[currentLanguage]}
+                        </div>
+                    ))}
+                    {/* Put some empty cells to align the buttons to the left. */}
+                    {range(0, 5).map(i => (
+                        <div key={i} className={styles.cell} />
+                    ))}
+                </div>
             </div>
         </div>
     );

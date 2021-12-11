@@ -13,3 +13,18 @@ export function range(start: number, limit: number, step = 1) {
 
     return result;
 }
+
+/**
+ * Generate a random real number such that min <= value < limit.
+ */
+export function getRandomFloat(min: number, limit: number) {
+    return Math.random() * (limit - min) + min;
+}
+
+/**
+ * Generate a random integer such that min <= value < limit.
+ * min and limit should be **integers**.
+ */
+export function getRandomInt(min: number, limit: number) {
+    return Math.floor(Math.random() * (limit - min)) + min; // 최댓값은 제외, 최솟값은 포함
+}

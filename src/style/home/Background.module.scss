@@ -1,0 +1,37 @@
+@use '../Common.scss';
+
+.background {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+$minOpacity: 0.1;
+$maxOpacity: 0.8;
+
+@keyframes starAnimation {
+    0% {
+        opacity: $minOpacity;
+    }
+    50% {
+        opacity: $maxOpacity;
+    }
+    100% {
+        opacity: $minOpacity;
+    }
+}
+
+.star {
+    position: absolute;
+
+    color: Common.$yellow;
+    opacity: $minOpacity;
+    animation: starAnimation 5s infinite;
+
+    & > svg {
+        @include Common.neonSVG(darken(Common.$yellow, 10), lighten(Common.$yellow, 10));
+    }
+}
