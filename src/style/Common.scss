@@ -10,6 +10,23 @@ $purple: #9e86c8;
 $pink: #b05279;
 $blue: #6c99bb;
 
+@mixin page {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+
+@mixin background {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 @mixin neonSVG($darkColor, $lightColor) {
     filter: drop-shadow(0 0 2px $darkColor) drop-shadow(0 0 4px $lightColor);
 }

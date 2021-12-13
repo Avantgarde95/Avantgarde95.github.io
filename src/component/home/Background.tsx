@@ -5,6 +5,9 @@ import { faStar } from '@fortawesome/free-regular-svg-icons/faStar';
 import { getRandomFloat, getRandomInt, range } from 'util/MathUtils';
 import styles from 'style/home/Background.module.scss';
 
+/**
+ * Generate some shining stars.
+ */
 export const Background = () => {
     return (
         <div className={styles.background}>

@@ -30,10 +30,8 @@ const Device = ({ Component, pageProps }: AppProps) => (
         </Head>
         <div className={styles.device}>
             <StatusBar />
-            <div className={styles.content}>
-                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                <Component {...pageProps} />
-            </div>
+            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+            <Component {...pageProps} />
             <NavigationBar />
         </div>
     </Provider>
