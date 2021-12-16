@@ -1,18 +1,28 @@
 @use '../Common.scss';
 
+.cardImage {
+    // This attaches the text to the top.
+    float: left;
+
+    margin-right: 0.5rem;
+}
+
 @mixin card($color) {
     box-sizing: border-box;
+    white-space: pre-line;
 
-    width: 30rem;
+    width: 32rem;
     height: 20rem;
-    margin: 5rem 0;
-    padding: 0.5rem;
+    padding: 1rem;
     border: 0.2rem solid $color;
     border-radius: 0.5rem;
 
-    color: $color;
+    color: darken($color, 30);
+    background: repeat url('/image/Paper.jpg');
 
-    @include Common.coloredBackground(rgba(255, 255, 255, 0.2), repeat url('/image/Paper.jpg'));
+    font-size: 1rem;
+    font-family: inherit;
+
     @include Common.neonBorder(darken($color, 10), lighten($color, 10));
 }
 
@@ -23,13 +33,20 @@
 .computerCard {
     @include card(Common.$green);
 
-    margin-left: 5rem;
+    margin-left: 8rem;
     transform: rotate(15deg);
 }
 
 .musicCard {
     @include card(Common.$orange);
 
-    margin-left: 5rem;
+    margin-left: 8rem;
     transform: rotate(-10deg);
+}
+
+.contactsCard {
+    @include card(Common.$pink);
+
+    margin-left: 8rem;
+    transform: rotate(5deg);
 }

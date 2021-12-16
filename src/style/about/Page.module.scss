@@ -29,6 +29,8 @@
 .zoomLayer {
     display: flex;
     flex-direction: row;
+
+    transition: transform 0.2s;
 }
 
 .buttons {

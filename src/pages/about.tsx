@@ -42,6 +42,7 @@ const Page = () => {
                 <button
                     className={styles.moveButton}
                     type={'button'}
+                    title={'이전 Previous'}
                     onClick={() => {
                         onClickMoveButton(-1);
                     }}
@@ -51,6 +52,7 @@ const Page = () => {
                 <button
                     className={styles.moveButton}
                     type={'button'}
+                    title={'다음 Next'}
                     onClick={() => {
                         onClickMoveButton(1);
                     }}
@@ -60,6 +62,7 @@ const Page = () => {
                 <button
                     className={styles.zoomButton}
                     type={'button'}
+                    title={'화면 확대 Zoom in'}
                     onClick={() => {
                         onClickZoomButton(1);
                     }}
@@ -69,6 +72,7 @@ const Page = () => {
                 <button
                     className={styles.zoomButton}
                     type={'button'}
+                    title={'화면 축소 Zoom out'}
                     onClick={() => {
                         onClickZoomButton(-1);
                     }}
