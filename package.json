@@ -39,12 +39,12 @@
     "scripts": {
         "task:typing": "tsm \"src/**/*.module.{css,scss}\"",
         "task:debug": "next dev -p 8080",
-        "task:serve": "next start -p 8080",
+        "task:start": "next start -p 8080",
         "task:build": "next build",
         "task:export": "next export -o docs",
         "task:lint": "next lint",
-        "debug": "run-p \"task:typing -- --watch\" \"task:debug\"",
-        "serve": "run-s \"task:typing\" \"task:build\" \"task:serve\"",
+        "serve": "run-p \"task:typing -- --watch\" \"task:debug\"",
+        "serve:production": "run-s \"task:typing\" \"task:build\" \"task:start\"",
         "export": "run-s \"task:typing\" \"task:build\" \"task:export\"",
         "lint": "run-s \"task:lint\"",
         "lint:fix": "run-s \"task:lint -- --fix\""

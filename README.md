@@ -22,3 +22,8 @@ Rewriting from the scratch...
 |  +-- pages // Components which represent the routes.
 +-- package.json, tsconfig.json, ...
 ```
+
+## Images
+
+- Wood: <https://polyhaven.com/a/plywood>
+- Paper: <https://unsplash.com/photos/vS3idIiYxX0>

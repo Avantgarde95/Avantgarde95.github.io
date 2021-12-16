@@ -1,0 +1,48 @@
+@use '../Common.scss';
+
+.background {
+    @include Common.background;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+$minOpacity: 0;
+$maxOpacity: 0.8;
+
+@keyframes iconAnimation {
+    0% {
+        opacity: $minOpacity;
+    }
+    100% {
+        opacity: $maxOpacity;
+    }
+}
+
+.icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 14rem;
+    height: 14rem;
+    border: 0.2rem solid Common.$blue;
+    border-radius: 50%;
+    font-size: 9rem;
+    color: Common.$white;
+
+    opacity: $minOpacity;
+    animation: iconAnimation 3s forwards;
+
+    & > svg {
+        @include Common.neonSVG(darken(Common.$blue, 10), lighten(Common.$blue, 10));
+
+        opacity: $minOpacity;
+        animation: iconAnimation 3s 1.5s forwards;
+    }
+
+    @include Common.neonBorder(darken(Common.$blue, 10), lighten(Common.$blue, 10));
+}

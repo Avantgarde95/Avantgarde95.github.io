@@ -30,3 +30,12 @@ $blue: #6c99bb;
 @mixin neonSVG($darkColor, $lightColor) {
     filter: drop-shadow(0 0 2px $darkColor) drop-shadow(0 0 4px $lightColor);
 }
+
+@mixin neonBorder($darkColor, $lightColor) {
+    box-shadow: 0 0 2px $darkColor, 0 0 4px $lightColor;
+}
+
+// Mix a color with the background.
+@mixin coloredBackground($color, $background) {
+    background: linear-gradient($color, $color), $background;
+}

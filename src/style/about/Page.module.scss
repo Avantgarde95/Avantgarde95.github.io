@@ -1,0 +1,64 @@
+@use '../Common.scss';
+
+.page {
+    @include Common.page;
+}
+
+.table {
+    overflow: auto;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.scrollLayer {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 200%;
+    height: 200%;
+
+    @include Common.coloredBackground(rgba(255, 255, 255, 0.7), repeat url('/image/Wood.jpg'));
+}
+
+.zoomLayer {
+    display: flex;
+    flex-direction: row;
+}
+
+.buttons {
+    position: absolute;
+
+    right: 1.5rem;
+    bottom: 1.5rem;
+}
+
+.moveButton,
+.zoomButton {
+    cursor: pointer;
+
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+
+    border-color: transparent;
+    color: Common.$white;
+    background-color: Common.$blue;
+
+    transition: transform 0.1s;
+
+    &:not(:first-child) {
+        margin-left: 0.5rem;
+    }
+
+    &:hover {
+        background-color: lighten(Common.$blue, 10);
+        transform: scale(0.9);
+    }
+}

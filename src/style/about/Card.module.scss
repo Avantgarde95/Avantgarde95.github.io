@@ -1,0 +1,35 @@
+@use '../Common.scss';
+
+@mixin card($color) {
+    box-sizing: border-box;
+
+    width: 30rem;
+    height: 20rem;
+    margin: 5rem 0;
+    padding: 0.5rem;
+    border: 0.2rem solid $color;
+    border-radius: 0.5rem;
+
+    color: $color;
+
+    @include Common.coloredBackground(rgba(255, 255, 255, 0.2), repeat url('/image/Paper.jpg'));
+    @include Common.neonBorder(darken($color, 10), lighten($color, 10));
+}
+
+.meCard {
+    @include card(Common.$yellow);
+}
+
+.computerCard {
+    @include card(Common.$green);
+
+    margin-left: 5rem;
+    transform: rotate(15deg);
+}
+
+.musicCard {
+    @include card(Common.$orange);
+
+    margin-left: 5rem;
+    transform: rotate(-10deg);
+}
