@@ -1,0 +1,13 @@
+@use '../Common.scss';
+
+.page {
+    @include Common.page;
+}
+
+.document {
+    width: 100%;
+    height: 100%;
+
+    border-color: transparent;
+    background: #d1d1d1;
+}
