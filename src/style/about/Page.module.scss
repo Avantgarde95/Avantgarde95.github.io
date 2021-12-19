@@ -2,65 +2,56 @@
 
 .page {
     @include Common.page;
+
+    overflow: hidden;
 }
 
-.table {
-    overflow: auto;
+.layer {
+    box-sizing: border-box;
+    overflow-y: auto;
     position: absolute;
-
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.scrollLayer {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
-    width: 200%;
-    height: 200%;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
 
-    @include Common.coloredBackground(rgba(255, 255, 255, 0.7), repeat url('/image/Wood.jpg'));
+    background-color: Common.$black;
 }
 
-.zoomLayer {
-    display: flex;
-    flex-direction: row;
+.article {
+    white-space: pre-line;
 
-    transition: transform 0.2s;
+    width: 32rem;
+    max-width: 100%;
 }
 
-.buttons {
+.image {
+    // This attaches the text to the top.
+    float: left;
+
+    margin-top: 0.4rem;
+    margin-right: 1rem;
+}
+
+.nextButton {
     position: absolute;
-
-    right: 1.5rem;
-    bottom: 1.5rem;
-}
-
-.moveButton,
-.zoomButton {
     cursor: pointer;
 
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    font-size: 1rem;
+    left: 50%;
+    bottom: 0;
+    font-size: 2rem;
+    transform: translateX(-50%);
 
-    border-color: transparent;
     color: Common.$white;
-    background-color: Common.$blue;
-
-    transition: transform 0.1s;
-
-    &:not(:first-child) {
-        margin-left: 0.5rem;
-    }
+    border-color: transparent;
+    background-color: transparent;
+    opacity: 0.5;
 
     &:hover {
-        background-color: lighten(Common.$blue, 10);
-        transform: scale(0.9);
+        opacity: 1;
     }
 }

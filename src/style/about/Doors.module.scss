@@ -1,0 +1,47 @@
+@use '../Common';
+
+$offset: 150%;
+
+@keyframes topDoorAnimation {
+    0% {
+        transform: translateY(-$offset);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-$offset);
+    }
+}
+
+@keyframes bottomDoorAnimation {
+    0% {
+        transform: translateY($offset);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY($offset);
+    }
+}
+
+$animationTime: 2s;
+
+.door {
+    box-sizing: border-box;
+    position: absolute;
+
+    border: 1px solid Common.$white;
+    background-color: Common.$black;
+
+    &.isTop {
+        border-top-color: transparent;
+        animation: topDoorAnimation $animationTime forwards;
+    }
+
+    &.isBottom {
+        border-bottom-color: transparent;
+        animation: bottomDoorAnimation $animationTime forwards;
+    }
+}

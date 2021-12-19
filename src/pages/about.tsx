@@ -1,85 +1,103 @@
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import { Icon } from 'react-avant/lib/Icon';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
-import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
-import { faMinus } from '@fortawesome/free-solid-svg-icons/faMinus';
+import Link from 'next/link';
+import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons/faArrowCircleRight';
 
-import { Card, cardNames } from 'component/about/Cards';
+import { range } from 'util/MathUtils';
+import { Doors } from 'component/about/Doors';
 import styles from 'style/about/Page.module.scss';
 
 /**
+ * Rendering function of each article.
+ */
+type Article = () => ReactNode;
+
+const articles: Array<Article> = [
+    () => (
+        <>
+            <img className={styles.image} src={'/image/Me.jpg'} alt={'Me'} title={'Me'} width={150} />
+            {`안녕하세요, 박훈민입니다.
+            Hello, I'm Hunmin Park.
+
+            개발자로 일하고 있습니다.
+            I'm working as a developer.
+
+            컴퓨터와 음악에 관심이 많습니다.
+            I'm interested in computer and music.`}
+        </>
+    ),
+    () => (
+        <>
+            <img
+                className={styles.image}
+                src={'/image/RayTracing.png'}
+                alt={'Computer'}
+                title={'Computer'}
+                width={180}
+            />
+            {`컴퓨터 그래픽스와 웹에 관심이 있습니다.
+            I'm interested in computer graphics and web.
+
+            현재는 회사에서 웹 앱과 데스크톱 앱을
+            개발하고 있습니다.
+            I'm currently developing web apps and desktop apps in my company.`}
+        </>
+    ),
+    () => (
+        <>
+            <img className={styles.image} src={'/image/Concert.jpg'} alt={'Music'} title={'Music'} width={180} />
+            {`취미로 피아노와 기타를 연주합니다.
+            I play piano and guitar as a hobby.
+
+            가끔씩 작곡과 편곡에도 도전합니다.
+            Sometimes I also try to compose and arrange music.`}
+        </>
+    ),
+    () => (
+        <>
+            이메일(Email):&nbsp;
+            <Link href={'mailto:mathematicianscott@gmail.com'}>
+                <a>mathematicianscott@gmail.com</a>
+            </Link>
+        </>
+    ),
+];
+
+/**
  * 'About' page.
- * There are some cards on the table.
- * Each card represents the information such as interests, contacts, ...
- * The page provides the buttons which moves or zooms the camera.
+ * When we click the button, the 'doors' are closed and open.
+ * While the doors are moving, the article is replaced with the next article.
  */
 const Page = () => {
-    const [focusedCardIndex, setFocusedCardIndex] = useState(0);
-    const [zoom, setZoom] = useState(1);
+    // State for re-rendering the doors.
+    const [renderCount, setRenderCount] = useState(0);
 
-    const onClickMoveButton = (diff: number) => {
-        setFocusedCardIndex((focusedCardIndex + diff + cardNames.length) % cardNames.length);
-    };
+    // State for re-rendering the articles.
+    const [showCount, setShowCount] = useState(articles.length);
 
-    const onClickZoomButton = (diff: number) => {
-        setZoom(zoom + diff * 0.1);
+    const onClickNextButton = () => {
+        setRenderCount(renderCount + 1);
+
+        setTimeout(() => {
+            if (showCount === 1) {
+                setShowCount(articles.length);
+            } else {
+                setShowCount(showCount - 1);
+            }
+        }, 1000);
     };
 
     return (
-        // TODO: Use fewer divs...
         <div className={styles.page}>
-            <div className={styles.table}>
-                <div className={styles.scrollLayer}>
-                    <div className={styles.zoomLayer} style={{ transform: `scale(${zoom})` }}>
-                        {cardNames.map((name, index) => (
-                            <Card key={name} name={name} focus={index === focusedCardIndex} />
-                        ))}
-                    </div>
+            {range(0, showCount).map(offset => (
+                <div key={offset} className={styles.layer}>
+                    <div className={styles.article}>{articles[articles.length - 1 - offset]()}</div>
                 </div>
-            </div>
-            <div className={styles.buttons}>
-                <button
-                    className={styles.moveButton}
-                    type={'button'}
-                    title={'이전 Previous'}
-                    onClick={() => {
-                        onClickMoveButton(-1);
-                    }}
-                >
-                    <Icon definition={faChevronLeft} />
-                </button>
-                <button
-                    className={styles.moveButton}
-                    type={'button'}
-                    title={'다음 Next'}
-                    onClick={() => {
-                        onClickMoveButton(1);
-                    }}
-                >
-                    <Icon definition={faChevronRight} />
-                </button>
-                <button
-                    className={styles.zoomButton}
-                    type={'button'}
-                    title={'화면 확대 Zoom in'}
-                    onClick={() => {
-                        onClickZoomButton(1);
-                    }}
-                >
-                    <Icon definition={faPlus} />
-                </button>
-                <button
-                    className={styles.zoomButton}
-                    type={'button'}
-                    title={'화면 축소 Zoom out'}
-                    onClick={() => {
-                        onClickZoomButton(-1);
-                    }}
-                >
-                    <Icon definition={faMinus} />
-                </button>
-            </div>
+            ))}
+            <button className={styles.nextButton} type={'button'} title={'다음 Next'} onClick={onClickNextButton}>
+                <Icon definition={faArrowCircleRight} />
+            </button>
+            <Doors renderCount={renderCount} />
         </div>
     );
 };
