@@ -6,12 +6,13 @@
     overflow: hidden;
 }
 
-.layer {
+.article {
+    word-break: break-all;
     box-sizing: border-box;
     overflow-y: auto;
     position: absolute;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -22,19 +23,20 @@
     background-color: Common.$black;
 }
 
-.article {
-    white-space: pre-line;
+.gallery {
+    white-space: nowrap;
+    overflow-x: auto;
 
-    width: 32rem;
     max-width: 100%;
+    min-height: 13rem;
 }
 
 .image {
-    // This attaches the text to the top.
-    float: left;
+    height: 12rem;
 
-    margin-top: 0.4rem;
-    margin-right: 1rem;
+    &:not(:last-child) {
+        margin-right: 1rem;
+    }
 }
 
 .nextButton {

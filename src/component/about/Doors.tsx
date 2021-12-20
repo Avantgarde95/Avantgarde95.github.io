@@ -38,8 +38,8 @@ interface Props {
  */
 // Hack: Use React.memo() from preventing the component from being re-rendered when the parent is re-rendered.
 export const Doors = memo(({ renderCount }: Props) => {
-    const randomMin = 20;
-    const randomMax = 80;
+    const randomMin = 30;
+    const randomMax = 70;
 
     const topLeftWidth = getRandomInt(randomMin, randomMax + 1);
     const topLeftHeight = getRandomInt(randomMin, randomMax + 1);

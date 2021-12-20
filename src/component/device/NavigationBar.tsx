@@ -3,7 +3,7 @@ import { Icon } from 'react-avant/lib/Icon';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
-import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
+import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 
 import { useStoreDispatch, useStoreSelector } from 'store/Store';
 import { Language, languageSlice } from 'store/Language';
@@ -56,7 +56,7 @@ export const NavigationBar = () => {
                 ))}
             </button>
             <button className={styles.button} type={'button'} title={'홈 Home'} onClick={onClickHome}>
-                <Icon definition={faSquare} />
+                <Icon definition={faHome} />
             </button>
             <button className={styles.button} type={'button'} title={'뒤로 Back'} onClick={onClickBack}>
                 <Icon definition={faChevronLeft} />
