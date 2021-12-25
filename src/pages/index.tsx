@@ -12,9 +12,9 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 
 import { Language } from 'store/Language';
+import { LanguageFilter } from 'component/common/LanguageFilter';
 import { Background } from 'component/home/Background';
 import { AppButton } from 'component/home/AppButton';
-import { AppName } from 'component/home/AppName';
 import { range } from 'util/MathUtils';
 import styles from 'style/home/Page.module.scss';
 
@@ -104,7 +104,11 @@ const Page = () => (
                 {apps.map(({ nameMap, path, icon, color }) => (
                     <div key={path} className={styles.cell}>
                         <AppButton title={Object.values(nameMap).join(' ')} path={path} icon={icon} color={color} />
-                        <AppName nameMap={nameMap} />
+                        {Object.entries(nameMap).map(([language, name]: [Language, string]) => (
+                            <LanguageFilter key={language} language={language}>
+                                {name}
+                            </LanguageFilter>
+                        ))}
                     </div>
                 ))}
                 {/* Put some empty cells to align the buttons to the left. */}
