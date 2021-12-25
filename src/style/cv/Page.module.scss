@@ -7,7 +7,8 @@
 .document {
     width: 100%;
     height: 100%;
+    // We remove iframe's border since it creates overflow.
+    border: 0;
 
-    border-color: transparent;
     background: #d1d1d1;
 }
