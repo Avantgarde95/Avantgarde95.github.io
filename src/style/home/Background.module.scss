@@ -2,6 +2,10 @@
 
 .background {
     @include Common.background;
+
+    position: fixed;
+
+    background: linear-gradient(darken(Common.$darkblue, 20), lighten(Common.$darkblue, 10));
 }
 
 $minOpacity: 0.1;

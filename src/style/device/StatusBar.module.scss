@@ -1,6 +1,12 @@
 @use '../Common';
 
 .statusBar {
+    // Since the page is rendered after the status bar,
+    // if something in the page is larger than the page, the status bar will be hidden.
+    // (ex. Background uses position: fixed)
+    // So we set z-index to always put the status bar in front of the page.
+    z-index: 1;
+
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
