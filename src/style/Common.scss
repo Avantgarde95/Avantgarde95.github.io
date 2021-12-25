@@ -1,7 +1,5 @@
-// Common palette based on Sublime Text default theme.
-// https://gist.github.com/r-malon/8fc669332215c8028697a0bbfbfbb32a
 $black: #2e2e2e;
-$white: #ffffff; // #d6d6d6;
+$white: #ffffff;
 $gray: #797979;
 $yellow: #e5b567;
 $darkblue: rgb(35, 51, 129);
@@ -25,15 +23,10 @@ $wideScreenMinWidth: 769px;
     height: 100%;
 }
 
-@mixin neonSVG($darkColor, $lightColor) {
-    filter: drop-shadow(0 0 2px $darkColor) drop-shadow(0 0 4px $lightColor);
+@mixin neonSVG($darkColor, $lightColor, $startSize: 2px, $endSize: 4px) {
+    filter: drop-shadow(0 0 $startSize $darkColor) drop-shadow(0 0 $endSize $lightColor);
 }
 
-@mixin neonBorder($darkColor, $lightColor) {
-    box-shadow: 0 0 2px $darkColor, 0 0 4px $lightColor;
-}
-
-// Mix a color with the background.
-@mixin coloredBackground($color, $background) {
-    background: linear-gradient($color, $color), $background;
+@mixin neonBorder($darkColor, $lightColor, $startSize: 2px, $endSize: 4px) {
+    box-shadow: 0 0 $startSize $darkColor, 0 0 $endSize $lightColor;
 }

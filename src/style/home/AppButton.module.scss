@@ -2,7 +2,7 @@
 
 .appButton {
     cursor: pointer;
-    transition: all 0.1s;
+    transition: transform 0.1s;
     text-align: center;
 
     width: 4rem;
@@ -11,10 +11,11 @@
     border-radius: 1rem;
     line-height: 4rem;
     font-size: 2.5rem;
-
-    background-color: Common.$white;
+    border: 2px solid Common.$white;
 
     &:hover {
         transform: scale(0.85);
     }
+
+    @include Common.neonBorder(darken(Common.$white, 20), darken(Common.$white, 10), 6px, 8px);
 }

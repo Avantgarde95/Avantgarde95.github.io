@@ -33,7 +33,7 @@ const apps: App[] = [
         nameMap: { Korean: '소개', English: 'About' },
         path: '/about',
         icon: faIdCard,
-        color: '#007aeb',
+        color: '#4ca9fe',
     },
     {
         nameMap: { Korean: '이력', English: 'CV' },
@@ -45,7 +45,7 @@ const apps: App[] = [
         nameMap: { Korean: '프로젝트', English: 'Projects' },
         path: '/project',
         icon: faLaptopCode,
-        color: '#876766',
+        color: '#ac9292',
     },
     {
         nameMap: { Korean: '음악', English: 'Musics' },
@@ -57,7 +57,7 @@ const apps: App[] = [
         nameMap: { Korean: '블로그', English: 'Blog' },
         path: '/blog',
         icon: faNewspaper,
-        color: '#677963',
+        color: '#a2b09f',
     },
     {
         nameMap: { Korean: '코드', English: 'Code' },
@@ -69,7 +69,7 @@ const apps: App[] = [
         nameMap: { Korean: '깃허브', English: 'GitHub' },
         path: 'https://github.com/Avantgarde95',
         icon: faGithub,
-        color: '#211f1f',
+        color: '#f0f6fc',
     },
     {
         nameMap: { Korean: '유튜브', English: 'YouTube' },
@@ -81,13 +81,13 @@ const apps: App[] = [
         nameMap: { Korean: '페이스북', English: 'Facebook' },
         path: 'https://www.facebook.com/s.ramanujan',
         icon: faFacebookSquare,
-        color: '#3b5998',
+        color: '#1877f2',
     },
     {
         nameMap: { Korean: '인스타그램', English: 'Instagram' },
         path: 'https://www.instagram.com/hunminpark95',
         icon: faInstagram,
-        color: '#c13584',
+        color: '#d1599d',
     },
 ];
 
