@@ -1,0 +1,36 @@
+@use '../Common';
+
+.locker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100%;
+}
+
+.largeClock {
+    margin-top: 3rem;
+
+    font-size: 2.5rem;
+}
+
+.smallClock {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.unlockButton {
+    cursor: pointer;
+
+    margin-top: auto;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+
+    border: 0;
+    color: Common.$white;
+    background-color: transparent;
+
+    &:hover {
+        color: Common.$yellow;
+    }
+}

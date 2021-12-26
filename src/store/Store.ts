@@ -3,6 +3,7 @@ import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
 
 import { languageSlice } from 'store/Language';
 import { timeSlice } from 'store/Time';
+import { lockSlice } from 'store/Lock';
 import { isDevelopmentMode } from 'util/DebugUtils';
 
 /**
@@ -12,6 +13,7 @@ export const store = configureStore({
     reducer: {
         [languageSlice.name]: languageSlice.reducer,
         [timeSlice.name]: timeSlice.reducer,
+        [lockSlice.name]: lockSlice.reducer,
     },
     devTools: isDevelopmentMode(),
 });

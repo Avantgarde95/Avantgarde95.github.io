@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Language } from 'store/Language';
 import { useStoreSelector } from 'store/Store';
 
 /**
@@ -29,27 +30,13 @@ export const Minute = () => {
     return <>{`${fillZero(currentTime.minute, 2)}`}</>;
 };
 
-const monthNames = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'November',
-    'December',
-];
-
 /**
  * Current month.
  */
 export const Month = () => {
     const currentTime = useStoreSelector(state => state.time.currentTime);
 
-    return <>{monthNames[currentTime.month]}</>;
+    return <>{`${fillZero(currentTime.month + 1, 2)}`}</>;
 };
 
 /**
@@ -61,15 +48,28 @@ export const MonthDay = () => {
     return <>{`${currentTime.monthDay + 1}`}</>;
 };
 
-const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+// const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+const dayNames: Array<Record<Language, string>> = [
+    { Korean: '일요일', English: 'Sunday' },
+    { Korean: '월요일', English: 'Monday' },
+    { Korean: '화요일', English: 'Tuesday' },
+    { Korean: '수요일', English: 'Wednesday' },
+    { Korean: '목요일', English: 'Thursday' },
+    { Korean: '금요일', English: 'Friday' },
+    { Korean: '토요일', English: 'Saturday' },
+];
 
 /**
  * Current week of day.
  */
 export const WeekDay = () => {
-    const currentTime = useStoreSelector(state => state.time.currentTime);
+    const [currentTime, currentLanguage] = useStoreSelector(state => [
+        state.time.currentTime,
+        state.language.currentLanguage,
+    ]);
 
-    return <>{dayNames[currentTime.weekDay]}</>;
+    return <>{dayNames[currentTime.weekDay][currentLanguage]}</>;
 };
 
 /**
