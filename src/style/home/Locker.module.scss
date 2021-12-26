@@ -1,11 +1,22 @@
 @use '../Common';
 
+@keyframes lockerAnimation {
+    100% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+}
+
 .locker {
     display: flex;
     flex-direction: column;
     align-items: center;
 
     height: 100%;
+
+    &.isDisappearing {
+        animation: lockerAnimation 0.5s forwards;
+    }
 }
 
 .largeClock {

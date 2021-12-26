@@ -1,3 +1,14 @@
+@keyframes gridAnimation {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 $cellWidth: 7rem;
 $cellHeight: 8rem;
 
@@ -9,6 +20,8 @@ $cellHeight: 8rem;
     justify-content: center;
 
     max-width: $cellWidth * 5;
+
+    animation: gridAnimation 0.3s forwards;
 }
 
 .cell {

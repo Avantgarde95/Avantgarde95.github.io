@@ -17,7 +17,6 @@ const Page = () => {
     const dispatch = useStoreDispatch();
 
     const onUnlock = () => {
-        sessionStorage.setItem('isLocked', 'Unlocked');
         dispatch(lockSlice.actions.setLock({ isLocked: false }));
     };
 
