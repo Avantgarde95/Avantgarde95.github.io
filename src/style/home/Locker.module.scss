@@ -1,6 +1,17 @@
 @use '../Common';
 
-@keyframes lockerAnimation {
+@keyframes lockerAppearingAnimation {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes lockerDisappearingAnimation {
     100% {
         transform: scale(0.9);
         opacity: 0;
@@ -14,14 +25,15 @@
 
     height: 100%;
 
+    animation: lockerAppearingAnimation 1.5s forwards;
+
     &.isDisappearing {
-        animation: lockerAnimation 0.5s forwards;
+        animation: lockerDisappearingAnimation 0.5s forwards;
     }
 }
 
 .largeClock {
     margin-top: 3rem;
-
     font-size: 2.5rem;
 }
 
