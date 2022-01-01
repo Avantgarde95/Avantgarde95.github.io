@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Icon } from 'react-avant/lib/Icon';
-import Link from 'next/link';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons/faArrowCircleRight';
 
 import { range } from 'util/MathUtils';
+import { WrappedLink } from 'component/common/WrappedLink';
 import styles from 'style/about/Page.module.scss';
 
 const AboutArticle = () => (
@@ -41,9 +41,9 @@ const ContactsArticle = () => (
     <div className={styles.article}>
         <div className={styles.line}>이메일 (Email)</div>
         <div className={styles.line}>
-            <Link href={'mailto:mathematicianscott@gmail.com'}>
-                <a className={styles.link}>mathematicianscott@gmail.com</a>
-            </Link>
+            <WrappedLink className={styles.link} href={'mailto:mathematicianscott@gmail.com'}>
+                mathematicianscott@gmail.com
+            </WrappedLink>
         </div>
     </div>
 );

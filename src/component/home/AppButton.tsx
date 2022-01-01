@@ -1,15 +1,17 @@
 import React from 'react';
 import { Icon } from 'react-avant/lib/Icon';
-import Link from 'next/link';
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
+import { Language } from 'store/Language';
+import { WrappedLink } from 'component/common/WrappedLink';
+import { LanguageFilter } from 'component/common/LanguageFilter';
 import styles from 'style/home/AppButton.module.scss';
 
 /**
  * AppButton props.
  */
 interface Props {
-    title: string;
+    nameMap: Record<Language, string>;
     path: string;
     icon: IconDefinition;
     color: string;
@@ -19,20 +21,20 @@ interface Props {
  * Link for opening an 'app' or an website.
  * It looks like an app button on the phone.
  */
-export const AppButton = ({ title, path, icon, color }: Props) => {
-    const openInNewTab = path.startsWith('http');
-
-    return (
-        <Link href={path}>
-            <a
-                title={title}
-                className={styles.appButton}
-                style={{ color }}
-                target={openInNewTab ? '_blank' : undefined}
-                rel={openInNewTab ? 'noreferrer noopener' : undefined}
-            >
-                <Icon definition={icon} />
-            </a>
-        </Link>
-    );
-};
+export const AppButton = ({ nameMap, path, icon, color }: Props) => (
+    <>
+        <WrappedLink
+            href={path}
+            title={Object.values(nameMap).join(' ')}
+            className={styles.appButton}
+            style={{ color }}
+        >
+            <Icon definition={icon} />
+        </WrappedLink>
+        {Object.entries(nameMap).map(([language, name]: [Language, string]) => (
+            <LanguageFilter key={language} language={language}>
+                {name}
+            </LanguageFilter>
+        ))}
+    </>
+);

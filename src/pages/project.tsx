@@ -1,9 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
 
 import { LanguageFilter } from 'component/common/LanguageFilter';
 import { range } from 'util/MathUtils';
 import styles from 'style/project/Page.module.scss';
+import { WrappedLink } from 'component/common/WrappedLink';
 
 /**
  * 'Project(s)' page.
@@ -16,20 +16,16 @@ const Page = () => {
             <div className={styles.description}>
                 <LanguageFilter language={'Korean'}>
                     모든 프로젝트들을 보려면&nbsp;
-                    <Link href={'https://github.com/Avantgarde95'}>
-                        <a className={styles.link} target={'_blank'} rel={'noreferrer'}>
-                            깃허브
-                        </a>
-                    </Link>
+                    <WrappedLink className={styles.link} href={'https://github.com/Avantgarde95'}>
+                        깃허브
+                    </WrappedLink>
                     를 방문해주세요.
                 </LanguageFilter>
                 <LanguageFilter language={'English'}>
                     To see the all projects, visit&nbsp;
-                    <Link href={'https://github.com/Avantgarde95'}>
-                        <a className={styles.link} target={'_blank'} rel={'noreferrer'}>
-                            GitHub
-                        </a>
-                    </Link>
+                    <WrappedLink className={styles.link} href={'https://github.com/Avantgarde95'}>
+                        GitHub
+                    </WrappedLink>
                     .
                 </LanguageFilter>
             </div>
