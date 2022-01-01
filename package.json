@@ -43,10 +43,12 @@
         "task:build": "next build",
         "task:export": "next export -o docs",
         "task:lint": "next lint",
+        "task:update": "node --experimental-json-modules Update.mjs",
         "serve": "run-p \"task:typing -- --watch\" \"task:debug\"",
         "serve:production": "run-s \"task:typing\" \"task:build\" \"task:start\"",
         "export": "run-s \"task:typing\" \"task:build\" \"task:export\"",
         "lint": "run-s \"task:lint\"",
-        "lint:fix": "run-s \"task:lint -- --fix\""
+        "lint:fix": "run-s \"task:lint -- --fix\"",
+        "update": "run-s \"task:update\""
     }
 }
