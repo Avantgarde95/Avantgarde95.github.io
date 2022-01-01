@@ -7,9 +7,8 @@
 }
 
 .article {
-    word-break: break-all;
     box-sizing: border-box;
-    overflow-y: auto;
+    overflow: auto;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -23,12 +22,76 @@
     background-color: Common.$black;
 }
 
+$contentAnimationDuration: 2s;
+
+@keyframes lineAnimation {
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes lineCursorAnimation {
+    0% {
+        border-left-color: Common.$white;
+    }
+    70% {
+        border-left-color: Common.$white;
+    }
+    100% {
+        width: 0;
+        border-left-color: transparent;
+    }
+}
+
+.line {
+    position: relative;
+    box-sizing: border-box;
+
+    clip-path: inset(0 100% 0 0);
+
+    animation: lineAnimation $contentAnimationDuration forwards;
+
+    &::after {
+        position: absolute;
+        content: '';
+
+        top: 50%;
+        right: 0;
+        width: 100%;
+        transform: translateY(-50%);
+        height: 2.5rem;
+
+        border-left: 2px solid transparent;
+        animation: lineCursorAnimation $contentAnimationDuration forwards;
+    }
+
+    @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+            animation-delay: $contentAnimationDuration * ($i - 1) * 0.8;
+
+            &::after {
+                animation-delay: $contentAnimationDuration * ($i - 1) * 0.8;
+            }
+        }
+    }
+}
+
+@keyframes galleryAnimation {
+    100% {
+        opacity: 1;
+    }
+}
+
 .gallery {
     white-space: nowrap;
     overflow-x: auto;
 
     max-width: 100%;
     min-height: 13rem;
+
+    opacity: 0;
+
+    animation: galleryAnimation $contentAnimationDuration forwards;
 }
 
 .image {
@@ -55,5 +118,13 @@
 
     &:hover {
         opacity: 1;
+    }
+}
+
+.link {
+    color: Common.$yellow;
+
+    &:hover {
+        color: lighten(Common.$yellow, 10);
     }
 }
