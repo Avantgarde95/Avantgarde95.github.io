@@ -45,7 +45,7 @@ export const Month = () => {
 export const MonthDay = () => {
     const currentTime = useStoreSelector(state => state.time.currentTime);
 
-    return <>{`${currentTime.monthDay + 1}`}</>;
+    return <>{`${fillZero(currentTime.monthDay + 1, 2)}`}</>;
 };
 
 // const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];

@@ -31,7 +31,6 @@ const MusicArticle = () => (
         <div className={styles.gallery}>
             <img className={styles.image} src={'/image/Guitar.jpg'} alt={'Guitar'} title={'Guitar'} />
             <img className={styles.image} src={'/image/Concert.jpg'} alt={'Concert'} title={'Concert'} />
-            <img className={styles.image} src={'/image/MyMusic.png'} alt={'MyMusic'} title={'MyMusic'} />
         </div>
         <div className={styles.line}>취미로 피아노와 기타를 연주합니다.</div>
         <div className={styles.line}>I play piano and guitar as a hobby.</div>

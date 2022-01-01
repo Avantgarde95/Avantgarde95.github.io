@@ -1,0 +1,107 @@
+@use '../Common';
+
+.page {
+    @include Common.page;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    // Trick of avoiding the scroll of the page.
+    min-height: 0;
+}
+
+.description {
+    box-sizing: border-box;
+
+    padding: 0 1rem;
+}
+
+.link {
+    color: Common.$yellow;
+
+    &:hover {
+        color: lighten(Common.$yellow, 10);
+    }
+}
+
+.tagButtonGroup {
+    box-sizing: border-box;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+.tagButton {
+    cursor: pointer;
+    box-sizing: border-box;
+
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 0.2rem 1rem;
+    border: 2px solid Common.$white;
+
+    font-family: inherit;
+
+    color: Common.$white;
+    background-color: transparent;
+
+    &:not(:first-child) {
+        margin-left: 1rem;
+    }
+
+    &:hover {
+        background-color: Common.$yellow;
+    }
+}
+
+.gridArea {
+    overflow-y: auto;
+
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    margin-top: 1rem;
+}
+
+$cellWidth: 12rem;
+$cellHeight: 12rem;
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+@keyframes cellAnimation {
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: $cellWidth;
+    height: $cellHeight;
+
+    opacity: 0;
+    transform: scale(0.8);
+
+    animation: cellAnimation 0.5s forwards;
+}
+
+.image {
+    height: 11rem;
+}
