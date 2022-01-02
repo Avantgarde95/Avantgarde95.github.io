@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import classNames from 'classnames';
 
-import { range } from 'util/MathUtils';
 import { LanguageFilter } from 'component/common/LanguageFilter';
 import { WrappedLink } from 'component/common/WrappedLink';
+import { ProjectGrid, ProjectTag, projectTagNames } from 'component/project/ProjectGrid';
 import styles from 'style/project/Page.module.scss';
 
 /**
  * 'Project(s)' page.
  */
 const Page = () => {
-    const tags = ['HTML', 'JavaScript', 'C++'];
+    const [tagStateMap, setTagStateMap] = useState(
+        Object.fromEntries(projectTagNames.map(tag => [tag, true])) as Record<ProjectTag, boolean>
+    );
+
+    const onClickTagButton = (tag: ProjectTag) => {
+        setTagStateMap({
+            ...tagStateMap,
+            [tag]: !tagStateMap[tag],
+        });
+    };
 
     return (
         <div className={styles.page}>
@@ -30,28 +40,21 @@ const Page = () => {
                 </LanguageFilter>
             </div>
             <div className={styles.tagButtonGroup}>
-                {tags.map(tag => (
-                    <button key={tag} className={styles.tagButton} type={'button'}>
+                {projectTagNames.map(tag => (
+                    <button
+                        key={tag}
+                        className={classNames(styles.tagButton, { [styles.isActive]: tagStateMap[tag] })}
+                        type={'button'}
+                        onClick={() => {
+                            onClickTagButton(tag);
+                        }}
+                    >
                         {tag}
                     </button>
                 ))}
             </div>
             <div className={styles.gridArea}>
-                <div className={styles.grid}>
-                    {range(0, 10).map(value => (
-                        <div key={value} className={styles.realCell}>
-                            <img
-                                className={styles.image}
-                                src={'/image/RayTracing.png'}
-                                alt={'RayTracing'}
-                                title={'RayTracing'}
-                            />
-                        </div>
-                    ))}
-                    {range(0, 5).map(value => (
-                        <div key={value} className={styles.fakeCell} />
-                    ))}
-                </div>
+                <ProjectGrid tagStateMap={tagStateMap} />
             </div>
         </div>
     );

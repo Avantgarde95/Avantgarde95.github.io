@@ -7,10 +7,15 @@
 
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding-top: 1rem;
 
     // Trick of avoiding the scroll of the page.
     min-height: 0;
+
+    @media (min-width: Common.$wideScreenMinWidth) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 .description {
@@ -40,6 +45,7 @@
 .tagButton {
     cursor: pointer;
     box-sizing: border-box;
+    transition: background-color 0.5s;
 
     border-radius: 1rem;
     font-size: 1rem;
@@ -55,7 +61,7 @@
         margin-left: 1rem;
     }
 
-    &:hover {
+    &.isActive {
         background-color: Common.$yellow;
     }
 }
@@ -69,45 +75,4 @@
     height: 100%;
     flex: 1;
     margin-top: 1rem;
-}
-
-$cellWidth: 9rem;
-$cellHeight: 9rem;
-
-.grid {
-    @include Common.grid($cellWidth, $cellHeight, 5);
-
-    margin: auto;
-}
-
-@keyframes cellAnimation {
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.realCell {
-    @include Common.realCell($cellWidth, $cellHeight);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    opacity: 0;
-    transform: scale(0.8);
-
-    animation: cellAnimation 0.5s forwards;
-}
-
-.fakeCell {
-    @include Common.fakeCell($cellWidth, $cellHeight);
-}
-
-.image {
-    box-sizing: border-box;
-
-    height: $cellHeight;
-    border: 1px solid Common.$white;
 }

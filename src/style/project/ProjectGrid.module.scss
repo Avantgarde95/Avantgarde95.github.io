@@ -1,0 +1,42 @@
+@use '../Common';
+
+$cellWidth: 10rem;
+$cellHeight: 10rem;
+
+.grid {
+    @include Common.grid($cellWidth, $cellHeight, 4);
+
+    margin: auto;
+}
+
+@keyframes cellAnimation {
+    100% {
+        opacity: 1;
+    }
+}
+
+.realCell {
+    @include Common.realCell($cellWidth, $cellHeight);
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    width: $cellWidth;
+    height: $cellHeight;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    border: 1px solid Common.$white;
+    opacity: 0;
+
+    animation: cellAnimation 0.5s forwards;
+}
+
+.fakeCell {
+    @include Common.fakeCell($cellWidth, $cellHeight);
+}
