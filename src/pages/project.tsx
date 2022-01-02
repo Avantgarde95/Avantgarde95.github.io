@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 
+import { strictFromEntries } from 'util/TypeUtils';
 import { LanguageFilter } from 'component/common/LanguageFilter';
 import { WrappedLink } from 'component/common/WrappedLink';
 import { ProjectGrid, ProjectTag, projectTagNames } from 'component/project/ProjectGrid';
@@ -19,14 +20,12 @@ const tagButtons: Array<Array<ProjectTag>> = [
  * 'Project(s)' page.
  */
 const Page = () => {
-    const [tagStateMap, setTagStateMap] = useState(
-        Object.fromEntries(projectTagNames.map(tag => [tag, true])) as Record<ProjectTag, boolean>
-    );
+    const [tagStateMap, setTagStateMap] = useState(strictFromEntries(projectTagNames.map(tag => [tag, true])));
 
     const onClickTagButton = (tags: Array<ProjectTag>) => {
         setTagStateMap({
             ...tagStateMap,
-            ...Object.fromEntries(tags.map(tag => [tag, !tagStateMap[tag]])),
+            ...strictFromEntries(tags.map(tag => [tag, !tagStateMap[tag]])),
         });
     };
 

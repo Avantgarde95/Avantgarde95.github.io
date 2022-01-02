@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { range } from 'util/MathUtils';
+import { strictKeys } from 'util/TypeUtils';
 import styles from 'style/project/ProjectGrid.module.scss';
 import Projects from 'data/Projects.json';
 
@@ -37,7 +38,7 @@ interface Project {
  * Find out whether the project has any 'active' tags.
  */
 function canShowProject(project: Project, tagStateMap: Record<ProjectTag, boolean>) {
-    const tags = Object.keys(project.languageMap) as ProjectTag[];
+    const tags = strictKeys<ProjectTag, number>(project.languageMap);
 
     for (let i = 0; i < tags.length; i += 1) {
         if (tagStateMap[tags[i]]) {

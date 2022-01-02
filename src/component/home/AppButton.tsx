@@ -3,6 +3,7 @@ import { Icon } from 'react-avant/lib/Icon';
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 import { Language } from 'store/Language';
+import { strictEntries } from 'util/TypeUtils';
 import { WrappedLink } from 'component/common/WrappedLink';
 import { LanguageFilter } from 'component/common/LanguageFilter';
 import styles from 'style/home/AppButton.module.scss';
@@ -31,7 +32,7 @@ export const AppButton = ({ nameMap, path, icon, color }: Props) => (
         >
             <Icon definition={icon} />
         </WrappedLink>
-        {Object.entries(nameMap).map(([language, name]: [Language, string]) => (
+        {strictEntries(nameMap).map(([language, name]) => (
             <LanguageFilter key={language} language={language}>
                 {name}
             </LanguageFilter>
