@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { LanguageFilter } from 'component/common/LanguageFilter';
 import { range } from 'util/MathUtils';
-import styles from 'style/project/Page.module.scss';
+import { LanguageFilter } from 'component/common/LanguageFilter';
 import { WrappedLink } from 'component/common/WrappedLink';
+import styles from 'style/project/Page.module.scss';
 
 /**
  * 'Project(s)' page.
@@ -39,7 +39,7 @@ const Page = () => {
             <div className={styles.gridArea}>
                 <div className={styles.grid}>
                     {range(0, 10).map(value => (
-                        <div key={value} className={styles.cell}>
+                        <div key={value} className={styles.realCell}>
                             <img
                                 className={styles.image}
                                 src={'/image/RayTracing.png'}
@@ -49,7 +49,7 @@ const Page = () => {
                         </div>
                     ))}
                     {range(0, 5).map(value => (
-                        <div key={value} className={styles.cell} />
+                        <div key={value} className={styles.fakeCell} />
                     ))}
                 </div>
             </div>

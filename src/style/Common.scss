@@ -1,11 +1,22 @@
+// =============================================
+// Common colors.
+
 $black: darken(#2e2e2e, 8);
 $white: #ffffff;
 $gray: #797979;
 $yellow: #e5b567;
 $darkblue: rgb(35, 51, 129);
 
+// =============================================
+// Common sizes.
+
+// Common size for the media query.
 $wideScreenMinWidth: 769px;
 
+// =============================================
+// Common mixins.
+
+// Common style for the page and the page's background.
 @mixin page {
     position: relative;
 
@@ -23,10 +34,32 @@ $wideScreenMinWidth: 769px;
     height: 100%;
 }
 
+// Mixins for giving neon effect on the elements.
 @mixin neonSVG($darkColor, $lightColor, $startSize: 2px, $endSize: 4px) {
     filter: drop-shadow(0 0 $startSize $darkColor) drop-shadow(0 0 $endSize $lightColor);
 }
 
 @mixin neonBorder($darkColor, $lightColor, $startSize: 2px, $endSize: 4px) {
     box-shadow: 0 0 $startSize $darkColor, 0 0 $endSize $lightColor;
+}
+
+// Mixins for creating a flex-based grid.
+@mixin grid($cellWidth, $cellHeight, $maxDimensionX) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+
+    max-width: $cellWidth * $maxDimensionX;
+}
+
+@mixin realCell($cellWidth, $cellHeight) {
+    width: $cellWidth;
+    height: $cellHeight;
+}
+
+@mixin fakeCell($cellWidth, $cellHeight) {
+    width: $cellWidth;
+    height: 0;
 }

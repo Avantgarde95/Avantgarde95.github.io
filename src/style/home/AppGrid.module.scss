@@ -1,3 +1,5 @@
+@use '../Common';
+
 @keyframes gridAnimation {
     0% {
         transform: scale(0.9);
@@ -13,23 +15,20 @@ $cellWidth: 7rem;
 $cellHeight: 8rem;
 
 .grid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: center;
-
-    max-width: $cellWidth * 5;
+    @include Common.grid($cellWidth, $cellHeight, 5);
 
     animation: gridAnimation 0.3s forwards;
 }
 
-.cell {
+.realCell {
+    @include Common.realCell($cellWidth, $cellHeight);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
 
-    width: $cellWidth;
-    height: $cellHeight;
+.fakeCell {
+    @include Common.fakeCell($cellWidth, $cellHeight);
 }

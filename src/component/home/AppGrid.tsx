@@ -12,8 +12,8 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 
 import { Language } from 'store/Language';
-import { AppButton } from 'component/home/AppButton';
 import { range } from 'util/MathUtils';
+import { AppButton } from 'component/home/AppButton';
 import styles from 'style/home/AppGrid.module.scss';
 
 /**
@@ -96,13 +96,13 @@ const apps: App[] = [
 export const AppGrid = () => (
     <div className={styles.grid}>
         {apps.map(({ nameMap, path, icon, color }) => (
-            <div key={path} className={styles.cell}>
+            <div key={path} className={styles.realCell}>
                 <AppButton nameMap={nameMap} path={path} icon={icon} color={color} />
             </div>
         ))}
         {/* Put some empty cells to align the buttons to the left. */}
         {range(0, 5).map(i => (
-            <div key={i} className={styles.cell} />
+            <div key={i} className={styles.fakeCell} />
         ))}
     </div>
 );
