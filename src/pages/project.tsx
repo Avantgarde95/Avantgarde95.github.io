@@ -6,6 +6,15 @@ import { WrappedLink } from 'component/common/WrappedLink';
 import { ProjectGrid, ProjectTag, projectTagNames } from 'component/project/ProjectGrid';
 import styles from 'style/project/Page.module.scss';
 
+const tagButtons: Array<Array<ProjectTag>> = [
+    ['C', 'C++'],
+    ['Java', 'Kotlin'],
+    ['HTML'],
+    ['CSS'],
+    ['JavaScript', 'TypeScript'],
+    ['Python'],
+];
+
 /**
  * 'Project(s)' page.
  */
@@ -14,10 +23,10 @@ const Page = () => {
         Object.fromEntries(projectTagNames.map(tag => [tag, true])) as Record<ProjectTag, boolean>
     );
 
-    const onClickTagButton = (tag: ProjectTag) => {
+    const onClickTagButton = (tags: Array<ProjectTag>) => {
         setTagStateMap({
             ...tagStateMap,
-            [tag]: !tagStateMap[tag],
+            ...Object.fromEntries(tags.map(tag => [tag, !tagStateMap[tag]])),
         });
     };
 
@@ -40,16 +49,18 @@ const Page = () => {
                 </LanguageFilter>
             </div>
             <div className={styles.tagButtonGroup}>
-                {projectTagNames.map(tag => (
+                {tagButtons.map(tags => (
                     <button
-                        key={tag}
-                        className={classNames(styles.tagButton, { [styles.isActive]: tagStateMap[tag] })}
+                        key={tags.join('')}
+                        className={classNames(styles.tagButton, {
+                            [styles.isActive]: tags.some(tag => tagStateMap[tag]),
+                        })}
                         type={'button'}
                         onClick={() => {
-                            onClickTagButton(tag);
+                            onClickTagButton(tags);
                         }}
                     >
-                        {tag}
+                        {tags.join(' / ')}
                     </button>
                 ))}
             </div>

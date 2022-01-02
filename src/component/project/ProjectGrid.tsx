@@ -4,7 +4,17 @@ import { range } from 'util/MathUtils';
 import styles from 'style/project/ProjectGrid.module.scss';
 import Projects from 'data/Projects.json';
 
-export const projectTagNames = ['C', 'C++', 'Java', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'Python'] as const;
+export const projectTagNames = [
+    'C',
+    'C++',
+    'Java',
+    'Kotlin',
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'TypeScript',
+    'Python',
+] as const;
 
 /**
  * 'Tag' for filtering the projects.
