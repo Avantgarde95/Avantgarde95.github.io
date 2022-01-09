@@ -39,11 +39,14 @@ module.exports = {
             arrowParens: 'avoid',
             endOfLine: 'auto'
         }],
-        // Fix "'React' was used before it was defined" error. (https://stackoverflow.com/a/64024916/2804329)
+        // Fix "'React' was used before it was defined" error.
+        // https://stackoverflow.com/a/64024916/2804329
         'no-use-before-define': 'off',
-        'consistent-return': 'off',
-        'default-case': 'off',
-        'no-param-reassign': 'off',
+        // Allow modifying the properties of the parameter.
+        // (We need this because of Redux toolkit.)
+        'no-param-reassign': ['error', {
+            props: false
+        }],
         'jsdoc/require-jsdoc': ['error', {
             publicOnly: false,
             require: {
@@ -73,7 +76,7 @@ module.exports = {
             ts: 'never',
             tsx: 'never'
         }],
-        'import/no-extraneous-dependencies': 'off',
+        //'import/no-extraneous-dependencies': 'off',
         'react/jsx-filename-extension': [1, {
             extensions: ['.tsx']
         }],
@@ -83,10 +86,10 @@ module.exports = {
             namedComponents: 'arrow-function',
             unnamedComponents: 'arrow-function'
         }],
-        // Allow using the optional properties instead of defaultProps. (https://github.com/yannickcr/eslint-plugin-react/issues/1433)
+        // Allow using the optional properties instead of defaultProps.
+        // https://github.com/yannickcr/eslint-plugin-react/issues/1433
         'react/require-default-props': 'off',
         // Allow wrapping a expression using fragment.
-        // (Since TypeScript doesn't allow returning a string from the React component, we have to wrap the string with a fragment.)
         'react/jsx-no-useless-fragment': [2, {
             allowExpressions: true
         }],
@@ -95,7 +98,6 @@ module.exports = {
             components: ['Link'],
             specialLink: ['hrefLeft', 'hrefRight'],
             aspects: ['invalidHref', 'preferButton']
-        }],
-        '@typescript-eslint/no-use-before-define': ['error']
+        }]
     }
 };
