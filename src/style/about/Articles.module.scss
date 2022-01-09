@@ -13,18 +13,22 @@
     width: 100%;
     height: 100%;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 
     background-color: Colors.$black;
 }
 
 .content {
     text-align: center;
+
+    max-width: 100%;
     margin: auto;
 }
 
 .text {
-    @include Mixins.typewriter(Colors.$white);
+    @include Mixins.typewriter(Colors.$white, Colors.$black, 15s);
+
+    word-break: keep-all;
 }
 
 @keyframes galleryAnimation {
@@ -54,7 +58,7 @@
 }
 
 .link {
-    @include Mixins.typewriter(Colors.$yellow);
+    @include Mixins.typewriter(Colors.$yellow, Colors.$black);
 
     &:hover {
         color: lighten(Colors.$yellow, 10);

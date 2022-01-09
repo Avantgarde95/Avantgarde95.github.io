@@ -13,7 +13,7 @@
     // Trick of avoiding the scroll of the page.
     min-height: 0;
 
-    @include Mixins.onWideScreen {
+    @include Mixins.wideScreen {
         padding-left: 1rem;
         padding-right: 1rem;
     }

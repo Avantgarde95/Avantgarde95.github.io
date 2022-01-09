@@ -1,7 +1,18 @@
 // ===============================================
+// Mixins for setting the fonts.
+
+@mixin defaultFont {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+@mixin codeFont {
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+// ===============================================
 // Mixins for responsive layout.
 
-@mixin onWideScreen {
+@mixin wideScreen {
     @media (min-width: 769px) {
         @content;
     }
@@ -70,12 +81,15 @@
     }
 }
 
-@mixin typewriter($color) {
+@mixin typewriter($color, $backgroundColor, $duration: 10s) {
     color: transparent;
     background: linear-gradient($color 0 0) 0 0;
     background-size: 0;
     background-clip: text;
     background-repeat: no-repeat;
 
-    animation: typewriterAnimation 10s forwards;
+    animation-name: typewriterAnimation;
+    animation-duration: $duration;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }

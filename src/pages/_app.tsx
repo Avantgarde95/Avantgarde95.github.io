@@ -23,9 +23,10 @@ setInterval(() => {
 const Device = ({ Component, pageProps }: AppProps) => (
     <Provider store={store}>
         <Head>
+            <title>Hunmin Park</title>
             <link
                 rel={'stylesheet'}
-                href={'https://fonts.googleapis.com/css2?family=Inconsolata&family=Noto+Sans+KR&display=swap'}
+                href={'https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Noto+Sans+KR&display=swap'}
             />
         </Head>
         <div className={styles.device}>
