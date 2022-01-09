@@ -1,7 +1,8 @@
-@use '../Common';
+@use '../common/_Colors';
+@use '../common/_Mixins';
 
 .page {
-    @include Common.page;
+    @include Mixins.page;
 }
 
 @keyframes appAnimation {

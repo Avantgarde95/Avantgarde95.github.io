@@ -1,0 +1,62 @@
+@use '../common/_Colors';
+@use '../common/_Mixins';
+
+.article {
+    box-sizing: border-box;
+    overflow: auto;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+
+    background-color: Colors.$black;
+}
+
+.content {
+    text-align: center;
+    margin: auto;
+}
+
+.text {
+    @include Mixins.typewriter(Colors.$white);
+}
+
+@keyframes galleryAnimation {
+    100% {
+        opacity: 1;
+    }
+}
+
+.gallery {
+    white-space: nowrap;
+    overflow-x: auto;
+
+    max-width: 100%;
+    min-height: 13rem;
+
+    opacity: 0;
+
+    animation: galleryAnimation 5s forwards;
+}
+
+.image {
+    height: 12rem;
+
+    &:not(:last-child) {
+        margin-right: 1rem;
+    }
+}
+
+.link {
+    @include Mixins.typewriter(Colors.$yellow);
+
+    &:hover {
+        color: lighten(Colors.$yellow, 10);
+    }
+}

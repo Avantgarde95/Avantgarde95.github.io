@@ -1,10 +1,11 @@
-@use '../Common';
+@use '../common/_Colors';
+@use '../common/_Mixins';
 
 $cellWidth: 10rem;
 $cellHeight: 10rem;
 
 .grid {
-    @include Common.grid($cellWidth, $cellHeight, 4);
+    @include Mixins.grid($cellWidth, $cellHeight, 4);
 
     margin: auto;
 }
@@ -16,7 +17,7 @@ $cellHeight: 10rem;
 }
 
 .realCell {
-    @include Common.realCell($cellWidth, $cellHeight);
+    @include Mixins.realCell($cellWidth, $cellHeight);
 
     box-sizing: border-box;
     display: flex;
@@ -31,12 +32,12 @@ $cellHeight: 10rem;
     background-repeat: no-repeat;
     background-position: center;
 
-    border: 1px solid Common.$white;
+    border: 1px solid Colors.$white;
     opacity: 0;
 
     animation: cellAnimation 0.5s forwards;
 }
 
 .fakeCell {
-    @include Common.fakeCell($cellWidth, $cellHeight);
+    @include Mixins.fakeCell($cellWidth, $cellHeight);
 }

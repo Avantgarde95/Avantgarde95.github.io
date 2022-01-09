@@ -1,4 +1,5 @@
-@use '../Common';
+@use '../common/_Colors';
+@use '../common/_Mixins';
 
 .appButton {
     cursor: pointer;
@@ -13,11 +14,11 @@
     margin-bottom: 1rem;
     border-radius: 1rem;
     font-size: 2.5rem;
-    border: 2px solid Common.$white;
+    border: 2px solid Colors.$white;
 
     &:hover {
         transform: scale(0.85);
     }
 
-    @include Common.neonBorder(darken(Common.$white, 20), darken(Common.$white, 10), 6px, 8px);
+    @include Mixins.neonBorder(darken(Colors.$white, 20), darken(Colors.$white, 10), 6px, 8px);
 }

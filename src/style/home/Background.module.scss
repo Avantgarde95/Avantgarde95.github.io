@@ -1,11 +1,12 @@
-@use '../Common';
+@use '../common/_Colors';
+@use '../common/_Mixins';
 
 .background {
-    @include Common.background;
+    @include Mixins.background;
 
     position: fixed;
 
-    background: linear-gradient(darken(Common.$darkblue, 20), lighten(Common.$darkblue, 10));
+    background: linear-gradient(darken(Colors.$darkblue, 20), lighten(Colors.$darkblue, 10));
 }
 
 $minOpacity: 0.1;
@@ -26,11 +27,11 @@ $maxOpacity: 0.8;
 .star {
     position: absolute;
 
-    color: Common.$yellow;
+    color: Colors.$yellow;
     opacity: $minOpacity;
     animation: starAnimation 5s infinite;
 
     & > svg {
-        @include Common.neonSVG(darken(Common.$yellow, 10), lighten(Common.$yellow, 10));
+        @include Mixins.neonSVG(darken(Colors.$yellow, 10), lighten(Colors.$yellow, 10));
     }
 }

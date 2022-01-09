@@ -1,4 +1,4 @@
-@use '../Common';
+@use '../common/_Colors';
 
 html {
     width: 100%;
@@ -23,6 +23,6 @@ body {
     margin: 0;
     padding: 0;
 
-    color: Common.$white;
-    background-color: Common.$black;
+    color: Colors.$white;
+    background-color: Colors.$black;
 }

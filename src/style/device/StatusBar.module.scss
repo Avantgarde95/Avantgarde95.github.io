@@ -1,4 +1,5 @@
-@use '../Common';
+@use '../common/_Colors';
+@use '../common/_Mixins';
 
 .statusBar {
     // Since the page is rendered after the status bar,
@@ -38,7 +39,7 @@
     display: none;
 }
 
-@media (min-width: Common.$wideScreenMinWidth) {
+@include Mixins.onWideScreen {
     .wideDeviceName {
         display: block;
     }

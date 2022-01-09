@@ -1,4 +1,5 @@
-@use '../Common';
+@use '../common/_Colors';
+@use '../common/_Mixins';
 
 @keyframes gridAnimation {
     0% {
@@ -15,13 +16,13 @@ $cellWidth: 7rem;
 $cellHeight: 8rem;
 
 .grid {
-    @include Common.grid($cellWidth, $cellHeight, 5);
+    @include Mixins.grid($cellWidth, $cellHeight, 5);
 
     animation: gridAnimation 0.3s forwards;
 }
 
 .realCell {
-    @include Common.realCell($cellWidth, $cellHeight);
+    @include Mixins.realCell($cellWidth, $cellHeight);
 
     display: flex;
     flex-direction: column;
@@ -30,5 +31,5 @@ $cellHeight: 8rem;
 }
 
 .fakeCell {
-    @include Common.fakeCell($cellWidth, $cellHeight);
+    @include Mixins.fakeCell($cellWidth, $cellHeight);
 }

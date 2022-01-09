@@ -1,4 +1,4 @@
-@use '../Common';
+@use '../common/_Colors';
 
 .navigationBar {
     box-sizing: border-box;
@@ -28,7 +28,7 @@
     border: none;
     font-size: 2rem;
 
-    color: Common.$white;
+    color: Colors.$white;
     background-color: transparent;
 
     &:hover {
@@ -47,7 +47,7 @@
     font-weight: bold;
     transition: top 0.5s, left 0.5s;
 
-    color: Common.$gray;
+    color: Colors.$gray;
 
     &.isSelected {
         z-index: 1;
@@ -55,6 +55,6 @@
         top: 0;
         left: 0;
 
-        color: Common.$white;
+        color: Colors.$white;
     }
 }

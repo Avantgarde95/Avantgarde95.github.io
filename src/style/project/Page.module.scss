@@ -1,7 +1,8 @@
-@use '../Common';
+@use '../common/_Colors';
+@use '../common/_Mixins';
 
 .page {
-    @include Common.page;
+    @include Mixins.page;
 
     box-sizing: border-box;
 
@@ -12,7 +13,7 @@
     // Trick of avoiding the scroll of the page.
     min-height: 0;
 
-    @media (min-width: Common.$wideScreenMinWidth) {
+    @include Mixins.onWideScreen {
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -25,10 +26,10 @@
 }
 
 .link {
-    color: Common.$yellow;
+    color: Colors.$yellow;
 
     &:hover {
-        color: lighten(Common.$yellow, 10);
+        color: lighten(Colors.$yellow, 10);
     }
 }
 
@@ -50,11 +51,11 @@
     border-radius: 1rem;
     font-size: 1rem;
     padding: 0.2rem 1rem;
-    border: 2px solid Common.$white;
+    border: 2px solid Colors.$white;
 
     font-family: inherit;
 
-    color: Common.$white;
+    color: Colors.$white;
     background-color: transparent;
 
     &:not(:first-child) {
@@ -62,7 +63,7 @@
     }
 
     &.isActive {
-        background-color: Common.$yellow;
+        background-color: Colors.$yellow;
     }
 }
 

@@ -1,4 +1,4 @@
-@use '../Common';
+@use '../common/_Colors';
 
 @keyframes lockerAppearingAnimation {
     0% {
@@ -50,10 +50,10 @@
     font-size: 3rem;
 
     border: 0;
-    color: Common.$white;
+    color: Colors.$white;
     background-color: transparent;
 
     &:hover {
-        color: Common.$yellow;
+        color: Colors.$yellow;
     }
 }

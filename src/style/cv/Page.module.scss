@@ -1,7 +1,7 @@
-@use '../Common';
+@use '../common/_Mixins';
 
 .page {
-    @include Common.page;
+    @include Mixins.page;
 }
 
 .document {

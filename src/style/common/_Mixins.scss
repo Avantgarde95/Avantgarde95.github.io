@@ -1,22 +1,15 @@
-// =============================================
-// Common colors.
+// ===============================================
+// Mixins for responsive layout.
 
-$black: darken(#2e2e2e, 8);
-$white: #ffffff;
-$gray: #797979;
-$yellow: #e5b567;
-$darkblue: rgb(35, 51, 129);
+@mixin onWideScreen {
+    @media (min-width: 769px) {
+        @content;
+    }
+}
 
-// =============================================
-// Common sizes.
+// ===============================================
+// Mixins for the page and the page's background.
 
-// Common size for the media query.
-$wideScreenMinWidth: 769px;
-
-// =============================================
-// Common mixins.
-
-// Common style for the page and the page's background.
 @mixin page {
     position: relative;
 
@@ -34,7 +27,9 @@ $wideScreenMinWidth: 769px;
     height: 100%;
 }
 
-// Mixins for giving neon effect on the elements.
+// ===============================================
+// Mixins for giving a neon effect on the element.
+
 @mixin neonSVG($darkColor, $lightColor, $startSize: 2px, $endSize: 4px) {
     filter: drop-shadow(0 0 $startSize $darkColor) drop-shadow(0 0 $endSize $lightColor);
 }
@@ -43,7 +38,9 @@ $wideScreenMinWidth: 769px;
     box-shadow: 0 0 $startSize $darkColor, 0 0 $endSize $lightColor;
 }
 
+// ===============================================
 // Mixins for creating a flex-based grid.
+
 @mixin grid($cellWidth, $cellHeight, $maxDimensionX) {
     display: flex;
     flex-direction: row;
@@ -62,4 +59,23 @@ $wideScreenMinWidth: 769px;
 @mixin fakeCell($cellWidth, $cellHeight) {
     width: $cellWidth;
     height: 0;
+}
+
+// ===============================================
+// Mixins for giving a typewriter effect on the element.
+
+@keyframes typewriterAnimation {
+    to {
+        background-size: 3000px;
+    }
+}
+
+@mixin typewriter($color) {
+    color: transparent;
+    background: linear-gradient($color 0 0) 0 0;
+    background-size: 0;
+    background-clip: text;
+    background-repeat: no-repeat;
+
+    animation: typewriterAnimation 10s forwards;
 }
