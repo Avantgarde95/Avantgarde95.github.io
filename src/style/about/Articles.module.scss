@@ -26,7 +26,7 @@
 }
 
 .text {
-    @include Mixins.typewriter(Colors.$white, Colors.$black, 15s);
+    @include Mixins.typewriter(Colors.$white, Colors.$white, Colors.$black);
 
     word-break: keep-all;
 }
@@ -58,7 +58,7 @@
 }
 
 .link {
-    @include Mixins.typewriter(Colors.$yellow, Colors.$black);
+    @include Mixins.typewriter(Colors.$yellow, Colors.$yellow, Colors.$black);
 
     &:hover {
         color: lighten(Colors.$yellow, 10);

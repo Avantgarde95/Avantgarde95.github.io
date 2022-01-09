@@ -76,16 +76,17 @@
 // Mixins for giving a typewriter effect on the element.
 
 @keyframes typewriterAnimation {
-    to {
+    100% {
         background-size: 3000px;
     }
 }
 
-@mixin typewriter($color, $backgroundColor, $duration: 10s) {
+@mixin typewriter($color, $caretColor, $backgroundColor, $duration: 15s) {
     color: transparent;
-    background: linear-gradient($color 0 0) 0 0;
+    background: linear-gradient(-90deg, $caretColor 5px, transparent 0) 10px 0, linear-gradient($color 0 0) 0 0;
     background-size: 0;
-    background-clip: text;
+    background-clip: padding-box, text;
+    -webkit-background-clip: padding-box, text;
     background-repeat: no-repeat;
 
     animation-name: typewriterAnimation;
