@@ -56,7 +56,20 @@
 
     @include Mixins.shadowBorder;
 
+    @include Mixins.wideScreen {
+        width: 24rem;
+    }
+
     &.isMe {
         background-color: Colors.$yellow;
     }
+}
+
+.image {
+    display: block;
+
+    width: 12rem;
+    height: 12rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
 }

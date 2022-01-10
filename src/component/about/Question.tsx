@@ -11,7 +11,7 @@ export const topics = ['Job', 'Hobbies', 'Contacts'] as const;
 export type Topic = typeof topics[number];
 
 /**
- * Map of {topic: Question component}.
+ * Map of {topic: Question element}.
  */
 export const questionMap: Record<Topic, ReactNode> = {
     Job: (
@@ -35,31 +35,40 @@ export const questionMap: Record<Topic, ReactNode> = {
 };
 
 /**
- * Map of {topic: Array of the message & images}.
+ * Map of {topic: {messages: [Elements], images: [URLs]}}.
  */
-export const answerMap: Record<Topic, Array<ReactNode>> = {
-    Job: [
-        <>
-            <LanguageFilter language={'Korean'}>개발자로 일하고 있습니다.</LanguageFilter>
-            <LanguageFilter language={'English'}>I&apos;m working as a developer.</LanguageFilter>
-        </>,
-        <>
-            <LanguageFilter language={'Korean'}>컴퓨터 그래픽스와 웹에 관심이 있습니다.</LanguageFilter>
-            <LanguageFilter language={'English'}>I&apos;m interested in computer graphics and web.</LanguageFilter>
-        </>,
-    ],
-    Hobbies: [
-        <>
-            <LanguageFilter language={'Korean'}>취미로 피아노와 기타를 연주합니다.</LanguageFilter>
-            <LanguageFilter language={'English'}>I play piano and guitar as a hobby.</LanguageFilter>
-        </>,
-    ],
-    Contacts: [
-        <>
-            <LanguageFilter language={'Korean'}>이메일</LanguageFilter>
-            <LanguageFilter language={'English'}>Email</LanguageFilter>
-            :&nbsp;
-            <WrappedLink href={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</WrappedLink>
-        </>,
-    ],
+export const answerMap: Record<Topic, { messages: Array<ReactNode>; images: Array<string> }> = {
+    Job: {
+        messages: [
+            <>
+                <LanguageFilter language={'Korean'}>개발자로 일하고 있습니다.</LanguageFilter>
+                <LanguageFilter language={'English'}>I&apos;m working as a developer.</LanguageFilter>
+            </>,
+            <>
+                <LanguageFilter language={'Korean'}>컴퓨터 그래픽스와 웹에 관심이 있습니다.</LanguageFilter>
+                <LanguageFilter language={'English'}>I&apos;m interested in computer graphics and web.</LanguageFilter>
+            </>,
+        ],
+        images: ['/image/RayTracing.png', '/image/Code.png'],
+    },
+    Hobbies: {
+        messages: [
+            <>
+                <LanguageFilter language={'Korean'}>취미로 피아노와 기타를 연주합니다.</LanguageFilter>
+                <LanguageFilter language={'English'}>I play piano and guitar as a hobby.</LanguageFilter>
+            </>,
+        ],
+        images: ['/image/Guitar.jpg', '/image/Concert.jpg'],
+    },
+    Contacts: {
+        messages: [
+            <>
+                <LanguageFilter language={'Korean'}>이메일</LanguageFilter>
+                <LanguageFilter language={'English'}>Email</LanguageFilter>
+                :&nbsp;
+                <WrappedLink href={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</WrappedLink>
+            </>,
+        ],
+        images: [],
+    },
 };

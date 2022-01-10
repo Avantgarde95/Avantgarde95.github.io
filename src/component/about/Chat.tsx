@@ -9,6 +9,7 @@ import styles from 'style/about/Chat.module.scss';
  */
 interface Props {
     messages: Array<ReactNode>;
+    images: Array<string>;
 
     // User's chat -> true.
     // Computer's chat -> false.
@@ -22,7 +23,7 @@ interface Props {
  * - Messages
  * - Images
  */
-export const Chat = ({ messages, isMe }: Props) => {
+export const Chat = ({ messages, images, isMe }: Props) => {
     const onRenderRef = (element: HTMLDivElement | null) => {
         if (element !== null) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -45,6 +46,9 @@ export const Chat = ({ messages, isMe }: Props) => {
                     <div key={index} className={classNames(styles.message, { [styles.isMe]: isMe })}>
                         {message}
                     </div>
+                ))}
+                {images.map(image => (
+                    <img key={image} className={styles.image} src={image} alt={image} title={image} />
                 ))}
             </div>
         </div>

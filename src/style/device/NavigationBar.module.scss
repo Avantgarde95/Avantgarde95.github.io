@@ -1,6 +1,9 @@
 @use '../common/Colors';
 
 .navigationBar {
+    // The navigation bar creates an overflow on Firefox, so we add this line.
+    overflow-y: hidden;
+
     box-sizing: border-box;
     display: flex;
     flex-direction: row;

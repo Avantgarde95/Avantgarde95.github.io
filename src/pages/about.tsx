@@ -27,14 +27,15 @@ const Page = () => {
                             <LanguageFilter language={'English'}>Hello, my name is Hunmin Park.</LanguageFilter>
                         </>,
                     ]}
+                    images={[]}
                 />
                 {writtenTopics.map((topic, index) => (
                     // We include the index in the key
                     // since the user can ask the same question multiple times.
                     // eslint-disable-next-line react/no-array-index-key
                     <Fragment key={`${index}-${topic}`}>
-                        <Chat isMe messages={[questionMap[topic]]} />
-                        <Chat isMe={false} messages={answerMap[topic]} />
+                        <Chat isMe messages={[questionMap[topic]]} images={[]} />
+                        <Chat isMe={false} messages={answerMap[topic].messages} images={answerMap[topic].images} />
                     </Fragment>
                 ))}
             </div>
