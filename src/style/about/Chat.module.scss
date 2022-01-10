@@ -28,7 +28,7 @@
     background-position: center;
 }
 
-.content {
+.chatContent {
     display: inline-block;
     vertical-align: top;
 
@@ -42,8 +42,7 @@
 }
 
 .message {
-    text-align: left;
-    word-break: break-all;
+    position: relative;
     box-sizing: border-box;
 
     width: 12rem;
@@ -60,9 +59,37 @@
         width: 24rem;
     }
 
+    &::before {
+        position: absolute;
+        content: '';
+
+        top: 0.5rem;
+        left: -0.6rem;
+        width: 0;
+        height: 0;
+        border: 1rem solid transparent;
+        border-top-color: Colors.$white;
+    }
+
     &.isMe {
         background-color: Colors.$yellow;
+
+        &::before {
+            left: auto;
+            right: -0.6rem;
+            border-top-color: Colors.$yellow;
+        }
     }
+}
+
+.messageContent {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    word-break: break-all;
+
+    width: 100%;
+    height: 100%;
 }
 
 .image {

@@ -33,7 +33,7 @@ export const Chat = ({ messages, images, isMe }: Props) => {
     return (
         <div className={classNames(styles.chat, { [styles.isMe]: isMe })} ref={onRenderRef}>
             {!isMe && <div className={styles.profile} />}
-            <div className={styles.content}>
+            <div className={styles.chatContent}>
                 {!isMe && (
                     <div className={styles.nickname}>
                         <LanguageFilter language={'Korean'}>박훈민</LanguageFilter>
@@ -44,7 +44,7 @@ export const Chat = ({ messages, images, isMe }: Props) => {
                     // We have nothing that can be used as a key other than the index...
                     // eslint-disable-next-line react/no-array-index-key
                     <div key={index} className={classNames(styles.message, { [styles.isMe]: isMe })}>
-                        {message}
+                        <div className={styles.messageContent}>{message}</div>
                     </div>
                 ))}
                 {images.map(image => (
