@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 
 import { LanguageFilter } from 'component/common/LanguageFilter';
+import { Delay } from 'component/common/Delay';
 import { Chat } from 'component/about/Chat';
 import { answerMap, questionMap, Topic, topics } from 'component/about/Question';
 import styles from 'style/about/Page.module.scss';
@@ -35,7 +36,9 @@ const Page = () => {
                     // eslint-disable-next-line react/no-array-index-key
                     <Fragment key={`${index}-${topic}`}>
                         <Chat isMe messages={[questionMap[topic]]} images={[]} />
-                        <Chat isMe={false} messages={answerMap[topic].messages} images={answerMap[topic].images} />
+                        <Delay delay={600}>
+                            <Chat isMe={false} messages={answerMap[topic].messages} images={answerMap[topic].images} />
+                        </Delay>
                     </Fragment>
                 ))}
             </div>

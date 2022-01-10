@@ -41,12 +41,29 @@
     color: Colors.$black;
 }
 
+@keyframes chatItemAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@mixin chatItem {
+    display: block;
+
+    margin-top: 0.5rem;
+    animation: chatItemAnimation 0.5s;
+}
+
 .message {
+    @include chatItem;
+
     position: relative;
     box-sizing: border-box;
 
     width: 12rem;
-    margin-top: 0.5rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
 
@@ -93,10 +110,9 @@
 }
 
 .image {
-    display: block;
+    @include chatItem;
 
     width: 12rem;
     height: 12rem;
-    margin-top: 0.5rem;
     border-radius: 0.5rem;
 }
