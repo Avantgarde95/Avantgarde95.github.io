@@ -1,0 +1,62 @@
+@use '../common/Colors';
+@use '../common/Mixins';
+
+.chat {
+    width: 100%;
+
+    &:not(:first-child) {
+        margin-top: 1rem;
+    }
+
+    &.isMe {
+        text-align: right;
+    }
+}
+
+.profile {
+    display: inline-block;
+    vertical-align: top;
+
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+
+    background-color: Colors.$white;
+    background-image: url('/image/Me.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.content {
+    display: inline-block;
+    vertical-align: top;
+
+    margin-left: 0.5rem;
+}
+
+.nickname {
+    font-size: 1rem;
+
+    color: Colors.$black;
+}
+
+.message {
+    text-align: left;
+    word-break: break-all;
+    box-sizing: border-box;
+
+    width: 12rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+
+    color: Colors.$black;
+    background-color: Colors.$white;
+
+    @include Mixins.shadowBorder;
+
+    &.isMe {
+        background-color: Colors.$yellow;
+    }
+}

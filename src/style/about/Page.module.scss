@@ -1,27 +1,57 @@
-@use '../common/_Colors';
-@use '../common/_Mixins';
+@use '../common/Colors';
+@use '../common/Mixins';
 
 .page {
     @include Mixins.page;
 
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    // Prevent the page from creating a overflow.
+    min-height: 0;
 }
 
-.nextButton {
-    position: absolute;
+.chats {
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    background-color: Colors.$blue;
+}
+
+.questions {
+    box-sizing: border-box;
+
+    width: 100%;
+    padding: 0.5rem;
+
+    background-color: Colors.$yellow;
+}
+
+.question {
+    text-align: left;
+    box-sizing: border-box;
     cursor: pointer;
 
-    left: 50%;
-    bottom: 0;
-    font-size: 2rem;
-    transform: translateX(-50%);
+    width: 100%;
+    padding: 0.2rem;
 
-    color: Colors.$white;
-    border-color: transparent;
-    background-color: transparent;
-    opacity: 0.5;
+    color: Colors.$black;
+    background-color: Colors.$white;
+    border: 1px solid Colors.$black;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    &:not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
 
     &:hover {
-        opacity: 1;
+        background-color: lighten(Colors.$yellow, 20);
     }
 }

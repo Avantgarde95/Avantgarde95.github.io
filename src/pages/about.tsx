@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { Icon } from 'react-avant/lib/Icon';
-import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons/faArrowCircleRight';
+import React, { Fragment, useState } from 'react';
 
-import { range } from 'util/MathUtils';
-import { articles } from 'component/about/Articles';
+import { LanguageFilter } from 'component/common/LanguageFilter';
+import { Chat } from 'component/about/Chat';
+import { answerMap, questionMap, Topic, topics } from 'component/about/Question';
 import styles from 'style/about/Page.module.scss';
 
 /**
@@ -11,29 +10,48 @@ import styles from 'style/about/Page.module.scss';
  * It shows a simple typewriter animation on each line.
  */
 const Page = () => {
-    // State for re-rendering the articles.
-    const [showCount, setShowCount] = useState(articles.length);
+    const [writtenTopics, setWrittenTopics] = useState<Array<Topic>>([]);
 
-    const onClickNextButton = () => {
-        if (showCount === 1) {
-            setShowCount(articles.length);
-        } else {
-            setShowCount(showCount - 1);
-        }
+    const onClickQuestion = (topic: Topic) => {
+        setWrittenTopics([...writtenTopics, topic]);
     };
 
     return (
         <div className={styles.page}>
-            {range(0, showCount).map(offset => {
-                const Article = articles[articles.length - 1 - offset];
-
-                // We put showCount in the key to force re-rendering of each article
-                // to start animation when showCount is changed.
-                return <Article key={`${showCount}-${offset}`} />;
-            })}
-            <button className={styles.nextButton} type={'button'} title={'다음 Next'} onClick={onClickNextButton}>
-                <Icon definition={faArrowCircleRight} />
-            </button>
+            <div className={styles.chats}>
+                <Chat
+                    isMe={false}
+                    messages={[
+                        <>
+                            <LanguageFilter language={'Korean'}>안녕하세요, 박훈민입니다.</LanguageFilter>
+                            <LanguageFilter language={'English'}>Hello, my name is Hunmin Park.</LanguageFilter>
+                        </>,
+                    ]}
+                />
+                {writtenTopics.map((topic, index) => (
+                    // We include the index in the key
+                    // since the user can ask the same question multiple times.
+                    // eslint-disable-next-line react/no-array-index-key
+                    <Fragment key={`${index}-${topic}`}>
+                        <Chat isMe messages={[questionMap[topic]]} />
+                        <Chat isMe={false} messages={answerMap[topic]} />
+                    </Fragment>
+                ))}
+            </div>
+            <div className={styles.questions}>
+                {topics.map(topic => (
+                    <button
+                        className={styles.question}
+                        key={topic}
+                        type={'button'}
+                        onClick={() => {
+                            onClickQuestion(topic);
+                        }}
+                    >
+                        {questionMap[topic]}
+                    </button>
+                ))}
+            </div>
         </div>
     );
 };

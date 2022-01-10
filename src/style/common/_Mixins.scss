@@ -1,3 +1,5 @@
+@use './Colors';
+
 // ===============================================
 // Mixins for setting the fonts.
 
@@ -93,4 +95,11 @@
     animation-duration: $duration;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
+}
+
+// ===============================================
+// Mixins for giving a shadow effect on the element.
+
+@mixin shadowBorder($color: Colors.$gray) {
+    box-shadow: 1.5px 1.5px 1.5px 1.5px $color;
 }
