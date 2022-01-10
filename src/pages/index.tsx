@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Background } from 'component/home/Background';
 import { Locker } from 'component/home/Locker';
+import { apps } from 'component/home/App';
 import { AppGrid } from 'component/home/AppGrid';
 import styles from 'style/home/Page.module.scss';
 
@@ -15,7 +16,7 @@ const Page = () => (
         <Background />
         <div className={styles.content}>
             <Locker>
-                <AppGrid />
+                <AppGrid apps={apps} />
             </Locker>
         </div>
     </div>
