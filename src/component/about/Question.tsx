@@ -48,16 +48,16 @@ export const answerMap: Record<Topic, Array<ReactNode>> = {
             <Korean>컴퓨터 그래픽스와 웹에 관심이 있습니다.</Korean>
             <English>I&apos;m interested in computer graphics and web.</English>
         </TextMessage>,
-        <ImageMessage title={'Computer graphics'} src={'/image/RayTracing.png'} />,
-        <ImageMessage title={'Web'} src={'/image/Code.png'} />,
+        <ImageMessage title={'컴퓨터 그래픽스 Computer graphics'} src={'/image/RayTracing.png'} />,
+        <ImageMessage title={'웹 Web'} src={'/image/Code.png'} />,
     ],
     Hobbies: [
         <TextMessage>
             <Korean>취미로 피아노와 기타를 연주합니다.</Korean>
             <English>I play piano and guitar as a hobby.</English>
         </TextMessage>,
-        <ImageMessage title={'Guitar'} src={'/image/Guitar.jpg'} />,
-        <ImageMessage title={'Concert'} src={'/image/Concert.jpg'} />,
+        <ImageMessage title={'기타 Guitar'} src={'/image/Guitar.jpg'} />,
+        <ImageMessage title={'공연 Concert'} src={'/image/Concert.jpg'} />,
     ],
     Contacts: [
         <TextMessage>

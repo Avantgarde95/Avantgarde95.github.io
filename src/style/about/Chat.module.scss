@@ -1,8 +1,19 @@
 @use '../common/Colors';
 @use '../common/Mixins';
 
+@keyframes chatAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .chat {
     width: 100%;
+
+    animation: chatAnimation 0.5s;
 
     &:not(:first-child) {
         margin-top: 1rem;

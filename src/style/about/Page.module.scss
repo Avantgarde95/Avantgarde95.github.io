@@ -24,12 +24,7 @@
 }
 
 .questions {
-    box-sizing: border-box;
-
     width: 100%;
-    padding: 0.5rem;
-
-    background-color: Colors.$yellow;
 }
 
 .question {
@@ -38,20 +33,17 @@
     cursor: pointer;
 
     width: 100%;
-    padding: 0.2rem;
+    padding: 0.5rem;
 
     color: Colors.$black;
     background-color: Colors.$white;
-    border: 1px solid Colors.$black;
+    border: 0;
+    border-top: 2px solid Colors.$gray;
 
     font-family: inherit;
     font-size: 1rem;
 
-    &:not(:last-child) {
-        margin-bottom: 0.5rem;
-    }
-
     &:hover {
-        background-color: lighten(Colors.$gray, 30);
+        background-color: Colors.$yellow;
     }
 }

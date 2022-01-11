@@ -1,20 +1,10 @@
 @use '../common/Colors';
 @use '../common/Mixins';
 
-@keyframes messageAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 @mixin message {
     display: block;
 
     margin-top: 0.5rem;
-    animation: messageAnimation 0.5s;
 }
 
 .textMessage {
