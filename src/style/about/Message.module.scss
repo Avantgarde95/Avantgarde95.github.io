@@ -1,0 +1,78 @@
+@use '../common/Colors';
+@use '../common/Mixins';
+
+@keyframes messageAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@mixin message {
+    display: block;
+
+    margin-top: 0.5rem;
+    animation: messageAnimation 0.5s;
+}
+
+.textMessage {
+    @include message;
+
+    position: relative;
+    box-sizing: border-box;
+
+    width: 12rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+
+    color: Colors.$black;
+    background-color: Colors.$white;
+
+    @include Mixins.shadowBorder;
+
+    @include Mixins.wideScreen {
+        width: 24rem;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+
+        top: 0.5rem;
+        left: -0.6rem;
+        width: 0;
+        height: 0;
+        border: 1rem solid transparent;
+        border-top-color: Colors.$white;
+    }
+
+    &.isMe {
+        background-color: Colors.$yellow;
+
+        &::before {
+            left: auto;
+            right: -0.6rem;
+            border-top-color: Colors.$yellow;
+        }
+    }
+}
+
+.textMessageContent {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    word-break: break-all;
+
+    width: 100%;
+    height: 100%;
+}
+
+.imageMessage {
+    @include message;
+
+    width: 12rem;
+    height: 12rem;
+    border-radius: 0.5rem;
+}

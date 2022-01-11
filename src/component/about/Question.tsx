@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 
 import { Korean, English } from 'component/common/Language';
 import { WrappedLink } from 'component/common/WrappedLink';
+import { TextMessage, ImageMessage } from 'component/about/Message';
 
 export const topics = ['Job', 'Hobbies', 'Contacts'] as const;
 
@@ -35,40 +36,35 @@ export const questionMap: Record<Topic, ReactNode> = {
 };
 
 /**
- * Map of {topic: {messages: [Elements], images: [URLs]}}.
+ * Map of {topic: [Message elements]}.
  */
-export const answerMap: Record<Topic, { messages: Array<ReactNode>; images: Array<string> }> = {
-    Job: {
-        messages: [
-            <>
-                <Korean>개발자로 일하고 있습니다.</Korean>
-                <English>I&apos;m working as a developer.</English>
-            </>,
-            <>
-                <Korean>컴퓨터 그래픽스와 웹에 관심이 있습니다.</Korean>
-                <English>I&apos;m interested in computer graphics and web.</English>
-            </>,
-        ],
-        images: ['/image/RayTracing.png', '/image/Code.png'],
-    },
-    Hobbies: {
-        messages: [
-            <>
-                <Korean>취미로 피아노와 기타를 연주합니다.</Korean>
-                <English>I play piano and guitar as a hobby.</English>
-            </>,
-        ],
-        images: ['/image/Guitar.jpg', '/image/Concert.jpg'],
-    },
-    Contacts: {
-        messages: [
-            <>
-                <Korean>이메일</Korean>
-                <English>Email</English>
-                :&nbsp;
-                <WrappedLink href={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</WrappedLink>
-            </>,
-        ],
-        images: [],
-    },
+export const answerMap: Record<Topic, Array<ReactNode>> = {
+    Job: [
+        <TextMessage>
+            <Korean>개발자로 일하고 있습니다.</Korean>
+            <English>I&apos;m working as a developer.</English>
+        </TextMessage>,
+        <TextMessage>
+            <Korean>컴퓨터 그래픽스와 웹에 관심이 있습니다.</Korean>
+            <English>I&apos;m interested in computer graphics and web.</English>
+        </TextMessage>,
+        <ImageMessage title={'Computer graphics'} src={'/image/RayTracing.png'} />,
+        <ImageMessage title={'Web'} src={'/image/Code.png'} />,
+    ],
+    Hobbies: [
+        <TextMessage>
+            <Korean>취미로 피아노와 기타를 연주합니다.</Korean>
+            <English>I play piano and guitar as a hobby.</English>
+        </TextMessage>,
+        <ImageMessage title={'Guitar'} src={'/image/Guitar.jpg'} />,
+        <ImageMessage title={'Concert'} src={'/image/Concert.jpg'} />,
+    ],
+    Contacts: [
+        <TextMessage>
+            <Korean>이메일</Korean>
+            <English>Email</English>
+            :&nbsp;
+            <WrappedLink href={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</WrappedLink>
+        </TextMessage>,
+    ],
 };

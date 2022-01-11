@@ -8,12 +8,9 @@ import styles from 'style/about/Chat.module.scss';
  * Chat props.
  */
 interface Props {
-    messages: Array<ReactNode>;
-    images: Array<string>;
-
-    // User's chat -> true.
-    // Computer's chat -> false.
-    isMe: boolean;
+    // true if the user is the sender.
+    isMe?: boolean;
+    children: ReactNode;
 }
 
 /**
@@ -21,9 +18,8 @@ interface Props {
  * - Profile image
  * - Nickname
  * - Messages
- * - Images
  */
-export const Chat = ({ messages, images, isMe }: Props) => {
+export const Chat = ({ isMe = false, children }: Props) => {
     const onRenderRef = (element: HTMLDivElement | null) => {
         if (element !== null) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -40,16 +36,7 @@ export const Chat = ({ messages, images, isMe }: Props) => {
                         <English>Hunmin Park</English>
                     </div>
                 )}
-                {messages.map((message, index) => (
-                    // We have nothing that can be used as a key other than the index...
-                    // eslint-disable-next-line react/no-array-index-key
-                    <div key={index} className={classNames(styles.message, { [styles.isMe]: isMe })}>
-                        <div className={styles.messageContent}>{message}</div>
-                    </div>
-                ))}
-                {images.map(image => (
-                    <img key={image} className={styles.image} src={image} alt={image} title={image} />
-                ))}
+                {children}
             </div>
         </div>
     );

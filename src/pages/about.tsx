@@ -4,6 +4,7 @@ import { English, Korean } from 'component/common/Language';
 import { Delay } from 'component/common/Delay';
 import { Chat } from 'component/about/Chat';
 import { answerMap, questionMap, Topic, topics } from 'component/about/Question';
+import { TextMessage } from 'component/about/Message';
 import styles from 'style/about/Page.module.scss';
 
 /**
@@ -20,24 +21,22 @@ const Page = () => {
     return (
         <div className={styles.page}>
             <div className={styles.chats}>
-                <Chat
-                    isMe={false}
-                    messages={[
-                        <>
-                            <Korean>안녕하세요, 박훈민입니다.</Korean>
-                            <English>Hello, my name is Hunmin Park.</English>
-                        </>,
-                    ]}
-                    images={[]}
-                />
+                <Chat>
+                    <TextMessage>
+                        <Korean>안녕하세요, 박훈민입니다.</Korean>
+                        <English>Hello, my name is Hunmin Park.</English>
+                    </TextMessage>
+                </Chat>
                 {writtenTopics.map((topic, index) => (
                     // We include the index in the key
                     // since the user can ask the same question multiple times.
                     // eslint-disable-next-line react/no-array-index-key
                     <Fragment key={`${index}-${topic}`}>
-                        <Chat isMe messages={[questionMap[topic]]} images={[]} />
+                        <Chat isMe>
+                            <TextMessage isMe>{questionMap[topic]}</TextMessage>
+                        </Chat>
                         <Delay delay={600}>
-                            <Chat isMe={false} messages={answerMap[topic].messages} images={answerMap[topic].images} />
+                            <Chat>{answerMap[topic]}</Chat>
                         </Delay>
                     </Fragment>
                 ))}
