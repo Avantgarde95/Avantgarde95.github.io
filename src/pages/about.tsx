@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 
-import { LanguageFilter } from 'component/common/LanguageFilter';
+import { English, Korean } from 'component/common/Language';
 import { Delay } from 'component/common/Delay';
 import { Chat } from 'component/about/Chat';
 import { answerMap, questionMap, Topic, topics } from 'component/about/Question';
@@ -24,8 +24,8 @@ const Page = () => {
                     isMe={false}
                     messages={[
                         <>
-                            <LanguageFilter language={'Korean'}>안녕하세요, 박훈민입니다.</LanguageFilter>
-                            <LanguageFilter language={'English'}>Hello, my name is Hunmin Park.</LanguageFilter>
+                            <Korean>안녕하세요, 박훈민입니다.</Korean>
+                            <English>Hello, my name is Hunmin Park.</English>
                         </>,
                     ]}
                     images={[]}

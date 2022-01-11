@@ -6,7 +6,7 @@ import { faSignal } from '@fortawesome/free-solid-svg-icons/faSignal';
 import { faBatteryFull } from '@fortawesome/free-solid-svg-icons/faBatteryFull';
 
 import { useStoreSelector } from 'store/Store';
-import { LanguageFilter } from 'component/common/LanguageFilter';
+import { Korean, English } from 'component/common/Language';
 import { AMPM, Hour, Minute } from 'component/device/Clock';
 import styles from 'style/device/StatusBar.module.scss';
 
@@ -21,12 +21,12 @@ export const StatusBar = () => {
         <div className={styles.statusBar}>
             <div className={styles.left}>
                 <div className={classNames(styles.block, styles.wideDeviceName)}>
-                    <LanguageFilter language={'Korean'}>마이패드</LanguageFilter>
-                    <LanguageFilter language={'English'}>MyPad</LanguageFilter>
+                    <Korean>마이패드</Korean>
+                    <English>MyPad</English>
                 </div>
                 <div className={classNames(styles.block, styles.narrowDeviceName)}>
-                    <LanguageFilter language={'Korean'}>마이폰</LanguageFilter>
-                    <LanguageFilter language={'English'}>MyPhone</LanguageFilter>
+                    <Korean>마이폰</Korean>
+                    <English>MyPhone</English>
                 </div>
             </div>
             <div className={styles.right}>

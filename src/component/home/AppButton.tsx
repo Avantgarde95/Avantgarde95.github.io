@@ -1,41 +1,32 @@
 import React from 'react';
 import { Icon } from 'react-avant/lib/Icon';
-import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
-import { Language } from 'store/Language';
-import { strictEntries } from 'util/TypeUtils';
+import { VirtualApp } from 'component/home/App';
 import { WrappedLink } from 'component/common/WrappedLink';
-import { LanguageFilter } from 'component/common/LanguageFilter';
+import { LanguagePicker } from 'component/common/Language';
 import styles from 'style/home/AppButton.module.scss';
 
 /**
  * AppButton props.
  */
 interface Props {
-    nameMap: Record<Language, string>;
-    path: string;
-    icon: IconDefinition;
-    color: string;
+    app: VirtualApp;
 }
 
 /**
  * Link for opening an 'app' or an website.
  * It looks like an app button on the phone.
  */
-export const AppButton = ({ nameMap, path, icon, color }: Props) => (
+export const AppButton = ({ app }: Props) => (
     <>
         <WrappedLink
-            href={path}
-            title={Object.values(nameMap).join(' ')}
+            href={app.path}
+            title={Object.values(app.nameMap).join(' ')}
             className={styles.appButton}
-            style={{ color }}
+            style={{ color: app.color }}
         >
-            <Icon definition={icon} />
+            <Icon definition={app.icon} />
         </WrappedLink>
-        {strictEntries(nameMap).map(([language, name]) => (
-            <LanguageFilter key={language} language={language}>
-                {name}
-            </LanguageFilter>
-        ))}
+        <LanguagePicker languageMap={app.nameMap} />
     </>
 );

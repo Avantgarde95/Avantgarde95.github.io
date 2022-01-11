@@ -18,9 +18,9 @@ interface Props {
  */
 export const AppGrid = ({ apps }: Props) => (
     <div className={styles.grid}>
-        {apps.map(({ nameMap, path, icon, color }) => (
-            <div key={path} className={styles.realCell}>
-                <AppButton nameMap={nameMap} path={path} icon={icon} color={color} />
+        {apps.map(app => (
+            <div key={app.path} className={styles.realCell}>
+                <AppButton app={app} />
             </div>
         ))}
         {/* Put some empty cells to align the buttons to the left. */}

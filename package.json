@@ -40,8 +40,8 @@
     },
     "scripts": {
         "task:typing": "tsm \"src/**/*.module.{css,scss}\"",
-        "task:debug": "next dev -p 8080",
-        "task:start": "next start -p 8080",
+        "task:debug": "next dev",
+        "task:start": "next start",
         "task:build": "next build",
         "task:export": "next export -o docs",
         "task:lint": "next lint",

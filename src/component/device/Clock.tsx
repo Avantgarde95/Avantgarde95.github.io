@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Language } from 'store/Language';
 import { useStoreSelector } from 'store/Store';
+import { LanguagePicker } from 'component/common/Language';
 
 /**
  * Format the number to the given length by putting zeros at the left.
@@ -48,8 +49,6 @@ export const MonthDay = () => {
     return <>{`${fillZero(currentTime.monthDay + 1, 2)}`}</>;
 };
 
-// const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-
 const dayNames: Array<Record<Language, string>> = [
     { Korean: '일요일', English: 'Sunday' },
     { Korean: '월요일', English: 'Monday' },
@@ -64,12 +63,9 @@ const dayNames: Array<Record<Language, string>> = [
  * Current week of day.
  */
 export const WeekDay = () => {
-    const [currentTime, currentLanguage] = useStoreSelector(state => [
-        state.time.currentTime,
-        state.language.currentLanguage,
-    ]);
+    const currentTime = useStoreSelector(state => state.time.currentTime);
 
-    return <>{dayNames[currentTime.weekDay][currentLanguage]}</>;
+    return <LanguagePicker languageMap={dayNames[currentTime.weekDay]} />;
 };
 
 /**

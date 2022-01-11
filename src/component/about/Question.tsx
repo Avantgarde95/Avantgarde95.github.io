@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { LanguageFilter } from 'component/common/LanguageFilter';
+import { Korean, English } from 'component/common/Language';
 import { WrappedLink } from 'component/common/WrappedLink';
 
 export const topics = ['Job', 'Hobbies', 'Contacts'] as const;
@@ -16,20 +16,20 @@ export type Topic = typeof topics[number];
 export const questionMap: Record<Topic, ReactNode> = {
     Job: (
         <>
-            <LanguageFilter language={'Korean'}>직업이 무엇인가요?</LanguageFilter>
-            <LanguageFilter language={'English'}>What is your job?</LanguageFilter>
+            <Korean>직업이 무엇인가요?</Korean>
+            <English>What is your job?</English>
         </>
     ),
     Hobbies: (
         <>
-            <LanguageFilter language={'Korean'}>취미가 무엇인가요?</LanguageFilter>
-            <LanguageFilter language={'English'}>What are your hobbies?</LanguageFilter>
+            <Korean>취미가 무엇인가요?</Korean>
+            <English>What are your hobbies?</English>
         </>
     ),
     Contacts: (
         <>
-            <LanguageFilter language={'Korean'}>연락처가 무엇인가요?</LanguageFilter>
-            <LanguageFilter language={'English'}>What are your contacts?</LanguageFilter>
+            <Korean>연락처가 무엇인가요?</Korean>
+            <English>What are your contacts?</English>
         </>
     ),
 };
@@ -41,12 +41,12 @@ export const answerMap: Record<Topic, { messages: Array<ReactNode>; images: Arra
     Job: {
         messages: [
             <>
-                <LanguageFilter language={'Korean'}>개발자로 일하고 있습니다.</LanguageFilter>
-                <LanguageFilter language={'English'}>I&apos;m working as a developer.</LanguageFilter>
+                <Korean>개발자로 일하고 있습니다.</Korean>
+                <English>I&apos;m working as a developer.</English>
             </>,
             <>
-                <LanguageFilter language={'Korean'}>컴퓨터 그래픽스와 웹에 관심이 있습니다.</LanguageFilter>
-                <LanguageFilter language={'English'}>I&apos;m interested in computer graphics and web.</LanguageFilter>
+                <Korean>컴퓨터 그래픽스와 웹에 관심이 있습니다.</Korean>
+                <English>I&apos;m interested in computer graphics and web.</English>
             </>,
         ],
         images: ['/image/RayTracing.png', '/image/Code.png'],
@@ -54,8 +54,8 @@ export const answerMap: Record<Topic, { messages: Array<ReactNode>; images: Arra
     Hobbies: {
         messages: [
             <>
-                <LanguageFilter language={'Korean'}>취미로 피아노와 기타를 연주합니다.</LanguageFilter>
-                <LanguageFilter language={'English'}>I play piano and guitar as a hobby.</LanguageFilter>
+                <Korean>취미로 피아노와 기타를 연주합니다.</Korean>
+                <English>I play piano and guitar as a hobby.</English>
             </>,
         ],
         images: ['/image/Guitar.jpg', '/image/Concert.jpg'],
@@ -63,8 +63,8 @@ export const answerMap: Record<Topic, { messages: Array<ReactNode>; images: Arra
     Contacts: {
         messages: [
             <>
-                <LanguageFilter language={'Korean'}>이메일</LanguageFilter>
-                <LanguageFilter language={'English'}>Email</LanguageFilter>
+                <Korean>이메일</Korean>
+                <English>Email</English>
                 :&nbsp;
                 <WrappedLink href={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</WrappedLink>
             </>,

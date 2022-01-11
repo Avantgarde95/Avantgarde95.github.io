@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import classNames from 'classnames';
 
-import { LanguageFilter } from 'component/common/LanguageFilter';
+import { English, Korean } from 'component/common/Language';
 import styles from 'style/about/Chat.module.scss';
 
 /**
@@ -36,8 +36,8 @@ export const Chat = ({ messages, images, isMe }: Props) => {
             <div className={styles.chatContent}>
                 {!isMe && (
                     <div className={styles.nickname}>
-                        <LanguageFilter language={'Korean'}>박훈민</LanguageFilter>
-                        <LanguageFilter language={'English'}>Hunmin Park</LanguageFilter>
+                        <Korean>박훈민</Korean>
+                        <English>Hunmin Park</English>
                     </div>
                 )}
                 {messages.map((message, index) => (
