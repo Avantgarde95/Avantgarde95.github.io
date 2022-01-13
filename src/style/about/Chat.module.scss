@@ -11,6 +11,9 @@
 }
 
 .chat {
+    display: flex;
+    flex-direction: row;
+
     width: 100%;
 
     animation: chatAnimation 0.5s;
@@ -20,14 +23,11 @@
     }
 
     &.isMe {
-        text-align: right;
+        justify-content: right;
     }
 }
 
 .profile {
-    display: inline-block;
-    vertical-align: top;
-
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
@@ -40,9 +40,6 @@
 }
 
 .chatContent {
-    display: inline-block;
-    vertical-align: top;
-
     margin-left: 0.5rem;
 }
 

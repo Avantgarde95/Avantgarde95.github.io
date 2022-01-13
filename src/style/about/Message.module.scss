@@ -13,7 +13,6 @@
     position: relative;
     box-sizing: border-box;
 
-    width: 12rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
 
@@ -21,10 +20,6 @@
     background-color: Colors.$white;
 
     @include Mixins.shadowBorder;
-
-    @include Mixins.wideScreen {
-        width: 24rem;
-    }
 
     &::before {
         position: absolute;
