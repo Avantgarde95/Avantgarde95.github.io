@@ -38,6 +38,11 @@
 
 .questions {
     width: 100%;
+
+    @include Mixins.smallHeightScreen {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 .question {
@@ -58,5 +63,11 @@
 
     &:hover {
         background-color: Colors.$yellow;
+    }
+
+    @include Mixins.smallHeightScreen {
+        &:not(:first-child) {
+            border-left: 2px solid Colors.$gray;
+        }
     }
 }

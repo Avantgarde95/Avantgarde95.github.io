@@ -39,7 +39,7 @@
     display: none;
 }
 
-@include Mixins.wideScreen {
+@include Mixins.largeWidthScreen {
     .wideDeviceName {
         display: block;
     }

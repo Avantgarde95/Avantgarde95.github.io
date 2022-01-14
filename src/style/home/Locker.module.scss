@@ -1,10 +1,5 @@
 @use '../common/Colors';
-
-@mixin smallHeightScreen {
-    @media (max-height: 400px) {
-        @content;
-    }
-}
+@use '../common/Mixins';
 
 @keyframes lockerAppearingAnimation {
     0% {
@@ -44,7 +39,7 @@
     margin-top: 4.5rem;
     font-size: 2.5rem;
 
-    @include smallHeightScreen {
+    @include Mixins.smallHeightScreen {
         margin-top: auto;
     }
 }
@@ -69,7 +64,7 @@
         color: Colors.$yellow;
     }
 
-    @include smallHeightScreen {
+    @include Mixins.smallHeightScreen {
         margin-bottom: auto;
     }
 }

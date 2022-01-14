@@ -14,8 +14,14 @@
 // ===============================================
 // Mixins for responsive layout.
 
-@mixin wideScreen {
+@mixin largeWidthScreen {
     @media (min-width: 769px) {
+        @content;
+    }
+}
+
+@mixin smallHeightScreen {
+    @media (max-height: 400px) {
         @content;
     }
 }
