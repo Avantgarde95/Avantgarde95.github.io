@@ -1,0 +1,29 @@
+@use '../common/Colors';
+@use '../common/Mixins';
+
+@mixin item {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+
+    @include Mixins.wideScreen {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.icon {
+    @include item;
+
+    font-size: 8rem;
+}
+
+.name {
+    @include item;
+
+    font-size: 2rem;
+    font-weight: bold;
+
+    color: Colors.$blue;
+}
