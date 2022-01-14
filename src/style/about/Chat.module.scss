@@ -28,6 +28,10 @@
 }
 
 .profile {
+    // Prevent the profile from shrinking.
+    // (It happens on some phones.)
+    min-width: 3rem;
+
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
