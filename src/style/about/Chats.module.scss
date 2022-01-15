@@ -1,0 +1,12 @@
+.chats {
+    position: relative;
+    // Force the logo to be located behind the chats.
+    z-index: 2;
+
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}

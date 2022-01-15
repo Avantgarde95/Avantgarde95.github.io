@@ -14,10 +14,7 @@ interface Props {
 }
 
 /**
- * Represents each row which contains...
- * - Profile image
- * - Nickname
- * - Messages
+ * 'Chat' = Profile image + nickname + text messages + image messages
  */
 export const Chat = ({ isMe = false, children }: Props) => {
     const onRenderRef = (element: HTMLDivElement | null) => {

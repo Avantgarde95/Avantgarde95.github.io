@@ -1,0 +1,38 @@
+@use '../common/Colors';
+@use '../common/Mixins';
+
+.questions {
+    width: 100%;
+
+    @include Mixins.smallHeightScreen {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.question {
+    text-align: left;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    width: 100%;
+    padding: 0.5rem;
+
+    color: Colors.$black;
+    background-color: Colors.$white;
+    border: 0;
+    border-top: 2px solid Colors.$gray;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    &:hover {
+        background-color: Colors.$yellow;
+    }
+
+    @include Mixins.smallHeightScreen {
+        &:not(:first-child) {
+            border-left: 2px solid Colors.$gray;
+        }
+    }
+}
