@@ -1,0 +1,15 @@
+@use '../common/Colors';
+
+.header {
+    box-sizing: border-box;
+
+    padding: 0 2rem;
+}
+
+.link {
+    color: Colors.$yellow;
+
+    &:hover {
+        color: lighten(Colors.$yellow, 10);
+    }
+}

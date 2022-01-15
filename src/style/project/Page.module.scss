@@ -5,70 +5,17 @@
     @include Mixins.page;
 
     box-sizing: border-box;
-
     display: flex;
     flex-direction: column;
     padding-top: 1rem;
 
     // Trick of avoiding the scroll of the page.
     min-height: 0;
-
-    @include Mixins.largeWidthScreen {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
-
-.description {
-    box-sizing: border-box;
-
-    padding: 0 1rem;
-}
-
-.link {
-    color: Colors.$yellow;
-
-    &:hover {
-        color: lighten(Colors.$yellow, 10);
-    }
-}
-
-.tagButtonGroup {
-    box-sizing: border-box;
-    overflow-x: auto;
-    white-space: nowrap;
-
-    width: 100%;
-    margin-top: 1rem;
-    padding: 0 1rem;
-}
-
-.tagButton {
-    cursor: pointer;
-    box-sizing: border-box;
-    transition: background-color 0.5s;
-
-    border-radius: 1rem;
-    font-size: 1rem;
-    padding: 0.2rem 1rem;
-    border: 2px solid Colors.$white;
-
-    font-family: inherit;
-
-    color: Colors.$white;
-    background-color: transparent;
-
-    &:not(:first-child) {
-        margin-left: 1rem;
-    }
-
-    &.isActive {
-        background-color: Colors.$yellow;
-    }
 }
 
 .gridArea {
     overflow-y: auto;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
 
@@ -76,4 +23,9 @@
     height: 100%;
     flex: 1;
     margin-top: 1rem;
+
+    @include Mixins.largeWidthScreen {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }

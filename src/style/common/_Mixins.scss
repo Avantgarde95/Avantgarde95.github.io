@@ -57,6 +57,10 @@
     box-shadow: 0 0 $startSize $darkColor, 0 0 $endSize $lightColor;
 }
 
+@mixin neonText($darkColor, $lightColor, $startSize: 2px, $endSize: 4px) {
+    text-shadow: 0 0 $startSize $darkColor, 0 0 $endSize $lightColor;
+}
+
 // ===============================================
 // Mixins for creating a flex-based grid.
 

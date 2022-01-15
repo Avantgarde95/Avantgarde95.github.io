@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { range } from 'util/MathUtils';
-import { strictKeys } from 'util/TypeUtils';
 import styles from 'style/project/ProjectGrid.module.scss';
 import Projects from 'data/Projects.json';
 
@@ -24,45 +23,11 @@ export const projectTagNames = [
 export type ProjectTag = typeof projectTagNames[number];
 
 /**
- * Information of each project.
- */
-interface Project {
-    name: string;
-    description: string;
-    repositoryURL: string;
-    imageURL: string;
-    languageMap: Record<string, number>;
-}
-
-/**
- * Find out whether the project has any 'active' tags.
- */
-function canShowProject(project: Project, tagStateMap: Record<ProjectTag, boolean>) {
-    const tags = strictKeys<ProjectTag, number>(project.languageMap);
-
-    for (let i = 0; i < tags.length; i += 1) {
-        if (tagStateMap[tags[i]]) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-/**
- * ProjectGrid props.
- */
-interface Props {
-    tagStateMap: Record<ProjectTag, boolean>;
-}
-
-/**
  * Grid of the project screenshots.
- * It only shows the projects which have at least one active tags.
  */
-export const ProjectGrid = ({ tagStateMap }: Props) => (
+export const ProjectGrid = () => (
     <div className={styles.grid}>
-        {Projects.filter((project: Project) => canShowProject(project, tagStateMap)).map(project => (
+        {Projects.map(project => (
             <div
                 key={project.name}
                 className={styles.realCell}
@@ -73,7 +38,7 @@ export const ProjectGrid = ({ tagStateMap }: Props) => (
                 {project.name}
             </div>
         ))}
-        {range(0, 4).map(value => (
+        {range(0, 8).map(value => (
             <div key={value} className={styles.fakeCell} />
         ))}
     </div>

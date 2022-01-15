@@ -5,7 +5,7 @@ $cellWidth: 10rem;
 $cellHeight: 10rem;
 
 .grid {
-    @include Mixins.grid($cellWidth, $cellHeight, 4);
+    @include Mixins.grid($cellWidth, $cellHeight, 8);
 
     margin: auto;
 }
@@ -19,6 +19,7 @@ $cellHeight: 10rem;
 .realCell {
     @include Mixins.realCell($cellWidth, $cellHeight);
 
+    cursor: pointer;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -28,6 +29,7 @@ $cellHeight: 10rem;
 
     width: $cellWidth;
     height: $cellHeight;
+    font-size: 1.2rem;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -36,6 +38,13 @@ $cellHeight: 10rem;
     opacity: 0;
 
     animation: cellAnimation 0.5s forwards;
+
+    @include Mixins.neonText(Colors.$yellow, Colors.$black);
+
+    &:hover {
+        color: Colors.$yellow;
+        border-color: Colors.$yellow;
+    }
 }
 
 .fakeCell {

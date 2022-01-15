@@ -8,7 +8,6 @@ import styles from 'style/about/Page.module.scss';
 
 /**
  * 'About' page.
- * It shows a simple typewriter animation on each line.
  */
 const Page = () => {
     const [writtenTopics, setWrittenTopics] = useState<Array<Topic>>([]);
