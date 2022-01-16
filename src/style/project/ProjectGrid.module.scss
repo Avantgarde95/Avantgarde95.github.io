@@ -19,6 +19,18 @@ $cellHeight: 10rem;
 .realCell {
     @include Mixins.realCell($cellWidth, $cellHeight);
 
+    box-sizing: border-box;
+
+    width: $cellWidth;
+    height: $cellHeight;
+    padding: 0.2rem;
+}
+
+.fakeCell {
+    @include Mixins.fakeCell($cellWidth, $cellHeight);
+}
+
+.projectButton {
     cursor: pointer;
     box-sizing: border-box;
     display: flex;
@@ -26,15 +38,19 @@ $cellHeight: 10rem;
     align-items: center;
     justify-content: center;
     text-align: center;
+    text-decoration: none;
 
-    width: $cellWidth;
-    height: $cellHeight;
+    width: 100%;
+    height: 100%;
     font-size: 1.2rem;
+
+    color: Colors.$white;
+    background-color: lighten(Colors.$black, 20);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    border: 2px solid transparent;
 
-    border: 1px solid Colors.$white;
     opacity: 0;
 
     animation: cellAnimation 0.5s forwards;
@@ -45,8 +61,4 @@ $cellHeight: 10rem;
         color: Colors.$yellow;
         border-color: Colors.$yellow;
     }
-}
-
-.fakeCell {
-    @include Mixins.fakeCell($cellWidth, $cellHeight);
 }

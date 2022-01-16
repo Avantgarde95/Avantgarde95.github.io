@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { range } from 'util/MathUtils';
+import { WrappedLink } from 'component/common/WrappedLink';
 import styles from 'style/project/ProjectGrid.module.scss';
 import Projects from 'data/Projects.json';
 
@@ -28,14 +29,16 @@ export type ProjectTag = typeof projectTagNames[number];
 export const ProjectGrid = () => (
     <div className={styles.grid}>
         {Projects.map(project => (
-            <div
-                key={project.name}
-                className={styles.realCell}
-                style={{
-                    backgroundImage: `url(${project.imageURL})`,
-                }}
-            >
-                {project.name}
+            <div key={project.name} className={styles.realCell}>
+                <WrappedLink
+                    className={styles.projectButton}
+                    href={project.repositoryURL}
+                    style={{
+                        backgroundImage: `url(${project.imageURL})`,
+                    }}
+                >
+                    {project.name}
+                </WrappedLink>
             </div>
         ))}
         {range(0, 8).map(value => (
