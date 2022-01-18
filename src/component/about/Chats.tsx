@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 
-import { answerMap, questionMap, Topic } from 'component/about/Topic';
+import { Topic } from 'model/about/Topic';
+import { answerMap, questionMap } from 'component/about/ElementMaps';
 import { Chat } from 'component/about/Chat';
 import { TextMessage } from 'component/about/Message';
 import { Delay } from 'component/common/Delay';

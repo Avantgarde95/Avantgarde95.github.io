@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { range } from 'util/MathUtils';
-import { VirtualApp } from 'component/home/App';
+import { VirtualApp } from 'model/home/App';
 import { AppButton } from 'component/home/AppButton';
 import styles from 'style/home/AppGrid.module.scss';
 

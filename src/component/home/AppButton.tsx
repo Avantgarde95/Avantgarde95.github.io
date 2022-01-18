@@ -1,8 +1,8 @@
 import React from 'react';
 import { Icon } from 'react-avant/lib/Icon';
 
-import { VirtualApp } from 'component/home/App';
-import { WrappedLink } from 'component/common/WrappedLink';
+import { VirtualApp } from 'model/home/App';
+import { AutoLink } from 'component/common/AutoLink';
 import { LanguagePicker } from 'component/common/Language';
 import styles from 'style/home/AppButton.module.scss';
 
@@ -19,14 +19,14 @@ interface Props {
  */
 export const AppButton = ({ app }: Props) => (
     <>
-        <WrappedLink
+        <AutoLink
             href={app.path}
             title={Object.values(app.nameMap).join(' ')}
             className={styles.appButton}
             style={{ color: app.color }}
         >
             <Icon definition={app.icon} />
-        </WrappedLink>
+        </AutoLink>
         <LanguagePicker languageMap={app.nameMap} />
     </>
 );

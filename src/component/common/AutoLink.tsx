@@ -14,7 +14,7 @@ type Props = HTMLProps<HTMLAnchorElement> & {
  * Simple util component which wraps <a/> with <Link/> provided by Next.
  * It opens the link in the new tab if the link is the external link. (i.e Starts with 'http')
  */
-export const WrappedLink = ({ href, children, target, rel, ...others }: Props) => {
+export const AutoLink = ({ href, children, target, rel, ...others }: Props) => {
     const openInNewTab = href.startsWith('http');
     const defaultTarget = openInNewTab ? '_blank' : undefined;
     const defaultRel = openInNewTab ? 'noreferrer noopener' : undefined;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
+import { Topic } from 'model/about/Topic';
 import { Logo } from 'component/about/Logo';
-import { Topic } from 'component/about/Topic';
 import { Chats } from 'component/about/Chats';
 import { Questions } from 'component/about/Questions';
 import styles from 'style/about/Page.module.scss';

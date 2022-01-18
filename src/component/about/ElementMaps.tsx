@@ -1,15 +1,9 @@
 import React, { ReactNode } from 'react';
 
+import { Topic } from 'model/about/Topic';
 import { Korean, English } from 'component/common/Language';
-import { WrappedLink } from 'component/common/WrappedLink';
+import { AutoLink } from 'component/common/AutoLink';
 import { TextMessage, ImageMessage } from 'component/about/Message';
-
-export const topics = ['Job', 'Hobbies', 'Contacts'] as const;
-
-/**
- * Topic of each question.
- */
-export type Topic = typeof topics[number];
 
 /**
  * Map of {topic: Question element}.
@@ -68,7 +62,7 @@ export const answerMap: Record<Topic, ReactNode> = {
             <Korean>이메일</Korean>
             <English>Email</English>
             :&nbsp;
-            <WrappedLink href={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</WrappedLink>
+            <AutoLink href={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</AutoLink>
         </TextMessage>
     ),
 };

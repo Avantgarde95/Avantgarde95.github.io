@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { range } from 'util/MathUtils';
-import { WrappedLink } from 'component/common/WrappedLink';
+import { AutoLink } from 'component/common/AutoLink';
 import styles from 'style/project/ProjectGrid.module.scss';
 import Projects from 'data/Projects.json';
 
@@ -30,7 +30,7 @@ export const ProjectGrid = () => (
     <div className={styles.grid}>
         {Projects.map(project => (
             <div key={project.name} className={styles.realCell}>
-                <WrappedLink
+                <AutoLink
                     className={styles.projectButton}
                     href={project.repositoryURL}
                     style={{
@@ -38,7 +38,7 @@ export const ProjectGrid = () => (
                     }}
                 >
                     {project.name}
-                </WrappedLink>
+                </AutoLink>
             </div>
         ))}
         {range(0, 8).map(value => (

@@ -13,7 +13,7 @@ import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 import { Language } from 'store/Language';
 
 /**
- * Data for constructing each AppButton.
+ * Data of each internal or external page.
  */
 export interface VirtualApp {
     nameMap: Record<Language, string>;

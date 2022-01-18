@@ -1,16 +1,9 @@
 import React from 'react';
 
+import { fillZero } from 'util/MathUtils';
 import { Language } from 'store/Language';
 import { useStoreSelector } from 'store/Store';
 import { LanguagePicker } from 'component/common/Language';
-
-/**
- * Format the number to the given length by putting zeros at the left.
- * ex. value = 2, length = 3 -> '002'
- */
-function fillZero(value: number, length: number) {
-    return `${10 ** length + value}`.slice(1);
-}
 
 /**
  * Current hour.

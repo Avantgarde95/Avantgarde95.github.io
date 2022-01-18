@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { questionMap, Topic, topics } from 'component/about/Topic';
+import { Topic, topics } from 'model/about/Topic';
+import { questionMap } from 'component/about/ElementMaps';
 import styles from 'style/about/Questions.module.scss';
 
 /**
