@@ -27,3 +27,8 @@ body {
     color: Colors.$white;
     background-color: Colors.$black;
 }
+
+// Let luminous-lightbox to create the lightbox in front of the all elements.
+.lum-lightbox {
+    z-index: 10;
+}
