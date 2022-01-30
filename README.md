@@ -19,14 +19,14 @@ $ npm run update
 - Downloads the projects & videos from the Internet
 
 ```bash
-$ npm run serve
+$ npm run debug
 ```
 
 - Builds the result in the development mode
 - Runs a server
 
 ```bash
-$ npm run serve:production
+$ npm run debug:production
 ```
 
 - Builds the result in the production mode
