@@ -1,5 +1,5 @@
-@use '../common/Colors';
-@use '../common/Mixins';
+@use 'src/style/common/Colors';
+@use 'src/style/common/Mixins';
 
 @mixin item {
     position: absolute;

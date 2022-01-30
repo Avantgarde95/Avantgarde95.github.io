@@ -1,4 +1,4 @@
-@use '../common/Mixins';
+@use 'src/style/common/Mixins';
 
 .page {
     @include Mixins.page;
