@@ -3,9 +3,10 @@
 
 $cellWidth: 10rem;
 $cellHeight: 10rem;
+$maxDimensionX: 8;
 
 .grid {
-    @include Mixins.grid($cellWidth, $cellHeight, 8);
+    @include Mixins.grid($cellWidth, $cellHeight, $maxDimensionX);
 
     margin: auto;
 }
@@ -22,4 +23,8 @@ $cellHeight: 10rem;
 
 .fakeCell {
     @include Mixins.fakeCell($cellWidth, $cellHeight);
+}
+
+:export {
+    maxDimensionX: $maxDimensionX;
 }

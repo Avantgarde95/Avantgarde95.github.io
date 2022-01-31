@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 
 import { Topic } from 'model/about/Topic';
 import { Korean, English } from 'component/common/Language';
-import { AutoLink } from 'component/common/AutoLink';
+import { NextLink } from 'component/common/NextLink';
 import { TextMessage, ImageMessage } from 'component/about/Message';
 
 /**
@@ -62,7 +62,7 @@ export const answerMap: Record<Topic, ReactNode> = {
             <Korean>이메일</Korean>
             <English>Email</English>
             :&nbsp;
-            <AutoLink href={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</AutoLink>
+            <NextLink href={'mailto:mathematicianscott@gmail.com'}>mathematicianscott@gmail.com</NextLink>
         </TextMessage>
     ),
 };
