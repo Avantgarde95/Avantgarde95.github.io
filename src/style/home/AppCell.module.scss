@@ -1,7 +1,7 @@
 @use 'src/style/common/Colors';
 @use 'src/style/common/Mixins';
 
-.appButton {
+.appCell {
     cursor: pointer;
     transition: transform 0.1s;
     display: flex;

@@ -4,7 +4,7 @@ import { Icon } from 'react-avant/lib/Icon';
 import { VirtualApp } from 'model/home/App';
 import { AutoLink } from 'component/common/AutoLink';
 import { LanguagePicker } from 'component/common/Language';
-import styles from 'style/home/AppButton.module.scss';
+import styles from 'style/home/AppCell.module.scss';
 
 /**
  * AppButton props.
@@ -17,12 +17,12 @@ interface Props {
  * Link for opening an 'app' or an website.
  * It looks like an app button on the phone.
  */
-export const AppButton = ({ app }: Props) => (
+export const AppCell = ({ app }: Props) => (
     <>
         <AutoLink
             href={app.path}
             title={Object.values(app.nameMap).join(' ')}
-            className={styles.appButton}
+            className={styles.appCell}
             style={{ color: app.color }}
         >
             <Icon definition={app.icon} />

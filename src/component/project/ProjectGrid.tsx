@@ -1,44 +1,19 @@
 import React from 'react';
 
 import { range } from 'util/MathUtils';
-import { AutoLink } from 'component/common/AutoLink';
+import { Project } from 'model/project/Project';
+import { ProjectCell } from 'component/project/ProjectCell';
 import styles from 'style/project/ProjectGrid.module.scss';
 import Projects from 'data/Projects.json';
-
-export const projectTagNames = [
-    'C',
-    'C++',
-    'Java',
-    'Kotlin',
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'TypeScript',
-    'Python',
-] as const;
-
-/**
- * 'Tag' for filtering the projects.
- * Currently, it just means each programming language.
- */
-export type ProjectTag = typeof projectTagNames[number];
 
 /**
  * Grid of the project screenshots.
  */
 export const ProjectGrid = () => (
     <div className={styles.grid}>
-        {Projects.map(project => (
+        {Projects.map((project: Project) => (
             <div key={project.name} className={styles.realCell}>
-                <AutoLink
-                    className={styles.projectButton}
-                    href={project.repositoryURL}
-                    style={{
-                        backgroundImage: `url(${project.imageURL})`,
-                    }}
-                >
-                    {project.name}
-                </AutoLink>
+                <ProjectCell project={project} />
             </div>
         ))}
         {range(0, 8).map(value => (

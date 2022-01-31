@@ -2,7 +2,7 @@ import React from 'react';
 
 import { range } from 'util/MathUtils';
 import { VirtualApp } from 'model/home/App';
-import { AppButton } from 'component/home/AppButton';
+import { AppCell } from 'component/home/AppCell';
 import styles from 'style/home/AppGrid.module.scss';
 
 /**
@@ -20,7 +20,7 @@ export const AppGrid = ({ apps }: Props) => (
     <div className={styles.grid}>
         {apps.map(app => (
             <div key={app.path} className={styles.realCell}>
-                <AppButton app={app} />
+                <AppCell app={app} />
             </div>
         ))}
         {/* Put some empty cells to align the buttons to the left. */}
