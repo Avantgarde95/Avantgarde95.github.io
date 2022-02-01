@@ -1,0 +1,72 @@
+@use 'src/style/common/Colors';
+@use 'src/style/common/Mixins';
+
+@keyframes projectViewAnimation {
+    0% {
+        opacity: 0;
+    }
+}
+
+.projectView {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    opacity: 1;
+    animation: projectViewAnimation 1s;
+}
+
+.imageArea {
+    position: relative;
+
+    min-height: 200px;
+    max-height: 400px;
+}
+
+.image {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.link {
+    position: absolute;
+    text-decoration: none;
+    text-align: center;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: inherit;
+    font-size: 1.8rem;
+    color: Colors.$white;
+
+    @include Mixins.neonText(Colors.$yellow, Colors.$black);
+
+    &:hover {
+        color: Colors.$yellow;
+    }
+}
+
+.description {
+    text-align: center;
+
+    margin-top: 1rem;
+}

@@ -1,0 +1,45 @@
+@use 'src/style/common/Colors';
+
+.table {
+    display: table;
+
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.row {
+    display: table-row;
+}
+
+@mixin cell {
+    display: table-cell;
+    vertical-align: middle;
+
+    height: 2rem;
+}
+
+.languageCell {
+    @include cell;
+
+    box-sizing: border-box;
+
+    padding-right: 1rem;
+}
+
+@keyframes valueCellAnimation {
+    0% {
+        background-size: 0 80%;
+    }
+}
+
+.valueCell {
+    @include cell;
+
+    width: 100%;
+    background: linear-gradient(to right, rgba(Colors.$yellow, 0.2), Colors.$yellow);
+    background-repeat: no-repeat;
+    background-position: left;
+
+    animation: valueCellAnimation 2s;
+}

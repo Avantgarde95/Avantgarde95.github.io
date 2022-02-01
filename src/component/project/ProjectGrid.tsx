@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { Key, ReactNode } from 'react';
 
 import { range } from 'util/MathUtils';
-import { Project } from 'model/project/Project';
-import { ProjectButton } from 'component/project/ProjectButton';
 import styles from 'style/project/ProjectGrid.module.scss';
-import Projects from 'data/Projects.json';
+
+/**
+ * ProjectGrid props.
+ */
+interface Props {
+    cells: Array<[Key, ReactNode]>;
+}
 
 /**
  * Grid of the project screenshots.
  */
-export const ProjectGrid = () => (
+export const ProjectGrid = ({ cells }: Props) => (
     <div className={styles.grid}>
-        {Projects.map((project: Project) => (
-            <div key={project.name} className={styles.realCell}>
-                <ProjectButton project={project} />
+        {cells.map(([key, cell]) => (
+            <div className={styles.realCell} key={key}>
+                {cell}
             </div>
         ))}
         {range(0, Number(styles.maxDimensionX)).map(value => (

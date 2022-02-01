@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Project } from 'model/project/Project';
-import { NextLink } from 'component/common/NextLink';
 import styles from 'style/project/ProjectButton.module.scss';
 
 /**
@@ -9,19 +8,22 @@ import styles from 'style/project/ProjectButton.module.scss';
  */
 interface Props {
     project: Project;
+    onClick: () => void;
 }
 
 /**
  * Cell which includes information for a project.
  */
-export const ProjectButton = ({ project }: Props) => (
-    <NextLink
+export const ProjectButton = ({ project, onClick }: Props) => (
+    <button
         className={styles.projectButton}
-        href={project.repositoryURL}
+        type={'button'}
+        title={project.name}
+        onClick={onClick}
         style={{
             backgroundImage: `url(${project.imageURL})`,
         }}
     >
         {project.name}
-    </NextLink>
+    </button>
 );

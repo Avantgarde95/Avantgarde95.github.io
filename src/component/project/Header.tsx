@@ -9,6 +9,7 @@ import styles from 'style/project/Header.module.scss';
  */
 export const Header = () => (
     <div className={styles.header}>
+        <div className={styles.title}>MyGallery</div>
         <Korean>
             모든 프로젝트들을 보려면&nbsp;
             <NextLink className={styles.link} href={'https://github.com/Avantgarde95'}>
