@@ -36,3 +36,10 @@ export function getRandomInt(min: number, limit: number) {
 export function fillZero(value: number, length: number) {
     return `${10 ** length + value}`.slice(1);
 }
+
+/**
+ * Compute the sum of the values.
+ */
+export function sum<T>(values: Array<T>, job: (value: T) => number) {
+    return values.reduce((result, value) => result + job(value), 0);
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { strictEntries } from 'util/TypeUtils';
+import { sum } from 'util/MathUtils';
 import { ProgrammingLanguage } from 'model/project/Project';
 import styles from 'style/project/ProgrammingLanguages.module.scss';
 
@@ -18,9 +19,15 @@ export const ProgrammingLanguages = ({ languageMap }: Props) => {
     const entries = strictEntries(languageMap);
     const valueSum = entries.reduce((result, [, value]) => result + value, 0);
 
-    const percentages = entries
+    // percentages = Sorted array of [language, percentage].
+    let percentages = entries
         .map<typeof entries[number]>(([language, value]) => [language, (value / valueSum) * 100])
         .sort(([, value1], [, value2]) => value2 - value1);
+
+    // If percentages is too long, omit some languages.
+    if (percentages.length >= 5) {
+        percentages = [...percentages.slice(0, 4), ['Others', sum(percentages.slice(4), ([, value]) => value)]];
+    }
 
     return (
         <div className={styles.table}>

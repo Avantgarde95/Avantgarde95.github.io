@@ -10,13 +10,13 @@
 
 .row {
     display: table-row;
+
+    height: 2rem;
 }
 
 @mixin cell {
     display: table-cell;
     vertical-align: middle;
-
-    height: 2rem;
 }
 
 .languageCell {
@@ -37,7 +37,7 @@
     @include cell;
 
     width: 100%;
-    background: linear-gradient(to right, rgba(Colors.$yellow, 0.2), Colors.$yellow);
+    background: linear-gradient(to right, rgba(Colors.$yellow, 0.8), rgba(Colors.$yellow, 0.8));
     background-repeat: no-repeat;
     background-position: left;
 
