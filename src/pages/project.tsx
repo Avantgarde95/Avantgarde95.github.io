@@ -14,11 +14,15 @@ import Projects from 'data/Projects.json';
 const Page = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
+    const onCloseProjectView = () => {
+        setSelectedProject(null);
+    };
+
     return (
         <div className={styles.page}>
             {!selectedProject && <Header />}
             <div className={styles.gridArea}>
-                {selectedProject && <ProjectView project={selectedProject} />}
+                {selectedProject && <ProjectView project={selectedProject} onClose={onCloseProjectView} />}
                 <ProjectGrid
                     cells={Projects.map((project: Project) => [
                         project.name,

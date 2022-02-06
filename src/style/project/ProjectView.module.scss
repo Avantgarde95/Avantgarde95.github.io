@@ -22,6 +22,22 @@
     animation: projectViewAnimation 1s;
 }
 
+.closeButton {
+    cursor: pointer;
+
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    font-size: 2rem;
+
+    color: Colors.$white;
+    background-color: transparent;
+
+    &:hover {
+        color: Colors.$yellow;
+    }
+}
+
 .imageArea {
     position: relative;
 
