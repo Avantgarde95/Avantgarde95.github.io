@@ -8,7 +8,7 @@ export type ProgrammingLanguage = string;
  */
 export interface Project {
     name: string;
-    description: string;
+    description: string | null;
     repositoryURL: string;
     imageURL: string;
     languageMap: Record<ProgrammingLanguage, number>;

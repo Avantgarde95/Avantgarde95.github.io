@@ -45,7 +45,7 @@ export const ProjectView = ({ project }: Props) => {
                     {project.name}
                 </NextLink>
             </div>
-            <div className={styles.description}>{project.description}</div>
+            {project.description && <div className={styles.description}>{project.description}</div>}
             <ProgrammingLanguages languageMap={project.languageMap} />
         </div>
     );
