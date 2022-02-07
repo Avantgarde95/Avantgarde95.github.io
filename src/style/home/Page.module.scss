@@ -5,15 +5,6 @@
     @include Mixins.page;
 }
 
-@keyframes appAnimation {
-    0% {
-        transform: scale(0.5);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 .content {
     position: absolute;
     display: flex;
@@ -26,4 +17,26 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+@keyframes gridAnimation {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.grid {
+    animation: gridAnimation 0.3s forwards;
+}
+
+.realCell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

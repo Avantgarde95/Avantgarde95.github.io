@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { apps } from 'model/home/App';
+import { Grid } from 'component/common/Grid';
 import { Background } from 'component/home/Background';
 import { Locker } from 'component/home/Locker';
-import { AppGrid } from 'component/home/AppGrid';
+import { AppButton } from 'component/home/AppButton';
 import styles from 'style/home/Page.module.scss';
 
 /**
@@ -16,7 +17,14 @@ const Page = () => (
         <Background />
         <div className={styles.content}>
             <Locker>
-                <AppGrid apps={apps} />
+                <Grid
+                    cells={apps.map(app => [app.path, <AppButton app={app} />])}
+                    cellWidth={'7rem'}
+                    cellHeight={'8rem'}
+                    maxDimensionX={5}
+                    className={styles.grid}
+                    realCellClassName={styles.realCell}
+                />
             </Locker>
         </div>
     </div>

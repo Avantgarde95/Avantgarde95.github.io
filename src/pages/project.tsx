@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 import { Project } from 'model/project/Project';
+import { Grid } from 'component/common/Grid';
 import { Header } from 'component/project/Header';
 import { ProjectView } from 'component/project/ProjectView';
-import { ProjectGrid } from 'component/project/ProjectGrid';
 import { ProjectButton } from 'component/project/ProjectButton';
 import styles from 'style/project/Page.module.scss';
 import Projects from 'data/Projects.json';
@@ -23,7 +23,7 @@ const Page = () => {
             {!selectedProject && <Header />}
             <div className={styles.gridArea}>
                 {selectedProject && <ProjectView project={selectedProject} onClose={onCloseProjectView} />}
-                <ProjectGrid
+                <Grid
                     cells={Projects.map((project: Project) => [
                         project.name,
                         <ProjectButton
@@ -33,6 +33,11 @@ const Page = () => {
                             }}
                         />,
                     ])}
+                    cellWidth={'10rem'}
+                    cellHeight={'10rem'}
+                    maxDimensionX={8}
+                    className={styles.grid}
+                    realCellClassName={styles.realCell}
                 />
             </div>
         </div>
