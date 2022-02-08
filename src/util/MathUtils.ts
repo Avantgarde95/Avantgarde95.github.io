@@ -30,14 +30,6 @@ export function getRandomInt(min: number, limit: number) {
 }
 
 /**
- * Format the number to the given length by putting zeros at the left.
- * ex. value = 2, length = 3 -> '002'
- */
-export function fillZero(value: number, length: number) {
-    return `${10 ** length + value}`.slice(1);
-}
-
-/**
  * Compute the sum of the values.
  */
 export function sum<T>(values: Array<T>, job: (value: T) => number) {

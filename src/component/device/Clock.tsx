@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { fillZero } from 'util/MathUtils';
 import { Language } from 'store/Language';
 import { useStoreSelector } from 'store/Store';
 import { LanguagePicker } from 'component/common/Language';
@@ -21,7 +20,7 @@ export const Hour = () => {
 export const Minute = () => {
     const currentTime = useStoreSelector(state => state.time.currentTime);
 
-    return <>{`${fillZero(currentTime.minute, 2)}`}</>;
+    return <>{`${currentTime.minute}`.padStart(2, '0')}</>;
 };
 
 /**
@@ -30,7 +29,7 @@ export const Minute = () => {
 export const Month = () => {
     const currentTime = useStoreSelector(state => state.time.currentTime);
 
-    return <>{`${fillZero(currentTime.month + 1, 2)}`}</>;
+    return <>{`${currentTime.month + 1}`.padStart(2, '0')}</>;
 };
 
 /**
@@ -39,7 +38,7 @@ export const Month = () => {
 export const MonthDay = () => {
     const currentTime = useStoreSelector(state => state.time.currentTime);
 
-    return <>{`${fillZero(currentTime.monthDay + 1, 2)}`}</>;
+    return <>{`${currentTime.monthDay + 1}`.padStart(2, '0')}</>;
 };
 
 const dayNames: Array<Record<Language, string>> = [
