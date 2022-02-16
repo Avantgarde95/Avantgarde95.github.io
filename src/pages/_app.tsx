@@ -25,6 +25,7 @@ const Device = ({ Component, pageProps }: AppProps) => (
     <Provider store={store}>
         <Head>
             <title>Hunmin Park</title>
+            {/* eslint-disable-next-line @next/next/no-page-custom-font */}
             <link
                 rel={'stylesheet'}
                 href={'https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Noto+Sans+KR&display=swap'}

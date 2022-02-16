@@ -14,6 +14,7 @@ module.exports = {
         'jsdoc'
     ],
     extends: [
+        'next/core-web-vitals',
         'airbnb',
         'airbnb/hooks',
         'plugin:@typescript-eslint/recommended',
@@ -93,11 +94,13 @@ module.exports = {
         'react/jsx-no-useless-fragment': [2, {
             allowExpressions: true
         }],
-        // Allow putting href to <Link/> (of next.js) instead of <a/>.
+        // Allow putting href to Next <Link/> instead of <a/>.
         'jsx-a11y/anchor-is-valid': ['error', {
             components: ['Link'],
             specialLink: ['hrefLeft', 'hrefRight'],
             aspects: ['invalidHref', 'preferButton']
-        }]
+        }],
+        // Allow using <img/> instead of Next <Image/>.
+        '@next/next/no-img-element': 'off'
     }
 };
