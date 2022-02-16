@@ -24,9 +24,9 @@ export const Chat = ({ isMe = false, children }: Props) => {
     };
 
     return (
-        <div className={classNames(styles.chat, { [styles.isMe]: isMe })} ref={onRenderRef}>
+        <div className={styles.chat} ref={onRenderRef}>
             {!isMe && <div className={styles.profile} />}
-            <div className={styles.chatContent}>
+            <div className={classNames(styles.content, { [styles.isMe]: isMe })}>
                 {!isMe && (
                     <div className={styles.nickname}>
                         <Korean>박훈민</Korean>

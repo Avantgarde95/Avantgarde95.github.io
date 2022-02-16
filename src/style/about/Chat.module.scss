@@ -21,10 +21,6 @@
     &:not(:first-child) {
         margin-top: 1rem;
     }
-
-    &.isMe {
-        justify-content: right;
-    }
 }
 
 .profile {
@@ -43,8 +39,12 @@
     background-position: center;
 }
 
-.chatContent {
+.content {
     margin-left: 0.5rem;
+
+    &.isMe {
+        margin-left: auto;
+    }
 }
 
 .nickname {
