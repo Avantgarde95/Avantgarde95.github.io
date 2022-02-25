@@ -8,14 +8,14 @@ import styles from 'style/project/ProgrammingLanguages.module.scss';
 /**
  * ProgrammingLanguages props.
  */
-interface Props {
+interface ProgrammingLanguagesProps {
     languageMap: Record<ProgrammingLanguage, number>;
 }
 
 /**
  * Table of the programming languages and their usage percentages.
  */
-export const ProgrammingLanguages = ({ languageMap }: Props) => {
+export const ProgrammingLanguages = ({ languageMap }: ProgrammingLanguagesProps) => {
     const entries = strictEntries(languageMap);
     const valueSum = entries.reduce((result, [, value]) => result + value, 0);
 

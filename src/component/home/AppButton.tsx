@@ -9,7 +9,7 @@ import styles from 'style/home/AppButton.module.scss';
 /**
  * AppButton props.
  */
-interface Props {
+interface AppButtonProps {
     app: VirtualApp;
 }
 
@@ -17,7 +17,7 @@ interface Props {
  * Link for opening an 'app' or an website.
  * It looks like an app button on the phone.
  */
-export const AppButton = ({ app }: Props) => (
+export const AppButton = ({ app }: AppButtonProps) => (
     <>
         <NextLink
             href={app.path}

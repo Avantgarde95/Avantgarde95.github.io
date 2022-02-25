@@ -5,7 +5,7 @@ import { range } from 'util/MathUtils';
 /**
  * Grid props.
  */
-interface Props {
+interface GridProps {
     cells: Array<[Key, ReactNode]>;
     cellWidth: string;
     cellHeight: string;
@@ -26,7 +26,7 @@ export const Grid = ({
     className,
     realCellClassName,
     fakeCellClassName,
-}: Props) => (
+}: GridProps) => (
     <div
         className={className}
         style={{

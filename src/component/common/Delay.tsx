@@ -3,7 +3,7 @@ import React, { ReactNode, useEffect, useState } from 'react';
 /**
  * Delay props.
  */
-interface Props {
+interface DelayProps {
     delay: number;
     children: ReactNode;
 }
@@ -11,7 +11,7 @@ interface Props {
 /**
  * Util component for delaying the rendering of a component.
  */
-export const Delay = ({ delay, children }: Props) => {
+export const Delay = ({ delay, children }: DelayProps) => {
     const [render, setRender] = useState(false);
 
     useEffect(() => {

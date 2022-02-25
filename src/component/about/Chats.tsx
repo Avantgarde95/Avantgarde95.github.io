@@ -11,7 +11,7 @@ import styles from 'style/about/Chats.module.scss';
 /**
  * Chats props.
  */
-interface Props {
+interface ChatsProps {
     writtenTopics: Array<Topic>;
 }
 
@@ -19,7 +19,7 @@ interface Props {
  * Shows currently stacked chats.
  * (KakaoTalk-like UI)
  */
-export const Chats = ({ writtenTopics }: Props) => (
+export const Chats = ({ writtenTopics }: ChatsProps) => (
     <div className={styles.chats}>
         <Chat>
             <TextMessage>

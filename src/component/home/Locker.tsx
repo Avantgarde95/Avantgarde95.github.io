@@ -11,7 +11,7 @@ import styles from 'style/home/Locker.module.scss';
 /**
  * Locker props.
  */
-interface Props {
+interface LockerProps {
     children: ReactNode;
 }
 
@@ -20,7 +20,7 @@ interface Props {
  * When the user clicks the unlock button,
  * this renders the children instead of the lock screen.
  */
-export const Locker = ({ children }: Props) => {
+export const Locker = ({ children }: LockerProps) => {
     const isLocked = useStoreSelector(state => state.lock.isLocked);
     const dispatch = useStoreDispatch();
 

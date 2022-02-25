@@ -6,7 +6,7 @@ import styles from 'style/project/ProjectButton.module.scss';
 /**
  * ProjectButton props.
  */
-interface Props {
+interface ProjectButtonProps {
     project: Project;
     onClick: () => void;
 }
@@ -14,7 +14,7 @@ interface Props {
 /**
  * Cell which includes information for a project.
  */
-export const ProjectButton = ({ project, onClick }: Props) => (
+export const ProjectButton = ({ project, onClick }: ProjectButtonProps) => (
     <button
         className={styles.projectButton}
         type={'button'}

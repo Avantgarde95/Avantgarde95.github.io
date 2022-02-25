@@ -5,7 +5,7 @@ import Link from 'next/link';
  * WrappedLink props.
  * (Similar to <a/>, but href and children are non-optional.)
  */
-type Props = HTMLProps<HTMLAnchorElement> & {
+type NextLinkProps = HTMLProps<HTMLAnchorElement> & {
     href: string;
     children: ReactNode;
 };
@@ -14,7 +14,7 @@ type Props = HTMLProps<HTMLAnchorElement> & {
  * Simple util component which wraps <a/> with <Link/> provided by Next.
  * It opens the link in the new tab if the link is the external link. (i.e Starts with 'http')
  */
-export const NextLink = ({ href, children, target, rel, ...others }: Props) => {
+export const NextLink = ({ href, children, target, rel, ...others }: NextLinkProps) => {
     const openInNewTab = href.startsWith('http');
     const defaultTarget = openInNewTab ? '_blank' : undefined;
     const defaultRel = openInNewTab ? 'noreferrer noopener' : undefined;

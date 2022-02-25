@@ -7,7 +7,7 @@ import styles from 'style/about/Chat.module.scss';
 /**
  * Chat props.
  */
-interface Props {
+interface ChatProps {
     // true if the user is the sender.
     isMe?: boolean;
     children: ReactNode;
@@ -16,7 +16,7 @@ interface Props {
 /**
  * 'Chat' = Profile image + nickname + text messages + image messages
  */
-export const Chat = ({ isMe = false, children }: Props) => {
+export const Chat = ({ isMe = false, children }: ChatProps) => {
     const onRenderRef = (element: HTMLDivElement | null) => {
         if (element !== null) {
             element.scrollIntoView({ behavior: 'smooth' });

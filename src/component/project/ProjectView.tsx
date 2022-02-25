@@ -11,7 +11,7 @@ import styles from 'style/project/ProjectView.module.scss';
 /**
  * ProjectView props.
  */
-interface Props {
+interface ProjectViewProps {
     project: Project;
     onClose: () => void;
 }
@@ -19,7 +19,7 @@ interface Props {
 /**
  * Shows the information of the given project.
  */
-export const ProjectView = ({ project, onClose }: Props) => {
+export const ProjectView = ({ project, onClose }: ProjectViewProps) => {
     const [hasImage, setImage] = useState(true);
 
     useEffect(() => {
