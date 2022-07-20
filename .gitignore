@@ -1,0 +1,22 @@
+# IDE files.
+.vscode
+.idea
+
+# Apple files.
+.DS_Store
+
+# NPM files.
+node_modules
+
+# Next.js files.
+.next
+.env
+
+# Yarn files.
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
