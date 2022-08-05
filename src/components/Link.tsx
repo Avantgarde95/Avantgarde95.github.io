@@ -6,7 +6,11 @@ import NextLink from "next/link";
  */
 const Link = ({ href, children, ...others }: ComponentProps<"a">) => (
   <NextLink href={href ?? "#"}>
-    <a target="_blank" rel="noreferrer noopener" {...others}>
+    <a
+      // Open external links at the new tabs.
+      {...(!href?.startsWith("/") && { target: "_blank", rel: "noreferrer noopener" })}
+      {...others}
+    >
       {/* We separate `children` from `others` to avoid anchor-has-content lint error. */}
       {children}
     </a>

@@ -1,8 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 import StatusBar from "layout/templates/StatusBar";
+import Menu from "layout/templates/Menu";
 import { resetButton, resetTitle } from "styles/Mixins";
 
 import MenuIcon from "layout/assets/Menu.svg";
@@ -17,9 +18,7 @@ const Page = ({ title, children }: PageProps) => (
     <Inner>
       <StatusBar />
       <Header>
-        <MenuButton>
-          <MenuIcon />
-        </MenuButton>
+        <MenuButton></MenuButton>
         <Title>{title.toUpperCase()}</Title>
         <div css={headerEndStyle} />
       </Header>
@@ -37,6 +36,7 @@ const Container = styled.div`
   height: 100%;
 
   color: ${({ theme }) => theme.color.black};
+  background-color: ${({ theme }) => theme.color.white};
 `;
 
 const Inner = styled.div`
@@ -71,12 +71,30 @@ const headerEndStyle = css`
   height: 24px;
 `;
 
-const MenuButton = styled.button`
-  ${resetButton}
-  ${headerEndStyle}
+const MenuButton = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleClickButton = () => {
+    setShowMenu(true);
+  };
+
+  return (
+    <>
+      <button
+        css={css`
+          ${resetButton}
+          ${headerEndStyle}
 
   margin-right: auto;
-`;
+        `}
+        onClick={handleClickButton}
+      >
+        <MenuIcon />
+      </button>
+      {<Menu show={showMenu} setShow={setShowMenu} />}
+    </>
+  );
+};
 
 const Content = styled.main`
   overflow-y: auto;
