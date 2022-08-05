@@ -21,9 +21,9 @@ const Page = ({ title, children }: PageProps) => (
           <MenuIcon />
         </MenuButton>
         <Title>{title.toUpperCase()}</Title>
-        <div css={headerEnd} />
+        <div css={headerEndStyle} />
       </Header>
-      {children}
+      <Content>{children}</Content>
     </Inner>
   </Container>
 );
@@ -35,6 +35,8 @@ const Container = styled.div`
 
   width: 100%;
   height: 100%;
+
+  color: ${({ theme }) => theme.color.black};
 `;
 
 const Inner = styled.div`
@@ -64,16 +66,23 @@ const Title = styled.h1`
   font-weight: 700;
 `;
 
-const headerEnd = css`
+const headerEndStyle = css`
   width: 24px;
   height: 24px;
 `;
 
 const MenuButton = styled.button`
   ${resetButton}
-  ${headerEnd}
+  ${headerEndStyle}
 
   margin-right: auto;
+`;
+
+const Content = styled.main`
+  overflow-y: auto;
+
+  width: 100%;
+  flex: 1;
 `;
 
 export default Page;

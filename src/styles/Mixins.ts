@@ -13,6 +13,15 @@ export const resetButton = css`
   font-size: inherit;
 `;
 
+export const resetLink = css`
+  text-decoration: none;
+
+  color: inherit;
+
+  font-family: inherit;
+  font-size: inherit;
+`;
+
 /**
  * Reset <h1>, <h2>, ...
  */
@@ -26,4 +35,16 @@ export const centerChild = css`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+`;
+
+export const centerAsAbsolute = css`
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+export const putShadow = css`
+  box-shadow: 0px 1px 5px rgba(129, 129, 129, 0.25);
 `;
