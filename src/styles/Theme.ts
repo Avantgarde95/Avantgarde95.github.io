@@ -2,9 +2,7 @@ import { Theme } from "@emotion/react";
 
 export const defaultTheme: Theme = {
   color: {
-    primary: "#444444",
-    secondary: "#888888",
-    tertiary: "#aacccc",
-    background: "#f0ffff",
+    black: "#1f1f1f",
+    gray1: "#f7f7f7",
   },
 };
