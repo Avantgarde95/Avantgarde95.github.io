@@ -68,6 +68,9 @@ const Preview = ({ repositoryURL, imageURL, alt }: PreviewProps) => {
         display: block;
 
         height: 264px;
+        max-width: 478px;
+        margin-left: auto;
+        margin-right: auto;
         background-color: ${theme.color.gray1};
 
         img {
