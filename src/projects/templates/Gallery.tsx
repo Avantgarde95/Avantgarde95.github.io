@@ -4,6 +4,7 @@ import { css, useTheme } from "@emotion/react";
 import useURL from "hooks/useURL";
 import { English, Korean } from "components/Language";
 import Link from "components/Link";
+import Grid from "components/Grid";
 import { createAnimation, fadeIn, resetLink } from "styles/Mixins";
 
 import Projects from "data/Projects.json";
@@ -24,12 +25,14 @@ const Gallery = () => (
       <Korean>에 있습니다.</Korean>
       <English>.</English>
     </Description>
-    {Projects.map(project => (
-      <Item key={project.name}>
-        <Preview repositoryURL={project.repositoryURL} imageURL={project.imageURL} alt={project.name} />
-        <Name>{project.name}</Name>
-      </Item>
-    ))}
+    <Grid cellWidth="478px" cellHeight="314px" maxDimensionX={2}>
+      {Projects.map(project => (
+        <Item key={project.name}>
+          <Preview repositoryURL={project.repositoryURL} imageURL={project.imageURL} alt={project.name} />
+          <Name>{project.name}</Name>
+        </Item>
+      ))}
+    </Grid>
   </Container>
 );
 
@@ -75,22 +78,25 @@ const Preview = ({ repositoryURL, imageURL, alt }: PreviewProps) => {
         display: block;
 
         height: 264px;
-        max-width: 478px;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
         background-color: ${theme.color.gray1};
-
-        img {
-          width: 100%;
-          height: 264px;
-          max-width: 478px;
-
-          object-fit: contain;
-        }
       `}
       href={repositoryURL}
     >
-      {isValidURL && <img src={imageURL} alt={alt} />}
+      {isValidURL && (
+        <img
+          css={css`
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+          `}
+          src={imageURL}
+          alt={alt}
+        />
+      )}
     </Link>
   );
 };
