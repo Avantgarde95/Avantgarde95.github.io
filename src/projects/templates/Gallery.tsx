@@ -37,6 +37,10 @@ const Gallery = () => (
 );
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   width: 100%;
 `;
 
@@ -55,6 +59,10 @@ const Description = styled.div`
 `;
 
 const Item = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   margin-top: 14px;
   margin-bottom: 14px;
 `;
