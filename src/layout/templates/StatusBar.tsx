@@ -42,7 +42,7 @@ const Clock = () => {
         font-weight: 500;
       `}
     >
-      {hour}:{minute}
+      {`${hour}`.padStart(2, "0")}:{`${minute}`.padStart(2, "0")}
     </div>
   );
 };

@@ -18,7 +18,7 @@ const Page = ({ title, children }: PageProps) => (
     <Inner>
       <StatusBar />
       <Header>
-        <MenuButton></MenuButton>
+        <MenuButton />
         <Title>{title.toUpperCase()}</Title>
         <div css={headerEndStyle} />
       </Header>
@@ -85,7 +85,7 @@ const MenuButton = () => {
           ${resetButton}
           ${headerEndStyle}
 
-  margin-right: auto;
+          margin-right: auto;
         `}
         onClick={handleClickButton}
       >

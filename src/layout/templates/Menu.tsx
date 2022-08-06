@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { useTheme } from "@emotion/react";
 import Drawer from "@mui/material/Drawer";
 
+import useScreen from "hooks/useScreen";
 import Link from "components/Link";
 import { resetButton, resetLink } from "styles/Mixins";
 
@@ -15,6 +16,7 @@ interface MenuProps {
 
 const Menu = ({ show, setShow }: MenuProps) => {
   const theme = useTheme();
+  const { isWide } = useScreen();
 
   const handleClickPaper = (event: MouseEvent) => {
     event.stopPropagation();
@@ -36,6 +38,7 @@ const Menu = ({ show, setShow }: MenuProps) => {
       anchor="left"
       open={show}
       onClick={handleCloseModal}
+      hideBackdrop={isWide}
     >
       <Controls>
         <CloseButton onClick={handleCloseModal}>
