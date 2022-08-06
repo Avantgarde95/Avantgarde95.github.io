@@ -1,12 +1,17 @@
 import styled from "@emotion/styled";
 
+import { English, Korean } from "components/Language";
+
 import Me from "home/assets/Me.jpg";
 
 const ProfileSection = () => (
   <Container>
     <Profile src={Me.src} alt="Me" />
     <Content>
-      <Name>박훈민</Name>
+      <Name>
+        <Korean>박훈민</Korean>
+        <English>Hunmin Park</English>
+      </Name>
       <Job>Developer, Front-End</Job>
     </Content>
   </Container>

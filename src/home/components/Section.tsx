@@ -1,17 +1,24 @@
 import { ReactNode } from "react";
+import { useRecoilValue } from "recoil";
 import styled from "@emotion/styled";
 
+import { Language, languageState } from "states/Language";
+
 interface SectionProps {
-  title: string;
+  title: Record<Language, string>;
   children: ReactNode;
 }
 
-const Section = ({ title, children }: SectionProps) => (
-  <Container>
-    <Title>{title}</Title>
-    <Content>{children}</Content>
-  </Container>
-);
+const Section = ({ title, children }: SectionProps) => {
+  const language = useRecoilValue(languageState);
+
+  return (
+    <Container>
+      <Title>{title[language]}</Title>
+      <Content>{children}</Content>
+    </Container>
+  );
+};
 
 const Container = styled.div`
   box-sizing: border-box;

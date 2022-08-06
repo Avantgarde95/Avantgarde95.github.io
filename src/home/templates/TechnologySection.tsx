@@ -24,7 +24,7 @@ const TechnologySection = () => {
   };
 
   return (
-    <Section title="주요기술">
+    <Section title={{ Korean: "주요기술", English: "Main technologies" }}>
       <Gallery onBlur={handleBlurGallery}>
         {iconInfos.map(([name, Icon], index) => (
           <IconButton

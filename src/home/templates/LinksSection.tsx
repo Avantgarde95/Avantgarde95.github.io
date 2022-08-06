@@ -11,7 +11,7 @@ import Instagram from "home/assets/Instagram.svg";
 import Blog from "home/assets/Blog.svg";
 
 const LinksSection = () => (
-  <Section title="SNS">
+  <Section title={{ Korean: "SNS", English: "SNS" }}>
     <EachLink href="https://www.youtube.com/user/Scottparkmusic">
       <YouTube />
       <Label>YouTube</Label>

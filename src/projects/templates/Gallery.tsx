@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { css, useTheme } from "@emotion/react";
 
 import useURL from "hooks/useURL";
+import { English, Korean } from "components/Language";
 import Link from "components/Link";
 import { resetLink } from "styles/Mixins";
 
@@ -10,7 +11,8 @@ import Projects from "data/Projects.json";
 const Gallery = () => (
   <Container>
     <Description>
-      더 자세한 정보는{" "}
+      <Korean>더 자세한 정보는 </Korean>
+      <English>You can see the details at </English>
       <Link
         css={css`
           text-decoration: underline;
@@ -19,7 +21,8 @@ const Gallery = () => (
       >
         Github
       </Link>
-      에 있습니다.
+      <Korean>에 있습니다.</Korean>
+      <English>.</English>
     </Description>
     {Projects.map(project => (
       <Item key={project.name}>

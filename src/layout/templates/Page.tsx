@@ -1,12 +1,15 @@
 import { ReactNode, useState } from "react";
+import { useSetRecoilState } from "recoil";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
+import { languageState } from "states/Language";
 import StatusBar from "layout/templates/StatusBar";
 import Menu from "layout/templates/Menu";
 import { resetButton, resetTitle } from "styles/Mixins";
 
 import MenuIcon from "layout/assets/Menu.svg";
+import LanguageIcon from "layout/assets/Language.svg";
 
 interface PageProps {
   title: string;
@@ -20,7 +23,7 @@ const Page = ({ title, children }: PageProps) => (
       <Header>
         <MenuButton />
         <Title>{title.toUpperCase()}</Title>
-        <div css={headerEndStyle} />
+        <LanguageButton />
       </Header>
       <Content>{children}</Content>
     </Inner>
@@ -92,6 +95,30 @@ const MenuButton = () => {
         <MenuIcon />
       </button>
       {<Menu show={showMenu} setShow={setShowMenu} />}
+    </>
+  );
+};
+
+const LanguageButton = () => {
+  const setLanguage = useSetRecoilState(languageState);
+
+  const handleClickButton = () => {
+    setLanguage(language => (language === "Korean" ? "English" : "Korean"));
+  };
+
+  return (
+    <>
+      <button
+        css={css`
+          ${resetButton}
+          ${headerEndStyle}
+
+          margin-left: auto;
+        `}
+        onClick={handleClickButton}
+      >
+        <LanguageIcon />
+      </button>
     </>
   );
 };
