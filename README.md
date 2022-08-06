@@ -1,4 +1,15 @@
-# Mypage
+# mypage
+
+![Screenshot](Screenshot.png)
+
+<details>
+<summary>Old version (v1)</summary>
+
+Branch: [Link](https://github.com/Avantgarde95/Avantgarde95.github.io/tree/v1)
+
+![OldScreenshot](OldScreenshot.png)
+
+</details>
 
 ## How to run
 
