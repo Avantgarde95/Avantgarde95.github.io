@@ -4,7 +4,7 @@ import { css, useTheme } from "@emotion/react";
 import useURL from "hooks/useURL";
 import { English, Korean } from "components/Language";
 import Link from "components/Link";
-import { resetLink } from "styles/Mixins";
+import { createAnimation, fadeIn, resetLink } from "styles/Mixins";
 
 import Projects from "data/Projects.json";
 
@@ -37,7 +37,11 @@ const Container = styled.div`
   width: 100%;
 `;
 
+const descriptionAnimation = createAnimation([fadeIn], "0.8s");
+
 const Description = styled.div`
+  ${descriptionAnimation.style}
+
   text-align: center;
 
   width: 100%;

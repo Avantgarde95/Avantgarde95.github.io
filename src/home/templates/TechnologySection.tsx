@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { rgba } from "polished";
 
 import Section from "home/components/Section";
-import { centerAsAbsolute, centerChild, resetButton } from "styles/Mixins";
+import { centerAsAbsolute, centerChild, createAnimation, fadeIn, resetButton, zoomIn } from "styles/Mixins";
 
 import ReactIcon from "home/assets/React.svg";
 import JSIcon from "home/assets/JS.svg";
@@ -59,8 +59,11 @@ const Gallery = styled.div`
   width: 100%;
 `;
 
+const iconAnimation = createAnimation([fadeIn, zoomIn], "1s");
+
 const IconButton = styled.button`
   ${resetButton}
+  ${iconAnimation.style}
 
   position: relative;
   overflow: hidden;

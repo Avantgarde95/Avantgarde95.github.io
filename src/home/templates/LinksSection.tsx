@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 import Link from "components/Link";
 import Section from "home/components/Section";
-import { putShadow, resetLink } from "styles/Mixins";
+import { createAnimation, fadeIn, putShadow, resetLink } from "styles/Mixins";
 
 import YouTube from "home/assets/YouTube.svg";
 import GitHub from "home/assets/GitHub.svg";
@@ -35,9 +35,12 @@ const LinksSection = () => (
   </Section>
 );
 
+const iconAnimation = createAnimation([fadeIn], "1.5s");
+
 const EachLink = styled(Link)`
   ${resetLink}
   ${putShadow}
+  ${iconAnimation.style}
 
   box-sizing: border-box;
   display: inline-flex;

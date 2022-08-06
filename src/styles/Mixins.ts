@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, Keyframes, keyframes, SerializedStyles } from "@emotion/react";
 
 export const resetButton = css`
   cursor: pointer;
@@ -48,3 +48,36 @@ export const centerAsAbsolute = css`
 export const putShadow = css`
   box-shadow: 0px 1px 5px rgba(129, 129, 129, 0.25);
 `;
+
+interface AnimationInfo {
+  startStyle: string;
+  endStyle: string;
+}
+
+export const fadeIn: AnimationInfo = {
+  startStyle: "opacity: 0",
+  endStyle: "opacity: 1",
+};
+
+export const zoomIn: AnimationInfo = {
+  startStyle: "transform: scale(0.5)",
+  endStyle: "transform: scale(1)",
+};
+
+export const createAnimation = (infos: Array<AnimationInfo>, duration = "1s") => {
+  const animationKeyframes = keyframes`
+    100% {
+      ${infos.map(animation => animation.endStyle + ";").join("\n")}
+    }
+  `;
+
+  const animationStyle = css`
+    ${infos.map(animation => animation.startStyle + ";").join("\n")}
+    animation: ${animationKeyframes} ${duration} forwards;
+  `;
+
+  return {
+    style: animationStyle,
+    keyframes: animationKeyframes,
+  };
+};
