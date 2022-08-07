@@ -25,7 +25,7 @@ const Gallery = () => (
       <Korean>에 있습니다.</Korean>
       <English>.</English>
     </Description>
-    <Grid cellWidth="478px" cellHeight="314px" maxDimensionX={2}>
+    <Grid cellWidth="478px" cellHeight="340px" maxDimensionX={2}>
       {Projects.map(project => (
         <Item key={project.name}>
           <Preview repositoryURL={project.repositoryURL} imageURL={project.imageURL} alt={project.name} />
@@ -52,6 +52,7 @@ const Description = styled.div`
   text-align: center;
 
   width: 100%;
+  margin-bottom: 30px;
   font-size: 17px;
   font-weight: 400;
 

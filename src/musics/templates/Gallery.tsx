@@ -25,7 +25,7 @@ const Gallery = () => {
           </CategoryButton>
         ))}
       </Categories>
-      <Grid cellWidth="478px" cellHeight="314px" maxDimensionX={2}>
+      <Grid cellWidth="478px" cellHeight="340px" maxDimensionX={2}>
         {categoryMap[currentCategory].map(videoID => (
           <Item key={videoID}>
             <Preview videoID={videoID} />
@@ -52,14 +52,15 @@ const Container = styled.div`
   width: 100%;
 `;
 
-const descriptionAnimation = createAnimation([fadeIn], "0.8s");
+const categoryAnimation = createAnimation([fadeIn], "0.8s");
 
 const Categories = styled.div`
-  ${descriptionAnimation.style}
+  ${categoryAnimation.style}
 
   text-align: center;
 
   width: 100%;
+  margin-bottom: 30px;
   font-size: 17px;
   font-weight: 400;
 
