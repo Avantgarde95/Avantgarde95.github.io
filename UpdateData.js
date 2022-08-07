@@ -47,6 +47,17 @@ async function updateProjects() {
     "ExtractMailFiles",
     "jsoncpp",
     "cpp-practice",
+    "avant-assignment-movie-awards",
+    "avant-assignment-stopwatch",
+    "avant-assignment-todos-and-movies",
+    "avant-assignment-weather",
+    "code-splitting-example",
+    "LGTM3D",
+    "mini-electron-app",
+    "react-popup-example",
+    "simple-schedule-app",
+    "react-scoped-css",
+    "study",
   ];
 
   const alternativeProjectNames = {
@@ -55,7 +66,6 @@ async function updateProjects() {
   };
 
   const alternativeProjectImagePaths = {
-    "Avantgarde95.github.io": "image/AboutApp.png",
     LiKo: "TestExample.png",
     LangtonAnt: "ScreenshotSimple.png",
     ArchiPi: "Screenshot7.png",

@@ -42,50 +42,6 @@
         }
     },
     {
-        "name": "avant-assignment-movie-awards",
-        "description": "React Take Home Test for Front End Engineers",
-        "repositoryURL": "https://github.com/Avantgarde95/avant-assignment-movie-awards",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/avant-assignment-movie-awards/master/Screenshot.png",
-        "languageMap": {
-            "TypeScript": 17265,
-            "HTML": 1994,
-            "JavaScript": 1479
-        }
-    },
-    {
-        "name": "avant-assignment-stopwatch",
-        "description": null,
-        "repositoryURL": "https://github.com/Avantgarde95/avant-assignment-stopwatch",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/avant-assignment-stopwatch/master/Screenshot.png",
-        "languageMap": {
-            "TypeScript": 13977,
-            "HTML": 1715,
-            "CSS": 956
-        }
-    },
-    {
-        "name": "avant-assignment-todos-and-movies",
-        "description": "프로그라피 6기 React 분야 사전과제 입니다.",
-        "repositoryURL": "https://github.com/Avantgarde95/avant-assignment-todos-and-movies",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/avant-assignment-todos-and-movies/master/Screenshot.png",
-        "languageMap": {
-            "TypeScript": 12177,
-            "JavaScript": 1050
-        }
-    },
-    {
-        "name": "avant-assignment-weather",
-        "description": "프론트엔드 멘토링 1886px 6주차 과제",
-        "repositoryURL": "https://github.com/Avantgarde95/avant-assignment-weather",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/avant-assignment-weather/master/Screenshot.png",
-        "languageMap": {
-            "TypeScript": 4830,
-            "HTML": 1946,
-            "JavaScript": 517,
-            "Shell": 50
-        }
-    },
-    {
         "name": "avant-template",
         "description": "Next.js + Recoil + Emotion template",
         "repositoryURL": "https://github.com/Avantgarde95/avant-template",
@@ -99,11 +55,11 @@
         "name": "MyPage",
         "description": "My website!",
         "repositoryURL": "https://github.com/Avantgarde95/Avantgarde95.github.io",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Avantgarde95.github.io/master/image/AboutApp.png",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Avantgarde95.github.io/master/Screenshot.png",
         "languageMap": {
-            "TypeScript": 51602,
-            "JavaScript": 6578,
-            "HTML": 5391
+            "TypeScript": 23747,
+            "JavaScript": 4988,
+            "Shell": 45
         }
     },
     {
@@ -161,18 +117,6 @@
             "Lua": 5277,
             "Gnuplot": 642,
             "Batchfile": 172
-        }
-    },
-    {
-        "name": "code-splitting-example",
-        "description": "Simple example of Webpack code splitting + React lazy component",
-        "repositoryURL": "https://github.com/Avantgarde95/code-splitting-example",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/code-splitting-example/master/Screenshot.png",
-        "languageMap": {
-            "JavaScript": 6423,
-            "TypeScript": 4458,
-            "SCSS": 2125,
-            "HTML": 463
         }
     },
     {
@@ -322,15 +266,6 @@
         }
     },
     {
-        "name": "LGTM3D",
-        "description": "3D LGTM images for collaboration",
-        "repositoryURL": "https://github.com/Avantgarde95/LGTM3D",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LGTM3D/master/Screenshot.png",
-        "languageMap": {
-            "C#": 7413
-        }
-    },
-    {
         "name": "LiKo",
         "description": "KAIST CS374 Team Project",
         "repositoryURL": "https://github.com/Avantgarde95/LiKo",
@@ -403,17 +338,6 @@
         }
     },
     {
-        "name": "mini-electron-app",
-        "description": "Simple mini electron application",
-        "repositoryURL": "https://github.com/Avantgarde95/mini-electron-app",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/mini-electron-app/master/Screenshot.png",
-        "languageMap": {
-            "JavaScript": 414,
-            "HTML": 343,
-            "CSS": 139
-        }
-    },
-    {
         "name": "MorseSimulator",
         "description": "Simple Morse code simulator in python",
         "repositoryURL": "https://github.com/Avantgarde95/MorseSimulator",
@@ -474,38 +398,6 @@
         }
     },
     {
-        "name": "react-popup-example",
-        "description": "Simple example of opening a popup window using React portal API.",
-        "repositoryURL": "https://github.com/Avantgarde95/react-popup-example",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/react-popup-example/master/Screenshot.png",
-        "languageMap": {
-            "TypeScript": 10871,
-            "JavaScript": 6406,
-            "SCSS": 2610,
-            "HTML": 732
-        }
-    },
-    {
-        "name": "react-scoped-css",
-        "description": "CSS encapsulation solution for React",
-        "repositoryURL": "https://github.com/Avantgarde95/react-scoped-css",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/react-scoped-css/master/Screenshot.png",
-        "languageMap": {
-            "JavaScript": 8166,
-            "SCSS": 492
-        }
-    },
-    {
-        "name": "simple-schedule-app",
-        "description": "Simple app for practicing React and related libraries (ex. React Query)",
-        "repositoryURL": "https://github.com/Avantgarde95/simple-schedule-app",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/simple-schedule-app/master/Screenshot.png",
-        "languageMap": {
-            "TypeScript": 18766,
-            "JavaScript": 1050
-        }
-    },
-    {
         "name": "SimpleLang",
         "description": "a SIMPLE LANGuage - Simple toy language I made for studying",
         "repositoryURL": "https://github.com/Avantgarde95/SimpleLang",
@@ -513,17 +405,6 @@
         "languageMap": {
             "Python": 220159,
             "Shell": 394
-        }
-    },
-    {
-        "name": "study",
-        "description": "Implementation of various kinds of algorithms & structures in C++, JS, ...",
-        "repositoryURL": "https://github.com/Avantgarde95/study",
-        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/study/master/Screenshot.png",
-        "languageMap": {
-            "C++": 13577,
-            "JavaScript": 6789,
-            "CMake": 596
         }
     },
     {
