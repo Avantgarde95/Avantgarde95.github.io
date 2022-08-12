@@ -8,7 +8,7 @@ const Document = () => (
         type="text/css"
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
       />
-      <link href="http://fonts.cdnfonts.com/css/sf-mono" rel="stylesheet" />
+      <link href="https://fonts.cdnfonts.com/css/sf-mono" rel="stylesheet" />
     </Head>
     <body>
       <Main />
