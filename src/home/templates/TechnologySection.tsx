@@ -1,5 +1,6 @@
 import { ElementType, useState } from "react";
 import styled from "@emotion/styled";
+import Button from "@mui/material/Button";
 import { rgba } from "polished";
 
 import Section from "home/components/Section";
@@ -13,28 +14,29 @@ import CPPIcon from "home/assets/CPP.svg";
 import WebpackIcon from "home/assets/Webpack.svg";
 
 const TechnologySection = () => {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [selectedName, setSelectedName] = useState<string | null>(null);
+
+  const titleTail = selectedName === null ? "" : ` - ${selectedName}`;
 
   const handleBlurGallery = () => {
-    setSelectedIndex(null);
+    setSelectedName(null);
   };
 
-  const handleClickIconButton = (index: number) => {
-    setSelectedIndex(index);
+  const handleClickIconButton = (name: string) => {
+    setSelectedName(name);
   };
 
   return (
-    <Section title={{ Korean: "주요기술", English: "Main technologies" }}>
+    <Section title={{ Korean: `주요기술${titleTail}`, English: `Main technologies${titleTail}` }}>
       <Gallery onBlur={handleBlurGallery}>
-        {iconInfos.map(([name, Icon], index) => (
+        {iconInfos.map(([name, Icon]) => (
           <IconButton
-            key={index}
+            key={name}
             onClick={() => {
-              handleClickIconButton(index);
+              handleClickIconButton(name);
             }}
           >
             <Icon />
-            {selectedIndex === index && <Name>{name}</Name>}
           </IconButton>
         ))}
       </Gallery>
@@ -44,11 +46,11 @@ const TechnologySection = () => {
 
 const iconInfos: Array<[string, ElementType]> = [
   ["React", ReactIcon],
-  ["Java\nScript", JSIcon],
-  ["Type\nScript", TSIcon],
+  ["JavaScript", JSIcon],
+  ["TypeScript", TSIcon],
   ["CSS", CSSIcon],
   ["C++", CPPIcon],
-  ["Web\npack", WebpackIcon],
+  ["Webpack", WebpackIcon],
 ];
 
 const Gallery = styled.div`
@@ -61,29 +63,18 @@ const Gallery = styled.div`
 
 const iconAnimation = createAnimation([fadeIn, zoomIn], "1s");
 
-const IconButton = styled.button`
+const IconButton = styled(Button)`
   ${resetButton}
   ${iconAnimation.style}
 
   position: relative;
   overflow: hidden;
 
+  min-width: 0;
+  min-height: 0;
   width: 56px;
   height: 56px;
   flex-shrink: 0;
-`;
-
-const Name = styled.span`
-  ${centerChild}
-  ${centerAsAbsolute}
-
-  position: absolute;
-
-  width: 48px;
-  height: 48px;
-  font-size: 12px;
-  font-weight: bold;
-  background-color: ${({ theme }) => rgba(theme.color.gray3, 0.5)};
 `;
 
 export default TechnologySection;

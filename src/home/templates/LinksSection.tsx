@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import { css, useTheme } from "@emotion/react";
+import Button, { ButtonProps } from "@mui/material/Button";
 
 import Link from "components/Link";
 import Section from "home/components/Section";
@@ -37,28 +39,38 @@ const LinksSection = () => (
 
 const iconAnimation = createAnimation([fadeIn], "1.5s");
 
-const EachLink = styled(Link)`
-  ${resetLink}
-  ${putShadow}
-  ${iconAnimation.style}
+const EachLink = (props: ButtonProps) => {
+  const theme = useTheme();
 
-  box-sizing: border-box;
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
+  return (
+    <Button
+      css={css`
+        ${resetLink}
+        ${putShadow}
+        ${iconAnimation.style}
 
-  height: 44px;
-  margin-right: 24px;
-  margin-bottom: 14px;
-  padding-left: 14px;
-  padding-right: 14px;
+        box-sizing: border-box;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
 
-  background-color: ${({ theme }) => theme.color.gray1};
+        height: 44px;
+        margin-right: 24px;
+        margin-bottom: 14px;
+        padding-left: 14px;
+        padding-right: 14px;
 
-  svg {
-    width: 28px;
-  }
-`;
+        background-color: ${theme.color.gray1};
+
+        svg {
+          width: 28px;
+        }
+      `}
+      LinkComponent={Link}
+      {...props}
+    />
+  );
+};
 
 const Label = styled.span`
   margin-left: 13px;

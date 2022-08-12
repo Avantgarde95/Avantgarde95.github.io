@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSetRecoilState } from "recoil";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
+import Button from "@mui/material/Button";
 
 import Menu from "layout/templates/Menu";
 import { resetButton, resetTitle } from "styles/Mixins";
@@ -55,17 +56,19 @@ const MenuButton = () => {
 
   return (
     <>
-      <button
+      <Button
         css={css`
           ${resetButton}
           ${headerEndStyle}
 
+          min-width: 0;
+          min-height: 0;
           margin-right: auto;
         `}
         onClick={handleClickButton}
       >
         <MenuIcon />
-      </button>
+      </Button>
       {<Menu show={showMenu} setShow={setShowMenu} />}
     </>
   );
@@ -80,17 +83,19 @@ const LanguageButton = () => {
 
   return (
     <>
-      <button
+      <Button
         css={css`
           ${resetButton}
           ${headerEndStyle}
 
+          min-width: 0;
+          min-height: 0;
           margin-left: auto;
         `}
         onClick={handleClickButton}
       >
         <LanguageIcon />
-      </button>
+      </Button>
     </>
   );
 };
