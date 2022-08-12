@@ -3,8 +3,6 @@ import { AppProps } from "next/app";
 import { Global, ThemeProvider } from "@emotion/react";
 import { ThemeProvider as MUIThemeProvider, createTheme as createMUITheme } from "@mui/material/styles";
 
-import "highlight.js/styles/vs2015.css";
-
 import { globalStyle } from "styles/Global";
 import { defaultTheme } from "styles/Theme";
 

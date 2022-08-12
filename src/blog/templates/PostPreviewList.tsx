@@ -1,15 +1,13 @@
 import styled from "@emotion/styled";
 
 import { formatTime } from "utils/StringUtils";
-import { allCategories, Category } from "blog/Category";
+import { allCategories } from "blog/Category";
+import { PostMeta } from "blog/Post";
 import Link from "components/Link";
 import { createAnimation, fadeIn, resetLink } from "styles/Mixins";
 
-export interface PostPreview {
+export interface PostPreview extends PostMeta {
   key: string;
-  title: string;
-  time: number;
-  category: Category;
   content: string;
 }
 

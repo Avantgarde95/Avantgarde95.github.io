@@ -1,9 +1,12 @@
 import { Category } from "blog/Category";
 
-export interface Post {
+export interface PostMeta {
   title: string;
   time: number;
   category: Category;
+}
+
+export interface Post extends PostMeta {
   content: string;
 }
 

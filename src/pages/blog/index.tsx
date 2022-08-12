@@ -1,7 +1,7 @@
 import type { GetStaticProps } from "next";
 
+import { extractTextFromMarkdown } from "utils/StringUtils";
 import { postMap } from "blog/Post";
-import { markdownToText } from "blog/Render";
 import PostPreviewList, { PostPreview } from "blog/templates/PostPreviewList";
 import Page from "layout/templates/Page";
 
@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async context => ({
     previews: Object.entries(postMap)
       .sort(([key1, post1], [key2, post2]) => post2.time - post1.time)
       .map(([key, post]) => {
-        const content = markdownToText(post.content);
+        const content = extractTextFromMarkdown(post.content);
         const maxContentLength = 100;
 
         return {
