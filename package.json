@@ -8,7 +8,8 @@
     "build": "next build && next export -o docs && node PostBuild",
     "update-data": "node UpdateData",
     "lint": "next lint --dir src",
-    "lint:fix": "next lint --dir src --fix"
+    "lint:fix": "next lint --dir src --fix",
+    "postinstall": "husky install"
   },
   "packageManager": "yarn@3.2.2",
   "dependencies": {
@@ -32,6 +33,7 @@
     "eslint-config-next": "^12.2.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.0",
     "node-fetch": "^3.2.10",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
