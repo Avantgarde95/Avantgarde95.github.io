@@ -5,7 +5,7 @@ import TechnologySection from "home/templates/TechnologySection";
 import LinksSection from "home/templates/LinksSection";
 
 const HomePage = () => (
-  <Page title="MyPage">
+  <Page title="Welcome">
     <ProfileSection />
     <EducationSection />
     <TechnologySection />

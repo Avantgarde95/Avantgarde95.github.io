@@ -45,7 +45,7 @@ const Menu = ({ show, setShow }: MenuProps) => {
           <CloseMenu />
         </CloseButton>
       </Controls>
-      <EachLink href="/">My page</EachLink>
+      <EachLink href="/">Home</EachLink>
       <EachLink href="/projects">Project</EachLink>
       <EachLink href="/musics">Music</EachLink>
       <EachLink href="https://avantgarde95.github.io/blog">Blog</EachLink>
