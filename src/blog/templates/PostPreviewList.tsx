@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
 import { formatTime } from "utils/StringUtils";
-import { Category } from "blog/Category";
+import { allCategories, Category } from "blog/Category";
 import Link from "components/Link";
-import { resetLink } from "styles/Mixins";
+import { createAnimation, fadeIn, resetLink } from "styles/Mixins";
 
 export interface PostPreview {
   key: string;
@@ -19,11 +19,21 @@ interface PostPreviewListProps {
 
 const PostPreviewList = ({ previews }: PostPreviewListProps) => (
   <Container>
+    <Categories>
+      {allCategories.map(category => (
+        <CategoryButton key={category} href={`/blog/category/${category}`}>
+          {category}
+        </CategoryButton>
+      ))}
+    </Categories>
     {previews.map(preview => (
       <Row key={preview.key}>
-        <Title href={`/blog/post/${preview.key}`}>{preview.title}</Title>
+        <PostLink href={`/blog/post/${preview.key}`}>{preview.title}</PostLink>
         <DateView>{formatTime(preview.time)}</DateView>
         <Content dangerouslySetInnerHTML={{ __html: preview.content }} />
+        <Others>
+          Category: <CategoryLink>{preview.category}</CategoryLink>
+        </Others>
       </Row>
     ))}
   </Container>
@@ -36,6 +46,28 @@ const Container = styled.div`
   padding: 0 21px;
 `;
 
+const categoryAnimation = createAnimation([fadeIn], "0.8s");
+
+const Categories = styled.div`
+  ${categoryAnimation.style}
+
+  text-align: center;
+
+  width: 100%;
+  font-size: 17px;
+  font-weight: 400;
+
+  color: ${({ theme }) => theme.color.blue};
+`;
+
+const CategoryButton = styled(Link)`
+  ${resetLink}
+
+  &:not(:first-of-type) {
+    margin-left: 16px;
+  }
+`;
+
 const Row = styled.div`
   box-sizing: border-box;
 
@@ -44,24 +76,38 @@ const Row = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.color.gray2};
 `;
 
-const Title = styled(Link)`
+const PostLink = styled(Link)`
   ${resetLink}
 
   display: block;
 
-  font-size: 18px;
+  margin-bottom: 2px;
+  font-size: 20px;
   font-weight: bold;
+
+  color: ${({ theme }) => theme.color.blue};
 `;
 
 const DateView = styled.div`
   margin-bottom: 8px;
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 const Content = styled.div`
   word-break: break-all;
 
-  font-size: 14px;
+  margin-bottom: 8px;
+  font-size: 16px;
+`;
+
+const Others = styled.div`
+  font-size: 16px;
+`;
+
+const CategoryLink = styled(Link)`
+  ${resetLink}
+
+  color: ${({ theme }) => theme.color.blue};
 `;
 
 export default PostPreviewList;

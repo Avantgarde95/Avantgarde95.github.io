@@ -1,9 +1,13 @@
 import styled from "@emotion/styled";
+import { DiscussionEmbed } from "disqus-react";
 
 import { formatTime } from "utils/StringUtils";
 import { Category } from "blog/Category";
+import Link from "components/Link";
+import { resetLink } from "styles/Mixins";
 
 export interface PostOutput {
+  key: string;
   title: string;
   time: number;
   category: Category;
@@ -19,6 +23,17 @@ const PostOutputView = ({ output }: PostOutputViewProps) => (
     <Title>{output.title}</Title>
     <DateView>{formatTime(output.time)}</DateView>
     <Content dangerouslySetInnerHTML={{ __html: output.content }} />
+    <Others>
+      Category: <CategoryLink>{output.category}</CategoryLink>
+    </Others>
+    <DiscussionEmbed
+      shortname={"Avantgarde95"}
+      config={{
+        url: `https://avantgarde95.github.io/blog/${output.key}`,
+        identifier: output.title,
+        title: output.title,
+      }}
+    />
   </Container>
 );
 
@@ -30,21 +45,24 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 18px;
+  margin-bottom: 2px;
+  font-size: 20px;
   font-weight: bold;
 `;
 
 const DateView = styled.div`
-  margin-bottom: 8px;
-  font-size: 14px;
+  margin-bottom: 16px;
+  font-size: 16px;
 `;
 
 const Content = styled.div`
   word-break: break-all;
 
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   font-size: 16px;
+  border-top: 1px solid ${({ theme }) => theme.color.gray2};
+  border-bottom: 1px solid ${({ theme }) => theme.color.gray2};
 
   pre {
     overflow-x: auto;
@@ -58,6 +76,17 @@ const Content = styled.div`
   code {
     font-family: "Inconsolata", monospace;
   }
+`;
+
+const Others = styled.div`
+  margin-bottom: 16px;
+  font-size: 16px;
+`;
+
+const CategoryLink = styled(Link)`
+  ${resetLink}
+
+  color: ${({ theme }) => theme.color.blue};
 `;
 
 export default PostOutputView;

@@ -37,6 +37,7 @@ export const getStaticProps: GetStaticProps<PostPageProps, Query> = async contex
   return {
     props: {
       output: {
+        key,
         title: post.title,
         time: post.time,
         category: post.category,

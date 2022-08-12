@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 import styled from "@emotion/styled";
-import { useTheme } from "@emotion/react";
+import { css, useTheme } from "@emotion/react";
 import Drawer from "@mui/material/Drawer";
 
 import useScreen from "hooks/useScreen";
@@ -8,6 +8,7 @@ import Link from "components/Link";
 import { resetButton, resetLink } from "styles/Mixins";
 
 import CloseMenu from "layout/assets/CloseMenu.svg";
+import Button, { ButtonProps } from "@mui/material/Button";
 
 interface MenuProps {
   show: boolean;
@@ -69,22 +70,39 @@ const CloseButton = styled.button`
   margin-right: 14px;
 `;
 
-const EachLink = styled(Link)`
-  ${resetLink}
+const EachLink = (props: ButtonProps) => {
+  const theme = useTheme();
 
-  overflow-x: hidden;
-  white-space: nowrap;
-  box-sizing: border-box;
-  display: block;
+  return (
+    <Button
+      css={css`
+        ${resetLink}
 
-  width: 100%;
-  height: 44px;
-  padding-top: 14px;
-  padding-left: 24px;
-  font-size: 19px;
-  font-weight: 700;
+        text-transform: none;
+        overflow-x: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        display: block;
 
-  border-bottom: 0.5px solid ${({ theme }) => theme.color.black};
-`;
+        width: 100%;
+        height: 44px;
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        padding-top: 14px;
+        padding-left: 24px;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: normal;
+
+        border-radius: 0;
+        border-bottom: 0.5px solid ${theme.color.black};
+      `}
+      LinkComponent={Link}
+      {...props}
+    />
+  );
+};
 
 export default Menu;

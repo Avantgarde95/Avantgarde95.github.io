@@ -15,8 +15,8 @@ class PostRenderer extends Renderer {
   }
 
   code(code: string, languageInfo: string | undefined, isEscaped: boolean): string {
-    const languageMatch = (languageInfo ?? "").match(/\S*/);
-    const language = languageMatch === null ? null : languageMatch[0];
+    const matchedWords = languageInfo?.match(/\S*/) ?? null;
+    const language = matchedWords === null || matchedWords.length === 0 ? null : matchedWords[0];
 
     const out =
       language === null || language.length === 0 || ["text", "literal", "nohighlight"].includes(language)
