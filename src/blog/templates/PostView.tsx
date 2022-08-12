@@ -43,7 +43,7 @@ const PostView = ({ post }: PostViewProps) => (
       </ReactMarkdown>
     </Content>
     <Others>
-      Category: <CategoryLink>{post.category}</CategoryLink>
+      Category: <CategoryLink href={`/blog/category/${post.category.toLowerCase()}`}>{post.category}</CategoryLink>
     </Others>
     <DiscussionEmbed
       shortname={"Avantgarde95"}

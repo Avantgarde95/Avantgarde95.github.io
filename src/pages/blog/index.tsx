@@ -9,7 +9,7 @@ interface BlogPageProps {
   previews: Array<PostPreview>;
 }
 
-const BlogPage = ({ previews }: BlogPageProps) => (
+const PreviewListPage = ({ previews }: BlogPageProps) => (
   <Page title="Blog">
     <PostPreviewList previews={previews} />
   </Page>
@@ -34,4 +34,4 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async context => ({
   },
 });
 
-export default BlogPage;
+export default PreviewListPage;

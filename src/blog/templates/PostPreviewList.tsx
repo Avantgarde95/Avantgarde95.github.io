@@ -19,7 +19,7 @@ const PostPreviewList = ({ previews }: PostPreviewListProps) => (
   <Container>
     <Categories>
       {allCategories.map(category => (
-        <CategoryButton key={category} href={`/blog/category/${category}`}>
+        <CategoryButton key={category} href={`/blog/category/${category.toLowerCase()}`}>
           {category}
         </CategoryButton>
       ))}
@@ -30,7 +30,8 @@ const PostPreviewList = ({ previews }: PostPreviewListProps) => (
         <DateView>{formatTime(preview.time)}</DateView>
         <Content dangerouslySetInnerHTML={{ __html: preview.content }} />
         <Others>
-          Category: <CategoryLink>{preview.category}</CategoryLink>
+          Category:{" "}
+          <CategoryLink href={`/blog/category/${preview.category.toLowerCase()}`}>{preview.category}</CategoryLink>
         </Others>
       </Row>
     ))}
