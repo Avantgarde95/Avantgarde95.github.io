@@ -1,9 +1,9 @@
 import Page from "layout/templates/Page";
-import Gallery from "musics/templates/Gallery";
+import MusicList from "musics/templates/MusicList";
 
 const MusicsPage = () => (
   <Page title="Music">
-    <Gallery />
+    <MusicList />
   </Page>
 );
 

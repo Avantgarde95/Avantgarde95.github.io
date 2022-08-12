@@ -1,9 +1,9 @@
 import Page from "layout/templates/Page";
-import Gallery from "projects/templates/Gallery";
+import ProjectList from "projects/templates/ProjectList";
 
 const ProjectsPage = () => (
   <Page title="Project">
-    <Gallery />
+    <ProjectList />
   </Page>
 );
 

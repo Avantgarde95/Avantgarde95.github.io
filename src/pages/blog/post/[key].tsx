@@ -1,17 +1,17 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { ParsedUrlQuery } from "querystring";
 
+import { postMap } from "blog/Post";
+import PostOutputView, { PostOutput } from "blog/templates/PostOutputView";
+import { markdownToHTML } from "blog/Render";
 import Page from "layout/templates/Page";
-import { postMap, Post } from "blog/models/Post";
 
 interface PostPageProps {
-  post?: Post;
+  output?: PostOutput;
 }
 
-const PostPage = ({ post }: PostPageProps) => (
-  <Page title="Blog">
-    <pre>{post?.content ?? ""}</pre>
-  </Page>
+const PostPage = ({ output }: PostPageProps) => (
+  <Page title="Blog">{output && <PostOutputView output={output} />}</Page>
 );
 
 interface Query extends ParsedUrlQuery {
@@ -28,8 +28,21 @@ export const getStaticPaths: GetStaticPaths<Query> = async () => ({
 export const getStaticProps: GetStaticProps<PostPageProps, Query> = async context => {
   const key = context.params?.key;
 
+  if (typeof key === "undefined") {
+    return { props: {} };
+  }
+
+  const post = postMap[key];
+
   return {
-    props: { post: typeof key === "undefined" ? undefined : postMap[key] },
+    props: {
+      output: {
+        title: post.title,
+        time: post.time,
+        category: post.category,
+        content: markdownToHTML(post.content),
+      },
+    },
   };
 };
 

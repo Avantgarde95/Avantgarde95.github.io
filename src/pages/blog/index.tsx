@@ -1,23 +1,17 @@
 import type { GetStaticProps } from "next";
 
+import { postMap } from "blog/Post";
+import { markdownToText } from "blog/Render";
+import PostPreviewList, { PostPreview } from "blog/templates/PostPreviewList";
 import Page from "layout/templates/Page";
-import { Category } from "blog/models/Category";
-import { postMap } from "blog/models/Post";
-
-interface Preview {
-  title: string;
-  time: number;
-  category: Category;
-  content: string;
-}
 
 interface BlogPageProps {
-  previews: Array<Preview>;
+  previews: Array<PostPreview>;
 }
 
 const BlogPage = ({ previews }: BlogPageProps) => (
   <Page title="Blog">
-    <pre>{previews.map(preview => preview.content).join("\n\n\n")}</pre>
+    <PostPreviewList previews={previews} />
   </Page>
 );
 
@@ -25,10 +19,18 @@ export const getStaticProps: GetStaticProps<BlogPageProps> = async context => ({
   props: {
     previews: Object.entries(postMap)
       .sort(([key1, post1], [key2, post2]) => post2.time - post1.time)
-      .map(([key, post]) => ({
-        ...post,
-        content: post.content.slice(0, 100),
-      })),
+      .map(([key, post]) => {
+        const content = markdownToText(post.content);
+        const maxContentLength = 100;
+
+        return {
+          key,
+          title: post.title,
+          time: post.time,
+          category: post.category,
+          content: content.slice(0, maxContentLength) + (content.length > maxContentLength ? "..." : ""),
+        };
+      }),
   },
 });
 
