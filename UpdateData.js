@@ -109,7 +109,7 @@ async function updateProjects() {
       })
   );
 
-  fs.writeFileSync("./src/data/Projects.json", JSON.stringify(projects, null, 4));
+  fs.writeFileSync("./src/projects/assets/Projects.json", JSON.stringify(projects, null, 4));
   console.log(`Got ${projects.length} projects from GitHub!`);
 }
 
@@ -133,7 +133,7 @@ async function updateMusics() {
     myPieces: await getVideos("PLosnnDHctFV1iZeOtf4AzJMc2K6RTMCC1"),
   };
 
-  fs.writeFileSync("./src/data/Musics.json", JSON.stringify(musics, null, 4));
+  fs.writeFileSync("./src/musics/assets/Musics.json", JSON.stringify(musics, null, 4));
 }
 
 (async () => {

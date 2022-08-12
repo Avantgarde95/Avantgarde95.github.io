@@ -7,7 +7,7 @@ import Link from "components/Link";
 import Grid from "components/Grid";
 import { createAnimation, fadeIn, resetLink } from "styles/Mixins";
 
-import Projects from "data/Projects.json";
+import Projects from "projects/assets/Projects.json";
 
 const Gallery = () => (
   <Container>

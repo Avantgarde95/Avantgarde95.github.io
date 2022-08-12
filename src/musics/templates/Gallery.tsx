@@ -6,7 +6,7 @@ import { css, useTheme } from "@emotion/react";
 import Grid from "components/Grid";
 import { createAnimation, fadeIn, resetButton } from "styles/Mixins";
 
-import Musics from "data/Musics.json";
+import Musics from "musics/assets/Musics.json";
 
 const Gallery = () => {
   const [currentCategory, setCurrentCategory] = useState<Category>("Guitar");
