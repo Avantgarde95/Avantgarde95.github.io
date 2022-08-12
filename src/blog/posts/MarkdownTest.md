@@ -17,9 +17,9 @@ Markdown test
 
 ## Image
 
-![Size100](http://via.placeholder.com/100)
-![Size150](http://via.placeholder.com/150)
-![Size200](http://via.placeholder.com/200)
+![Size100](https://via.placeholder.com/100)
+![Size150](https://via.placeholder.com/150)
+![Size200](https://via.placeholder.com/200)
 
 ## Video (YouTube)
 
@@ -29,17 +29,17 @@ Markdown test
 
 # Table
 
-|Name|Age|Height|
-|---|---|---|
-|John|25|178|
-|Paul|30|180|
-|Cindy|27|175|
+| Name  | Age | Height |
+| ----- | --- | ------ |
+| John  | 25  | 178    |
+| Paul  | 30  | 180    |
+| Cindy | 27  | 175    |
 
 # Code
 
 ## Bash
 
-```$ ./py -3 run.py```
+`$ ./py -3 run.py`
 
 ## Python
 
@@ -47,14 +47,14 @@ Markdown test
 import math
 
 x = 3.5
-print('sqrt(%f) = %f', x, math.sqrt(x)) 
+print('sqrt(%f) = %f', x, math.sqrt(x))
 ```
 
 ## JavaScript
 
 ```javascript
 function add(x, y) {
-    return x + y;
+  return x + y;
 }
 
 console.log(add(3, 2));

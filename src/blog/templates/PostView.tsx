@@ -13,10 +13,11 @@ import cpp from "react-syntax-highlighter/dist/cjs/languages/prism/cpp";
 import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
 import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 
-import { formatTime } from "utils/StringUtils";
+import { formatTime, parseYouTubeURL } from "utils/StringUtils";
 import { Post } from "blog/Post";
 import Link from "components/Link";
 import { resetLink } from "styles/Mixins";
+import { rgba } from "polished";
 
 SyntaxHighlighter.registerLanguage("js", javascript);
 SyntaxHighlighter.registerLanguage("javascript", javascript);
@@ -29,11 +30,10 @@ SyntaxHighlighter.registerLanguage("python", python);
 SyntaxHighlighter.registerLanguage("bash", bash);
 
 interface PostViewProps {
-  postKey: string;
   post: Post;
 }
 
-const PostView = ({ postKey, post }: PostViewProps) => (
+const PostView = ({ post }: PostViewProps) => (
   <Container>
     <Title>{post.title}</Title>
     <DateView>{formatTime(post.time)}</DateView>
@@ -48,7 +48,7 @@ const PostView = ({ postKey, post }: PostViewProps) => (
     <DiscussionEmbed
       shortname={"Avantgarde95"}
       config={{
-        url: `https://avantgarde95.github.io/blog/${postKey}`,
+        url: `https://avantgarde95.github.io/blog/${post.key}`,
         identifier: post.title,
         title: post.title,
       }}
@@ -70,12 +70,54 @@ const componentMap: ReactMarkdownOptions["components"] = {
         {String(children).replace(/\n$/, "")}
       </SyntaxHighlighter>
     ) : (
-      <code className={className} {...others}>
+      <InlineCode className={className} {...others}>
         {children}
-      </code>
+      </InlineCode>
     );
   },
+  a: props => {
+    const youTubeID = parseYouTubeURL(props.href ?? "");
+
+    if (youTubeID === null) {
+      return <Link {...props} />;
+    } else {
+      return (
+        <YouTube
+          width={560}
+          height={315}
+          frameBorder={0}
+          allowFullScreen
+          src={`https://www.youtube.com/embed/${youTubeID}`}
+        />
+      );
+    }
+  },
+  img: ({ src, alt, ...others }) => (
+    <ImageContainer>
+      <img src={src} alt={alt} {...others} />
+    </ImageContainer>
+  ),
 };
+
+const InlineCode = styled.code`
+  box-sizing: border-box;
+  vertical-align: middle;
+
+  font-size: 13px;
+  padding: 0 2px;
+  line-height: 16px;
+  background-color: ${({ theme }) => rgba(theme.color.gray3, 0.7)};
+`;
+
+const YouTube = styled.iframe`
+  max-width: 100%;
+`;
+
+const ImageContainer = styled.div`
+  overflow-x: auto;
+
+  width: 100%;
+`;
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -103,6 +145,48 @@ const Content = styled.div`
   font-size: 16px;
   border-top: 1px solid ${({ theme }) => theme.color.gray2};
   border-bottom: 1px solid ${({ theme }) => theme.color.gray2};
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  ul {
+    padding-left: 24px;
+  }
+
+  a {
+    cursor: pointer;
+
+    font-weight: normal;
+    color: ${({ theme }) => theme.color.blue};
+  }
+
+  table {
+    box-sizing: border-box;
+
+    border-collapse: collapse;
+    border: 1px solid ${({ theme }) => theme.color.gray2};
+
+    th,
+    td {
+      box-sizing: border-box;
+
+      padding: 8px;
+      border: 1px solid ${({ theme }) => theme.color.gray2};
+    }
+  }
+
+  code {
+    font-family: "SF Mono", monospace !important;
+  }
 `;
 
 const Others = styled.div`
