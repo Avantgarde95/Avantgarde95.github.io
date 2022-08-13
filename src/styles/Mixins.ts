@@ -1,4 +1,6 @@
-import { css, Keyframes, keyframes, SerializedStyles } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
+
+export const wideScreen = "(min-width: 768px)";
 
 export const resetButton = css`
   cursor: pointer;

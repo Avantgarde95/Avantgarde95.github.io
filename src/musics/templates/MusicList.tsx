@@ -2,14 +2,22 @@ import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "@emotion/styled";
 import { css, useTheme } from "@emotion/react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import Grid from "components/Grid";
-import { createAnimation, fadeIn, resetButton } from "styles/Mixins";
+import { createAnimation, fadeIn, resetButton, wideScreen } from "styles/Mixins";
 
 import Musics from "musics/assets/Musics.json";
 
 const MusicList = () => {
   const [currentCategory, setCurrentCategory] = useState<Category>("Guitar");
+  const onWideScreen = useMediaQuery(wideScreen);
+
+  const items = categoryMap[currentCategory].map(videoID => (
+    <Item key={videoID}>
+      <Preview videoID={videoID} />
+    </Item>
+  ));
 
   return (
     <Container>
@@ -25,13 +33,13 @@ const MusicList = () => {
           </CategoryButton>
         ))}
       </Categories>
-      <Grid cellWidth="478px" cellHeight="340px" maxDimensionX={2}>
-        {categoryMap[currentCategory].map(videoID => (
-          <Item key={videoID}>
-            <Preview videoID={videoID} />
-          </Item>
-        ))}
-      </Grid>
+      {onWideScreen ? (
+        <Grid cellWidth={cellWidth} cellHeight="340px" maxDimensionX={2}>
+          {items}
+        </Grid>
+      ) : (
+        items
+      )}
     </Container>
   );
 };
@@ -77,11 +85,15 @@ const CategoryButton = styled.button`
   }
 `;
 
+const cellWidth = "478px";
+
 const Item = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  width: 100%;
+  max-width: ${cellWidth};
   margin-top: 14px;
   margin-bottom: 14px;
 `;

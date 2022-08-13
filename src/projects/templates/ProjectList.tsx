@@ -1,40 +1,51 @@
 import styled from "@emotion/styled";
 import { css, useTheme } from "@emotion/react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import useURL from "hooks/useURL";
 import { English, Korean } from "components/Language";
 import Link from "components/Link";
 import Grid from "components/Grid";
-import { createAnimation, fadeIn, resetLink } from "styles/Mixins";
+import { createAnimation, fadeIn, resetLink, wideScreen } from "styles/Mixins";
 
 import Projects from "projects/assets/Projects.json";
 
-const ProjectList = () => (
-  <Container>
-    <Description>
-      <Korean>더 자세한 정보는 </Korean>
-      <English>You can see the details at </English>
-      <Link
-        css={css`
-          text-decoration: underline;
-        `}
-        href="https://github.com/Avantgarde95"
-      >
-        Github
-      </Link>
-      <Korean>에 있습니다.</Korean>
-      <English>.</English>
-    </Description>
-    <Grid cellWidth="478px" cellHeight="340px" maxDimensionX={2}>
-      {Projects.map(project => (
-        <Item key={project.name}>
-          <Preview repositoryURL={project.repositoryURL} imageURL={project.imageURL} alt={project.name} />
-          <Name>{project.name}</Name>
-        </Item>
-      ))}
-    </Grid>
-  </Container>
-);
+const ProjectList = () => {
+  const onWideScreen = useMediaQuery(wideScreen);
+
+  const items = Projects.map(project => (
+    <Item key={project.name}>
+      <Preview repositoryURL={project.repositoryURL} imageURL={project.imageURL} alt={project.name} />
+      <Name>{project.name}</Name>
+    </Item>
+  ));
+
+  return (
+    <Container>
+      <Description>
+        <Korean>더 자세한 정보는 </Korean>
+        <English>You can see the details at </English>
+        <Link
+          css={css`
+            text-decoration: underline;
+          `}
+          href="https://github.com/Avantgarde95"
+        >
+          Github
+        </Link>
+        <Korean>에 있습니다.</Korean>
+        <English>.</English>
+      </Description>
+      {onWideScreen ? (
+        <Grid cellWidth={cellWidth} cellHeight="340px" maxDimensionX={2}>
+          {items}
+        </Grid>
+      ) : (
+        items
+      )}
+    </Container>
+  );
+};
 
 const Container = styled.div`
   display: flex;
@@ -59,11 +70,15 @@ const Description = styled.div`
   color: ${({ theme }) => theme.color.blue};
 `;
 
+const cellWidth = "478px";
+
 const Item = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  width: 100%;
+  max-width: ${cellWidth};
   margin-top: 14px;
   margin-bottom: 14px;
 `;
@@ -88,8 +103,6 @@ const Preview = ({ repositoryURL, imageURL, alt }: PreviewProps) => {
 
         height: 264px;
         width: 90%;
-        margin-left: auto;
-        margin-right: auto;
         background-color: ${theme.color.gray1};
       `}
       href={repositoryURL}
