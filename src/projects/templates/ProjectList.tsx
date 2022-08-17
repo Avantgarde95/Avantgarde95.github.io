@@ -36,13 +36,15 @@ const ProjectList = () => {
         <Korean>에 있습니다.</Korean>
         <English>.</English>
       </Description>
-      {onWideScreen ? (
-        <Grid cellWidth={cellWidth} cellHeight="340px" maxDimensionX={2}>
-          {items}
-        </Grid>
-      ) : (
-        items
-      )}
+      <Content>
+        {onWideScreen ? (
+          <Grid cellWidth={cellWidth} cellHeight="340px" maxDimensionX={2}>
+            {items}
+          </Grid>
+        ) : (
+          items
+        )}
+      </Content>
     </Container>
   );
 };
@@ -53,6 +55,14 @@ const Container = styled.div`
   align-items: center;
 
   width: 100%;
+  height: 100%;
+`;
+
+const Content = styled.div`
+  overflow-y: auto;
+
+  width: 100%;
+  flex: 1;
 `;
 
 const descriptionAnimation = createAnimation([fadeIn], "0.8s");
