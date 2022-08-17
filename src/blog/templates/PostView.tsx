@@ -75,11 +75,11 @@ const componentMap: ReactMarkdownOptions["components"] = {
       </InlineCode>
     );
   },
-  a: props => {
-    const youTubeID = parseYouTubeURL(props.href ?? "");
+  a: ({ node, ...others }) => {
+    const youTubeID = parseYouTubeURL(others.href ?? "");
 
     if (youTubeID === null) {
-      return <Link {...props} />;
+      return <Link {...others} />;
     } else {
       return (
         <YouTube
@@ -92,7 +92,7 @@ const componentMap: ReactMarkdownOptions["components"] = {
       );
     }
   },
-  img: ({ src, alt, ...others }) => (
+  img: ({ node, src, alt, ...others }) => (
     <ImageContainer>
       <img src={src} alt={alt} {...others} />
     </ImageContainer>
