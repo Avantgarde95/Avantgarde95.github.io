@@ -1,8 +1,7 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { ParsedUrlQuery } from "querystring";
 
-import { allCategories } from "blog/Category";
-import { posts } from "blog/Post";
+import { allCategories, allPosts } from "blog/Post";
 import PostPreviewList, { PostPreview } from "blog/templates/PostPreviewList";
 import Page from "layout/templates/Page";
 import { extractTextFromMarkdown } from "utils/StringUtils";
@@ -30,7 +29,7 @@ export const getStaticPaths: GetStaticPaths<Query> = async () => ({
 
 export const getStaticProps: GetStaticProps<FilteredPreviewListPageProps, Query> = async context => ({
   props: {
-    previews: posts
+    previews: allPosts
       .filter(post => post.category.toLowerCase() === context.params?.key)
       .sort((post1, post2) => post2.time - post1.time)
       .map(post => {

@@ -1,4 +1,5 @@
-import { Category } from "blog/Category";
+export const allCategories = ["Computer", "Music", "Misc"] as const;
+export type Category = typeof allCategories[number];
 
 export interface PostMeta {
   key: string;
@@ -11,7 +12,7 @@ export interface Post extends PostMeta {
   content: string;
 }
 
-export const posts: Array<Post> = [
+export const allPosts: Array<Post> = [
   {
     key: "wslgdisplayissue",
     title: 'Solving "Cannot open display" issue in WSLg',

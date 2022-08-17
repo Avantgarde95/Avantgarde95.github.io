@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 
 import { formatTime } from "utils/StringUtils";
-import { allCategories } from "blog/Category";
-import { PostMeta } from "blog/Post";
+import { allCategories, PostMeta } from "blog/Post";
 import Link from "components/Link";
 import { createAnimation, fadeIn, resetLink } from "styles/Mixins";
 

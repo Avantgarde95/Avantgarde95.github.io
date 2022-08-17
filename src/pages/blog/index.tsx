@@ -1,7 +1,7 @@
 import type { GetStaticProps } from "next";
 
 import { extractTextFromMarkdown } from "utils/StringUtils";
-import { posts } from "blog/Post";
+import { allPosts } from "blog/Post";
 import PostPreviewList, { PostPreview } from "blog/templates/PostPreviewList";
 import Page from "layout/templates/Page";
 
@@ -17,7 +17,7 @@ const PreviewListPage = ({ previews }: BlogPageProps) => (
 
 export const getStaticProps: GetStaticProps<BlogPageProps> = async context => ({
   props: {
-    previews: posts
+    previews: allPosts
       .sort((post1, post2) => post2.time - post1.time)
       .map(post => {
         const content = extractTextFromMarkdown(post.content);
