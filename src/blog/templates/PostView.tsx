@@ -64,7 +64,7 @@ const componentMap: ReactMarkdownOptions["components"] = {
       <SyntaxHighlighter
         // We put 'as' because of the strange type computation of `style`.
         style={SyntaxHighlighterTheme as any}
-        language={match[1]}
+        language={match[1].toLowerCase()}
         {...others}
       >
         {String(children).replace(/\n$/, "")}
