@@ -1,4 +1,5 @@
 import { Theme } from "@emotion/react";
+import { createTheme as createMUITheme } from "@mui/material/styles";
 
 export const defaultTheme: Theme = {
   color: {
@@ -10,3 +11,5 @@ export const defaultTheme: Theme = {
     blue: "#3c4fff",
   },
 };
+
+export const muiTheme = createMUITheme();
