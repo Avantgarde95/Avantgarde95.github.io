@@ -1,10 +1,12 @@
-import ReactMarkdown, { Options as ReactMarkdownOptions } from "react-markdown";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import SyntaxHighlighterTheme from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
-import remarkGfm from "remark-gfm";
 import { DiscussionEmbed } from "disqus-react";
 import styled from "@emotion/styled";
+import { rgba } from "polished";
 
+import ReactMarkdown, { Options as ReactMarkdownOptions } from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import SyntaxHighlighterTheme from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
 import javascript from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
 import typescript from "react-syntax-highlighter/dist/cjs/languages/prism/typescript";
 import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
@@ -17,7 +19,6 @@ import { formatTime, parseYouTubeURL } from "utils/StringUtils";
 import { Post } from "blog/Post";
 import Link from "components/Link";
 import { resetLink } from "styles/Mixins";
-import { rgba } from "polished";
 
 SyntaxHighlighter.registerLanguage("js", javascript);
 SyntaxHighlighter.registerLanguage("javascript", javascript);
@@ -38,7 +39,7 @@ const PostView = ({ post }: PostViewProps) => (
     <Title>{post.title}</Title>
     <DateView>{formatTime(post.time)}</DateView>
     <Content>
-      <ReactMarkdown components={componentMap} remarkPlugins={[remarkGfm]}>
+      <ReactMarkdown components={componentMap} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} skipHtml>
         {post.content}
       </ReactMarkdown>
     </Content>
