@@ -1,15 +1,14 @@
 import { useState } from "react";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import Button from "@mui/material/Button";
 
+import { languageState } from "states/Language";
 import Menu from "layout/templates/Menu";
-import { resetButton, resetTitle } from "styles/Mixins";
+import { createAnimation, fadeIn, resetButton, resetTitle } from "styles/Mixins";
 
 import MenuIcon from "layout/assets/Menu.svg";
-import LanguageIcon from "layout/assets/Language.svg";
-import { languageState } from "states/Language";
 
 interface HeaderProps {
   title: string;
@@ -32,6 +31,8 @@ const Container = styled.header`
   padding: 18px 20px;
 `;
 
+const titleAnimation = createAnimation([fadeIn], "0.5s");
+
 const Title = styled.h1`
   ${resetTitle}
 
@@ -40,11 +41,8 @@ const Title = styled.h1`
   flex: 1;
   font-size: 21px;
   font-weight: 700;
-`;
 
-const headerEndStyle = css`
-  width: 24px;
-  height: 24px;
+  ${titleAnimation.style}
 `;
 
 const MenuButton = () => {
@@ -74,8 +72,13 @@ const MenuButton = () => {
   );
 };
 
+const headerEndStyle = css`
+  width: 24px;
+  height: 24px;
+`;
+
 const LanguageButton = () => {
-  const setLanguage = useSetRecoilState(languageState);
+  const [language, setLanguage] = useRecoilState(languageState);
 
   const handleClickButton = () => {
     setLanguage(language => (language === "Korean" ? "English" : "Korean"));
@@ -88,16 +91,41 @@ const LanguageButton = () => {
           ${resetButton}
           ${headerEndStyle}
 
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+
           min-width: 0;
           min-height: 0;
           margin-left: auto;
         `}
         onClick={handleClickButton}
       >
-        <LanguageIcon />
+        <span
+          css={css`
+            ${createLanguageStyle(language === "Korean")}
+          `}
+        >
+          가
+        </span>
+        <span
+          css={css`
+            ${createLanguageStyle(language === "English")}
+          `}
+        >
+          A
+        </span>
       </Button>
     </>
   );
 };
+
+const createLanguageStyle = (isActive: boolean) => css`
+  font-size: ${isActive ? "21px" : "12px"};
+  line-height: ${isActive ? "21px" : "12px"};
+  opacity: ${isActive ? 1 : 0.5};
+
+  transition: opacity 1s, font-size 0.3s, line-height 0.3s;
+`;
 
 export default Header;
