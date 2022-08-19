@@ -10,7 +10,7 @@ interface BlogPageProps {
 }
 
 const PreviewListPage = ({ previews }: BlogPageProps) => (
-  <Page title="Blog">
+  <Page title={{ Korean: "블로그", English: "Blog" }}>
     <PostPreviewList previews={previews} />
   </Page>
 );

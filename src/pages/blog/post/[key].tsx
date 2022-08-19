@@ -9,7 +9,9 @@ interface PostPageProps {
   post?: Post;
 }
 
-const PostPage = ({ post }: PostPageProps) => <Page title="Blog">{post && <PostView post={post} />}</Page>;
+const PostPage = ({ post }: PostPageProps) => (
+  <Page title={{ Korean: "블로그", English: "Blog" }}>{post && <PostView post={post} />}</Page>
+);
 
 interface Query extends ParsedUrlQuery {
   key: string;

@@ -5,7 +5,7 @@ import TechnologySection from "home/templates/TechnologySection";
 import LinksSection from "home/templates/LinksSection";
 
 const HomePage = () => (
-  <Page title="Welcome">
+  <Page title={{ Korean: "환영합니다", English: "Welcome" }}>
     <ProfileSection />
     <EducationSection />
     <TechnologySection />

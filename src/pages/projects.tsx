@@ -2,7 +2,7 @@ import Page from "layout/templates/Page";
 import ProjectList from "projects/templates/ProjectList";
 
 const ProjectsPage = () => (
-  <Page title="Project">
+  <Page title={{ Korean: "프로젝트", English: "Projects" }}>
     <ProjectList />
   </Page>
 );

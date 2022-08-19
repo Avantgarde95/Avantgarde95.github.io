@@ -1,23 +1,29 @@
 import { ReactNode } from "react";
+import { useRecoilValue } from "recoil";
 import styled from "@emotion/styled";
 
+import { Language, languageState } from "states/Language";
 import StatusBar from "layout/templates/StatusBar";
 import Header from "layout/templates/Header";
 
 interface PageProps {
-  title: string;
+  title: Record<Language, string>;
   children: ReactNode;
 }
 
-const Page = ({ title, children }: PageProps) => (
-  <Container>
-    <Inner>
-      <StatusBar />
-      <Header title={title} />
-      <Content>{children}</Content>
-    </Inner>
-  </Container>
-);
+const Page = ({ title, children }: PageProps) => {
+  const language = useRecoilValue(languageState);
+
+  return (
+    <Container>
+      <Inner>
+        <StatusBar />
+        <Header title={title[language]} />
+        <Content>{children}</Content>
+      </Inner>
+    </Container>
+  );
+};
 
 const Container = styled.div`
   display: flex;
