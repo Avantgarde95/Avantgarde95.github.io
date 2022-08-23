@@ -1,8 +1,8 @@
-import Page from "layout/templates/Page";
-import ProfileSection from "home/templates/ProfileSection";
-import EducationSection from "home/templates/EducationSection";
-import TechnologySection from "home/templates/TechnologySection";
-import LinksSection from "home/templates/LinksSection";
+import Page from "modules/layout/components/Page";
+import ProfileSection from "modules/home/components/ProfileSection";
+import EducationSection from "modules/home/components/EducationSection";
+import TechnologySection from "modules/home/components/TechnologySection";
+import LinksSection from "modules/home/components/LinksSection";
 
 const HomePage = () => (
   <Page title={{ Korean: "환영합니다", English: "Welcome" }}>

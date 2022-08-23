@@ -1,5 +1,5 @@
-import Page from "layout/templates/Page";
-import MusicList from "musics/templates/MusicList";
+import Page from "modules/layout/components/Page";
+import MusicList from "modules/musics/components/MusicList";
 
 const MusicsPage = () => (
   <Page title={{ Korean: "음악", English: "Musics" }}>

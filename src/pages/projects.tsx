@@ -1,5 +1,5 @@
-import Page from "layout/templates/Page";
-import ProjectList from "projects/templates/ProjectList";
+import Page from "modules/layout/components/Page";
+import ProjectList from "modules/projects/components/ProjectList";
 
 const ProjectsPage = () => (
   <Page title={{ Korean: "프로젝트", English: "Projects" }}>

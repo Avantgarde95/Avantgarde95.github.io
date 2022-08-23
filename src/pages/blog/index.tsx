@@ -1,9 +1,9 @@
 import type { GetStaticProps } from "next";
 
-import { extractTextFromMarkdown } from "utils/StringUtils";
-import { allPosts } from "blog/Post";
-import PostPreviewList, { PostPreview } from "blog/templates/PostPreviewList";
-import Page from "layout/templates/Page";
+import { extractTextFromMarkdown } from "common/utils/StringUtils";
+import { allPosts } from "modules/blog/Post";
+import PostPreviewList, { PostPreview } from "modules/blog/components/PostPreviewList";
+import Page from "modules/layout/components/Page";
 
 interface BlogPageProps {
   previews: Array<PostPreview>;

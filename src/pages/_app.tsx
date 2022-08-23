@@ -4,8 +4,8 @@ import Script from "next/script";
 import { Global, ThemeProvider } from "@emotion/react";
 import { ThemeProvider as MUIThemeProvider } from "@mui/material/styles";
 
-import { globalStyle } from "styles/Global";
-import { defaultTheme, muiTheme } from "styles/Theme";
+import { globalStyle } from "common/styles/Global";
+import { defaultTheme, muiTheme } from "common/styles/Theme";
 
 const App = ({ Component, pageProps }: AppProps) => (
   <RecoilRoot>

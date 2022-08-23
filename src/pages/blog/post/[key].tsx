@@ -1,9 +1,9 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { ParsedUrlQuery } from "querystring";
 
-import { Post, allPosts } from "blog/Post";
-import PostView from "blog/templates/PostView";
-import Page from "layout/templates/Page";
+import { Post, allPosts } from "modules/blog/Post";
+import PostView from "modules/blog/components/PostView";
+import Page from "modules/layout/components/Page";
 
 interface PostPageProps {
   post?: Post;
