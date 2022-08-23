@@ -17,6 +17,7 @@ interface PostPreviewListProps {
 const PostPreviewList = ({ previews }: PostPreviewListProps) => (
   <Container>
     <Categories>
+      <CategoryButton href={`/blog`}>All</CategoryButton>
       {allCategories.map(category => (
         <CategoryButton key={category} href={`/blog/category/${category.toLowerCase()}`}>
           {category}
