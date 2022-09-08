@@ -39,3 +39,10 @@ Check the code
 
 - Run `yarn lint`
 - Run `yarn lint:fix` to check & fix
+
+## How to add contents
+
+Add a blog post
+
+- Create a post in "src/modules/blog/posts"
+- Register the post on "src/modules/blog/Post.ts"
