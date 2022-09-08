@@ -14,6 +14,13 @@ export interface Post extends PostMeta {
 
 export const allPosts: Array<Post> = [
   {
+    key: "cssinjscompatible",
+    title: "Creating a component compatible to CSS-in-JS",
+    time: new Date("2022-09-08").getTime(),
+    category: "Computer",
+    content: require("modules/blog/posts/CSSInJSCompatible.md"),
+  },
+  {
     key: "wslgdisplayissue",
     title: 'Solving "Cannot open display" issue in WSLg',
     time: new Date("2022-03-31").getTime(),
