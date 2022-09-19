@@ -14,6 +14,13 @@ export interface Post extends PostMeta {
 
 export const allPosts: Array<Post> = [
   {
+    key: "nextgithubpages",
+    title: "Creating GitHub pages using Next.js",
+    time: new Date("2022-09-19").getTime(),
+    category: "Computer",
+    content: require("modules/blog/posts/NextGitHubPages.md"),
+  },
+  {
     key: "cssinjscompatible",
     title: "Creating a component compatible to CSS-in-JS",
     time: new Date("2022-09-08").getTime(),
