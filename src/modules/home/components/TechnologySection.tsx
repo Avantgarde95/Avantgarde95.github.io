@@ -1,16 +1,17 @@
-import { ElementType, useState } from "react";
+import { useState } from "react";
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 import Button from "@mui/material/Button";
 
 import { createAnimation, fadeIn, resetButton, zoomIn } from "common/styles/Mixins";
 import Section from "modules/home/components/Section";
 
-import ReactIcon from "modules/home/assets/React.svg";
-import JSIcon from "modules/home/assets/JS.svg";
-import TSIcon from "modules/home/assets/TS.svg";
-import CSSIcon from "modules/home/assets/CSS.svg";
-import CPPIcon from "modules/home/assets/CPP.svg";
-import WebpackIcon from "modules/home/assets/Webpack.svg";
+import ReactIcon from "modules/home/assets/React.png";
+import JSIcon from "modules/home/assets/JS.png";
+import TSIcon from "modules/home/assets/TS.png";
+import CSSIcon from "modules/home/assets/CSS.png";
+import CPPIcon from "modules/home/assets/CPP.png";
+import WebpackIcon from "modules/home/assets/Webpack.png";
 
 const TechnologySection = () => {
   const [selectedName, setSelectedName] = useState<string | null>(null);
@@ -28,28 +29,30 @@ const TechnologySection = () => {
   return (
     <Section title={{ Korean: `주요기술${titleTail}`, English: `Main technologies${titleTail}` }}>
       <Gallery onBlur={handleBlurGallery}>
-        {iconInfos.map(([name, Icon]) => (
+        {iconInfos.map(([name, url]) => (
           <IconButton
+            css={css`
+              background-image: url(${url});
+              background-repeat: no-repeat;
+            `}
             key={name}
             onClick={() => {
               handleClickIconButton(name);
             }}
-          >
-            <Icon />
-          </IconButton>
+          />
         ))}
       </Gallery>
     </Section>
   );
 };
 
-const iconInfos: Array<[string, ElementType]> = [
-  ["React", ReactIcon],
-  ["JavaScript", JSIcon],
-  ["TypeScript", TSIcon],
-  ["CSS", CSSIcon],
-  ["C++", CPPIcon],
-  ["Webpack", WebpackIcon],
+const iconInfos: Array<[string, string]> = [
+  ["React", ReactIcon.src],
+  ["JavaScript", JSIcon.src],
+  ["TypeScript", TSIcon.src],
+  ["CSS", CSSIcon.src],
+  ["C++", CPPIcon.src],
+  ["Webpack", WebpackIcon.src],
 ];
 
 const Gallery = styled.div`
