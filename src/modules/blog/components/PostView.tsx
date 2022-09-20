@@ -1,6 +1,8 @@
-import { DiscussionEmbed } from "disqus-react";
+import { ComponentProps, useState } from "react";
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { rgba } from "polished";
+import { DiscussionEmbed } from "disqus-react";
 
 import ReactMarkdown, { Options as ReactMarkdownOptions } from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -16,9 +18,9 @@ import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
 import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 
 import { formatTime, parseYouTubeURL } from "common/utils/StringUtils";
-import { Post } from "modules/blog/Post";
 import Link from "common/components/Link";
 import { resetLink } from "common/styles/Mixins";
+import { Post } from "modules/blog/Post";
 
 SyntaxHighlighter.registerLanguage("js", javascript);
 SyntaxHighlighter.registerLanguage("javascript", javascript);
@@ -46,7 +48,7 @@ const PostView = ({ post }: PostViewProps) => (
     <Others>
       Category: <CategoryLink href={`/blog/category/${post.category.toLowerCase()}`}>{post.category}</CategoryLink>
     </Others>
-    <DiscussionEmbed
+    <Comments
       shortname={"Avantgarde95"}
       config={{
         url: `https://avantgarde95.github.io/blog/${post.key}`,
@@ -200,5 +202,36 @@ const CategoryLink = styled(Link)`
 
   color: ${({ theme }) => theme.color.blue};
 `;
+
+const Comments = (props: ComponentProps<typeof DiscussionEmbed>) => {
+  const [isReady, setReady] = useState(false);
+
+  const newProps: typeof props = {
+    ...props,
+    config: {
+      ...props.config,
+      onReady: () => {
+        setReady(true);
+      },
+    },
+  };
+
+  return (
+    <>
+      {!isReady && (
+        <div
+          css={css`
+            margin-top: 32px;
+            margin-bottom: 128px;
+            font-size: 16px;
+          `}
+        >
+          Loading the comments...
+        </div>
+      )}
+      <DiscussionEmbed {...newProps} />
+    </>
+  );
+};
 
 export default PostView;
