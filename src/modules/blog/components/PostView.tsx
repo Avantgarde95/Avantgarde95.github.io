@@ -1,10 +1,11 @@
-import { ComponentProps, useState } from "react";
+import { ComponentProps, ComponentPropsWithRef, useState } from "react";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { rgba } from "polished";
 import { DiscussionEmbed } from "disqus-react";
 
-import ReactMarkdown, { Options as ReactMarkdownOptions } from "react-markdown";
+import ReactMarkdown from "react-markdown";
+import { ReactMarkdownProps, CodeProps } from "react-markdown/lib/ast-to-react";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -18,6 +19,7 @@ import python from "react-syntax-highlighter/dist/cjs/languages/prism/python";
 import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 
 import { formatTime, parseYouTubeURL } from "common/utils/StringUtils";
+import useClient from "common/hooks/useClient";
 import Link from "common/components/Link";
 import { resetLink } from "common/styles/Mixins";
 import { Post } from "modules/blog/Post";
@@ -41,7 +43,16 @@ const PostView = ({ post }: PostViewProps) => (
     <Title>{post.title}</Title>
     <DateView>{formatTime(post.time)}</DateView>
     <Content>
-      <ReactMarkdown components={componentMap} remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} skipHtml>
+      <ReactMarkdown
+        components={{
+          code: MarkdownCode,
+          a: MarkdownLink,
+          img: MarkdownImage,
+        }}
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
+        skipHtml
+      >
         {post.content}
       </ReactMarkdown>
     </Content>
@@ -59,48 +70,56 @@ const PostView = ({ post }: PostViewProps) => (
   </Container>
 );
 
-const componentMap: ReactMarkdownOptions["components"] = {
-  code: ({ node, inline, className, children, ...others }) => {
-    const match = /language-(\w+)/.exec(className || "");
+const MarkdownCode = ({ node, inline, className, children, ...others }: CodeProps) => {
+  const { isClient } = useClient();
 
-    return !inline && match ? (
-      <SyntaxHighlighter
-        // We put 'as' because of the strange type computation of `style`.
-        style={SyntaxHighlighterTheme as any}
-        language={match[1].toLowerCase()}
-        {...others}
-      >
-        {String(children).replace(/\n$/, "")}
-      </SyntaxHighlighter>
-    ) : (
-      <InlineCode className={className} {...others}>
-        {children}
-      </InlineCode>
-    );
-  },
-  a: ({ node, ...others }) => {
-    const youTubeID = parseYouTubeURL(others.href ?? "");
+  const match = /language-(\w+)/.exec(className || "");
 
-    if (youTubeID === null) {
-      return <Link {...others} />;
-    } else {
-      return (
-        <YouTube
-          width={560}
-          height={315}
-          frameBorder={0}
-          allowFullScreen
-          src={`https://www.youtube.com/embed/${youTubeID}`}
-        />
-      );
-    }
-  },
-  img: ({ node, src, alt, ...others }) => (
-    <ImageContainer>
-      <img src={src} alt={alt} {...others} />
-    </ImageContainer>
-  ),
+  return isClient && !inline && match ? (
+    <SyntaxHighlighter
+      // We put 'as' because of the strange type computation of `style`.
+      style={SyntaxHighlighterTheme as any}
+      language={match[1].toLowerCase()}
+      {...others}
+    >
+      {String(children).replace(/\n$/, "")}
+    </SyntaxHighlighter>
+  ) : (
+    <InlineCode className={className} {...others}>
+      {children}
+    </InlineCode>
+  );
 };
+
+const MarkdownLink = ({ node, ...others }: ReactMarkdownProps & ComponentPropsWithRef<"a">) => {
+  const youTubeID = parseYouTubeURL(others.href ?? "");
+
+  if (youTubeID === null) {
+    return <Link {...others} />;
+  } else {
+    return (
+      <YouTube
+        width={560}
+        height={315}
+        frameBorder={0}
+        allowFullScreen
+        src={`https://www.youtube.com/embed/${youTubeID}`}
+      />
+    );
+  }
+};
+
+const MarkdownImage = ({ node, src, alt, ...others }: ReactMarkdownProps & ComponentProps<"img">) => (
+  <div
+    css={css`
+      overflow-x: auto;
+
+      width: 100%;
+    `}
+  >
+    <img src={src} alt={alt} {...others} />
+  </div>
+);
 
 const InlineCode = styled.code`
   box-sizing: border-box;
@@ -114,12 +133,6 @@ const InlineCode = styled.code`
 
 const YouTube = styled.iframe`
   max-width: 100%;
-`;
-
-const ImageContainer = styled.div`
-  overflow-x: auto;
-
-  width: 100%;
 `;
 
 const Container = styled.div`
