@@ -14,6 +14,13 @@ export interface Post extends PostMeta {
 
 export const allPosts: Array<Post> = [
   {
+    key: "nextmismatch",
+    title: "Server & client mismatch problem in Next.js",
+    time: new Date("2022-09-21").getTime(),
+    category: "Computer",
+    content: require("modules/blog/posts/NextMismatch.md"),
+  },
+  {
     key: "nextgithubpages",
     title: "Creating GitHub pages using Next.js",
     time: new Date("2022-09-19").getTime(),
