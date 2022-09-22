@@ -1,5 +1,8 @@
 module.exports = {
   trailingSlash: true,
+  compiler: {
+    emotion: true,
+  },
   webpack: config => {
     config.module.rules.push(
       {
