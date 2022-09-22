@@ -20,7 +20,7 @@ import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 
 import { formatTime, parseYouTubeURL } from "common/utils/StringUtils";
 import useClient from "common/hooks/useClient";
-import Link from "common/components/Link";
+import NextLink from "common/components/NextLink";
 import { resetLink } from "common/styles/Mixins";
 import { Post } from "modules/blog/Post";
 
@@ -95,7 +95,7 @@ const MarkdownLink = ({ node, ...others }: ReactMarkdownProps & ComponentPropsWi
   const youTubeID = parseYouTubeURL(others.href ?? "");
 
   if (youTubeID === null) {
-    return <Link {...others} />;
+    return <NextLink {...others} />;
   } else {
     return (
       <YouTube
@@ -210,7 +210,7 @@ const Others = styled.div`
   font-size: 16px;
 `;
 
-const CategoryLink = styled(Link)`
+const CategoryLink = styled(NextLink)`
   ${resetLink}
 
   color: ${({ theme }) => theme.color.blue};

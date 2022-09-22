@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 import { formatTime } from "common/utils/StringUtils";
 import { allCategories, PostMeta } from "modules/blog/Post";
-import Link from "common/components/Link";
+import NextLink from "common/components/NextLink";
 import { createAnimation, fadeIn, resetLink } from "common/styles/Mixins";
 
 export interface PostPreview extends PostMeta {
@@ -73,7 +73,7 @@ const Categories = styled.div`
   color: ${({ theme }) => theme.color.blue};
 `;
 
-const CategoryButton = styled(Link)`
+const CategoryButton = styled(NextLink)`
   ${resetLink}
 
   &:not(:first-of-type) {
@@ -93,7 +93,7 @@ const Row = styled.div`
   }
 `;
 
-const PostLink = styled(Link)`
+const PostLink = styled(NextLink)`
   ${resetLink}
 
   display: block;
@@ -121,7 +121,7 @@ const Others = styled.div`
   font-size: 16px;
 `;
 
-const CategoryLink = styled(Link)`
+const CategoryLink = styled(NextLink)`
   ${resetLink}
 
   color: ${({ theme }) => theme.color.blue};

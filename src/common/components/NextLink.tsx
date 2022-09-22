@@ -1,11 +1,11 @@
 import { ComponentProps, forwardRef } from "react";
-import NextLink from "next/link";
+import Link from "next/link";
 
 /**
  * Wrap Next.js Link to enable styling it with Emotion.
  */
-const Link = forwardRef<HTMLAnchorElement, ComponentProps<"a">>(({ href, children, ...others }, ref) => (
-  <NextLink href={href ?? "#"}>
+const NextLink = forwardRef<HTMLAnchorElement, ComponentProps<"a">>(({ href = "/", children, ...others }, ref) => (
+  <Link href={href}>
     <a
       ref={ref}
       // Open external links at the new tabs.
@@ -15,9 +15,9 @@ const Link = forwardRef<HTMLAnchorElement, ComponentProps<"a">>(({ href, childre
       {/* We separate `children` from `others` to avoid anchor-has-content lint error. */}
       {children}
     </a>
-  </NextLink>
+  </Link>
 ));
 
-Link.displayName = "Link";
+NextLink.displayName = "NextLink";
 
-export default Link;
+export default NextLink;

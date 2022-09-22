@@ -4,7 +4,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 import useURL from "common/hooks/useURL";
 import { English, Korean } from "common/components/Language";
-import Link from "common/components/Link";
+import NextLink from "common/components/NextLink";
 import Grid from "common/components/Grid";
 import { createAnimation, fadeIn, resetLink, wideScreen } from "common/styles/Mixins";
 
@@ -25,14 +25,14 @@ const ProjectList = () => {
       <Description>
         <Korean>더 자세한 정보는 </Korean>
         <English>You can see the details at </English>
-        <Link
+        <NextLink
           css={css`
             text-decoration: underline;
           `}
           href="https://github.com/Avantgarde95"
         >
           Github
-        </Link>
+        </NextLink>
         <Korean>에 있습니다.</Korean>
         <English>.</English>
       </Description>
@@ -104,7 +104,7 @@ const Preview = ({ repositoryURL, imageURL, alt }: PreviewProps) => {
   const theme = useTheme();
 
   return (
-    <Link
+    <NextLink
       css={css`
         ${resetLink}
 
@@ -129,7 +129,7 @@ const Preview = ({ repositoryURL, imageURL, alt }: PreviewProps) => {
           alt={alt}
         />
       )}
-    </Link>
+    </NextLink>
   );
 };
 

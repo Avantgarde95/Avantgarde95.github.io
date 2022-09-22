@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { css, useTheme } from "@emotion/react";
 import Button, { ButtonProps } from "@mui/material/Button";
 
-import Link from "common/components/Link";
+import NextLink from "common/components/NextLink";
 import Section from "modules/home/components/Section";
 import { createAnimation, fadeIn, putShadow, resetLink } from "common/styles/Mixins";
 
@@ -66,7 +66,7 @@ const EachLink = (props: ButtonProps) => {
           width: 28px;
         }
       `}
-      LinkComponent={Link}
+      LinkComponent={NextLink}
       {...props}
     />
   );

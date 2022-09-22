@@ -5,7 +5,7 @@ import Drawer from "@mui/material/Drawer";
 import Button, { ButtonProps } from "@mui/material/Button";
 
 import useScreen from "common/hooks/useScreen";
-import Link from "common/components/Link";
+import NextLink from "common/components/NextLink";
 import { resetButton, resetLink } from "common/styles/Mixins";
 
 import CloseMenu from "modules/layout/assets/CloseMenu.svg";
@@ -100,7 +100,7 @@ const EachLink = (props: ButtonProps) => {
         border-radius: 0;
         border-bottom: 0.5px solid ${theme.color.black};
       `}
-      LinkComponent={Link}
+      LinkComponent={NextLink}
       {...props}
     />
   );
