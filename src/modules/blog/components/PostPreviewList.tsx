@@ -1,8 +1,10 @@
+import { useRecoilValue } from "recoil";
 import styled from "@emotion/styled";
 
-import { formatTime } from "common/utils/StringUtils";
 import { allCategories, PostMeta } from "modules/blog/Post";
+import { formatTime } from "common/utils/StringUtils";
 import NextLink from "common/components/NextLink";
+import { languageState } from "common/states/Language";
 import { createAnimation, fadeIn, resetLink } from "common/styles/Mixins";
 
 export interface PostPreview extends PostMeta {
@@ -31,7 +33,7 @@ const PostPreviewList = ({ previews }: PostPreviewListProps) => (
           <DateView>{formatTime(preview.time)}</DateView>
           <PostContent dangerouslySetInnerHTML={{ __html: preview.content }} />
           <Others>
-            Category:{" "}
+            <CategoryLabel />
             <CategoryLink href={`/blog/category/${preview.category.toLowerCase()}`}>{preview.category}</CategoryLink>
           </Others>
         </Row>
@@ -72,6 +74,11 @@ const Categories = styled.div`
 
   color: ${({ theme }) => theme.color.blue};
 `;
+const CategoryLabel = () => {
+  const language = useRecoilValue(languageState);
+
+  return <>{language === "Korean" ? "카테고리" : "Category"}:&nbsp;</>;
+};
 
 const CategoryButton = styled(NextLink)`
   ${resetLink}

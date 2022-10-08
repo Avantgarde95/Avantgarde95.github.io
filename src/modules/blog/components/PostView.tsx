@@ -1,4 +1,5 @@
 import { ComponentProps, ComponentPropsWithRef, useState } from "react";
+import { useRecoilValue } from "recoil";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { rgba } from "polished";
@@ -20,6 +21,7 @@ import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 
 import { formatTime, parseYouTubeURL } from "common/utils/StringUtils";
 import useClient from "common/hooks/useClient";
+import { languageState } from "common/states/Language";
 import NextLink from "common/components/NextLink";
 import { resetLink } from "common/styles/Mixins";
 import { Post } from "modules/blog/Post";
@@ -57,7 +59,8 @@ const PostView = ({ post }: PostViewProps) => (
       </ReactMarkdown>
     </Content>
     <Others>
-      Category: <CategoryLink href={`/blog/category/${post.category.toLowerCase()}`}>{post.category}</CategoryLink>
+      <CategoryLabel />
+      <CategoryLink href={`/blog/category/${post.category.toLowerCase()}`}>{post.category}</CategoryLink>
     </Others>
     <Comments
       shortname={"Avantgarde95"}
@@ -69,6 +72,12 @@ const PostView = ({ post }: PostViewProps) => (
     />
   </Container>
 );
+
+const CategoryLabel = () => {
+  const language = useRecoilValue(languageState);
+
+  return <>{language === "Korean" ? "카테고리" : "Category"}:&nbsp;</>;
+};
 
 const MarkdownCode = ({ node, inline, className, children, ...others }: CodeProps) => {
   const { isClient } = useClient();

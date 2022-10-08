@@ -12,6 +12,8 @@ Uncaught Error: Minified React error #423; visit https://reactjs.org/docs/error-
 
 위 에러 메시지들에 나온 링크를 방문해보면 아래와 같은 메시지들이 나온다.
 
+If you visit the links in these error messages, you will see the following messages.
+
 - Text content does not match server-rendered HTML.
 - Hydration failed because the initial UI does not match what was rendered on the server.
 - There was an error while hydrating. Because the error happened outside of a Suspense boundary, the entire root will switch to client rendering.
