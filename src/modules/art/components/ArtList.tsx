@@ -145,7 +145,7 @@ interface WorkViewProps {
 }
 
 const WorkView = ({ work }: WorkViewProps) => {
-  const { ref, inView } = useInView({ triggerOnce: true });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.8 });
   const theme = useTheme();
   const [load, setLoad] = useState(false);
   const { value, forceUpdate } = useForceUpdate();
