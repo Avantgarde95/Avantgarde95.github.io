@@ -50,6 +50,7 @@ const Menu = ({ show, setShow }: MenuProps) => {
       <EachLink href="https://avant-resume.vercel.app/">Resume</EachLink>
       <EachLink href="/projects">Projects</EachLink>
       <EachLink href="/musics">Musics</EachLink>
+      <EachLink href="/art">Art</EachLink>
       <EachLink href="/blog">Blog</EachLink>
       <EachLink href="https://github.com/Avantgarde95">GitHub</EachLink>
     </Drawer>
