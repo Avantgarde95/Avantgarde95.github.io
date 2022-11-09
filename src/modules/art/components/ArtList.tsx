@@ -6,9 +6,9 @@ import Button from "@mui/material/Button";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { IoIosRefresh } from "react-icons/io";
 import { FaRegWindowRestore } from "react-icons/fa";
+import { BsCode } from "react-icons/bs";
 
 import useForceUpdate from "common/hooks/useForceUpdate";
-import NextLink from "common/components/NextLink";
 import Grid from "common/components/Grid";
 import { English, Korean } from "common/components/Language";
 import { createAnimation, fadeIn, resetButton, wideScreen } from "common/styles/Mixins";
@@ -160,8 +160,12 @@ const WorkView = ({ work }: WorkViewProps) => {
 
   const handleClickRefresh = forceUpdate;
 
-  const handleClickNewTab = () => {
+  const handleOpenDemo = () => {
     window.open(work.demoURL, "_blank");
+  };
+
+  const handleOpenCode = () => {
+    window.open(work.codeURL, "_blank");
   };
 
   return (
@@ -195,26 +199,19 @@ const WorkView = ({ work }: WorkViewProps) => {
             />
             <Controls>
               <ControlButton onClick={handleClickRefresh}>
-                <IoIosRefresh
-                  css={css`
-                    position: relative;
-                  `}
-                />
+                <IoIosRefresh />
               </ControlButton>
-              <ControlButton onClick={handleClickNewTab}>
-                <FaRegWindowRestore
-                  css={css`
-                    position: relative;
-                  `}
-                />
+              <ControlButton onClick={handleOpenDemo}>
+                <FaRegWindowRestore />
+              </ControlButton>
+              <ControlButton onClick={handleOpenCode}>
+                <BsCode />
               </ControlButton>
             </Controls>
           </>
         )}
       </div>
-      <Name>
-        <NextLink href={work.codeURL}>{work.name}</NextLink>
-      </Name>
+      <Name>{work.name}</Name>
     </Item>
   );
 };
@@ -239,8 +236,8 @@ const ControlButton = styled(Button)`
   justify-content: center;
   align-items: center;
 
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   min-width: 0;
   min-height: 0;
   padding: 0;
