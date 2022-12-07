@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { css, useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
@@ -17,12 +17,13 @@ const ArtList = () => {
   const onWideScreen = useMediaQuery(wideScreen);
 
   const items = works.map(work => <WorkView key={work.name} work={work} />);
+  items.reverse();
 
   return (
     <Container>
       <Description>
-        <Korean>CSS를 주로 사용하여 제작한 작품들입니다.</Korean>
-        <English>These are works made mainly using CSS.</English>
+        <Korean>웹을 이용하여 제작한 작품들입니다.</Korean>
+        <English>These are works made using web technology.</English>
       </Description>
       <Content>
         {onWideScreen ? (
@@ -94,6 +95,12 @@ const works: Array<Work> = [
     codeURL: "https://codesandbox.io/s/infinite-loop-coding-logo-rj10sv",
   },
   { name: "c2022yh", demoURL: "https://vg3w5j.csb.app/", codeURL: "https://codesandbox.io/s/c2022yh-vg3w5j" },
+  {
+    name: "moon",
+    demoURL: "https://2mj3hc.csb.app/",
+    codeURL: "https://codesandbox.io/s/2mj3hc",
+    scale: 0.7,
+  },
 ];
 
 const Container = styled.div`
