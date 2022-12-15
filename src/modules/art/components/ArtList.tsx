@@ -101,6 +101,7 @@ const works: Array<Work> = [
     codeURL: "https://codesandbox.io/s/2mj3hc",
     scale: 0.7,
   },
+  { name: "snowman", demoURL: "https://ejbt1s.csb.app/", codeURL: "https://codesandbox.io/s/ejbt1s", scale: 0.7 },
 ];
 
 const Container = styled.div`
