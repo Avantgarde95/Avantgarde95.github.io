@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+  html {
+    /* Set rem size. */
+    font-size: 16px;
+  }
+}
