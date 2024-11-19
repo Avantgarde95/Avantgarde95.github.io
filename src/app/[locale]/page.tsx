@@ -4,14 +4,17 @@ import { localeNames } from "@/common/models/I18n";
 import Header from "@/common/components/Header";
 import PageMenu from "@/common/components/PageMenu";
 import { generateElementID } from "@/common/utils/DOM";
-import About from "@/modules/home/About";
 import { CommonPageProps, CommonParamsProps } from "@/common/models/Props";
+import About from "@/modules/home/About";
+import Careers from "@/modules/home/Careers";
+import Education from "@/modules/home/Education";
+import Links from "@/modules/home/Links";
 
 const sections: Record<string, { title: string; content: (props: CommonParamsProps) => ReactNode }> = {
   about: { title: "About", content: ({ params }) => <About params={params} /> },
-  careers: { title: "Careers", content: () => null },
-  education: { title: "Education", content: () => null },
-  contacts: { title: "Contacts", content: () => null },
+  careers: { title: "Careers", content: ({ params }) => <Careers params={params} /> },
+  education: { title: "Education", content: ({ params }) => <Education params={params} /> },
+  links: { title: "Links", content: () => <Links /> },
 };
 
 const Page = async ({ params }: CommonPageProps) => (

@@ -18,5 +18,7 @@ module.exports = {
     ],
     // Whether allowing using <img> instead of <Image> or not.
     "@next/next/no-img-element": "off",
+    // Not needed in app router-based project.
+    "@next/next/no-page-custom-font": "off",
   },
 };
