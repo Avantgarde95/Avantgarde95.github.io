@@ -1,3 +1,3 @@
-const Page = () => <div>Hello</div>;
+import Page from "@/app/[locale]/page";
 
 export default Page;

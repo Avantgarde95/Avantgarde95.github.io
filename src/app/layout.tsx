@@ -1,3 +1,5 @@
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+
 import { CommonLayoutProps } from "@/common/models/Props";
 
 import "@/common/styles/Global.css";
@@ -18,9 +20,11 @@ const Layout = ({ children }: CommonLayoutProps) => (
       <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet" />
     </head>
     <body className="m-0 h-full w-full p-0">
-      <div className="flex h-full w-full flex-row justify-center bg-background text-primary">
-        <div className="w-full max-w-screen-lg px-6 py-16">{children}</div>
-      </div>
+      <AppRouterCacheProvider>
+        <div className="flex h-full w-full flex-row justify-center bg-background text-primary">
+          <div className="w-full max-w-screen-lg px-6 py-16">{children}</div>
+        </div>
+      </AppRouterCacheProvider>
     </body>
   </html>
 );
