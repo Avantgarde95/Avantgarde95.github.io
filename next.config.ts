@@ -1,8 +1,12 @@
 import type { NextConfig } from "next";
 
+const isDevelopment = process.env.NODE_ENV === "development";
+
+console.log(`===== ${isDevelopment ? "Dev. mode" : "Prod. mode"} =====`);
+
 const nextConfig: NextConfig = {
   output: "export",
-  distDir: "docs",
+  distDir: isDevelopment ? ".next" : "docs",
   webpack: config => {
     config.module.rules.push(
       {
