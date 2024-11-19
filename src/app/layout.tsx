@@ -21,7 +21,7 @@ const Layout = ({ children }: CommonLayoutProps) => (
     </head>
     <body className="m-0 h-full w-full p-0">
       <AppRouterCacheProvider>
-        <div className="flex h-full w-full flex-row justify-center bg-background text-primary">
+        <div className="flex h-full w-full flex-row justify-center overflow-y-auto scroll-smooth bg-background text-primary">
           <div className="w-full max-w-screen-lg px-6 py-16">{children}</div>
         </div>
       </AppRouterCacheProvider>

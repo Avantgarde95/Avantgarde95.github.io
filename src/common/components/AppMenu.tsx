@@ -7,15 +7,15 @@ import MenuItem from "@mui/material/MenuItem";
 
 import allRoutes from "@/common/models/Routes";
 
-const dimensionX = 20;
-const separator = <div className="px-2 py-1">+{"-".repeat(dimensionX - 2)}+</div>;
-
 const navItems: Array<{ name: string; url: string }> = [
   { name: "Home", url: allRoutes.home.url },
   { name: "Projects", url: allRoutes.projects.url },
   { name: "Musics", url: allRoutes.musics.url },
   { name: "Art", url: allRoutes.art.url },
 ];
+
+const dimensionX = 20;
+const separator = <div className="px-2 py-1">+{"-".repeat(dimensionX - 2)}+</div>;
 
 const AppMenu = () => {
   const [anchor, setAnchor] = useState<HTMLElement | null>(null);
@@ -37,7 +37,7 @@ const AppMenu = () => {
       <Menu
         slotProps={{
           paper: {
-            className: "!bg-background",
+            className: "!bg-background [&_.MuiList-root]:p-0",
           },
         }}
         open={isOpen}
