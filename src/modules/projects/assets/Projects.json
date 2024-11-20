@@ -1,441 +1,494 @@
 [
-  {
-    "name": "ArchiPi",
-    "description": "Simulation of Archimedes' polygonal algorithm",
-    "repositoryURL": "https://github.com/Avantgarde95/ArchiPi",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/ArchiPi/master/Screenshot7.png",
-    "languageMap": {
-      "Python": 16942
+    {
+        "name": "ArchiPi",
+        "description": "Simulation of Archimedes' polygonal algorithm",
+        "repositoryURL": "https://github.com/Avantgarde95/ArchiPi",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/ArchiPi/master/Screenshot7.png",
+        "languageMap": {
+            "Python": 16942
+        }
+    },
+    {
+        "name": "archipi-web",
+        "description": "Archimedes' method for approximating π. Created for celebrating π day! (2019.03.14)",
+        "repositoryURL": "https://github.com/Avantgarde95/archipi-web",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/archipi-web/master/Screenshot.png",
+        "languageMap": {
+            "JavaScript": 6653,
+            "HTML": 4720,
+            "CSS": 1551
+        }
+    },
+    {
+        "name": "asciirain",
+        "description": "Rain of the characters",
+        "repositoryURL": "https://github.com/Avantgarde95/asciirain",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciirain/master/image/Screenshot.png",
+        "languageMap": {
+            "JavaScript": 2907,
+            "CSS": 677,
+            "HTML": 627
+        }
+    },
+    {
+        "name": "asciisnow",
+        "description": "Snow of the characters",
+        "repositoryURL": "https://github.com/Avantgarde95/asciisnow",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciisnow/master/image/Screenshot.png",
+        "languageMap": {
+            "JavaScript": 4841,
+            "CSS": 677,
+            "HTML": 627
+        }
+    },
+    {
+        "name": "avant-template",
+        "description": "Next.js + Recoil + Emotion template",
+        "repositoryURL": "https://github.com/Avantgarde95/avant-template",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/avant-template/master/Screenshot.png",
+        "languageMap": {
+            "JavaScript": 4195,
+            "TypeScript": 789
+        }
+    },
+    {
+        "name": "MyPage",
+        "description": "My website!",
+        "repositoryURL": "https://github.com/Avantgarde95/Avantgarde95.github.io",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Avantgarde95.github.io/master/Screenshot.png",
+        "languageMap": {
+            "TypeScript": 54442,
+            "JavaScript": 5425,
+            "Shell": 87
+        }
+    },
+    {
+        "name": "blog",
+        "description": "My blog! (Old version)",
+        "repositoryURL": "https://github.com/Avantgarde95/blog",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/blog/master/Screenshot.png",
+        "languageMap": {
+            "TypeScript": 40249,
+            "JavaScript": 7017,
+            "HTML": 5234,
+            "CSS": 1488
+        }
+    },
+    {
+        "name": "C3DMB",
+        "description": "Code for 'Collaborative 3D modeling system based on blockchain'",
+        "repositoryURL": "https://github.com/Avantgarde95/C3DMB",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/C3DMB/master/Screenshot.png",
+        "languageMap": {
+            "Kotlin": 49724,
+            "Python": 5303,
+            "Batchfile": 387
+        }
+    },
+    {
+        "name": "cat",
+        "description": "Meow",
+        "repositoryURL": "https://github.com/Avantgarde95/cat",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/cat/master/Screenshot.png",
+        "languageMap": {
+            "HTML": 15183,
+            "JavaScript": 677
+        }
+    },
+    {
+        "name": "CGLab",
+        "description": "KAIST CS580 Computer graphics projects",
+        "repositoryURL": "https://github.com/Avantgarde95/CGLab",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/CGLab/master/Screenshot.png",
+        "languageMap": {
+            "C": 4898555,
+            "C++": 2900395,
+            "HTML": 2366034,
+            "CMake": 757830,
+            "Objective-C": 194423,
+            "CSS": 50617,
+            "JavaScript": 41758,
+            "Perl": 34534,
+            "GLSL": 33548,
+            "Makefile": 29671,
+            "Shell": 20608,
+            "Python": 15533,
+            "Less": 8551,
+            "Lua": 5277,
+            "Gnuplot": 642,
+            "Batchfile": 172
+        }
+    },
+    {
+        "name": "DailyBread-old",
+        "description": "DailyBread viewer in python",
+        "repositoryURL": "https://github.com/Avantgarde95/DailyBread-old",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/DailyBread-old/master/Screenshot.png",
+        "languageMap": {
+            "Python": 67405
+        }
+    },
+    {
+        "name": "Deform2D",
+        "description": "Fork of Deform2D for studying 2D deformation",
+        "repositoryURL": "https://github.com/Avantgarde95/Deform2D",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Deform2D/master/Screenshot.png",
+        "languageMap": {
+            "C": 1727861,
+            "HTML": 129465,
+            "C++": 106390,
+            "CMake": 36502,
+            "Python": 593,
+            "Makefile": 580
+        }
+    },
+    {
+        "name": "ffmpeg.js",
+        "description": "Port of FFmpeg with Emscripten",
+        "repositoryURL": "https://github.com/Avantgarde95/ffmpeg.js",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/ffmpeg.js/master/Screenshot.png",
+        "languageMap": {
+            "JavaScript": 20769,
+            "Makefile": 6868,
+            "Dockerfile": 493
+        }
+    },
+    {
+        "name": "Gauss",
+        "description": "Implementation of Gaussian elimination in Pthread / OpenMP",
+        "repositoryURL": "https://github.com/Avantgarde95/Gauss",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Gauss/master/Screenshot.png",
+        "languageMap": {
+            "C": 11099,
+            "C++": 2132,
+            "Makefile": 1219,
+            "Objective-C": 300
+        }
+    },
+    {
+        "name": "guitarsayo",
+        "description": "악기 구매 도우미",
+        "repositoryURL": "https://github.com/Avantgarde95/guitarsayo",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/guitarsayo/master/Screenshot.jpg",
+        "languageMap": {
+            "JavaScript": 6941,
+            "HTML": 1349,
+            "CSS": 995,
+            "Python": 351
+        }
+    },
+    {
+        "name": "HandyClock",
+        "description": "Simple clock written in python",
+        "repositoryURL": "https://github.com/Avantgarde95/HandyClock",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HandyClock/master/Screenshot.png",
+        "languageMap": {
+            "Python": 17499
+        }
+    },
+    {
+        "name": "HoloLight",
+        "description": null,
+        "repositoryURL": "https://github.com/Avantgarde95/HoloLight",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HoloLight/master/Screenshot.png",
+        "languageMap": {
+            "C#": 3273422,
+            "ShaderLab": 136783,
+            "HLSL": 38282
+        }
+    },
+    {
+        "name": "HQ9",
+        "description": "Simple implementation of HQ9+ in python",
+        "repositoryURL": "https://github.com/Avantgarde95/HQ9",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HQ9/master/Screenshot.png",
+        "languageMap": {
+            "Python": 3343
+        }
+    },
+    {
+        "name": "html-birthday-card",
+        "description": "Simple birthday card in a HTML file",
+        "repositoryURL": "https://github.com/Avantgarde95/html-birthday-card",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/html-birthday-card/master/Screenshot.png",
+        "languageMap": {
+            "HTML": 5999
+        }
+    },
+    {
+        "name": "Image2Term",
+        "description": "Draw an image on the terminal.",
+        "repositoryURL": "https://github.com/Avantgarde95/Image2Term",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Image2Term/master/Screenshot.png",
+        "languageMap": {
+            "Python": 1795
+        }
+    },
+    {
+        "name": "image2term-web",
+        "description": "Web version of Image2Term (https://github.com/Avantgarde95/Image2Term)",
+        "repositoryURL": "https://github.com/Avantgarde95/image2term-web",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/image2term-web/master/Screenshot.png",
+        "languageMap": {
+            "JavaScript": 3410,
+            "CSS": 1721,
+            "HTML": 1306
+        }
+    },
+    {
+        "name": "infinite-loop-camera-old",
+        "description": "Simple camera app for infinite loop coding",
+        "repositoryURL": "https://github.com/Avantgarde95/infinite-loop-camera-old",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/infinite-loop-camera-old/master/Screenshot.png",
+        "languageMap": {
+            "TypeScript": 24014,
+            "JavaScript": 21
+        }
+    },
+    {
+        "name": "Blowing Bubble",
+        "description": "KAIST-CS482 (2016), Interactive Computer Graphics, Team 4",
+        "repositoryURL": "https://github.com/Avantgarde95/kaist_cs482_2016_team4",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/kaist_cs482_2016_team4/master/Screenshot.png",
+        "languageMap": {
+            "Java": 1694761,
+            "GLSL": 50135
+        }
+    },
+    {
+        "name": "LangtonAnt",
+        "description": "Simple simulation of (multi-color) Langton's ant (in python)",
+        "repositoryURL": "https://github.com/Avantgarde95/LangtonAnt",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LangtonAnt/master/ScreenshotSimple.png",
+        "languageMap": {
+            "Python": 47808,
+            "Makefile": 514
+        }
+    },
+    {
+        "name": "lets-react",
+        "description": "React tutorial written in React",
+        "repositoryURL": "https://github.com/Avantgarde95/lets-react",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/lets-react/master/Screenshot.png",
+        "languageMap": {
+            "TypeScript": 17843,
+            "SCSS": 6730,
+            "JavaScript": 1939,
+            "HTML": 603
+        }
+    },
+    {
+        "name": "lets-style",
+        "description": "My own implementation of CSS-in-JS library",
+        "repositoryURL": "https://github.com/Avantgarde95/lets-style",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/lets-style/master/Screenshot.png",
+        "languageMap": {
+            "TypeScript": 14515,
+            "JavaScript": 265
+        }
+    },
+    {
+        "name": "LiKo",
+        "description": "KAIST CS374 Team Project",
+        "repositoryURL": "https://github.com/Avantgarde95/LiKo",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LiKo/master/TestExample.png",
+        "languageMap": {
+            "JavaScript": 84587,
+            "HTML": 19968,
+            "CSS": 18008
+        }
+    },
+    {
+        "name": "Lucky",
+        "description": null,
+        "repositoryURL": "https://github.com/Avantgarde95/Lucky",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Lucky/master/Screenshot.png",
+        "languageMap": {
+            "Python": 5458
+        }
+    },
+    {
+        "name": "LucyViewer",
+        "description": "Simple Embree ray tracing demo",
+        "repositoryURL": "https://github.com/Avantgarde95/LucyViewer",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LucyViewer/master/Screenshot.png",
+        "languageMap": {
+            "HTML": 14820450,
+            "C++": 2607223,
+            "JavaScript": 285639,
+            "Objective-C": 53085,
+            "CSS": 30394,
+            "CMake": 24141,
+            "C": 16550,
+            "Makefile": 173
+        }
+    },
+    {
+        "name": "Mandelbrot",
+        "description": "Mandelbrot generator, made for fun",
+        "repositoryURL": "https://github.com/Avantgarde95/Mandelbrot",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Mandelbrot/master/Screenshot.png",
+        "languageMap": {
+            "C": 5578,
+            "Python": 3849,
+            "Makefile": 132
+        }
+    },
+    {
+        "name": "marked-plaintext",
+        "description": "A plain text renderer for Marked",
+        "repositoryURL": "https://github.com/Avantgarde95/marked-plaintext",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/marked-plaintext/master/Screenshot.png",
+        "languageMap": {
+            "JavaScript": 1980
+        }
+    },
+    {
+        "name": "meow-generator",
+        "description": "Hide a cat in your website",
+        "repositoryURL": "https://github.com/Avantgarde95/meow-generator",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/meow-generator/master/Screenshot.png",
+        "languageMap": {
+            "JavaScript": 3308,
+            "HTML": 969
+        }
+    },
+    {
+        "name": "MeshChain-publish",
+        "description": "MeshChain: Secure 3D model and intellectual property management powered by blockchain technology",
+        "repositoryURL": "https://github.com/Avantgarde95/MeshChain-publish",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/MeshChain-publish/master/Screenshot.png",
+        "languageMap": {
+            "Python": 102793,
+            "Kotlin": 86412,
+            "Batchfile": 21326,
+            "Shell": 16324,
+            "Solidity": 8190,
+            "JavaScript": 3697,
+            "GLSL": 3542
+        }
+    },
+    {
+        "name": "MorseSimulator",
+        "description": "Simple Morse code simulator in python",
+        "repositoryURL": "https://github.com/Avantgarde95/MorseSimulator",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/MorseSimulator/master/Screenshot.png",
+        "languageMap": {
+            "Python": 20585
+        }
+    },
+    {
+        "name": "PaintTalk",
+        "description": "Draw a picture by using natural language",
+        "repositoryURL": "https://github.com/Avantgarde95/PaintTalk",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PaintTalk/master/extra/TreeDemo.png",
+        "languageMap": {
+            "Kotlin": 58971,
+            "Java": 12028
+        }
+    },
+    {
+        "name": "PathFinder",
+        "description": "Simple implementation of path-finder which uses genetic algorithm.",
+        "repositoryURL": "https://github.com/Avantgarde95/PathFinder",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PathFinder/master/Screenshot.png",
+        "languageMap": {
+            "Python": 28586
+        }
+    },
+    {
+        "name": "pyMalbolge",
+        "description": "Malbolge interpreter in python",
+        "repositoryURL": "https://github.com/Avantgarde95/pyMalbolge",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/pyMalbolge/master/Screenshot.png",
+        "languageMap": {
+            "C": 4739,
+            "Python": 2672,
+            "Makefile": 196
+        }
+    },
+    {
+        "name": "PySIC",
+        "description": "A simple programming language I made for studying PL.",
+        "repositoryURL": "https://github.com/Avantgarde95/PySIC",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PySIC/master/Screenshot.png",
+        "languageMap": {
+            "Python": 18618
+        }
+    },
+    {
+        "name": "react-avant",
+        "description": "Small React library for myself",
+        "repositoryURL": "https://github.com/Avantgarde95/react-avant",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/react-avant/master/Screenshot.png",
+        "languageMap": {
+            "TypeScript": 12879,
+            "JavaScript": 7494,
+            "Shell": 98,
+            "SCSS": 49
+        }
+    },
+    {
+        "name": "SimpleLang",
+        "description": "a SIMPLE LANGuage - Simple toy language I made for studying",
+        "repositoryURL": "https://github.com/Avantgarde95/SimpleLang",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/SimpleLang/master/Screenshot.png",
+        "languageMap": {
+            "Python": 220159,
+            "Shell": 394
+        }
+    },
+    {
+        "name": "TeX2Hwp",
+        "description": "TeX-to-Hwp converter written in Java (Proof-of-concept GUI app)",
+        "repositoryURL": "https://github.com/Avantgarde95/TeX2Hwp",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/TeX2Hwp/master/Screenshot.png",
+        "languageMap": {
+            "Java": 12156
+        }
+    },
+    {
+        "name": "WhereToGoNow",
+        "description": "KAIST CS408 Computer science project",
+        "repositoryURL": "https://github.com/Avantgarde95/WhereToGoNow",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/WhereToGoNow/master/Screenshot.png",
+        "languageMap": {
+            "Python": 35783,
+            "JavaScript": 24803,
+            "HTML": 10361
+        }
+    },
+    {
+        "name": "Whitespace",
+        "description": "Write Whitespace code by using human-readable code.",
+        "repositoryURL": "https://github.com/Avantgarde95/Whitespace",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Whitespace/master/Screenshot.png",
+        "languageMap": {
+            "Python": 5303,
+            "Erlang": 2192
+        }
+    },
+    {
+        "name": "woori-hangul",
+        "description": null,
+        "repositoryURL": "https://github.com/Avantgarde95/woori-hangul",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/woori-hangul/master/Screenshot.png",
+        "languageMap": {
+            "TypeScript": 13957,
+            "JavaScript": 1050
+        }
+    },
+    {
+        "name": "zoom_pinch_overlay",
+        "description": "Allows widgets to be zoomed in and out by inserting a OverlayEntry which allows the widget to be on the front at all times.",
+        "repositoryURL": "https://github.com/Avantgarde95/zoom_pinch_overlay",
+        "imageURL": "https://raw.githubusercontent.com/Avantgarde95/zoom_pinch_overlay/master/Screenshot.png",
+        "languageMap": {
+            "Dart": 13194,
+            "HTML": 3693,
+            "Swift": 404,
+            "Kotlin": 124,
+            "Objective-C": 38
+        }
     }
-  },
-  {
-    "name": "archipi-web",
-    "description": "Archimedes' method for approximating π. Created for celebrating π day! (2019.03.14)",
-    "repositoryURL": "https://github.com/Avantgarde95/archipi-web",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/archipi-web/master/Screenshot.png",
-    "languageMap": {
-      "JavaScript": 6653,
-      "HTML": 4720,
-      "CSS": 1551
-    }
-  },
-  {
-    "name": "asciirain",
-    "description": "Rain of the characters",
-    "repositoryURL": "https://github.com/Avantgarde95/asciirain",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciirain/master/image/Screenshot.png",
-    "languageMap": {
-      "JavaScript": 2907,
-      "CSS": 677,
-      "HTML": 627
-    }
-  },
-  {
-    "name": "asciisnow",
-    "description": "Snow of the characters",
-    "repositoryURL": "https://github.com/Avantgarde95/asciisnow",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/asciisnow/master/image/Screenshot.png",
-    "languageMap": {
-      "JavaScript": 4841,
-      "CSS": 677,
-      "HTML": 627
-    }
-  },
-  {
-    "name": "avant-template",
-    "description": "Next.js + Recoil + Emotion template",
-    "repositoryURL": "https://github.com/Avantgarde95/avant-template",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/avant-template/master/Screenshot.png",
-    "languageMap": {
-      "JavaScript": 4195,
-      "TypeScript": 1477
-    }
-  },
-  {
-    "name": "MyPage",
-    "description": "My website!",
-    "repositoryURL": "https://github.com/Avantgarde95/Avantgarde95.github.io",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Avantgarde95.github.io/master/Screenshot.png",
-    "languageMap": {
-      "TypeScript": 55581,
-      "JavaScript": 5409,
-      "Shell": 132
-    }
-  },
-  {
-    "name": "blog",
-    "description": "My blog! (Old version)",
-    "repositoryURL": "https://github.com/Avantgarde95/blog",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/blog/master/Screenshot.png",
-    "languageMap": {
-      "TypeScript": 40249,
-      "JavaScript": 7017,
-      "HTML": 5234,
-      "CSS": 1488
-    }
-  },
-  {
-    "name": "C3DMB",
-    "description": "Code for 'Collaborative 3D modeling system based on blockchain'",
-    "repositoryURL": "https://github.com/Avantgarde95/C3DMB",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/C3DMB/master/Screenshot.png",
-    "languageMap": {
-      "Kotlin": 49724,
-      "Python": 5303,
-      "Batchfile": 387
-    }
-  },
-  {
-    "name": "cat",
-    "description": "Meow",
-    "repositoryURL": "https://github.com/Avantgarde95/cat",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/cat/master/Screenshot.png",
-    "languageMap": {
-      "HTML": 15183,
-      "JavaScript": 677
-    }
-  },
-  {
-    "name": "CGLab",
-    "description": "KAIST CS580 Computer graphics projects",
-    "repositoryURL": "https://github.com/Avantgarde95/CGLab",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/CGLab/master/Screenshot.png",
-    "languageMap": {
-      "C": 4898555,
-      "C++": 2900395,
-      "HTML": 2366034,
-      "CMake": 757830,
-      "Objective-C": 194423,
-      "CSS": 50617,
-      "JavaScript": 41758,
-      "Perl": 34534,
-      "GLSL": 33548,
-      "Makefile": 29671,
-      "Shell": 20608,
-      "Python": 15533,
-      "Less": 8551,
-      "Lua": 5277,
-      "Gnuplot": 642,
-      "Batchfile": 172
-    }
-  },
-  {
-    "name": "DailyBread-old",
-    "description": "DailyBread viewer in python",
-    "repositoryURL": "https://github.com/Avantgarde95/DailyBread-old",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/DailyBread-old/master/Screenshot.png",
-    "languageMap": {
-      "Python": 67405
-    }
-  },
-  {
-    "name": "Deform2D",
-    "description": "Fork of Deform2D for studying 2D deformation",
-    "repositoryURL": "https://github.com/Avantgarde95/Deform2D",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Deform2D/master/Screenshot.png",
-    "languageMap": {
-      "C": 1727861,
-      "HTML": 129465,
-      "C++": 106390,
-      "CMake": 36502,
-      "Python": 593,
-      "Makefile": 580
-    }
-  },
-  {
-    "name": "Gauss",
-    "description": "Implementation of Gaussian elimination in Pthread / OpenMP",
-    "repositoryURL": "https://github.com/Avantgarde95/Gauss",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Gauss/master/Screenshot.png",
-    "languageMap": {
-      "C": 11099,
-      "C++": 2132,
-      "Makefile": 1219,
-      "Objective-C": 300
-    }
-  },
-  {
-    "name": "guitarsayo",
-    "description": "악기 구매 도우미",
-    "repositoryURL": "https://github.com/Avantgarde95/guitarsayo",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/guitarsayo/master/Screenshot.jpg",
-    "languageMap": {
-      "JavaScript": 6941,
-      "HTML": 1349,
-      "CSS": 995,
-      "Python": 351
-    }
-  },
-  {
-    "name": "HandyClock",
-    "description": "Simple clock written in python",
-    "repositoryURL": "https://github.com/Avantgarde95/HandyClock",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HandyClock/master/Screenshot.png",
-    "languageMap": {
-      "Python": 17499
-    }
-  },
-  {
-    "name": "HoloLight",
-    "description": null,
-    "repositoryURL": "https://github.com/Avantgarde95/HoloLight",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HoloLight/master/Screenshot.png",
-    "languageMap": {
-      "C#": 3273422,
-      "ShaderLab": 136783,
-      "HLSL": 38282
-    }
-  },
-  {
-    "name": "HQ9",
-    "description": "Simple implementation of HQ9+ in python",
-    "repositoryURL": "https://github.com/Avantgarde95/HQ9",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/HQ9/master/Screenshot.png",
-    "languageMap": {
-      "Python": 3343
-    }
-  },
-  {
-    "name": "html-birthday-card",
-    "description": "Simple birthday card in a HTML file",
-    "repositoryURL": "https://github.com/Avantgarde95/html-birthday-card",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/html-birthday-card/master/Screenshot.png",
-    "languageMap": {
-      "HTML": 5999
-    }
-  },
-  {
-    "name": "Image2Term",
-    "description": "Draw an image on the terminal.",
-    "repositoryURL": "https://github.com/Avantgarde95/Image2Term",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Image2Term/master/Screenshot.png",
-    "languageMap": {
-      "Python": 1795
-    }
-  },
-  {
-    "name": "image2term-web",
-    "description": "Web version of Image2Term (https://github.com/Avantgarde95/Image2Term)",
-    "repositoryURL": "https://github.com/Avantgarde95/image2term-web",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/image2term-web/master/Screenshot.png",
-    "languageMap": {
-      "JavaScript": 3410,
-      "CSS": 1721,
-      "HTML": 1306
-    }
-  },
-  {
-    "name": "Blowing Bubble",
-    "description": "KAIST-CS482 (2016), Interactive Computer Graphics, Team 4",
-    "repositoryURL": "https://github.com/Avantgarde95/kaist_cs482_2016_team4",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/kaist_cs482_2016_team4/master/Screenshot.png",
-    "languageMap": {
-      "Java": 1694761,
-      "GLSL": 50135
-    }
-  },
-  {
-    "name": "LangtonAnt",
-    "description": "Simple simulation of (multi-color) Langton's ant (in python)",
-    "repositoryURL": "https://github.com/Avantgarde95/LangtonAnt",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LangtonAnt/master/ScreenshotSimple.png",
-    "languageMap": {
-      "Python": 47808,
-      "Makefile": 514
-    }
-  },
-  {
-    "name": "lets-react",
-    "description": "React tutorial written in React",
-    "repositoryURL": "https://github.com/Avantgarde95/lets-react",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/lets-react/master/Screenshot.png",
-    "languageMap": {
-      "TypeScript": 17843,
-      "SCSS": 6730,
-      "JavaScript": 1939,
-      "HTML": 603
-    }
-  },
-  {
-    "name": "lets-style",
-    "description": "My own implementation of CSS-in-JS library",
-    "repositoryURL": "https://github.com/Avantgarde95/lets-style",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/lets-style/master/Screenshot.png",
-    "languageMap": {
-      "TypeScript": 14515,
-      "JavaScript": 265
-    }
-  },
-  {
-    "name": "LiKo",
-    "description": "KAIST CS374 Team Project",
-    "repositoryURL": "https://github.com/Avantgarde95/LiKo",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LiKo/master/TestExample.png",
-    "languageMap": {
-      "JavaScript": 84587,
-      "HTML": 19968,
-      "CSS": 18008
-    }
-  },
-  {
-    "name": "Lucky",
-    "description": null,
-    "repositoryURL": "https://github.com/Avantgarde95/Lucky",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Lucky/master/Screenshot.png",
-    "languageMap": {
-      "Python": 5458
-    }
-  },
-  {
-    "name": "LucyViewer",
-    "description": "Simple Embree ray tracing demo",
-    "repositoryURL": "https://github.com/Avantgarde95/LucyViewer",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/LucyViewer/master/Screenshot.png",
-    "languageMap": {
-      "HTML": 14820450,
-      "C++": 2607223,
-      "JavaScript": 285639,
-      "Objective-C": 53085,
-      "CSS": 30394,
-      "CMake": 24141,
-      "C": 16550,
-      "Makefile": 173
-    }
-  },
-  {
-    "name": "Mandelbrot",
-    "description": "Mandelbrot generator, made for fun",
-    "repositoryURL": "https://github.com/Avantgarde95/Mandelbrot",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Mandelbrot/master/Screenshot.png",
-    "languageMap": {
-      "C": 5578,
-      "Python": 3849,
-      "Makefile": 132
-    }
-  },
-  {
-    "name": "meow-generator",
-    "description": "Hide a cat in your website",
-    "repositoryURL": "https://github.com/Avantgarde95/meow-generator",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/meow-generator/master/Screenshot.png",
-    "languageMap": {
-      "JavaScript": 3308,
-      "HTML": 969
-    }
-  },
-  {
-    "name": "MeshChain-publish",
-    "description": "MeshChain: Secure 3D model and intellectual property management powered by blockchain technology",
-    "repositoryURL": "https://github.com/Avantgarde95/MeshChain-publish",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/MeshChain-publish/master/Screenshot.png",
-    "languageMap": {
-      "Python": 102793,
-      "Kotlin": 86412,
-      "Batchfile": 21326,
-      "Shell": 16324,
-      "Solidity": 8190,
-      "JavaScript": 3697,
-      "GLSL": 3542
-    }
-  },
-  {
-    "name": "MorseSimulator",
-    "description": "Simple Morse code simulator in python",
-    "repositoryURL": "https://github.com/Avantgarde95/MorseSimulator",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/MorseSimulator/master/Screenshot.png",
-    "languageMap": {
-      "Python": 20585
-    }
-  },
-  {
-    "name": "PaintTalk",
-    "description": "Draw a picture by using natural language",
-    "repositoryURL": "https://github.com/Avantgarde95/PaintTalk",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PaintTalk/master/extra/TreeDemo.png",
-    "languageMap": {
-      "Kotlin": 58971,
-      "Java": 12028
-    }
-  },
-  {
-    "name": "PathFinder",
-    "description": "Simple implementation of path-finder which uses genetic algorithm.",
-    "repositoryURL": "https://github.com/Avantgarde95/PathFinder",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PathFinder/master/Screenshot.png",
-    "languageMap": {
-      "Python": 28586
-    }
-  },
-  {
-    "name": "pyMalbolge",
-    "description": "Malbolge interpreter in python",
-    "repositoryURL": "https://github.com/Avantgarde95/pyMalbolge",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/pyMalbolge/master/Screenshot.png",
-    "languageMap": {
-      "C": 4739,
-      "Python": 2672,
-      "Makefile": 196
-    }
-  },
-  {
-    "name": "PySIC",
-    "description": "A simple programming language I made for studying PL.",
-    "repositoryURL": "https://github.com/Avantgarde95/PySIC",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/PySIC/master/Screenshot.png",
-    "languageMap": {
-      "Python": 18618
-    }
-  },
-  {
-    "name": "react-avant",
-    "description": "Small React library for myself",
-    "repositoryURL": "https://github.com/Avantgarde95/react-avant",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/react-avant/master/Screenshot.png",
-    "languageMap": {
-      "TypeScript": 12879,
-      "JavaScript": 7494,
-      "Shell": 98,
-      "SCSS": 49
-    }
-  },
-  {
-    "name": "SimpleLang",
-    "description": "a SIMPLE LANGuage - Simple toy language I made for studying",
-    "repositoryURL": "https://github.com/Avantgarde95/SimpleLang",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/SimpleLang/master/Screenshot.png",
-    "languageMap": {
-      "Python": 220159,
-      "Shell": 394
-    }
-  },
-  {
-    "name": "TeX2Hwp",
-    "description": "TeX-to-Hwp converter written in Java (Proof-of-concept GUI app)",
-    "repositoryURL": "https://github.com/Avantgarde95/TeX2Hwp",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/TeX2Hwp/master/Screenshot.png",
-    "languageMap": {
-      "Java": 12156
-    }
-  },
-  {
-    "name": "WhereToGoNow",
-    "description": "KAIST CS408 Computer science project",
-    "repositoryURL": "https://github.com/Avantgarde95/WhereToGoNow",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/WhereToGoNow/master/Screenshot.png",
-    "languageMap": {
-      "Python": 35783,
-      "JavaScript": 24803,
-      "HTML": 10361
-    }
-  },
-  {
-    "name": "Whitespace",
-    "description": "Write Whitespace code by using human-readable code.",
-    "repositoryURL": "https://github.com/Avantgarde95/Whitespace",
-    "imageURL": "https://raw.githubusercontent.com/Avantgarde95/Whitespace/master/Screenshot.png",
-    "languageMap": {
-      "Python": 5303,
-      "Erlang": 2192
-    }
-  }
 ]

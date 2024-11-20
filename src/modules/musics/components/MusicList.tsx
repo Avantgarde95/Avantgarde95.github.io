@@ -10,7 +10,7 @@ import { createAnimation, fadeIn, resetButton, wideScreen } from "common/styles/
 import Musics from "modules/musics/assets/Musics.json";
 
 const MusicList = () => {
-  const [currentCategory, setCurrentCategory] = useState<Category>("Guitar");
+  const [currentCategory, setCurrentCategory] = useState<Category>("Pieces");
   const onWideScreen = useMediaQuery(wideScreen);
 
   const items = categoryMap[currentCategory].map(videoID => (
@@ -47,9 +47,9 @@ const MusicList = () => {
 };
 
 const categoryMap = {
+  Pieces: Musics.myPieces,
   Guitar: Musics.myGuitarPlayings,
   Piano: Musics.myPianoPlayings,
-  Pieces: Musics.myPieces,
 } as const;
 
 type Category = keyof typeof categoryMap;
