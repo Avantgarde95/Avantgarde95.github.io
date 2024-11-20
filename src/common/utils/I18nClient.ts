@@ -1,23 +1,33 @@
 "use client";
 
 import { ReactNode } from "react";
-import { useParams } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 
-import { Locale, defaultLocale } from "@/common/models/I18n";
+import { Locale, defaultLocale, localeNames } from "@/common/models/I18n";
 
 interface Params {
   locale?: Locale;
 }
 
+// ex. ^/(ko|en)
+const localeRegex = new RegExp(`^/(${localeNames.join("|")})`);
+
 export function useLocale() {
   const params = useParams() as Params;
-  const { locale } = params;
+  const pathname = usePathname();
+  const router = useRouter();
 
-  return locale ?? defaultLocale;
+  function setLocale(newLocale: Locale) {
+    // ex. /ko -> /en
+    // ex. /ko/projects -> /en/projects
+    router.push(`/${newLocale}${pathname.replace(localeRegex, "")}`);
+  }
+
+  return { locale: params.locale ?? defaultLocale, setLocale };
 }
 
 export function useTranslation<Data extends Record<string, Record<Locale, ReactNode>>>(data: Data) {
-  const locale = useLocale();
+  const { locale } = useLocale();
 
   function translate(key: keyof Data) {
     return data[key][locale];

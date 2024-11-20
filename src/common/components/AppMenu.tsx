@@ -7,6 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 
 import allRoutes from "@/common/models/Routes";
 import { useLocale } from "@/common/utils/I18nClient";
+import { Locale } from "@/common/models/I18n";
 
 const navItems: Array<{ name: string; url: string }> = [
   { name: "Home", url: allRoutes.home.url },
@@ -16,13 +17,34 @@ const navItems: Array<{ name: string; url: string }> = [
   { name: "Blog", url: allRoutes.blog.url },
 ];
 
+const localeItems: Record<Locale, { name: string; nextLocale: Locale }> = {
+  ko: { name: "English", nextLocale: "en" },
+  en: { name: "한국어", nextLocale: "ko" },
+};
+
 const dimensionX = 20;
-const separator = <div className="px-2 py-1">+{"-".repeat(dimensionX - 2)}+</div>;
+const rowStyle = "!px-2 !py-0.5";
+const separator = <div className={rowStyle}>+{"-".repeat(dimensionX - 2)}+</div>;
+
+interface AppMenuItemProps {
+  label: string;
+  onClick: () => void;
+}
+
+const AppMenuItem = ({ label, onClick }: AppMenuItemProps) => (
+  <MenuItem
+    className={`group !relative !min-h-0 !whitespace-pre ${rowStyle} !font-mono !text-base !leading-tight !tracking-[normal] !text-primary`}
+    onClick={onClick}
+  >
+    {`|${" ".repeat(dimensionX - 2)}|`}
+    <span className="absolute left-7 top-1/2 -translate-y-1/2 group-hover:text-yellow">{label}</span>
+  </MenuItem>
+);
 
 const AppMenu = () => {
   const [anchor, setAnchor] = useState<HTMLElement | null>(null);
   const router = useRouter();
-  const locale = useLocale();
+  const { locale, setLocale } = useLocale();
 
   const isOpen = anchor !== null;
 
@@ -59,21 +81,21 @@ const AppMenu = () => {
         <div className="font-mono text-base text-primary">
           {separator}
           {navItems.map(item => (
-            <MenuItem
+            <AppMenuItem
               key={item.name}
-              className="group !min-h-0 !whitespace-pre !px-2 !py-1 !font-mono !text-base !leading-tight !tracking-[normal] !text-primary"
+              label={`<${item.name}/>`}
               onClick={() => {
                 router.push(`/${locale}${item.url}`);
               }}
-            >
-              |&nbsp;
-              <span className="group-hover:text-yellow">
-                {`<${item.name}/>`}
-                {" ".repeat(dimensionX - 7 - item.name.length)}
-              </span>
-              &nbsp;|
-            </MenuItem>
+            />
           ))}
+          {separator}
+          <AppMenuItem
+            label={`${localeItems[locale].name}()`}
+            onClick={() => {
+              setLocale(localeItems[locale].nextLocale);
+            }}
+          />
           {separator}
         </div>
       </Menu>

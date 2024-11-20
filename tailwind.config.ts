@@ -11,7 +11,7 @@ const baseColors = {
   orange: "#e87d3e",
   purple: "#9e86c8",
   pink: "#b05279",
-  blue: "#6c99bb",
+  blue: "#7da5c3",
 };
 
 export default {
@@ -26,7 +26,8 @@ export default {
       },
       fontFamily: {
         sans: ["Pretendard", "sans-serif"],
-        mono: ["Fira Code", "monospace"],
+        // Since Fira Code doesn't support Korean, we just put sans-serif font as a fallback...
+        mono: ["Fira Code", "Pretendard", "monospace"],
       },
     },
   },

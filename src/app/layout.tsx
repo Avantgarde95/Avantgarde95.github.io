@@ -1,9 +1,9 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
 import { CommonChildrenProps } from "@/common/models/Props";
+import { localeNames } from "@/common/models/I18n";
 
 import "@/common/styles/Global.css";
-import { localeNames } from "@/common/models/I18n";
 
 const Layout = ({ children }: CommonChildrenProps) => (
   <html lang="ko" className="m-0 h-full w-full p-0 font-sans">

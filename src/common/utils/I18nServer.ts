@@ -6,14 +6,19 @@ interface Params {
   locale?: Locale;
 }
 
+export async function getLocale(params: Promise<Params>) {
+  const { locale } = await params;
+  return locale ?? defaultLocale;
+}
+
 export async function createTranslation<Data extends Record<string, Record<Locale, ReactNode>>>(
   data: Data,
   params: Promise<Params>
 ) {
-  const { locale } = await params;
+  const locale = await getLocale(params);
 
   function translate(key: keyof Data) {
-    return data[key][locale ?? defaultLocale];
+    return data[key][locale];
   }
 
   return { translate };
