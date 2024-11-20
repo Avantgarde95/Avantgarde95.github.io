@@ -1,6 +1,6 @@
+import HistoryView from "@/common/components/HistoryView";
 import { CommonParamsProps } from "@/common/models/Props";
 import { createTranslation } from "@/common/utils/I18nServer";
-import { History } from "@/modules/home/Common";
 
 const data = {
   tmaxgaia: {
@@ -25,7 +25,7 @@ const Careers = async ({ params }: CommonParamsProps) => {
   const { translate } = await createTranslation(data, params);
 
   return (
-    <History
+    <HistoryView
       items={[
         {
           id: "tmaxgaia",

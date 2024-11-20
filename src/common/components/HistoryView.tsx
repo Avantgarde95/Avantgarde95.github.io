@@ -8,11 +8,11 @@ interface HistoryItem {
   content?: ReactNode;
 }
 
-interface HistoryProps {
+interface HistoryViewProps {
   items: Array<HistoryItem>;
 }
 
-export const History = ({ items }: HistoryProps) => (
+const HistoryView = ({ items }: HistoryViewProps) => (
   <div>
     {items.map((item, index) => (
       <div key={item.id} className="flex flex-row">
@@ -31,3 +31,5 @@ export const History = ({ items }: HistoryProps) => (
     ))}
   </div>
 );
+
+export default HistoryView;

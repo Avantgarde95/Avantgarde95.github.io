@@ -1,8 +1,7 @@
-import Link from "next/link";
-
 import { CommonParamsProps } from "@/common/models/Props";
 import { createTranslation } from "@/common/utils/I18nServer";
-import { History } from "@/modules/home/Common";
+import HistoryView from "@/common/components/HistoryView";
+import DecoratedLink from "@/common/components/DecoratedLink";
 
 const data = {
   graduateMajor: {
@@ -19,13 +18,11 @@ const data = {
   },
 };
 
-const linkStyle = "text-blue hover:text-yellow";
-
 const Education = async ({ params }: CommonParamsProps) => {
   const { translate } = await createTranslation(data, params);
 
   return (
-    <History
+    <HistoryView
       items={[
         {
           id: "graduate",
@@ -34,17 +31,15 @@ const Education = async ({ params }: CommonParamsProps) => {
           subtitle: translate("graduateMajor"),
           content: (
             <>
-              MeshChain: Secure 3D model and intellectual property management powered by blockchain technology (
-              <Link className={linkStyle} target="_blank" href="https://avantgarde95.github.io/MeshChain-publish/">
-                {translate("link")}
-              </Link>
-              )
+              <DecoratedLink target="_blank" href="https://avantgarde95.github.io/MeshChain-publish/">
+                MeshChain
+              </DecoratedLink>
+              : Secure 3D model and intellectual property management powered by blockchain technology
               <br />
-              Collaborative 3D modeling system based on blockchain (
-              <Link className={linkStyle} target="_blank" href="https://avantgarde95.github.io/C3DMB/">
-                {translate("link")}
-              </Link>
-              )
+              <DecoratedLink target="_blank" href="https://avantgarde95.github.io/C3DMB/">
+                C3DMB
+              </DecoratedLink>
+              : Collaborative 3D modeling system based on blockchain
             </>
           ),
         },

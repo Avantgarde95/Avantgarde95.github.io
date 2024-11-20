@@ -5057,6 +5057,7 @@ __metadata:
     eslint-plugin-prettier: "npm:^4.2.1"
     husky: "npm:^9.1.7"
     next: "npm:15.0.3"
+    next-image-export-optimizer: "npm:^1.16.0"
     postcss: "npm:^8"
     prettier: "npm:2.8.8"
     prettier-plugin-tailwindcss: "npm:0.4.1"
@@ -5099,6 +5100,21 @@ __metadata:
   version: 0.6.4
   resolution: "negotiator@npm:0.6.4"
   checksum: 10c0/3e677139c7fb7628a6f36335bf11a885a62c21d5390204590a1a214a5631fcbe5ea74ef6a610b60afe84b4d975cbe0566a23f20ee17c77c73e74b80032108dea
+  languageName: node
+  linkType: hard
+
+"next-image-export-optimizer@npm:^1.16.0":
+  version: 1.16.0
+  resolution: "next-image-export-optimizer@npm:1.16.0"
+  dependencies:
+    sharp: "npm:^0.33.1"
+    typescript: "npm:^5.2.2"
+  peerDependencies:
+    next: ^15.0.3
+    react: ^18.0.0-0
+  bin:
+    next-image-export-optimizer: dist/optimizeImages.js
+  checksum: 10c0/58edef741b112566b2487bba1af41727a185ef304f6eab43c47bd186d3c134fb4a9cc53a04e37bd9de5da75ed7d890f312cfd43f97148f2777c35c16779e9858
   languageName: node
   linkType: hard
 
@@ -6037,7 +6053,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.33.5":
+"sharp@npm:^0.33.1, sharp@npm:^0.33.5":
   version: 0.33.5
   resolution: "sharp@npm:0.33.5"
   dependencies:
@@ -6633,7 +6649,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5":
+"typescript@npm:^5, typescript@npm:^5.2.2":
   version: 5.6.3
   resolution: "typescript@npm:5.6.3"
   bin:
@@ -6643,7 +6659,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>":
   version: 5.6.3
   resolution: "typescript@patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"
   bin:
