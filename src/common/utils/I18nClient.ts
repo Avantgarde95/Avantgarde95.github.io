@@ -9,12 +9,18 @@ interface Params {
   locale?: Locale;
 }
 
-export function useTranslation<Data extends Record<string, Record<Locale, ReactNode>>>(data: Data) {
+export function useLocale() {
   const params = useParams() as Params;
   const { locale } = params;
 
+  return locale ?? defaultLocale;
+}
+
+export function useTranslation<Data extends Record<string, Record<Locale, ReactNode>>>(data: Data) {
+  const locale = useLocale();
+
   function translate(key: keyof Data) {
-    return data[key][locale ?? defaultLocale];
+    return data[key][locale];
   }
 
   return { translate };

@@ -1,10 +1,11 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
-import { CommonLayoutProps } from "@/common/models/Props";
+import { CommonChildrenProps } from "@/common/models/Props";
 
 import "@/common/styles/Global.css";
+import { localeNames } from "@/common/models/I18n";
 
-const Layout = ({ children }: CommonLayoutProps) => (
+const Layout = ({ children }: CommonChildrenProps) => (
   <html lang="ko" className="m-0 h-full w-full p-0 font-sans">
     <head>
       {/* Pretendard. */}
@@ -30,5 +31,9 @@ const Layout = ({ children }: CommonLayoutProps) => (
     </body>
   </html>
 );
+
+export async function generateStaticParams() {
+  return [...localeNames.map(value => ({ locale: value }))];
+}
 
 export default Layout;

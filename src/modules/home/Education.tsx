@@ -1,7 +1,8 @@
+import Link from "next/link";
+
 import { CommonParamsProps } from "@/common/models/Props";
 import { createTranslation } from "@/common/utils/I18nServer";
 import { History } from "@/modules/home/Common";
-import Link from "next/link";
 
 const data = {
   graduateMajor: {

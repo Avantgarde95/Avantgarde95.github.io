@@ -1,10 +1,9 @@
 import { Fragment, ReactNode } from "react";
 
-import { localeNames } from "@/common/models/I18n";
 import Header from "@/common/components/Header";
 import PageMenu from "@/common/components/PageMenu";
 import { generateElementID } from "@/common/utils/DOM";
-import { CommonPageProps, CommonParamsProps } from "@/common/models/Props";
+import { CommonParamsProps } from "@/common/models/Props";
 import About from "@/modules/home/About";
 import Careers from "@/modules/home/Careers";
 import Education from "@/modules/home/Education";
@@ -17,7 +16,7 @@ const sections: Record<string, { title: string; content: (props: CommonParamsPro
   links: { title: "Links", content: () => <Links /> },
 };
 
-const Page = async ({ params }: CommonPageProps) => (
+const Page = async ({ params }: CommonParamsProps) => (
   <div className="h-full w-full">
     <Header
       title={
@@ -43,9 +42,5 @@ const Page = async ({ params }: CommonPageProps) => (
     ))}
   </div>
 );
-
-export async function generateStaticParams() {
-  return localeNames.map(value => ({ locale: value }));
-}
 
 export default Page;

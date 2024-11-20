@@ -9,9 +9,3 @@ export interface CommonChildrenProps {
 export interface CommonParamsProps {
   params: Promise<{ locale?: Locale }>;
 }
-
-export interface CommonLayoutProps {
-  children: ReactNode;
-}
-
-export interface CommonPageProps extends CommonParamsProps {}
