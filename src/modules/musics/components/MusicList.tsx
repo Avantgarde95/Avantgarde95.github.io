@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import PageMenu from "@/common/components/PageMenu";
-import Musics from "@/common/data/Musics.json";
+import Musics from "@/modules/musics/data/Musics.json";
 import Preview from "@/modules/musics/components/Preview";
 
 const categoryMap = {
