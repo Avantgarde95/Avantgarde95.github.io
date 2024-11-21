@@ -3,7 +3,7 @@ import type { Config } from "tailwindcss";
 // Based on Monokai.
 // (https://gist.github.com/r-malon/8fc669332215c8028697a0bbfbfbb32a)
 const baseColors = {
-  black: "#222222",
+  black: "#1a1a1a",
   gray: "#797979",
   white: "#d6d6d6",
   yellow: "#e5b567",

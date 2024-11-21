@@ -22,17 +22,23 @@ interface PageMenuProps {
 
 const PageMenu = ({ items }: PageMenuProps) => (
   <div className="flex flex-col items-start justify-start gap-1 sm:flex-row sm:gap-4">
-    {items.map(item => (
-      <Fragment key={item.label}>
-        {item.type === "link" ? (
-          <Link href={item.url} className={itemClassName}>
-            {`.${item.label.toLowerCase()}`}
-          </Link>
-        ) : (
-          <button onClick={item.onClick} className={itemClassName}>{`<${item.label}/>`}</button>
-        )}
-      </Fragment>
-    ))}
+    {items.map(item => {
+      const labelText = `.${item.label.toLowerCase()}`;
+
+      return (
+        <Fragment key={item.label}>
+          {item.type === "link" ? (
+            <Link href={item.url} className={itemClassName}>
+              {labelText}
+            </Link>
+          ) : (
+            <button onClick={item.onClick} className={itemClassName}>
+              {labelText}
+            </button>
+          )}
+        </Fragment>
+      );
+    })}
   </div>
 );
 
