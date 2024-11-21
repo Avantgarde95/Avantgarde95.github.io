@@ -1,38 +1,50 @@
-import { Fragment, ReactNode } from "react";
+"use client";
 
-import { CommonParamsProps } from "@/common/models/Props";
+import { Fragment, ReactNode, useRef } from "react";
+import { scrollIntoView } from "seamless-scroll-polyfill";
+
 import PageMenu from "@/common/components/PageMenu";
-import { generateElementID } from "@/common/utils/DOM";
 
-interface SectionContent {
+interface Section {
   title: string;
-  content: (props: CommonParamsProps) => ReactNode;
+  content: ReactNode;
 }
 
-export type SectionItems = Record<string, SectionContent>;
-
-interface ScrolledSectionsProps extends CommonParamsProps {
-  items: SectionItems;
+interface ScrolledSectionsProps {
+  sections: Array<Section>;
 }
 
-const ScrolledSections = async ({ items, params }: ScrolledSectionsProps) => (
-  <>
-    <PageMenu
-      items={Object.entries(items).map(([id, { title }]) => ({
-        type: "link",
-        label: title,
-        url: `#${generateElementID(id)}`,
-      }))}
-    />
-    {Object.entries(items).map(([id, { title, content }]) => (
-      <Fragment key={id}>
-        <h3 id={generateElementID(id)} className="mx-0 my-4 p-0 font-mono text-xl text-yellow">
-          {title}
-        </h3>
-        {content({ params })}
-      </Fragment>
-    ))}
-  </>
-);
+const ScrolledSections = ({ sections }: ScrolledSectionsProps) => {
+  const titleRefMap = useRef<Record<string, HTMLHeadingElement>>({});
+
+  return (
+    <>
+      <PageMenu
+        items={sections.map(({ title }) => ({
+          type: "button",
+          label: title,
+          onClick: () => {
+            scrollIntoView(titleRefMap.current[title], { behavior: "smooth" });
+          },
+        }))}
+      />
+      {sections.map(({ title, content }) => (
+        <Fragment key={title}>
+          <h3
+            ref={element => {
+              if (element !== null) {
+                titleRefMap.current[title] = element;
+              }
+            }}
+            className="mx-0 my-4 p-0 font-mono text-xl text-yellow"
+          >
+            {title}
+          </h3>
+          {content}
+        </Fragment>
+      ))}
+    </>
+  );
+};
 
 export default ScrolledSections;

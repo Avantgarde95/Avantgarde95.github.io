@@ -15,10 +15,10 @@ const Page = async ({ params }: CommonParamsProps) => {
   const { translate } = await createTranslation(data, params);
 
   return (
-    <div className="h-full w-full">
+    <div className="w-full">
       <Header title="Art" />
       <div className="mt-4">{translate("description")}</div>
-      <div className="mt-8 grid grid-cols-1 justify-center gap-x-12 gap-y-16 sm:grid-cols-[478px] lg:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 justify-center gap-x-12 gap-y-12 sm:grid-cols-[478px] lg:grid-cols-2">
         {allWorks.map(work => (
           <Preview key={work.name} work={work} />
         ))}

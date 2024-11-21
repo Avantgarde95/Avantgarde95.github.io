@@ -4,29 +4,10 @@ import About from "@/modules/home/components/About";
 import Careers from "@/modules/home/components/Careers";
 import Education from "@/modules/home/components/Education";
 import Links from "@/modules/home/components/Links";
-import ScrolledSections, { SectionItems } from "@/common/components/ScrolledSections";
-
-const sectionItems: SectionItems = {
-  about: {
-    title: "About",
-    content: ({ params }) => <About params={params} />,
-  },
-  careers: {
-    title: "Careers",
-    content: ({ params }) => <Careers params={params} />,
-  },
-  education: {
-    title: "Education",
-    content: ({ params }) => <Education params={params} />,
-  },
-  links: {
-    title: "Links",
-    content: () => <Links />,
-  },
-};
+import ScrolledSections from "@/common/components/ScrolledSections";
 
 const Page = async ({ params }: CommonParamsProps) => (
-  <div className="h-full w-full">
+  <div className="w-full">
     <Header
       title={
         <>
@@ -34,7 +15,26 @@ const Page = async ({ params }: CommonParamsProps) => (
         </>
       }
     />
-    <ScrolledSections params={params} items={sectionItems} />
+    <ScrolledSections
+      sections={[
+        {
+          title: "About",
+          content: <About params={params} />,
+        },
+        {
+          title: "Careers",
+          content: <Careers params={params} />,
+        },
+        {
+          title: "Education",
+          content: <Education params={params} />,
+        },
+        {
+          title: "Links",
+          content: <Links />,
+        },
+      ]}
+    />
   </div>
 );
 

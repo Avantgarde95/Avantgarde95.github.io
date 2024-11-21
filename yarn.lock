@@ -5099,6 +5099,7 @@ __metadata:
     react-dom: "npm:19.0.0-rc-66855b96-20241106"
     react-icons: "npm:^5.3.0"
     react-intersection-observer: "npm:^9.13.1"
+    seamless-scroll-polyfill: "npm:^2.3.4"
     tailwindcss: "npm:^3.4.1"
     typescript: "npm:^5"
   languageName: unknown
@@ -6057,6 +6058,13 @@ __metadata:
   version: 0.25.0-rc-66855b96-20241106
   resolution: "scheduler@npm:0.25.0-rc-66855b96-20241106"
   checksum: 10c0/65f1187d4b472ad674b91d98661c54dfc312e0ba850713b57411a05db722b5a9cdc7a46683c776116668c251c90cd4d3973b9f021d3821762fa224f94275c85a
+  languageName: node
+  linkType: hard
+
+"seamless-scroll-polyfill@npm:^2.3.4":
+  version: 2.3.4
+  resolution: "seamless-scroll-polyfill@npm:2.3.4"
+  checksum: 10c0/66f1ba3ba9fe13436c8b36d22bac91f9b83c75ac5ea5bc1dff6a0138bde421a9a2f66ba3ccc65352cee72a9139015d4043554ab625c77978f3d341bb3a601777
   languageName: node
   linkType: hard
 

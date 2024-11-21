@@ -22,7 +22,7 @@ const Layout = ({ children }: CommonChildrenProps) => (
     </head>
     <body className="m-0 h-full w-full p-0">
       <AppRouterCacheProvider>
-        <div className="flex h-full w-full flex-col items-center overflow-y-auto scroll-smooth bg-background pt-16 text-primary">
+        <div className="flex h-full w-full flex-col items-center overflow-y-auto bg-background pt-16 text-primary">
           <div className="w-full max-w-screen-lg px-6">{children}</div>
           {/* padding-bottom is ignored when we have scroll. So we use an empty box instead. */}
           <div className="h-32 w-full shrink-0" />

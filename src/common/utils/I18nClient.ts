@@ -4,10 +4,7 @@ import { ReactNode } from "react";
 import { useParams, usePathname, useRouter } from "next/navigation";
 
 import { Locale, defaultLocale, localeNames } from "@/common/models/I18n";
-
-interface Params {
-  locale?: Locale;
-}
+import { Params } from "@/common/models/Params";
 
 // ex. ^/(ko|en)
 const localeRegex = new RegExp(`^/(${localeNames.join("|")})`);

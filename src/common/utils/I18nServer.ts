@@ -1,10 +1,7 @@
 import { ReactNode } from "react";
 
 import { Locale, defaultLocale } from "@/common/models/I18n";
-
-interface Params {
-  locale?: Locale;
-}
+import { Params } from "@/common/models/Params";
 
 export async function getLocale(params: Promise<Params>) {
   const { locale } = await params;
