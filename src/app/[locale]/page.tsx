@@ -1,11 +1,9 @@
-import { ReactNode } from "react";
-
 import Header from "@/common/components/Header";
 import { CommonParamsProps } from "@/common/models/Props";
-import About from "@/modules/home/About";
-import Careers from "@/modules/home/Careers";
-import Education from "@/modules/home/Education";
-import Links from "@/modules/home/Links";
+import About from "@/modules/home/components/About";
+import Careers from "@/modules/home/components/Careers";
+import Education from "@/modules/home/components/Education";
+import Links from "@/modules/home/components/Links";
 import ScrolledSections, { SectionItems } from "@/common/components/ScrolledSections";
 
 const sectionItems: SectionItems = {
