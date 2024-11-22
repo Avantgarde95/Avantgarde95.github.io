@@ -9,41 +9,41 @@ the [separate repository](https://github.com/Avantgarde95/blog).
 
 The home screen is designed similar to the home screen of a smartphone.
 
-![Smartphone](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/Smartphone.png)
+![Smartphone](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/v1/image/Smartphone.png)
 
-![HomeScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/HomeScreen.png)
+![HomeScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/v1/image/HomeScreen.png)
 
 Each app is designed with a 'neon' concept.
 
-![AboutApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/AboutApp.png)
+![AboutApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/v1/image/AboutApp.png)
 
 The website supports Korean and English. Press the language button to change the language.
 
-![HomeScreenKorean](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/HomeScreenKorean.png)
+![HomeScreenKorean](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/v1/image/HomeScreenKorean.png)
 
 ### Screenshots
 
 #### Home screen
 
-![HomeScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/HomeScreen.png)
+![HomeScreen](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/v1/image/HomeScreen.png)
 
 #### 'About' app
 
-![AboutApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/AboutApp.png)
+![AboutApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/v1/image/AboutApp.png)
 
-![AboutAppLightbox](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/AboutAppLightbox.png)
+![AboutAppLightbox](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/v1/image/AboutAppLightbox.png)
 
 #### 'CV' app
 
-![CVApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/CVApp.png)
+![CVApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/v1/image/CVApp.png)
 
 #### 'Project' app
 
-![ProjectApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/ProjectApp.png)
+![ProjectApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/v1/image/ProjectApp.png)
 
 #### 'Music' app
 
-![MusicApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/master/image/MusicApp.png)
+![MusicApp](https://github.com/Avantgarde95/Avantgarde95.github.io/blob/v1/image/MusicApp.png)
 
 ### Technologies
 
