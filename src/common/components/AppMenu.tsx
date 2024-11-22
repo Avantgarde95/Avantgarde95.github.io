@@ -65,7 +65,7 @@ const AppMenu = () => {
     <div className="relative">
       <button className="font-mono text-base hover:text-yellow" onClick={handleClickOpen}>{`<Menu/>`}</button>
       <div
-        className={`absolute right-0 origin-top-right scale-0 bg-background font-mono text-base text-primary [transition:transform_200ms,opacity_150ms] ${
+        className={`absolute right-0 z-10 origin-top-right scale-0 bg-background font-mono text-base text-primary [transition:transform_200ms,opacity_150ms] ${
           isOpen ? "opacity-1 scale-100" : "scale-0 opacity-0"
         }`}
         ref={menuRef}
