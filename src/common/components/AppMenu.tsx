@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, MouseEvent } from "react";
+import { MouseEvent, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 
 import allRoutes from "@/common/models/Routes";
 import { useLocale } from "@/common/utils/I18nClient";
 import { Locale } from "@/common/models/I18n";
+import useOutsideClick from "@/common/hooks/useOutsideClick";
 
 const navItems: Array<{ name: string; url: string }> = [
   { name: "Home", url: allRoutes.home.url },
@@ -32,74 +31,65 @@ interface AppMenuItemProps {
 }
 
 const AppMenuItem = ({ label, onClick }: AppMenuItemProps) => (
-  <MenuItem
-    className={`group !relative !min-h-0 !whitespace-pre ${rowStyle} !font-mono !text-base !leading-tight !tracking-[normal] !text-primary`}
+  <button
+    className={`group relative block whitespace-pre ${rowStyle} font-mono text-base leading-tight tracking-[normal] text-primary`}
     onClick={onClick}
   >
     {`|${" ".repeat(dimensionX - 2)}|`}
     <span className="absolute left-7 top-1/2 -translate-y-1/2 group-hover:text-yellow">{label}</span>
-  </MenuItem>
+  </button>
 );
 
 const AppMenu = () => {
-  const [anchor, setAnchor] = useState<HTMLElement | null>(null);
   const router = useRouter();
   const { locale, setLocale } = useLocale();
+  const [isOpen, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
-  const isOpen = anchor !== null;
+  useOutsideClick(
+    menuRef,
+    () => {
+      if (isOpen) {
+        setOpen(false);
+      }
+    },
+    [isOpen, setOpen]
+  );
 
-  const handleOpen = (event: MouseEvent<HTMLButtonElement>) => {
-    setAnchor(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchor(null);
+  const handleClickOpen = (event: MouseEvent) => {
+    event.stopPropagation();
+    setOpen(!isOpen);
   };
 
   return (
-    <>
-      <button className="font-mono text-base hover:text-yellow" onClick={handleOpen}>{`<Menu/>`}</button>
-      <Menu
-        slotProps={{
-          paper: {
-            className: "!bg-background [&_.MuiList-root]:p-0",
-          },
-        }}
-        open={isOpen}
-        onClose={handleClose}
-        anchorEl={anchor}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "right",
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "right",
-        }}
-        elevation={0}
+    <div className="relative">
+      <button className="font-mono text-base hover:text-yellow" onClick={handleClickOpen}>{`<Menu/>`}</button>
+      <div
+        className={`absolute right-0 origin-top-right scale-0 bg-background font-mono text-base text-primary [transition:transform_200ms,opacity_150ms] ${
+          isOpen ? "opacity-1 scale-100" : "scale-0 opacity-0"
+        }`}
+        ref={menuRef}
       >
-        <div className="font-mono text-base text-primary">
-          {separator}
-          {navItems.map(item => (
-            <AppMenuItem
-              key={item.name}
-              label={`<${item.name}/>`}
-              onClick={() => {
-                router.push(`/${locale}${item.url}`);
-              }}
-            />
-          ))}
-          {separator}
+        {separator}
+        {navItems.map(item => (
           <AppMenuItem
-            label={`${localeItems[locale].name}()`}
+            key={item.name}
+            label={`<${item.name}/>`}
             onClick={() => {
-              setLocale(localeItems[locale].nextLocale);
+              router.push(`/${locale}${item.url}`);
             }}
           />
-          {separator}
-        </div>
-      </Menu>
-    </>
+        ))}
+        {separator}
+        <AppMenuItem
+          label={`${localeItems[locale].name}()`}
+          onClick={() => {
+            setLocale(localeItems[locale].nextLocale);
+          }}
+        />
+        {separator}
+      </div>
+    </div>
   );
 };
 

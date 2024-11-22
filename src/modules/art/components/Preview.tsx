@@ -55,7 +55,7 @@ const Preview = ({ work }: PreviewProps) => {
           src={work.demoURL}
           frameBorder={0}
         />
-        <div className="absolute right-0 top-0 flex h-[36px] flex-row bg-black bg-opacity-60">
+        <div className="absolute right-0 top-0 flex h-[36px] flex-row bg-background bg-opacity-60">
           <button className={buttonStyle} onClick={handleClickRefresh}>
             <IoIosRefresh />
           </button>
