@@ -1,3 +1,5 @@
-import Page from "@/app/[locale]/page";
+import Page, { metadata } from "@/app/[locale]/page";
+
+export { metadata };
 
 export default Page;

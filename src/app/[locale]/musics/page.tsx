@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import Header from "@/common/components/Header";
 import { CommonParamsProps } from "@/common/models/Props";
 import MusicList from "@/modules/musics/components/MusicList";
@@ -8,5 +10,9 @@ const Page = async ({ params }: CommonParamsProps) => (
     <MusicList />
   </div>
 );
+
+export const metadata: Metadata = {
+  title: "Musics",
+};
 
 export default Page;

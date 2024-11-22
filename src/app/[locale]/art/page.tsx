@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import Header from "@/common/components/Header";
 import { CommonParamsProps } from "@/common/models/Props";
 import { createTranslation } from "@/common/utils/I18nServer";
@@ -25,6 +27,10 @@ const Page = async ({ params }: CommonParamsProps) => {
       </div>
     </div>
   );
+};
+
+export const metadata: Metadata = {
+  title: "Art",
 };
 
 export default Page;

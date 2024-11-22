@@ -4687,6 +4687,7 @@ __metadata:
     eslint-plugin-prettier: "npm:^4.2.1"
     husky: "npm:^9.1.7"
     next: "npm:15.0.3"
+    nextjs-toploader: "npm:^3.7.15"
     node-fetch: "npm:^3.3.2"
     postcss: "npm:^8"
     prettier: "npm:2.8.8"
@@ -4796,6 +4797,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nextjs-toploader@npm:^3.7.15":
+  version: 3.7.15
+  resolution: "nextjs-toploader@npm:3.7.15"
+  dependencies:
+    nprogress: "npm:^0.2.0"
+    prop-types: "npm:^15.8.1"
+  peerDependencies:
+    next: ">= 6.0.0"
+    react: ">= 16.0.0"
+    react-dom: ">= 16.0.0"
+  checksum: 10c0/0ef7bd5ae034b1bb4ef05c68bd7808e311b9eaa26d8b33582f414708a852b5d2ad4dfc2291c07e5863f131a1e086ba485eef9df1fe21a727dd550dc699800ceb
+  languageName: node
+  linkType: hard
+
 "no-case@npm:^3.0.4":
   version: 3.0.4
   resolution: "no-case@npm:3.0.4"
@@ -4873,6 +4888,13 @@ __metadata:
   version: 0.1.2
   resolution: "normalize-range@npm:0.1.2"
   checksum: 10c0/bf39b73a63e0a42ad1a48c2bd1bda5a07ede64a7e2567307a407674e595bcff0fa0d57e8e5f1e7fa5e91000797c7615e13613227aaaa4d6d6e87f5bd5cc95de6
+  languageName: node
+  linkType: hard
+
+"nprogress@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "nprogress@npm:0.2.0"
+  checksum: 10c0/eab9a923a1ad1eed71a455ecfbc358442dd9bcd71b9fa3fa1c67eddf5159360b182c218f76fca320c97541a1b45e19ced04e6dcb044a662244c5419f8ae9e821
   languageName: node
   linkType: hard
 

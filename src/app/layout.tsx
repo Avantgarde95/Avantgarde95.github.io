@@ -1,3 +1,5 @@
+import NextTopLoader from "nextjs-toploader";
+
 import { CommonChildrenProps } from "@/common/models/Props";
 import { localeNames } from "@/common/models/I18n";
 
@@ -19,6 +21,7 @@ const Layout = ({ children }: CommonChildrenProps) => (
       <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet" />
     </head>
     <body className="m-0 h-full w-full p-0">
+      <NextTopLoader color="#d6d6d6" showSpinner={false} shadow={false} />
       <div className="flex h-full w-full flex-col items-center overflow-y-auto bg-background pt-16 text-primary">
         <div className="w-full max-w-screen-lg px-6">{children}</div>
         {/* padding-bottom is ignored when we have scroll. So we use an empty box instead. */}

@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import Header from "@/common/components/Header";
 import { CommonParamsProps } from "@/common/models/Props";
 import ScrolledSections from "@/common/components/ScrolledSections";
@@ -26,5 +28,9 @@ const Page = async ({ params }: CommonParamsProps) => (
     />
   </div>
 );
+
+export const metadata: Metadata = {
+  title: "Projects",
+};
 
 export default Page;

@@ -1,7 +1,8 @@
 "use client";
 
 import { ReactNode } from "react";
-import { useParams, usePathname, useRouter } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
+import { useRouter } from "nextjs-toploader/app";
 
 import { Locale, defaultLocale, localeNames } from "@/common/models/I18n";
 import { Params } from "@/common/models/Params";

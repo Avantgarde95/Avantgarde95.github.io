@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import Header from "@/common/components/Header";
 import { CommonParamsProps } from "@/common/models/Props";
 import About from "@/modules/home/components/About";
@@ -37,5 +39,9 @@ const Page = async ({ params }: CommonParamsProps) => (
     />
   </div>
 );
+
+export const metadata: Metadata = {
+  title: "Welcome!",
+};
 
 export default Page;

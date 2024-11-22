@@ -1,7 +1,7 @@
 "use client";
 
 import { MouseEvent, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "nextjs-toploader/app";
 
 import allRoutes from "@/common/models/Routes";
 import { useLocale } from "@/common/utils/I18nClient";
