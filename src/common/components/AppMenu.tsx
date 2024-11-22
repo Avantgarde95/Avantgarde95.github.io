@@ -22,7 +22,7 @@ const localeItems: Record<Locale, { name: string; nextLocale: Locale }> = {
 };
 
 const dimensionX = 20;
-const rowStyle = "!px-2 !py-0.5";
+const rowStyle = "px-2 py-0.5 whitespace-pre";
 const separator = <div className={rowStyle}>+{"-".repeat(dimensionX - 2)}+</div>;
 
 interface AppMenuItemProps {
@@ -32,7 +32,7 @@ interface AppMenuItemProps {
 
 const AppMenuItem = ({ label, onClick }: AppMenuItemProps) => (
   <button
-    className={`group relative block whitespace-pre ${rowStyle} font-mono text-base leading-tight tracking-[normal] text-primary`}
+    className={`group relative block ${rowStyle} font-mono text-base leading-tight tracking-[normal] text-primary`}
     onClick={onClick}
   >
     {`|${" ".repeat(dimensionX - 2)}|`}
