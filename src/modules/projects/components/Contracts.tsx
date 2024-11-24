@@ -16,7 +16,7 @@ const data = {
   meshdeform: {
     ko: (
       <>
-        <DecoratedLink target="_blank" href="https://www.dgp.toronto.edu/~rms/software/Deform2D/index.html">
+        <DecoratedLink href="https://www.dgp.toronto.edu/~rms/software/Deform2D/index.html">
           2D 모양 변형 알고리즘
         </DecoratedLink>
         의 Unity 구현
@@ -25,7 +25,7 @@ const data = {
     en: (
       <>
         Implementation of&nbsp;
-        <DecoratedLink target="_blank" href="https://www.dgp.toronto.edu/~rms/software/Deform2D/index.html">
+        <DecoratedLink href="https://www.dgp.toronto.edu/~rms/software/Deform2D/index.html">
           2D shape manipulation algorithm
         </DecoratedLink>
         &nbsp; for Unity
@@ -43,11 +43,7 @@ const Contracts = async ({ params }: CommonParamsProps) => {
         {
           id: "seeme",
           duration: { start: "2022", end: "2022" },
-          title: (
-            <DecoratedLink target="_blank" href="https://github.com/volunteer-project-1/volunteer_client">
-              SeeMe
-            </DecoratedLink>
-          ),
+          title: <DecoratedLink href="https://github.com/volunteer-project-1/volunteer_client">SeeMe</DecoratedLink>,
           subtitle: (
             <>
               {translate("timebank")}
@@ -72,7 +68,11 @@ const Contracts = async ({ params }: CommonParamsProps) => {
         {
           id: "meshdeform",
           duration: { start: "2021", end: "2021" },
-          title: "MeshDeform",
+          title: (
+            <DecoratedLink href="https://drive.google.com/file/d/1uUva_ICv_qVCJ_i1U3v-G605PYZE1nMn/view?usp=sharing">
+              MeshDeform
+            </DecoratedLink>
+          ),
           subtitle: (
             <>
               {translate("personel")}

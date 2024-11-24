@@ -39,11 +39,7 @@ const Personal = async ({ params }: CommonParamsProps) => {
         {
           id: "woorihangul",
           duration: { start: "2024", end: "2024" },
-          title: (
-            <DecoratedLink target="_blank" href="https://woori-hangul.vercel.app/">
-              woori-hangul
-            </DecoratedLink>
-          ),
+          title: <DecoratedLink href="https://woori-hangul.vercel.app/">woori-hangul</DecoratedLink>,
           subtitle: (
             <ProjectTechnologies technologies={[allTechnologies.ts, allTechnologies.emotion, allTechnologies.next]} />
           ),
@@ -57,11 +53,7 @@ const Personal = async ({ params }: CommonParamsProps) => {
         {
           id: "letsstyle",
           duration: { start: "2022", end: "2022" },
-          title: (
-            <DecoratedLink target="_blank" href="https://lets-style.vercel.app/">
-              lets-style
-            </DecoratedLink>
-          ),
+          title: <DecoratedLink href="https://lets-style.vercel.app/">lets-style</DecoratedLink>,
           subtitle: <ProjectTechnologies technologies={[allTechnologies.ts, allTechnologies.next]} />,
           content: (
             <>
@@ -73,11 +65,7 @@ const Personal = async ({ params }: CommonParamsProps) => {
         {
           id: "letsreact",
           duration: { start: "2021", end: "2021" },
-          title: (
-            <DecoratedLink target="_blank" href="https://avantgarde95.github.io/lets-react/">
-              lets-react
-            </DecoratedLink>
-          ),
+          title: <DecoratedLink href="https://avantgarde95.github.io/lets-react/">lets-react</DecoratedLink>,
           subtitle: (
             <>
               {translate("forteam")}
@@ -101,11 +89,7 @@ const Personal = async ({ params }: CommonParamsProps) => {
         {
           id: "asciisnow",
           duration: { start: "2020", end: "2020" },
-          title: (
-            <DecoratedLink target="_blank" href="https://avantgarde95.github.io/asciisnow/">
-              ASCII snow
-            </DecoratedLink>
-          ),
+          title: <DecoratedLink href="https://avantgarde95.github.io/asciisnow/">ASCII snow</DecoratedLink>,
           subtitle: <ProjectTechnologies technologies={[allTechnologies.js]} />,
           content: (
             <>
@@ -118,11 +102,7 @@ const Personal = async ({ params }: CommonParamsProps) => {
           id: "painttalk",
           duration: { start: "2019", end: "2019" },
           subtitle: <ProjectTechnologies technologies={[allTechnologies.kotlin]} />,
-          title: (
-            <DecoratedLink target="_blank" href="https://github.com/Avantgarde95/PaintTalk">
-              PaintTalk
-            </DecoratedLink>
-          ),
+          title: <DecoratedLink href="https://github.com/Avantgarde95/PaintTalk">PaintTalk</DecoratedLink>,
           content: (
             <>
               {translate("painttalk")}

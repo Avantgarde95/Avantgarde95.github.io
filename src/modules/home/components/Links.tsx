@@ -11,7 +11,7 @@ const items: Array<{ id: string; icon: ReactNode; url: string }> = [
 const Links = () => (
   <div className="flex flex-row flex-wrap items-center justify-start gap-5">
     {items.map(contact => (
-      <Link className="text-2xl hover:text-yellow" key={contact.id} target="_blank" href={contact.url}>
+      <Link className="text-2xl hover:text-yellow" key={contact.id} href={contact.url}>
         {contact.icon}
       </Link>
     ))}

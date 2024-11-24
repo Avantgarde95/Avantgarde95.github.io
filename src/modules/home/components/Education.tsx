@@ -31,15 +31,11 @@ const Education = async ({ params }: CommonParamsProps) => {
           subtitle: translate("graduateMajor"),
           content: (
             <>
-              <DecoratedLink target="_blank" href="https://avantgarde95.github.io/MeshChain-publish/">
-                MeshChain
-              </DecoratedLink>
+              <DecoratedLink href="https://avantgarde95.github.io/MeshChain-publish/">MeshChain</DecoratedLink>
               : Secure 3D model and intellectual property management powered by blockchain technology
               <br />
-              <DecoratedLink target="_blank" href="https://avantgarde95.github.io/C3DMB/">
-                C3DMB
-              </DecoratedLink>
-              : Collaborative 3D modeling system based on blockchain
+              <DecoratedLink href="https://avantgarde95.github.io/C3DMB/">C3DMB</DecoratedLink>: Collaborative 3D
+              modeling system based on blockchain
             </>
           ),
         },

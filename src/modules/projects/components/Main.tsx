@@ -36,11 +36,7 @@ const Main = async ({ params }: CommonParamsProps) => {
         {
           id: "gaia",
           duration: { start: "2021" },
-          title: (
-            <DecoratedLink target="_link" href="https://tmaxgaia.net/GAIACube">
-              GAIA
-            </DecoratedLink>
-          ),
+          title: <DecoratedLink href="https://tmaxgaia.net/GAIACube">GAIA</DecoratedLink>,
           subtitle: (
             <>
               {translate("tmax")}
@@ -78,11 +74,7 @@ const Main = async ({ params }: CommonParamsProps) => {
         {
           id: "meshchain",
           duration: { start: "2020", end: "2021" },
-          title: (
-            <DecoratedLink target="_blank" href="https://avantgarde95.github.io/MeshChain-publish/">
-              MeshChain
-            </DecoratedLink>
-          ),
+          title: <DecoratedLink href="https://avantgarde95.github.io/MeshChain-publish/">MeshChain</DecoratedLink>,
           subtitle: (
             <>
               {translate("graduate")}
@@ -108,11 +100,7 @@ const Main = async ({ params }: CommonParamsProps) => {
         {
           id: "c3dmb",
           duration: { start: "2018", end: "2019" },
-          title: (
-            <DecoratedLink target="_blank" href="https://avantgarde95.github.io/C3DMB/">
-              C3DMB
-            </DecoratedLink>
-          ),
+          title: <DecoratedLink href="https://avantgarde95.github.io/C3DMB/">C3DMB</DecoratedLink>,
           subtitle: (
             <>
               {translate("graduate")}
