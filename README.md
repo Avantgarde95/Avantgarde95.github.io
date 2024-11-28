@@ -1,4 +1,4 @@
-# mypage
+# mypage (v2)
 
 ![Screenshot](Screenshot.png)
 
