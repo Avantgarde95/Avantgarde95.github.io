@@ -88,6 +88,19 @@ const AppMenu = () => {
           }}
         />
         {separator}
+        <AppMenuItem
+          label="v1()"
+          onClick={() => {
+            window.open("https://mypage-v1.vercel.app/", "_blank");
+          }}
+        />
+        <AppMenuItem
+          label="v2()"
+          onClick={() => {
+            window.open("https://mypage-v2.vercel.app/", "_blank");
+          }}
+        />
+        {separator}
       </div>
     </div>
   );
