@@ -13,7 +13,7 @@ const navItems: Array<{ name: string; url: string }> = [
   { name: "Projects", url: allRoutes.projects.url },
   { name: "Musics", url: allRoutes.musics.url },
   { name: "Art", url: allRoutes.art.url },
-  // { name: "Blog", url: allRoutes.blog.url },
+  { name: "Blog", url: allRoutes.blog.url },
 ];
 
 const localeItems: Record<Locale, { name: string; nextLocale: Locale }> = {

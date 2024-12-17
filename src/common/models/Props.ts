@@ -6,6 +6,6 @@ export interface CommonChildrenProps {
   children?: ReactNode;
 }
 
-export interface CommonParamsProps {
-  params: Promise<{ locale?: Locale }>;
+export interface CommonParamsProps<Params = {}> {
+  params: Promise<{ locale?: Locale } & Params>;
 }

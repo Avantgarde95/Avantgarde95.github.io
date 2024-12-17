@@ -29,7 +29,7 @@ const Careers = async ({ params }: CommonParamsProps) => {
       items={[
         {
           id: "tmaxgaia",
-          duration: { start: "2023", end: "2024" },
+          duration: { start: "2021", end: "2024" },
           title: translate("tmaxgaia"),
           subtitle: translate("researcher"),
           content: (

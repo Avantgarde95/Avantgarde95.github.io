@@ -1,0 +1,57 @@
+1:"$Sreact.fragment"
+2:I[7628,["177","static/chunks/app/layout-5d369154124a380d.js"],""]
+3:I[9888,[],""]
+4:I[9750,[],""]
+6:I[977,[],"OutletBoundary"]
+8:I[977,[],"MetadataBoundary"]
+a:I[977,[],"ViewportBoundary"]
+c:I[9375,[],""]
+:HL["/_next/static/css/f81b53168bed0ade.css","style"]
+0:{"P":null,"b":"XOqaZJiAFj7n3m_gH_73R","p":"","c":["","ko","blog","post","reactiframehistory"],"i":false,"f":[[["",{"children":[["locale","ko","d"],{"children":["blog",{"children":["post",{"children":[["key","reactiframehistory","d"],{"children":["__PAGE__",{}]}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/f81b53168bed0ade.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","className":"m-0 h-full w-full p-0 font-sans","children":[["$","head",null,{"children":[["$","link",null,{"rel":"stylesheet","as":"style","crossOrigin":"","href":"https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":""}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"className":"m-0 h-full w-full p-0","children":[["$","$L2",null,{"color":"#d6d6d6","showSpinner":false,"shadow":false}],["$","div",null,{"className":"flex h-full w-full flex-col items-center overflow-y-auto bg-background pt-16 text-primary","children":[["$","div",null,{"className":"w-full max-w-screen-lg px-6","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","div",null,{"className":"h-32 w-full shrink-0"}]]}]]}]]}]]}],{"children":[["locale","ko","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$0:f:0:1:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$0:f:0:1:2:children:0","children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["post",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$0:f:0:1:2:children:0","children","blog","children","post","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["key","reactiframehistory","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$0:f:0:1:2:children:0","children","blog","children","post","children","$0:f:0:1:2:children:2:children:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":"$L7"}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","iLbcbkye_zkxBdqEk0eXe",{"children":[["$","$L8",null,{"children":"$L9"}],["$","$La",null,{"children":"$Lb"}],null]}]]}],false]],"m":"$undefined","G":["$c","$undefined"],"s":false,"S":true}
+d:I[1357,["899","static/chunks/66a21e36-9320fd4f2767de8c.js","79","static/chunks/79-121b1482e66f2415.js","568","static/chunks/568-94d199cce9c2ce6e.js","253","static/chunks/app/%5Blocale%5D/blog/post/%5Bkey%5D/page-39ba752fa4b62049.js"],"default"]
+e:I[149,["899","static/chunks/66a21e36-9320fd4f2767de8c.js","79","static/chunks/79-121b1482e66f2415.js","568","static/chunks/568-94d199cce9c2ce6e.js","253","static/chunks/app/%5Blocale%5D/blog/post/%5Bkey%5D/page-39ba752fa4b62049.js"],"default"]
+10:I[6879,["899","static/chunks/66a21e36-9320fd4f2767de8c.js","79","static/chunks/79-121b1482e66f2415.js","568","static/chunks/568-94d199cce9c2ce6e.js","253","static/chunks/app/%5Blocale%5D/blog/post/%5Bkey%5D/page-39ba752fa4b62049.js"],"default"]
+f:T7e3,웹페이지에서 iframe의 src를 변경하면 브라우저의 히스토리가 변경될 수 있다. 이를 방지하는 방법 중 하나는, src가 변경되면 iframe 요소를 지우고 새로 렌더링하는 것이다.
+만약 [리액트](https://reactjs.org/)를 사용중이라면,
+[key](https://reactjs.org/docs/lists-and-keys.html)를 사용하여 간단하게 해결할 수 있다.
+
+If you change the src of iframe, the browser history can be modified. One of the methods to prevent this is to delete
+the iframe element and render a new one when the src is changed. If you are using [React](https://reactjs.org/), it can
+be solved simply by using the [key](https://reactjs.org/docs/lists-and-keys.html).
+
+예를 들어, 아래 코드를 사용하여 유튜브 비디오를 표시하려고 한다. 이 때 새로운 비디오를 렌더링하고자 기존과 다른 `id`의 값을 주면, 기존에 렌더링된 iframe 요소는 그대로 남아있고 src만 변경되므로
+브라우저 히스토리가 변경될 수 있다.
+
+For example, we want to display a YouTube video using the code below. If you give a different `id` value to render a new
+video, since the previously rendered iframe element is still alive and only the src is changed, the browser history can
+be modified.
+
+```typescript jsx
+const Video = ({id = ''}) => (
+    <iframe
+        frameBorder={0}
+        allowFullScreen={true}
+        src={`https://www.youtube.com/embed/${id}`}
+    />
+);
+```
+
+아래와 같이 key를 사용하여 리액트가 iframe을 새로 렌더링하도록 강제하면 히스토리에 영향을 미치지 않고 비디오를 변경할 수 있다.
+
+If you force React to render a new iframe using the key as shown below, You can change the video without affecting the
+history.
+
+```typescript jsx
+const Video = ({id = ''}) => (
+    <iframe
+        key = {id} // Or a counter, a random value, ...
+        frameBorder={0}
+        allowFullScreen={true}
+        src={`https://www.youtube.com/embed/${id}`}
+    />
+);
+```
+5:["$","div",null,{"className":"w-full","children":[["$","header",null,{"className":"mb-4 flex w-full flex-row items-center","children":[["$","h1",null,{"className":"m-0 mr-auto p-0 font-mono text-3xl font-normal md:text-4xl","children":"Blog"}],["$","$Ld",null,{}]]}],["$","div",null,{"className":"mb-4 w-full border-b-2 border-dashed border-gray pb-4","children":[["$","h2",null,{"className":"m-0 p-0 text-xl","children":"Preventing iframe from affecting the history"}],["$","div",null,{"className":"text-gray","children":"2020-12-29"}]]}],["$","$Le",null,{"post":{"key":"reactiframehistory","title":"Preventing iframe from affecting the history","time":1609200000000,"category":"Computer","content":"$f"}}],["$","div",null,{"className":"my-4 w-full border-b-2 border-dashed border-gray"}],["$","$L10",null,{"shortname":"Avantgarde95","config":{"url":"https://avantgarde95.github.io/blog/reactiframehistory","identifier":"Preventing iframe from affecting the history","title":"Preventing iframe from affecting the history"}}]]}]
+b:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Preventing iframe from affecting the history"}]]
+7:null
