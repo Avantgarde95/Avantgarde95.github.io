@@ -6,6 +6,7 @@ console.log(`===== ${isDevelopment ? "Dev. mode" : "Prod. mode"} =====`);
 
 const nextConfig: NextConfig = {
   output: "export",
+  trailingSlash: true,
   distDir: isDevelopment ? ".next" : "docs",
   webpack: config => {
     config.module.rules.push(

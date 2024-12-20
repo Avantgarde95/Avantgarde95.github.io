@@ -1,0 +1,92 @@
+1:"$Sreact.fragment"
+2:I[6024,["177","static/chunks/app/layout-302cfb3185d6d840.js"],""]
+3:I[6964,[],""]
+4:I[9154,[],""]
+6:I[8893,[],"OutletBoundary"]
+8:I[8893,[],"MetadataBoundary"]
+a:I[8893,[],"ViewportBoundary"]
+c:I[5915,[],""]
+:HL["/_next/static/css/6125e7c0a64057a1.css","style"]
+0:{"P":null,"b":"WH7BdXr9yD9so5hm5ls5N","p":"","c":["","ko","blog","post","nextgithubpages",""],"i":false,"f":[[["",{"children":[["locale","ko","d"],{"children":["blog",{"children":["post",{"children":[["key","nextgithubpages","d"],{"children":["__PAGE__",{}]}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/6125e7c0a64057a1.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"ko","className":"m-0 h-full w-full p-0 font-sans","children":[["$","head",null,{"children":[["$","link",null,{"rel":"stylesheet","as":"style","crossOrigin":"","href":"https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":""}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"className":"m-0 h-full w-full p-0","children":[["$","$L2",null,{"color":"#d6d6d6","showSpinner":false,"shadow":false}],["$","div",null,{"className":"flex h-full w-full flex-col items-center overflow-y-auto bg-background pt-16 text-primary","children":[["$","div",null,{"className":"w-full max-w-screen-lg px-6","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","div",null,{"className":"h-32 w-full shrink-0"}]]}]]}]]}]]}],{"children":[["locale","ko","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$0:f:0:1:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$0:f:0:1:2:children:0","children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["post",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$0:f:0:1:2:children:0","children","blog","children","post","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["key","nextgithubpages","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$0:f:0:1:2:children:0","children","blog","children","post","children","$0:f:0:1:2:children:2:children:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":"$L7"}]]}],{},null,false]},null,false]},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","iNftEIZuMNqrkDbqNnzgW",{"children":[["$","$L8",null,{"children":"$L9"}],["$","$La",null,{"children":"$Lb"}],null]}]]}],false]],"m":"$undefined","G":["$c","$undefined"],"s":false,"S":true}
+d:I[4829,["847","static/chunks/300e3dd5-e01ac94ab32faefa.js","647","static/chunks/647-f239b428bd9278ac.js","722","static/chunks/722-9c0ef4ab251a6d8b.js","253","static/chunks/app/%5Blocale%5D/blog/post/%5Bkey%5D/page-bcbb1879ab8669a5.js"],"default"]
+e:I[9339,["847","static/chunks/300e3dd5-e01ac94ab32faefa.js","647","static/chunks/647-f239b428bd9278ac.js","722","static/chunks/722-9c0ef4ab251a6d8b.js","253","static/chunks/app/%5Blocale%5D/blog/post/%5Bkey%5D/page-bcbb1879ab8669a5.js"],"default"]
+10:I[435,["847","static/chunks/300e3dd5-e01ac94ab32faefa.js","647","static/chunks/647-f239b428bd9278ac.js","722","static/chunks/722-9c0ef4ab251a6d8b.js","253","static/chunks/app/%5Blocale%5D/blog/post/%5Bkey%5D/page-bcbb1879ab8669a5.js"],"default"]
+f:Te11,[Next.js](https://nextjs.org/)는 기본적으로 서버 사이드 렌더링(SSR)을 위한 프레임워크이지만,
+정적 사이트 생성 (SSG) 기능도 제공한다.
+(이 블로그와 같이) 이 기능을 이용하여 GitHub pages를 만들 수 있다.
+다만 이를 위해서는 자잘한 설정이 필요하다.
+
+[Next.js](https://nextjs.org/) is basically a framework for server-side rendering (SSR),
+but it also provides static site generation (SSG).
+You can use that feature to create GitHub pages (like this blog).
+There are some configurations we need to set.
+
+## 생성 위치 설정 Configure output folder
+
+GitHub pages를 사용하려면, 웹사이트의 index.html 파일이 프로젝트 루트 또는 "docs" 폴더에 위치하게 하면 된다.
+"docs" 폴더에 위치하게 하고 싶다고 가정하자.
+그러면 `next build`를 사용해서 **우선 빌드를 한 뒤**, `next export -o docs`를 이용해서 정적 사이트 생성을 해주면 된다.
+
+To use GitHub pages, we need to place index.html at the project root or "docs" folder.
+Suppose that we want to place it at "docs" folder.
+**Build the website first** using `next build`, and generate the static website using `next export -o docs`.
+
+## Jekyll 비활성화 Disable Jekyll
+
+이대로 GitHub pages를 생성해보면, 웹사이트가 잘 작동하지 않는 경우가 있다.
+GitHub pages에는 기본적으로 [Jekyll](https://jekyllrb.com/)이 깔려있는데, 이것이 Next.js가 사용하려고 만드는 \_next 폴더를 무시해버리기 때문이다.
+해결법은 간단하다. docs 폴더에 .nojekyll이라는 이름의 파일을 하나 만들어 주면 된다. (내용물은 비어도 된다.)
+아래처럼 스크립트를 작성해서 자동화해주면 편리하다.
+
+Sometimes the website does not work well after performing the previous processes.
+This is because [Jekyll](https://jekyllrb.com/), installed on GitHub pages by default, ignores the \_next folder Next.js creates to use.
+The solution is simple. Just create a file named .nojekyll in the docs folder. (The contents can be empty.)
+It is convenient to write a automation script like the one below.
+
+PostBuild.js
+
+```javascript
+const fs = require("fs");
+
+fs.writeFileSync("docs/.nojekyll", "Turn off Jekyll!");
+```
+
+package.json
+
+```json
+{
+  "scripts": {
+    "deploy": "next build && next export -o docs && node PostBuild"
+  }
+}
+```
+
+## 경로 설정 Path configuration
+
+GitHub 레포지토리가 사용자 사이트용 레포지토리(`[username].github.io`)가 아니라 특정 프로젝트용 레포지토리(`[username].github.io/[projectname]`)인 경우에는 추가적인 설정이 필요하다.
+예컨대 레포지토리 이름이 my-app이라면, next.config.js 파일을 생성하고 아래처럼 `basePath`를 추가해주면 된다.
+
+If your GitHub repository is for a specific project (`[username].github.io/[projectname]`) rather than for your site (`[username].github.io`), additional setups are required.
+For example, if the repository name is my-app, create a file next.config.js and add `basePath` like below.
+
+```javascript
+module.exports = {
+  basePath: "/my-app",
+};
+```
+
+public 폴더를 통해 이미지 등의 정적 파일들을 사용할때도, 경로 지정이 필요하다.
+아래처럼 URL에 레포지토리 이름을 넣어주면 된다.
+
+When using static files such as images through the public folder, you need to specify the path, too.
+Put the repository name in the URL like below.
+
+```jsx
+const basePath = "/my-app";
+
+const Icon = () => <img src={`${basePath}/my-image.png`} alt="My image">;
+```
+5:["$","div",null,{"className":"w-full","children":[["$","header",null,{"className":"mb-4 flex w-full flex-row items-center","children":[["$","h1",null,{"className":"relative m-0 mr-auto p-0 font-mono text-3xl font-normal md:text-4xl","children":["Blog",["$","span",null,{"className":"absolute right-0 top-0 z-10 inline-block h-full w-full animate-[typing-reveal_forwards] border-l-4 border-solid border-yellow bg-background","style":{"animationDuration":"1.6s","animationTimingFunction":"steps(4, end)"}}]]}],["$","$Ld",null,{}]]}],["$","div",null,{"className":"mb-4 w-full border-b-2 border-dashed border-gray pb-4","children":[["$","h2",null,{"className":"m-0 p-0 text-xl","children":"Creating GitHub pages using Next.js"}],["$","div",null,{"className":"text-gray","children":"2022-09-19"}]]}],["$","$Le",null,{"post":{"key":"nextgithubpages","title":"Creating GitHub pages using Next.js","time":1663545600000,"category":"Computer","content":"$f"}}],["$","div",null,{"className":"my-4 w-full border-b-2 border-dashed border-gray"}],["$","$L10",null,{"shortname":"Avantgarde95","config":{"url":"https://avantgarde95.github.io/blog/nextgithubpages","identifier":"Creating GitHub pages using Next.js","title":"Creating GitHub pages using Next.js"}}]]}]
+b:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Creating GitHub pages using Next.js"}]]
+7:null

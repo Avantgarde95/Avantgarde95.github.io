@@ -16,6 +16,7 @@ const Page = async ({ params }: CommonParamsProps) => (
           <span className="text-orange">Hunmin</span> <span className="text-green">Park</span>
         </>
       }
+      titleText="Hunmin Park"
     />
     <ScrolledSections
       sections={[

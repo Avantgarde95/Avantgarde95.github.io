@@ -41,20 +41,22 @@ const Preview = ({ work }: PreviewProps) => {
   };
 
   return (
-    <div className="flex h-[450px] flex-col items-center">
+    <div className="flex h-[450px] flex-col items-center" ref={ref}>
       <div className="relative h-[360px] w-full">
-        <iframe
-          className="origin-top-left"
-          style={{
-            width: scaleString,
-            height: scaleString,
-            transform: `scale(${scale})`,
-          }}
-          key={value}
-          title={work.name}
-          src={work.demoURL}
-          frameBorder={0}
-        />
+        {isRequested && (
+          <iframe
+            className="origin-top-left"
+            style={{
+              width: scaleString,
+              height: scaleString,
+              transform: `scale(${scale})`,
+            }}
+            key={value}
+            title={work.name}
+            src={work.previewURL ?? work.demoURL}
+            frameBorder={0}
+          />
+        )}
         <div className="absolute right-0 top-0 flex h-[36px] flex-row bg-background bg-opacity-60">
           <button className={buttonStyle} onClick={handleClickRefresh}>
             <IoIosRefresh />

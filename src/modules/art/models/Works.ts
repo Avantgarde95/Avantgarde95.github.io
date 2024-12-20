@@ -2,7 +2,18 @@ export interface Work {
   name: string;
   demoURL: string;
   codeURL: string;
+  previewURL?: string;
   scale?: number;
+}
+
+function createCodeSandbox(name: string, projectID: string, previewID: string, scale?: number): Work {
+  return {
+    name,
+    demoURL: `https://${previewID}.csb.app`,
+    codeURL: `https://codesandbox.io/s/${projectID}`,
+    // previewURL: `https://codesandbox.io/embed/${previewID}?view=preview&module=%2Findex.html&hidenavigation=1&hidedevtools=1`,
+    scale,
+  };
 }
 
 const allWorks: Array<Work> = [
@@ -24,51 +35,25 @@ const allWorks: Array<Work> = [
     codeURL: "https://github.com/Avantgarde95/html-birthday-card",
     scale: 0.7,
   },
-  {
-    name: "simple-christmas-tree",
-    demoURL: "https://c6jjj.csb.app/",
-    codeURL: "https://codesandbox.io/s/simple-christmas-tree-c6jjj",
-  },
-  { name: "sun", demoURL: "https://wfxb8f.csb.app/", codeURL: "https://codesandbox.io/s/sun-wfxb8f" },
+  createCodeSandbox("simple-christmas-tree", "simple-christmas-tree-c6jjj", "c6jjj"),
+  createCodeSandbox("sun", "sun-wfxb8f", "wfxb8f"),
   {
     name: "cat",
     demoURL: "https://avantgarde95.github.io/cat/cat1.html",
     codeURL: "https://github.com/Avantgarde95/cat",
     scale: 0.9,
   },
-  { name: "guitar", demoURL: "https://lqii8k.csb.app/", codeURL: "https://codesandbox.io/s/guitar-lqii8k" },
-  {
-    name: "sea-and-coconut",
-    demoURL: "https://gxfv9i.csb.app/",
-    codeURL: "https://codesandbox.io/s/sea-and-coconut-gxfv9i",
-    scale: 0.8,
-  },
-  { name: "puppy", demoURL: "https://loj5r9.csb.app/", codeURL: "https://codesandbox.io/s/nike-puppy-loj5r9" },
-  { name: "error-cat", demoURL: "https://4zu4ls.csb.app/", codeURL: "https://codesandbox.io/s/error-cat-4zu4ls" },
-  { name: "doguri", demoURL: "https://ckjtww.csb.app/", codeURL: "https://codesandbox.io/s/doguri-ckjtww" },
-  {
-    name: "doguri-variations",
-    demoURL: "https://d646zl.csb.app/",
-    codeURL: "https://codesandbox.io/s/doguri-variations-d646zl",
-  },
-  {
-    name: "infinite-loop-coding-logo",
-    demoURL: "https://rj10sv.csb.app/",
-    codeURL: "https://codesandbox.io/s/infinite-loop-coding-logo-rj10sv",
-  },
-  { name: "c2022yh", demoURL: "https://vg3w5j.csb.app/", codeURL: "https://codesandbox.io/s/c2022yh-vg3w5j" },
-  {
-    name: "single-element-art\n(Single <div> + All CSS!)",
-    demoURL: "https://k20srv.csb.app/",
-    codeURL: "https://codesandbox.io/s/single-element-art-k20srv",
-  },
-  {
-    name: "moon",
-    demoURL: "https://2mj3hc.csb.app/",
-    codeURL: "https://codesandbox.io/s/2mj3hc",
-    scale: 0.7,
-  },
-  { name: "snowman", demoURL: "https://ejbt1s.csb.app/", codeURL: "https://codesandbox.io/s/ejbt1s", scale: 0.7 },
+  createCodeSandbox("guitar", "guitar-lqii8k", "lqii8k"),
+  createCodeSandbox("sea-and-coconut", "sea-and-coconut-gxfv9i", "gxfv9i", 0.8),
+  createCodeSandbox("puppy", "nike-puppy-loj5r9", "loj5r9"),
+  createCodeSandbox("error-cat", "error-cat-4zu4ls", "4zu4ls"),
+  createCodeSandbox("doguri", "doguri-ckjtww", "ckjtww"),
+  createCodeSandbox("doguri-variations", "doguri-variations-d646zl", "d646zl"),
+  createCodeSandbox("infinite-loop-coding-logo", "infinite-loop-coding-logo-rj10sv", "rj10sv"),
+  createCodeSandbox("c2022yh", "c2022yh-forked-lwmxmn", "lwmxmn"),
+  createCodeSandbox("single-element-art\n(Single <div> + All CSS!)", "single-element-art-k20srv", "k20srv"),
+  createCodeSandbox("moon", "moon-forked-qgy8l3", "qgy8l3", 0.7),
+  createCodeSandbox("snowman", "ejbt1s", "ejbt1s", 0.7),
 ];
 
 allWorks.reverse();
