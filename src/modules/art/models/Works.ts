@@ -43,6 +43,8 @@ const allWorks: Array<Work> = [
     codeURL: "https://codesandbox.io/s/sea-and-coconut-gxfv9i",
     scale: 0.8,
   },
+  { name: "puppy", demoURL: "https://loj5r9.csb.app/", codeURL: "https://codesandbox.io/s/nike-puppy-loj5r9" },
+  { name: "error-cat", demoURL: "https://4zu4ls.csb.app/", codeURL: "https://codesandbox.io/s/error-cat-4zu4ls" },
   { name: "doguri", demoURL: "https://ckjtww.csb.app/", codeURL: "https://codesandbox.io/s/doguri-ckjtww" },
   {
     name: "doguri-variations",
@@ -55,6 +57,11 @@ const allWorks: Array<Work> = [
     codeURL: "https://codesandbox.io/s/infinite-loop-coding-logo-rj10sv",
   },
   { name: "c2022yh", demoURL: "https://vg3w5j.csb.app/", codeURL: "https://codesandbox.io/s/c2022yh-vg3w5j" },
+  {
+    name: "single-element-art\n(Single <div> + All CSS!)",
+    demoURL: "https://k20srv.csb.app/",
+    codeURL: "https://codesandbox.io/s/single-element-art-k20srv",
+  },
   {
     name: "moon",
     demoURL: "https://2mj3hc.csb.app/",

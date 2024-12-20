@@ -67,7 +67,7 @@ const Preview = ({ work }: PreviewProps) => {
           </button>
         </div>
       </div>
-      <div className="mt-4">{work.name}</div>
+      <div className="mt-4 whitespace-pre-wrap text-center">{work.name}</div>
     </div>
   );
 };
