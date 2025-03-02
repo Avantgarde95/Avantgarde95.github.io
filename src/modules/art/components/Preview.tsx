@@ -70,6 +70,7 @@ const Preview = ({ work }: PreviewProps) => {
         </div>
       </div>
       <div className="mt-4 whitespace-pre-wrap text-center">{work.name}</div>
+      <div className="text-gray">{work.description}</div>
     </div>
   );
 };

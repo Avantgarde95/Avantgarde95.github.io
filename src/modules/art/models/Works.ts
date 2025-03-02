@@ -4,15 +4,23 @@ export interface Work {
   codeURL: string;
   previewURL?: string;
   scale?: number;
+  description?: string;
 }
 
-function createCodeSandbox(name: string, projectID: string, previewID: string, scale?: number): Work {
+function createCodeSandbox(
+  name: string,
+  projectID: string,
+  previewID: string,
+  scale?: number,
+  description?: string
+): Work {
   return {
     name,
     demoURL: `https://${previewID}.csb.app`,
     codeURL: `https://codesandbox.io/s/${projectID}`,
     // previewURL: `https://codesandbox.io/embed/${previewID}?view=preview&module=%2Findex.html&hidenavigation=1&hidedevtools=1`,
     scale,
+    description,
   };
 }
 
@@ -48,12 +56,13 @@ const allWorks: Array<Work> = [
   createCodeSandbox("puppy", "nike-puppy-loj5r9", "loj5r9"),
   createCodeSandbox("error-cat", "error-cat-4zu4ls", "4zu4ls"),
   createCodeSandbox("doguri", "doguri-ckjtww", "ckjtww"),
-  createCodeSandbox("doguri-variations", "doguri-variations-d646zl", "d646zl"),
+  createCodeSandbox("doguri-variations", "doguri-variations-d646zl", "d646zl", 1, "Click the emojis!"),
+  createCodeSandbox("animal-cakes", "v2wgzk", "v2wgzk"),
   createCodeSandbox("infinite-loop-coding-logo", "infinite-loop-coding-logo-rj10sv", "rj10sv"),
   createCodeSandbox("c2022yh", "c2022yh-forked-lwmxmn", "lwmxmn"),
   createCodeSandbox("single-element-art\n(Single <div> + All CSS!)", "single-element-art-k20srv", "k20srv"),
-  createCodeSandbox("moon", "moon-forked-qgy8l3", "qgy8l3", 0.7),
   createCodeSandbox("snowman", "ejbt1s", "ejbt1s", 0.7),
+  createCodeSandbox("moon", "moon-forked-qgy8l3", "qgy8l3", 0.7, "Click the buttons or the moon!"),
 ];
 
 allWorks.reverse();
