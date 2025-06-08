@@ -1,0 +1,20 @@
+---
+interface Props {
+  titleText: string;
+}
+
+const { titleText } = Astro.props;
+const titleLength = titleText.length;
+---
+
+<header class="mb-4 flex w-full flex-row items-center">
+  <h1 class="relative m-0 mr-auto p-0 font-mono text-3xl font-normal md:text-4xl">
+    <slot />
+    <span
+      class="border-yellow bg-background absolute top-0 right-0 z-10 inline-block h-full w-full animate-[typing-reveal_forwards] border-l-4 border-solid"
+      style={{
+        animationDuration: `${(titleLength < 5 ? 0.4 : 0.2) * titleLength}s`,
+        animationTimingFunction: `steps(${titleLength}, end)`,
+      }}></span>
+  </h1>
+</header>
