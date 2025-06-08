@@ -1,10 +1,14 @@
 ---
+import AppMenu from "@/shared/components/AppMenu";
+import { defaultLocale, type Locale } from "@/shared/constants/I18n";
+
 interface Props {
   titleText: string;
 }
 
 const { titleText } = Astro.props;
 const titleLength = titleText.length;
+const locale = (Astro.params.locale ?? defaultLocale) as Locale;
 ---
 
 <header class="mb-4 flex w-full flex-row items-center">
@@ -17,4 +21,5 @@ const titleLength = titleText.length;
         animationTimingFunction: `steps(${titleLength}, end)`,
       }}></span>
   </h1>
+  <AppMenu locale={locale} client:load />
 </header>
