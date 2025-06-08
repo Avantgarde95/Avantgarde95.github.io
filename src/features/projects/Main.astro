@@ -3,7 +3,7 @@ import ProjectImage from "@/features/projects/ProjectImage.astro";
 import ProjectTechnologies from "@/features/projects/ProjectTechnologies.astro";
 import DecoratedLink from "@/shared/components/DecoratedLink.astro";
 import HistoryView from "@/shared/components/HistoryView.astro";
-import { allTechnologies } from "@/shared/components/Technology";
+import { allTechnologies } from "@/shared/constants/Technology";
 import { getLocale } from "@/shared/utils/LocaleUtils";
 
 const data = {
@@ -31,7 +31,7 @@ const locale = getLocale(Astro.params);
 ---
 
 <HistoryView duration={{ start: "2021" }}>
-  <DecoratedLink slot="title" href="https://tmaxgaia.net/GAIACube">GAIA</DecoratedLink>
+  <div slot="title">GAIA</div>
   <div slot="subtitle">
     {data.tmax[locale]}
     <ProjectTechnologies
@@ -47,6 +47,7 @@ const locale = getLocale(Astro.params);
   </div>
   {data.gaia[locale]}
 </HistoryView>
+
 <HistoryView duration={{ start: "2021", end: "2021" }}>
   <div slot="title">ToOffice</div>
   <div slot="subtitle">
@@ -56,6 +57,7 @@ const locale = getLocale(Astro.params);
   {data.office[locale]}
   <ProjectImage url="/images/tooffice.png" alt="ToOffice" />
 </HistoryView>
+
 <HistoryView duration={{ start: "2020", end: "2021" }}>
   <DecoratedLink slot="title" href="https://avantgarde95.github.io/MeshChain-publish/">MeshChain</DecoratedLink>
   <div slot="subtitle">
@@ -74,6 +76,7 @@ const locale = getLocale(Astro.params);
   {data.meshchain[locale]}
   <ProjectImage url="/images/meshchain.png" alt="MeshChain" />
 </HistoryView>
+
 <HistoryView duration={{ start: "2018", end: "2019" }}>
   <DecoratedLink slot="title" href="https://avantgarde95.github.io/C3DMB/">C3DMB</DecoratedLink>
   <div slot="subtitle">

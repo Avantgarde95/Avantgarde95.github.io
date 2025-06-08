@@ -1,0 +1,77 @@
+---
+import ProjectImage from "@/features/projects/ProjectImage.astro";
+import ProjectTechnologies from "@/features/projects/ProjectTechnologies.astro";
+import DecoratedLink from "@/shared/components/DecoratedLink.astro";
+import HistoryView from "@/shared/components/HistoryView.astro";
+import { allTechnologies } from "@/shared/constants/Technology";
+import { getLocale } from "@/shared/utils/LocaleUtils";
+
+const data = {
+  forteam: { ko: "회사 팀원들 위해 제작", en: "For company teammates" },
+  woorihangul: {
+    ko: "토스 한글날 이벤트와 유사한 다른 글자 찾기 게임",
+    en: "Other letter-finding game, similar to Toss's Hangul day event",
+  },
+  letsstyle: {
+    ko: "직접 구현해본 CSS-in-JS",
+    en: "My own implementation of CSS-in-JS",
+  },
+  letsreact: {
+    ko: "React로 구현한 React 튜토리얼",
+    en: "React tutorial written in React",
+  },
+  asciisnow: {
+    ko: "아스키 아트로 만들어 본 눈",
+    en: "ASCII art snow",
+  },
+  painttalk: {
+    ko: "자연어로 그림 그리기",
+    en: "Draw a picture by using natural language",
+  },
+};
+
+const locale = getLocale(Astro.params);
+---
+
+<HistoryView duration={{ start: "2024", end: "2024" }}>
+  <DecoratedLink slot="title" href="https://woori-hangul.vercel.app/">woori-hangul</DecoratedLink>
+  <ProjectTechnologies
+    slot="subtitle"
+    technologies={[allTechnologies.ts, allTechnologies.emotion, allTechnologies.next]}
+  />
+  {data.woorihangul[locale]}
+  <ProjectImage url="/images/woorihangul.png" alt="woori-hangul" />
+</HistoryView>
+
+<HistoryView duration={{ start: "2022", end: "2022" }}>
+  <DecoratedLink slot="title" href="https://lets-style.vercel.app/">lets-style</DecoratedLink>
+  <ProjectTechnologies slot="subtitle" technologies={[allTechnologies.ts, allTechnologies.next]} />
+  {data.letsstyle[locale]}
+  <ProjectImage url="/images/letsstyle.png" alt="lets-style" />
+</HistoryView>
+
+<HistoryView duration={{ start: "2021", end: "2021" }}>
+  <DecoratedLink slot="title" href="https://avantgarde95.github.io/lets-react/">lets-react</DecoratedLink>
+  <div slot="subtitle">
+    {data.forteam[locale]}
+    <ProjectTechnologies
+      technologies={[allTechnologies.ts, allTechnologies.scss, allTechnologies.react, allTechnologies.webpack]}
+    />
+  </div>
+  {data.letsreact[locale]}
+  <ProjectImage url="/images/letsreact.png" alt="lets-react" />
+</HistoryView>
+
+<HistoryView duration={{ start: "2020", end: "2020" }}>
+  <DecoratedLink slot="title" href="https://avantgarde95.github.io/asciisnow/">ASCII snow</DecoratedLink>
+  <ProjectTechnologies slot="subtitle" technologies={[allTechnologies.js]} />
+  {data.asciisnow[locale]}
+  <ProjectImage url="/images/asciisnow.png" alt="asciisnow" />
+</HistoryView>
+
+<HistoryView duration={{ start: "2019", end: "2019" }}>
+  <DecoratedLink slot="title" href="https://github.com/Avantgarde95/PaintTalk">PaintTalk</DecoratedLink>
+  <ProjectTechnologies slot="subtitle" technologies={[allTechnologies.kotlin]} />
+  {data.painttalk[locale]}
+  <ProjectImage url="/images/painttalk.png" alt="PaintTalk" />
+</HistoryView>

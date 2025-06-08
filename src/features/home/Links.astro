@@ -1,10 +1,10 @@
 ---
-import { siYoutube, siGithub, siInstagram } from "simple-icons";
+import SVGIcon from "@/shared/components/SVGIcon.astro";
 
-const items: Array<{ iconPath: string; url: string }> = [
-  { iconPath: siYoutube.path, url: "https://www.youtube.com/user/Scottparkmusic" },
-  { iconPath: siGithub.path, url: "https://github.com/Avantgarde95" },
-  { iconPath: siInstagram.path, url: "https://www.instagram.com/hunminpark95" },
+const items: Array<{ iconName: string; url: string }> = [
+  { iconName: "youtube", url: "https://www.youtube.com/user/Scottparkmusic" },
+  { iconName: "github", url: "https://github.com/Avantgarde95" },
+  { iconName: "instagram", url: "https://www.instagram.com/hunminpark95" },
 ];
 ---
 
@@ -12,9 +12,7 @@ const items: Array<{ iconPath: string; url: string }> = [
   {
     items.map(item => (
       <a class="hover:text-yellow" href={item.url} target="_blank">
-        <svg class="h-6 w-6 fill-current">
-          <path d={item.iconPath} />
-        </svg>
+        <SVGIcon class="h-6 w-6 fill-current" name={item.iconName} />
       </a>
     ))
   }

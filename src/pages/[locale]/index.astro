@@ -8,6 +8,7 @@ import Careers from "@/features/home/Careers.astro";
 import Education from "@/features/home/Education.astro";
 import Links from "@/features/home/Links.astro";
 import { getStaticPaths } from "@/shared/utils/LocaleUtils";
+import SVGSprite from "@/shared/components/SVGSprite.astro";
 
 export { getStaticPaths };
 ---
@@ -30,4 +31,5 @@ export { getStaticPaths };
   <Section id="links" title="Links">
     <Links />
   </Section>
+  <SVGSprite names={["youtube", "github", "instagram"]} />
 </AppLayout>

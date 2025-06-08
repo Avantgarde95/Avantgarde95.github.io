@@ -3,7 +3,7 @@ import ProjectImage from "@/features/projects/ProjectImage.astro";
 import ProjectTechnologies from "@/features/projects/ProjectTechnologies.astro";
 import DecoratedLink from "@/shared/components/DecoratedLink.astro";
 import HistoryView from "@/shared/components/HistoryView.astro";
-import { allTechnologies } from "@/shared/components/Technology";
+import { allTechnologies } from "@/shared/constants/Technology";
 import { getLocale } from "@/shared/utils/LocaleUtils";
 
 const data = {
@@ -39,6 +39,7 @@ const locale = getLocale(Astro.params);
   {data.seeme[locale]}
   <ProjectImage url="/images/seeme.png" alt="SeeMe" />
 </HistoryView>
+
 <HistoryView duration={{ start: "2021", end: "2021" }}>
   <DecoratedLink slot="title" href="https://drive.google.com/file/d/1uUva_ICv_qVCJ_i1U3v-G605PYZE1nMn/view?usp=sharing">
     MeshDeform

@@ -7,4 +7,4 @@ interface Props {
 const { url, alt } = Astro.props;
 ---
 
-<img class="mt-4 w-full max-w-[24rem]" src={url} alt={alt} />
+<img class="mt-4 w-full max-w-[24rem]" src={url} alt={alt} loading="lazy" />

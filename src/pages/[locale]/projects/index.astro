@@ -1,10 +1,13 @@
 ---
 import Contracts from "@/features/projects/Contracts.astro";
 import Main from "@/features/projects/Main.astro";
+import Personal from "@/features/projects/Personal.astro";
 import AppLayout from "@/shared/components/AppLayout.astro";
 import Header from "@/shared/components/Header.astro";
 import PageMenu from "@/shared/components/PageMenu.astro";
 import Section from "@/shared/components/Section.astro";
+import SVGSprite from "@/shared/components/SVGSprite.astro";
+import { allTechnologies } from "@/shared/constants/Technology";
 import { getStaticPaths } from "@/shared/utils/LocaleUtils";
 
 export { getStaticPaths };
@@ -19,5 +22,12 @@ export { getStaticPaths };
   <Section id="contracts" title="Contracts">
     <Contracts />
   </Section>
-  <Section id="personal" title="Personal" />
+  <Section id="personal" title="Personal">
+    <Personal />
+  </Section>
+  <SVGSprite
+    names={Object.values(allTechnologies)
+      .filter(item => item.iconType === "svg")
+      .map(item => item.iconName)}
+  />
 </AppLayout>

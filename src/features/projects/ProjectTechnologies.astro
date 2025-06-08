@@ -1,25 +1,26 @@
 ---
-import type { Technology } from "@/shared/components/Technology";
+import SVGIcon from "@/shared/components/SVGIcon.astro";
+import type { Technology } from "@/shared/constants/Technology";
 
 interface Props {
   technologies: Array<Technology>;
 }
 
 const { technologies } = Astro.props;
+
+const iconStyle = "mr-1 h-[0.875rem] w-[0.875rem]";
 ---
 
 <div class="mt-1 flex flex-row flex-wrap gap-x-3 gap-y-1 text-sm text-white">
   {
-    technologies.map(({ icon, iconColor, name }) => (
+    technologies.map(item => (
       <div class="inline-flex flex-row items-center">
-        <div
-          class="mr-1 *:h-[0.875rem] *:w-[0.875rem] *:fill-current"
-          set:html={icon}
-          style={{
-            color: iconColor,
-          }}
-        />
-        {name}
+        {item.iconType === "svg" ? (
+          <SVGIcon class={iconStyle} fill={item.iconColor ?? "#ffffff"} name={item.iconName} />
+        ) : (
+          <img class={iconStyle} src={item.icon.src} alt={item.name} />
+        )}
+        {item.name}
       </div>
     ))
   }

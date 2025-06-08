@@ -1,0 +1,25 @@
+---
+import fs from "fs";
+import path from "path";
+
+interface Props {
+  names: Array<string>;
+}
+
+const { names } = Astro.props;
+
+const svgItems = names.map(name => ({
+  id: `icon-${name}`,
+  svg: fs.readFileSync(path.join(process.cwd(), `src/shared/icons/${name}.svg`)),
+}));
+---
+
+<svg class="absolute h-0 w-0">
+  {
+    svgItems.map(item => (
+      <symbol viewBox="0 0 24 24" id={item.id}>
+        {item.svg}
+      </symbol>
+    ))
+  }
+</svg>
