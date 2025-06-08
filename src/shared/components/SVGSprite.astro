@@ -2,14 +2,10 @@
 import fs from "fs";
 import path from "path";
 
-interface Props {
-  names: Array<string>;
-}
+import { createSVGID, usedSVGNames } from "@/shared/utils/SVGUtils";
 
-const { names } = Astro.props;
-
-const svgItems = names.map(name => ({
-  id: `icon-${name}`,
+const svgItems = [...usedSVGNames].map(name => ({
+  id: createSVGID(name),
   svg: fs.readFileSync(path.join(process.cwd(), `src/shared/icons/${name}.svg`)),
 }));
 ---

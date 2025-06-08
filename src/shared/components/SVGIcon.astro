@@ -1,13 +1,17 @@
 ---
 import type { JSX } from "astro/jsx-runtime";
 
+import { createSVGID, usedSVGNames } from "@/shared/utils/SVGUtils";
+
 type Props = JSX.IntrinsicElements["svg"] & {
   name: string;
 };
 
 const { name, ...others } = Astro.props;
+
+usedSVGNames.add(name);
 ---
 
 <svg {...others}>
-  <use href={`#icon-${name}`}></use>
+  <use href={`#${createSVGID(name)}`}></use>
 </svg>
