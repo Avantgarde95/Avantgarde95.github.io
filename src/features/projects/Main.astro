@@ -1,0 +1,85 @@
+---
+import ProjectImage from "@/features/projects/ProjectImage.astro";
+import ProjectTechnologies from "@/features/projects/ProjectTechnologies.astro";
+import DecoratedLink from "@/shared/components/DecoratedLink.astro";
+import HistoryView from "@/shared/components/HistoryView.astro";
+import { allTechnologies } from "@/shared/components/Technology";
+import { getLocale } from "@/shared/utils/LocaleUtils";
+
+const data = {
+  tmax: { ko: "티맥스가이아", en: "TmaxGaia" },
+  graduate: { ko: "대학원 연구", en: "Graduate school" },
+  gaia: {
+    ko: "No-code 앱 제작 도구",
+    en: "No-code app creation tool",
+  },
+  office: {
+    ko: "데스크톱용 오피스 프로그램 모음집",
+    en: "Office suite for desktop",
+  },
+  meshchain: {
+    ko: "탈중앙화 네트워크를 활용한 3D 협업 및 지적 재산권 관리 시스템",
+    en: "Collaborative 3D modeling & intellectual property management system powered by decentralized network",
+  },
+  c3dmb: {
+    ko: "블록체인 기반의 3D 협업 시스템",
+    en: "Collaborative 3D modeling system based on blockchain",
+  },
+};
+
+const locale = getLocale(Astro.params);
+---
+
+<HistoryView duration={{ start: "2021" }}>
+  <DecoratedLink slot="title" href="https://tmaxgaia.net/GAIACube">GAIA</DecoratedLink>
+  <div slot="subtitle">
+    {data.tmax[locale]}
+    <ProjectTechnologies
+      technologies={[
+        allTechnologies.ts,
+        allTechnologies.scss,
+        allTechnologies.react,
+        allTechnologies.mobx,
+        allTechnologies.electron,
+        allTechnologies.webpack,
+      ]}
+    />
+  </div>
+  {data.gaia[locale]}
+</HistoryView>
+<HistoryView duration={{ start: "2021", end: "2021" }}>
+  <div slot="title">ToOffice</div>
+  <div slot="subtitle">
+    {data.tmax[locale]}
+    <ProjectTechnologies technologies={[allTechnologies.cpp]} />
+  </div>
+  {data.office[locale]}
+  <ProjectImage url="/images/tooffice.png" alt="ToOffice" />
+</HistoryView>
+<HistoryView duration={{ start: "2020", end: "2021" }}>
+  <DecoratedLink slot="title" href="https://avantgarde95.github.io/MeshChain-publish/">MeshChain</DecoratedLink>
+  <div slot="subtitle">
+    {data.graduate[locale]}
+    <ProjectTechnologies
+      technologies={[
+        allTechnologies.kotlin,
+        allTechnologies.js,
+        allTechnologies.python,
+        allTechnologies.ethereum,
+        allTechnologies.solidity,
+        allTechnologies.opengl,
+      ]}
+    />
+  </div>
+  {data.meshchain[locale]}
+  <ProjectImage url="/images/meshchain.png" alt="MeshChain" />
+</HistoryView>
+<HistoryView duration={{ start: "2018", end: "2019" }}>
+  <DecoratedLink slot="title" href="https://avantgarde95.github.io/C3DMB/">C3DMB</DecoratedLink>
+  <div slot="subtitle">
+    {data.graduate[locale]}
+    <ProjectTechnologies technologies={[allTechnologies.kotlin, allTechnologies.python, allTechnologies.opengl]} />
+  </div>
+  {data.c3dmb[locale]}
+  <ProjectImage url="/images/c3dmb.png" alt="C3DMB" />
+</HistoryView>

@@ -1,0 +1,57 @@
+---
+import ProjectImage from "@/features/projects/ProjectImage.astro";
+import ProjectTechnologies from "@/features/projects/ProjectTechnologies.astro";
+import DecoratedLink from "@/shared/components/DecoratedLink.astro";
+import HistoryView from "@/shared/components/HistoryView.astro";
+import { allTechnologies } from "@/shared/components/Technology";
+import { getLocale } from "@/shared/utils/LocaleUtils";
+
+const data = {
+  timebank: { ko: "For 타임뱅크코리아", en: "For Timebanks Korea" },
+  personel: { ko: "For 개인", en: "For personel" },
+  seeme: {
+    ko: "장애인을 위한 직장 소개 사이트 (개발 중단)",
+    en: "Job website for people with disabilities (Discontinued)",
+  },
+  meshdeform: {
+    ko: "2D 모양 변형 알고리즘의 Unity 구현",
+    en: "Implementation of 2D shape manipulation algorithm for Unity",
+  },
+};
+
+const locale = getLocale(Astro.params);
+---
+
+<HistoryView duration={{ start: "2022", end: "2022" }}>
+  <DecoratedLink slot="title" href="https://github.com/volunteer-project-1/volunteer_client">SeeMe</DecoratedLink>
+  <div slot="subtitle">
+    {data.timebank[locale]}
+    <ProjectTechnologies
+      technologies={[
+        allTechnologies.ts,
+        allTechnologies.scss,
+        allTechnologies.react,
+        allTechnologies.redux,
+        allTechnologies.next,
+      ]}
+    />
+  </div>
+  {data.seeme[locale]}
+  <ProjectImage url="/images/seeme.png" alt="SeeMe" />
+</HistoryView>
+<HistoryView duration={{ start: "2021", end: "2021" }}>
+  <DecoratedLink slot="title" href="https://drive.google.com/file/d/1uUva_ICv_qVCJ_i1U3v-G605PYZE1nMn/view?usp=sharing">
+    MeshDeform
+  </DecoratedLink>
+  <div slot="subtitle">
+    {data.personel[locale]}
+    <ProjectTechnologies
+      technologies={[
+        // allTechnologies.csharp,
+        allTechnologies.unity,
+      ]}
+    />
+  </div>
+  {data.meshdeform[locale]}
+  <ProjectImage url="/images/meshdeform.png" alt="MeshDeform" />
+</HistoryView>

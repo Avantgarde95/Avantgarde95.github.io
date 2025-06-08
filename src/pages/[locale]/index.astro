@@ -1,7 +1,4 @@
 ---
-import type { GetStaticPaths } from "astro";
-
-import { localeNames } from "@/shared/constants/I18n";
 import AppLayout from "@/shared/components/AppLayout.astro";
 import Header from "@/shared/components/Header.astro";
 import PageMenu from "@/shared/components/PageMenu.astro";
@@ -10,11 +7,9 @@ import About from "@/features/home/About.astro";
 import Careers from "@/features/home/Careers.astro";
 import Education from "@/features/home/Education.astro";
 import Links from "@/features/home/Links.astro";
+import { getStaticPaths } from "@/shared/utils/LocaleUtils";
 
-export const getStaticPaths: GetStaticPaths = () =>
-  localeNames.map(locale => ({
-    params: { locale },
-  }));
+export { getStaticPaths };
 ---
 
 <AppLayout>

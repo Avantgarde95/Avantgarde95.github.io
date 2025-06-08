@@ -1,12 +1,10 @@
 ---
 interface Props {
   duration: { start: string; end?: string };
-  title: string;
-  subtitle?: string;
   noContent?: boolean;
 }
 
-const { duration, title, subtitle, noContent = false } = Astro.props;
+const { duration, noContent = false } = Astro.props;
 ---
 
 <div class="group flex flex-row">
@@ -20,8 +18,12 @@ const { duration, title, subtitle, noContent = false } = Astro.props;
     <div class="bg-gray w-[2px] flex-1"></div>
   </div>
   <div class="ml-2">
-    <div class="mt-[0.05rem]">{title}</div>
-    {subtitle && <div class="text-gray">{subtitle}</div>}
+    <div class="mt-[0.05rem]">
+      <slot name="title" />
+    </div>
+    <div class="text-gray">
+      <slot name="subtitle" />
+    </div>
     {
       !noContent && (
         <div class="mt-2">

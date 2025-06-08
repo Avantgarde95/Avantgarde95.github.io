@@ -37,7 +37,10 @@ const AppMenuItem = (props: AppMenuItemProps) => {
   );
 
   const Component = props.type === "link" ? "a" : "button";
-  const attrs = props.type === "link" ? { href: props.url, target: "_blank" } : { onClick: props.onClick };
+  const attrs =
+    props.type === "link"
+      ? { href: props.url, target: props.url.startsWith("http") ? "_blank" : undefined }
+      : { onClick: props.onClick };
 
   return (
     <Component

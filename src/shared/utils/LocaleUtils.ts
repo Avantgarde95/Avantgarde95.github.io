@@ -1,3 +1,5 @@
+import type { GetStaticPaths } from "astro";
+
 import { defaultLocale, localeNames, type Locale } from "@/shared/constants/I18n";
 
 // ex. ^/(ko|en)
@@ -12,3 +14,8 @@ export function setLocale(locale: Locale) {
   // ex. /ko/projects -> /en/projects
   window.location.href = `/${locale}${window.location.pathname.replace(localeRegex, "")}`;
 }
+
+export const getStaticPaths: GetStaticPaths = () =>
+  localeNames.map(locale => ({
+    params: { locale },
+  }));

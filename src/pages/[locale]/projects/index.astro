@@ -1,0 +1,23 @@
+---
+import Contracts from "@/features/projects/Contracts.astro";
+import Main from "@/features/projects/Main.astro";
+import AppLayout from "@/shared/components/AppLayout.astro";
+import Header from "@/shared/components/Header.astro";
+import PageMenu from "@/shared/components/PageMenu.astro";
+import Section from "@/shared/components/Section.astro";
+import { getStaticPaths } from "@/shared/utils/LocaleUtils";
+
+export { getStaticPaths };
+---
+
+<AppLayout>
+  <Header titleText="Projects">Projects</Header>
+  <PageMenu ids={["main", "contracts", "personal"]} />
+  <Section id="main" title="Main">
+    <Main />
+  </Section>
+  <Section id="contracts" title="Contracts">
+    <Contracts />
+  </Section>
+  <Section id="personal" title="Personal" />
+</AppLayout>
