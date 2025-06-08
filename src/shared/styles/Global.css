@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-black: #1a1a1a;
+  --color-gray: #797979;
+  --color-white: #d6d6d6;
+  --color-yellow: #e5b567;
+  --color-green: #b4d273;
+  --color-orange: #e87d3e;
+  --color-purple: #9e86c8;
+  --color-pink: #b05279;
+  --color-blue: #7da5c3;
+  --color-background: var(--color-black);
+  --color-primary: var(--color-white);
+  --color-highlight: var(--color-yellow);
+
+  --font-*: initial;
+  --font-sans: "Pretendard", sans-serif;
+  --font-mono: "Fira Code", monospace;
+}
+
+html {
+  /* Set rem size. */
+  font-size: 16px;
+}
+
+* {
+  font-variant-ligatures: none;
+}
+
+@keyframes typing-reveal {
+  0% {
+    width: 100%;
+    opacity: 1;
+  }
+  80% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}

@@ -1,5 +1,5 @@
 export default {
-  plugins: ["prettier-plugin-astro"],
+  plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   singleQuote: false,
   semi: true,
   useTabs: false,
