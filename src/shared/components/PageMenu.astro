@@ -1,0 +1,21 @@
+---
+interface Props {
+  ids: Array<string>;
+}
+
+const { ids } = Astro.props;
+---
+
+<div class="ids-start flex flex-col justify-start gap-1 sm:flex-row sm:gap-4">
+  {
+    ids.map(id => {
+      const labelText = `.${id.toLowerCase()}`;
+
+      return (
+        <a href={`#${id}`} class={"hover:text-yellow font-mono text-base"}>
+          {labelText}
+        </a>
+      );
+    })
+  }
+</div>

@@ -4,6 +4,12 @@ import type { GetStaticPaths } from "astro";
 import { localeNames } from "@/shared/constants/I18n";
 import AppLayout from "@/shared/components/AppLayout.astro";
 import Header from "@/shared/components/Header.astro";
+import PageMenu from "@/shared/components/PageMenu.astro";
+import Section from "@/shared/components/Section.astro";
+import About from "@/features/home/About.astro";
+import Careers from "@/features/home/Careers.astro";
+import Education from "@/features/home/Education.astro";
+import Links from "@/features/home/Links.astro";
 
 export const getStaticPaths: GetStaticPaths = () =>
   localeNames.map(locale => ({
@@ -16,4 +22,17 @@ export const getStaticPaths: GetStaticPaths = () =>
     <span class="text-orange">Hunmin</span>
     <span class="text-green">Park</span>
   </Header>
+  <PageMenu ids={["about", "careers", "education", "links"]} />
+  <Section id="about" title="About">
+    <About />
+  </Section>
+  <Section id="careers" title="Careers">
+    <Careers />
+  </Section>
+  <Section id="education" title="Education">
+    <Education />
+  </Section>
+  <Section id="links" title="Links">
+    <Links />
+  </Section>
 </AppLayout>

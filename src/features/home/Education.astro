@@ -1,0 +1,31 @@
+---
+import DecoratedLink from "@/shared/components/DecoratedLink.astro";
+import HistoryView from "@/shared/components/HistoryView.astro";
+import { getLocale } from "@/shared/utils/LocaleUtils";
+
+const data = {
+  graduateMajor: {
+    ko: "전산학부 석사",
+    en: "M.S. in School of computing",
+  },
+  bachelorMajor: {
+    ko: "전산학부 및 수리과학과 학사",
+    en: "B.S. in School of computing & Department of Mathematical Sciences",
+  },
+  link: {
+    ko: "링크",
+    en: "Link",
+  },
+};
+
+const locale = getLocale(Astro.params);
+---
+
+<HistoryView duration={{ start: "2018", end: "2021" }} title="KAIST" subtitle={data.graduateMajor[locale]}>
+  <DecoratedLink href="https://avantgarde95.github.io/MeshChain-publish/">MeshChain</DecoratedLink>
+  : Secure 3D model and intellectual property management powered by blockchain technology
+  <br />
+  <DecoratedLink href="https://avantgarde95.github.io/C3DMB/">C3DMB</DecoratedLink>: Collaborative 3D modeling system
+  based on blockchain
+</HistoryView>
+<HistoryView duration={{ start: "2013", end: "2018" }} title="KAIST" subtitle={data.bachelorMajor[locale]} noContent />

@@ -1,6 +1,6 @@
 ---
 import AppMenu from "@/shared/components/AppMenu";
-import { defaultLocale, type Locale } from "@/shared/constants/I18n";
+import { getLocale } from "@/shared/utils/LocaleUtils";
 
 interface Props {
   titleText: string;
@@ -8,7 +8,7 @@ interface Props {
 
 const { titleText } = Astro.props;
 const titleLength = titleText.length;
-const locale = (Astro.params.locale ?? defaultLocale) as Locale;
+const locale = getLocale(Astro.params);
 ---
 
 <header class="mb-4 flex w-full flex-row items-center">

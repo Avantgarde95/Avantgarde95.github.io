@@ -2,8 +2,11 @@
 import "@/shared/styles/Global.css";
 ---
 
-<html lang="ko" class="m-0 h-full w-full p-0 font-sans">
+<html lang="ko" class="m-0 h-full w-full scroll-smooth p-0 font-sans">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <!-- Pretendard. -->
     <link
       rel="stylesheet"
@@ -16,8 +19,8 @@ import "@/shared/styles/Global.css";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet" />
   </head>
-  <body class="m-0 h-full w-full overflow-y-auto p-0">
-    <div class="bg-background text-primary flex h-full w-full flex-col items-center pt-16">
+  <body class="bg-background text-primary m-0 h-full w-full overflow-y-auto p-0">
+    <div class="flex h-full w-full flex-col items-center pt-16">
       <div class="w-full max-w-screen-lg px-6"><slot /></div>
       <!-- padding-bottom is ignored when we have scroll. So we use an empty box instead. -->
       <div class="h-32 w-full shrink-0"></div>

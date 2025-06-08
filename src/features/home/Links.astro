@@ -1,0 +1,21 @@
+---
+import { siYoutube, siGithub, siInstagram } from "simple-icons";
+
+const items: Array<{ iconPath: string; url: string }> = [
+  { iconPath: siYoutube.path, url: "https://www.youtube.com/user/Scottparkmusic" },
+  { iconPath: siGithub.path, url: "https://github.com/Avantgarde95" },
+  { iconPath: siInstagram.path, url: "https://www.instagram.com/hunminpark95" },
+];
+---
+
+<div class="flex flex-row flex-wrap items-center justify-start gap-5">
+  {
+    items.map(item => (
+      <a class="hover:text-yellow" href={item.url} target="_blank">
+        <svg class="h-6 w-6 fill-current">
+          <path d={item.iconPath} />
+        </svg>
+      </a>
+    ))
+  }
+</div>
