@@ -1,11 +1,24 @@
 ---
+import { getLocale } from "@/shared/utils/LocaleUtils";
 import "@/shared/styles/Global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const locale = getLocale(Astro.params);
 ---
 
-<html lang="ko" class="m-0 h-full w-full scroll-smooth p-0 font-sans">
+<html lang={locale} class="m-0 h-full w-full scroll-smooth p-0 font-sans">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
 
     <!-- Pretendard. -->
     <link

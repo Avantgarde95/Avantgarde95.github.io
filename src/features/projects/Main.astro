@@ -30,7 +30,7 @@ const data = {
 const locale = getLocale(Astro.params);
 ---
 
-<HistoryView duration={{ start: "2021" }}>
+<HistoryView duration={{ start: "2021", end: "2024" }}>
   <div slot="title">GAIA</div>
   <div slot="subtitle">
     {data.tmax[locale]}
