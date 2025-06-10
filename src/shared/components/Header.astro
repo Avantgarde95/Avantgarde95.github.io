@@ -1,5 +1,5 @@
 ---
-import AppMenu from "@/shared/components/AppMenu";
+import AppMenu from "@/shared/components/AppMenu.astro";
 import { getLocale } from "@/shared/utils/LocaleUtils";
 
 interface Props {
@@ -21,5 +21,5 @@ const locale = getLocale(Astro.params);
         animationTimingFunction: `steps(${titleLength}, end)`,
       }}></span>
   </h1>
-  <AppMenu locale={locale} client:load />
+  <AppMenu locale={locale} />
 </header>

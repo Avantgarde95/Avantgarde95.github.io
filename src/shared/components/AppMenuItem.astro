@@ -1,0 +1,21 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+
+type Props = { length: number } & (
+  | ({ type: "link" } & JSX.IntrinsicElements["a"])
+  | ({ type: "button" } & JSX.IntrinsicElements["button"])
+);
+
+const { type, length, ...others } = Astro.props;
+
+const Component = type === "link" ? "a" : "button";
+---
+
+<Component
+  class="group text-primary relative block cursor-pointer px-2 py-0.5 font-mono text-base leading-tight tracking-normal"
+  target="_blank"
+  {...others}
+>
+  <span class="whitespace-pre">{`|${" ".repeat(length - 2)}|`}</span>
+  <span class="group-hover:text-yellow absolute top-1/2 left-7 -translate-y-1/2"><slot /></span>
+</Component>

@@ -17,6 +17,23 @@ const tabIDs = Object.keys(tabs);
 export { getStaticPaths };
 ---
 
+<AppLayout title="MyPage - Musics" description="My pieces & performances">
+  <Header titleText="Musics">Musics</Header>
+  <PageMenu ids={tabIDs} />
+  {
+    tabIDs.map(tabID => (
+      <div
+        data-id={tabID}
+        class={`mt-8 grid grid-cols-1 justify-center gap-x-12 gap-y-16 sm:grid-cols-[478px] lg:grid-cols-2`}
+      >
+        {tabs[tabID].videoIDs.map(videoID => (
+          <Preview videoID={videoID} />
+        ))}
+      </div>
+    ))
+  }
+</AppLayout>
+
 <script>
   const tabIDs = ["pieces", "guitar", "piano"];
 
@@ -36,20 +53,3 @@ export { getStaticPaths };
     renderTab();
   });
 </script>
-
-<AppLayout title="MyPage - Musics" description="My pieces & performances">
-  <Header titleText="Musics">Musics</Header>
-  <PageMenu ids={tabIDs} />
-  {
-    tabIDs.map(tabID => (
-      <div
-        data-id={tabID}
-        class={`mt-8 grid grid-cols-1 justify-center gap-x-12 gap-y-16 sm:grid-cols-[478px] lg:grid-cols-2`}
-      >
-        {tabs[tabID].videoIDs.map(videoID => (
-          <Preview videoID={videoID} />
-        ))}
-      </div>
-    ))
-  }
-</AppLayout>

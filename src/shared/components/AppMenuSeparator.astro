@@ -1,0 +1,9 @@
+---
+interface Props {
+  length: number;
+}
+
+const { length } = Astro.props;
+---
+
+<div class="px-2 py-0.5 whitespace-pre">+{"-".repeat(length - 2)}+</div>
