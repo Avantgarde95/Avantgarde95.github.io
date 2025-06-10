@@ -1,0 +1,74 @@
+---
+import type { Work } from "@/features/art/constants/Works";
+import Refresh from "@lucide/astro/icons/refresh-cw";
+import ExternalLink from "@lucide/astro/icons/external-link";
+import Code from "@lucide/astro/icons/code";
+import SmartLink from "@/shared/components/SmartLink.astro";
+
+interface Props {
+  work: Work;
+}
+
+const { work } = Astro.props;
+
+const scale = work.scale ?? 1;
+const scaleString = `${Math.floor(100 / scale)}%`;
+
+const buttonStyle =
+  "cursor-pointer w-[36px] h-full flex flex-row justify-center items-center text-[20px] text-white hover:text-yellow";
+---
+
+<app-art>
+  <div class="app-art-container flex h-[450px] flex-col items-center">
+    <div class="relative h-[360px] w-full">
+      <iframe
+        class="origin-top-left"
+        style={{
+          width: scaleString,
+          height: scaleString,
+          transform: `scale(${scale})`,
+        }}
+        title={work.name}
+        src={work.previewURL ?? work.demoURL}></iframe>
+      <div class="bg-background/60 absolute top-0 right-0 flex h-[36px] flex-row">
+        <button class={`app-art-refresh ${buttonStyle}`}>
+          <Refresh />
+        </button>
+        <SmartLink class={buttonStyle} href={work.demoURL}>
+          <ExternalLink />
+        </SmartLink>
+        <SmartLink class={buttonStyle} href={work.codeURL}>
+          <Code />
+        </SmartLink>
+      </div>
+    </div>
+    <div class="mt-4 text-center whitespace-pre-wrap">{work.name}</div>
+    <div class="text-gray">{work.description}</div>
+  </div>
+</app-art>
+
+<script>
+  import { remountElement } from "@/shared/utils/DOMUtils";
+
+  class AppArt extends HTMLElement {
+    connectedCallback() {
+      this.attachRefresh();
+    }
+
+    private attachRefresh() {
+      const containerElement = this.querySelector<HTMLElement>(".app-art-container");
+      const refreshElement = this.querySelector<HTMLElement>(".app-art-refresh");
+
+      if (!containerElement || !refreshElement) {
+        return;
+      }
+
+      refreshElement.onclick = () => {
+        remountElement(containerElement);
+        this.attachRefresh();
+      };
+    }
+  }
+
+  window.customElements.define("app-art", AppArt);
+</script>

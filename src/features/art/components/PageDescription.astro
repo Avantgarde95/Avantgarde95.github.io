@@ -1,0 +1,14 @@
+---
+import { getLocale } from "@/shared/utils/LocaleUtils";
+
+const data = {
+  description: {
+    ko: "웹을 이용하여 제작한 작품들입니다.",
+    en: "These are works made using web technology.",
+  },
+};
+
+const locale = getLocale(Astro.params);
+---
+
+<div class="mt-4">{data.description[locale]}</div>

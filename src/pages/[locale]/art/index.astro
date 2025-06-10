@@ -1,0 +1,18 @@
+---
+import PageDescription from "@/features/art/components/PageDescription.astro";
+import Preview from "@/features/art/components/Preview.astro";
+import allWorks from "@/features/art/constants/Works";
+import AppLayout from "@/shared/components/AppLayout.astro";
+import Header from "@/shared/components/Header.astro";
+import { getStaticPaths } from "@/shared/utils/LocaleUtils";
+
+export { getStaticPaths };
+---
+
+<AppLayout title="MyPage - Art" description="My art">
+  <Header titleText="Art">Art</Header>
+  <PageDescription />
+  <div class="mt-8 grid grid-cols-1 justify-center gap-x-12 gap-y-12 sm:grid-cols-[478px] lg:grid-cols-2">
+    {allWorks.map(work => <Preview work={work} />)}
+  </div>
+</AppLayout>
