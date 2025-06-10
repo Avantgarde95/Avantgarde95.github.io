@@ -1,7 +1,5 @@
 import { defineConfig } from "astro/config";
 
-import preact from "@astrojs/preact";
-
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
@@ -12,7 +10,7 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
-  integrations: [preact()],
+  integrations: [],
   vite: {
     plugins: [tailwindcss()],
   },
