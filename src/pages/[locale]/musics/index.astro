@@ -1,0 +1,55 @@
+---
+import Preview from "@/features/musics/components/Preview.astro";
+import Musics from "@/features/musics/data/Musics.json";
+import AppLayout from "@/shared/components/AppLayout.astro";
+import Header from "@/shared/components/Header.astro";
+import PageMenu from "@/shared/components/PageMenu.astro";
+import { getStaticPaths } from "@/shared/utils/LocaleUtils";
+
+const tabs: Record<string, { videoIDs: Array<string> }> = {
+  pieces: { videoIDs: Musics.myPieces },
+  guitar: { videoIDs: Musics.myGuitarPlayings },
+  piano: { videoIDs: Musics.myPianoPlayings },
+};
+
+const tabIDs = Object.keys(tabs);
+
+export { getStaticPaths };
+---
+
+<script>
+  const tabIDs = ["pieces", "guitar", "piano"];
+
+  function renderTab() {
+    const currentID = window.location.hash.slice(1).trim();
+    const targetID = tabIDs.includes(currentID) ? currentID : tabIDs[0];
+
+    for (const tabID of tabIDs) {
+      const tabElement = document.querySelector<HTMLElement>(`[data-id=${tabID}]`);
+      tabElement?.classList.toggle("hidden", tabID !== targetID);
+    }
+  }
+
+  renderTab();
+
+  window.addEventListener("hashchange", () => {
+    renderTab();
+  });
+</script>
+
+<AppLayout title="MyPage - Musics" description="My pieces & performances">
+  <Header titleText="Musics">Musics</Header>
+  <PageMenu ids={tabIDs} />
+  {
+    tabIDs.map(tabID => (
+      <div
+        data-id={tabID}
+        class={`mt-8 grid grid-cols-1 justify-center gap-x-12 gap-y-16 sm:grid-cols-[478px] lg:grid-cols-2`}
+      >
+        {tabs[tabID].videoIDs.map(videoID => (
+          <Preview videoID={videoID} />
+        ))}
+      </div>
+    ))
+  }
+</AppLayout>
