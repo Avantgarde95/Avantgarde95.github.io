@@ -1,4 +1,6 @@
 ---
+import SmartLink from "@/shared/components/SmartLink.astro";
+
 interface Props {
   ids: Array<string>;
 }
@@ -12,9 +14,9 @@ const { ids } = Astro.props;
       const labelText = `.${id.toLowerCase()}`;
 
       return (
-        <a href={`#${id}`} class={"hover:text-yellow font-mono text-base"}>
+        <SmartLink href={`#${id}`} class={"hover:text-yellow font-mono text-base"}>
           {labelText}
-        </a>
+        </SmartLink>
       );
     })
   }

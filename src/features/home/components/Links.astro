@@ -1,4 +1,5 @@
 ---
+import SmartLink from "@/shared/components/SmartLink.astro";
 import SVGIcon from "@/shared/components/SVGIcon.astro";
 
 const items: Array<{ iconName: string; url: string }> = [
@@ -11,9 +12,9 @@ const items: Array<{ iconName: string; url: string }> = [
 <div class="flex flex-row flex-wrap items-center justify-start gap-5">
   {
     items.map(item => (
-      <a class="hover:text-yellow" href={item.url} target="_blank">
+      <SmartLink class="hover:text-yellow" href={item.url}>
         <SVGIcon class="h-6 w-6 fill-current" name={item.iconName} />
-      </a>
+      </SmartLink>
     ))
   }
 </div>

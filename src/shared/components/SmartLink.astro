@@ -1,0 +1,11 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+
+type Props = JSX.IntrinsicElements["a"];
+
+const { href, ...others } = Astro.props;
+
+const isExternalLink = `${href}`.startsWith("http");
+---
+
+<a href={href} target={isExternalLink ? "_blank" : undefined} {...others}><slot /></a>

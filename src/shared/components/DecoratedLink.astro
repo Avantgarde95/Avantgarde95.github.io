@@ -1,12 +1,13 @@
 ---
 import type { JSX } from "astro/jsx-runtime";
 import ArrowUpRight from "@lucide/astro/icons/arrow-up-right";
+import SmartLink from "@/shared/components/SmartLink.astro";
 
 type Props = JSX.IntrinsicElements["a"];
 
 const props = Astro.props;
 ---
 
-<a class="text-blue hover:text-yellow" target="_blank" {...props}>
+<SmartLink class="text-blue hover:text-yellow" {...props}>
   <slot /><ArrowUpRight class="mb-1.5 inline-block" size="1rem" />
-</a>
+</SmartLink>
