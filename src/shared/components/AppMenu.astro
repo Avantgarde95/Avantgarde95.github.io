@@ -23,10 +23,9 @@ const locale = getLocale(Astro.params);
 ---
 
 <div class="relative">
-  <button id="app-menu-trigger" class="hover:text-yellow cursor-pointer font-mono text-base">{"<Menu/>"}</button>
+  <button class="app-menu-trigger hover:text-yellow cursor-pointer font-mono text-base">{"<Menu/>"}</button>
   <div
-    id="app-menu"
-    class={"bg-background text-primary absolute opacity-0 right-0 z-10 origin-top-right scale-0 font-mono text-base transition-[transform_200ms,opacity_150ms]"}
+    class={"app-menu bg-background text-primary absolute opacity-0 right-0 z-10 origin-top-right scale-0 font-mono text-base transition-[transform_200ms,opacity_150ms]"}
   >
     <AppMenuSeparator length={length} />
     {
@@ -54,8 +53,8 @@ const locale = getLocale(Astro.params);
 
 <!-- Handle menu. -->
 <script>
-  const triggerElement = document.querySelector<HTMLElement>("#app-menu-trigger")!;
-  const menuElement = document.querySelector<HTMLElement>("#app-menu")!;
+  const triggerElement = document.querySelector<HTMLElement>(".app-menu-trigger")!;
+  const menuElement = document.querySelector<HTMLElement>(".app-menu")!;
   let isOpen = false;
 
   function openMenu(open: boolean) {

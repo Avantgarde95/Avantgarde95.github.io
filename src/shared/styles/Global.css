@@ -17,7 +17,7 @@
 
   --font-*: initial;
   --font-sans: "Pretendard", sans-serif;
-  --font-mono: "Fira Code", monospace;
+  --font-mono: "Fira Code", "Pretendard", monospace;
 }
 
 html {
