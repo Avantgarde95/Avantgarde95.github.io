@@ -5,9 +5,9 @@ import SmartLink from "@/shared/components/SmartLink.astro";
 
 type Props = JSX.IntrinsicElements["a"];
 
-const props = Astro.props;
+const { class: className, ...others } = Astro.props;
 ---
 
-<SmartLink class="text-blue hover:text-yellow" {...props}>
+<SmartLink class={`text-blue hover:text-yellow ${className}`} {...others}>
   <slot /><ArrowUpRight class="mb-1.5 inline-block" size="1rem" />
 </SmartLink>

@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import DecoratedLink from "@/shared/components/DecoratedLink.astro";
+import Header from "@/shared/components/Header.astro";
+import AppLayout from "@/shared/components/AppLayout.astro";
+import { extractTextFromMarkdown, formatDate } from "@/shared/utils/StringUtils";
+import { getStaticPaths } from "@/shared/utils/LocaleUtils";
+
+const posts = (await getCollection("blog")).sort((a, b) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+
+const maxContentLength = 100;
+
+const { locale } = Astro.params;
+
+function createPreview(body: string) {
+  const content = extractTextFromMarkdown(body);
+  return content.slice(0, maxContentLength) + (content.length > maxContentLength ? "..." : "");
+}
+
+export { getStaticPaths };
+---
+
+<AppLayout title="MyPage - Blog" description="My blog">
+  <div class="w-full">
+    <Header titleText="Blog">Blog</Header>
+    {
+      posts.map(post => (
+        <div class="border-gray mb-6 w-full border-b-2 border-dashed pb-6">
+          <DecoratedLink class="hover:text-yellow text-xl" href={`/${locale}/blog/post/${post.id}`}>
+            {post.data.title}
+          </DecoratedLink>
+          <div class="text-gray">{formatDate(post.data.date)}</div>
+          <div>{createPreview(post.body ?? "")}</div>
+        </div>
+      ))
+    }
+  </div>
+</AppLayout>
