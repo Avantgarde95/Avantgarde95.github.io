@@ -1,0 +1,28 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+import { parseYouTubeURL } from "@/shared/utils/StringUtils";
+import DecoratedLink from "@/shared/components/DecoratedLink.astro";
+
+type Props = JSX.IntrinsicElements["a"];
+
+const props = Astro.props;
+const youTubeID = parseYouTubeURL(props.href?.toString() ?? "");
+---
+
+{
+  youTubeID === null ? (
+    <DecoratedLink {...props}>
+      <slot />
+    </DecoratedLink>
+  ) : (
+    <iframe
+      class="max-w-full"
+      title={`Video ${youTubeID}`}
+      width={560}
+      height={315}
+      allowfullscreen
+      loading="lazy"
+      src={`https://www.youtube.com/embed/${youTubeID}`}
+    />
+  )
+}

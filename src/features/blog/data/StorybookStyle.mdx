@@ -8,7 +8,7 @@ category: Computer
 
 We sometimes merge our Webpack configuration to the default Storybook Webpack configuration when we use [Storybook](https://storybook.js.org/).
 
-```JavaScript
+```javascript
 // ex. .storybook/main.js
 
 const createOurConfig = require('../webpack.config.js');
@@ -43,7 +43,7 @@ If we merge our style configuration such as css-loader, we sometimes get the err
 The reasons is Storybook's default Webpack configuration already defines the loaders related to style.
 We can solve that problem by excluding the those loaders (ex. Exclude the loaders whose regex includes 'css') and using our loaders instead.
 
-```JavaScript
+```javascript
 // ex. .storybook/main.js
 
 const createOurConfig = require('../webpack.config.js');

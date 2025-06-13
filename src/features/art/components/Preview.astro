@@ -29,6 +29,7 @@ const buttonStyle =
           transform: `scale(${scale})`,
         }}
         title={work.name}
+        loading="lazy"
         src={work.previewURL ?? work.demoURL}></iframe>
       <div class="bg-background/60 absolute top-0 right-0 flex h-[36px] flex-row">
         <button slot="refresh" class={buttonStyle}>

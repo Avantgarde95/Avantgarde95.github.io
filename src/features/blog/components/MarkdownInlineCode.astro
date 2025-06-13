@@ -1,0 +1,9 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+
+type Props = JSX.IntrinsicElements["code"];
+
+const { class: _class, ...others } = Astro.props;
+---
+
+<code class={`bg-gray/20 pl-[2px] pr-[2px] align-middle text-sm leading-none ${_class}`} {...others}><slot /></code>

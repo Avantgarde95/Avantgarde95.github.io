@@ -1,0 +1,12 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+
+type Props = JSX.IntrinsicElements["img"];
+
+// Manually destructure src, alt to avoid eslint a11y errors.
+const { src, alt, ...others } = Astro.props;
+---
+
+<span class="block w-full overflow-x-auto">
+  <img src={src} alt={alt} {...others} />
+</span>
