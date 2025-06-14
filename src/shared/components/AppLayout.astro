@@ -31,6 +31,7 @@ const locale = getLocale(Astro.params);
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet" />
+    <slot name="head" />
   </head>
   <body class="bg-background text-primary m-0 h-full w-full overflow-y-auto p-0">
     <div class="flex h-full w-full flex-col items-center pt-16">
