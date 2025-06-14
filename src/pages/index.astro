@@ -1,0 +1,12 @@
+---
+import AppLayout from "@/shared/components/AppLayout.astro";
+---
+
+<AppLayout title="Redirecting..." description="Redirecting to the default locale.">
+  <Fragment slot="head">
+    <meta http-equiv="refresh" content="0; url=/ko" />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="/ko" />
+  </Fragment>
+  Redirecting to <a href="/ko">/ko</a>...
+</AppLayout>

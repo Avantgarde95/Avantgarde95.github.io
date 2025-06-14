@@ -30,6 +30,7 @@ export default defineConfig({
     defaultLocale: "ko",
     routing: {
       prefixDefaultLocale: true,
+      redirectToDefaultLocale: false,
     },
   },
   integrations: [
