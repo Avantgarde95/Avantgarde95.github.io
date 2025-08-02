@@ -25,7 +25,7 @@ Recommended to install
 
 Install the dependencies
 
-- Run `pnpm`
+- Run `pnpm install`
 
 Run in the development mode
 
