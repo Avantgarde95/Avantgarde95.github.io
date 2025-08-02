@@ -1,7 +1,6 @@
 ---
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 
-import MarkdownH2 from "@/shared/components/MarkdownH2.astro";
 import MarkdownImage from "@/shared/components/MarkdownImage.astro";
 import MarkdownInlineCode from "@/shared/components/MarkdownInlineCode.astro";
 import MarkdownLink from "@/shared/components/MarkdownLink.astro";
@@ -15,11 +14,20 @@ interface Props {
 const { Content } = Astro.props;
 ---
 
-<Content
-  components={{
-    h2: MarkdownH2,
-    img: MarkdownImage,
-    a: MarkdownLink,
-    code: MarkdownInlineCode,
-  }}
-/>
+<div
+  class="app-markdown-view [&_table]:border-gray [&_td]:border-gray [&_th]:border-gray mb-2 text-base break-all [&_a]:cursor-pointer [&_a]:font-normal [&_code]:font-mono [&_h1]:my-4 [&_h1]:text-xl [&_h1]:font-bold [&_h2]:my-4 [&_h2]:text-lg [&_h2]:font-semibold [&_h3]:my-4 [&_h3]:text-base [&_li]:list-disc [&_p]:my-4 [&_pre]:my-4 [&_pre]:p-3 [&_pre]:text-sm [&_table]:border-collapse [&_table]:border-2 [&_table]:border-solid [&_td]:border-2 [&_td]:border-solid [&_th]:border-2 [&_th]:border-solid [&_th]:p-[8px] [&_ul]:pl-6"
+>
+  <Content
+    components={{
+      img: MarkdownImage,
+      a: MarkdownLink,
+      code: MarkdownInlineCode,
+    }}
+  />
+</div>
+
+<style>
+  .app-markdown-view :global(pre) :global(code) {
+    all: unset;
+  }
+</style>
