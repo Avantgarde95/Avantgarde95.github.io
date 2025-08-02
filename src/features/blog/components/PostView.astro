@@ -4,9 +4,7 @@ import Header from "@/shared/components/Header.astro";
 import { formatDate } from "@/shared/utils/StringUtils";
 import AppLayout from "@/shared/components/AppLayout.astro";
 import PostComments from "@/features/blog/components/PostComments.astro";
-import MarkdownImage from "@/features/blog/components/MarkdownImage.astro";
-import MarkdownLink from "@/features/blog/components/MarkdownLink.astro";
-import MarkdownInlineCode from "@/features/blog/components/MarkdownInlineCode.astro";
+import MarkdownView from "@/shared/components/MarkdownView.astro";
 
 const { id: postID } = Astro.params;
 
@@ -25,13 +23,7 @@ const { Content, frontmatter } = (await postModule()) as MDXInstance<Record<stri
   <div
     class="app-post-content [&_table]:border-gray [&_td]:border-gray [&_th]:border-gray mb-2 text-base break-all [&_a]:cursor-pointer [&_a]:font-normal [&_code]:font-mono [&_h1]:my-4 [&_h1]:text-xl [&_h1]:font-bold [&_h2]:my-4 [&_h2]:text-lg [&_h2]:font-semibold [&_h3]:my-4 [&_h3]:text-base [&_li]:list-disc [&_p]:my-4 [&_pre]:my-4 [&_pre]:p-3 [&_pre]:text-sm [&_table]:border-collapse [&_table]:border-2 [&_table]:border-solid [&_td]:border-2 [&_td]:border-solid [&_th]:border-2 [&_th]:border-solid [&_th]:p-[8px] [&_ul]:pl-6"
   >
-    <Content
-      components={{
-        img: MarkdownImage,
-        a: MarkdownLink,
-        code: MarkdownInlineCode,
-      }}
-    />
+    <MarkdownView Content={Content} />
   </div>
   <div class="border-gray my-4 w-full border-b-2 border-dashed"></div>
   <PostComments />

@@ -15,4 +15,11 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+const study = defineCollection({
+  loader: glob({
+    pattern: ["**/*.md", "**/*.mdx"],
+    base: "./src/features/study/data",
+  }),
+});
+
+export const collections = { blog, study };

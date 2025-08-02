@@ -1,0 +1,59 @@
+---
+import AppLayout from "@/shared/components/AppLayout.astro";
+import Header from "@/shared/components/Header.astro";
+import PageMenu from "@/shared/components/PageMenu.astro";
+import { getStaticPaths } from "@/shared/utils/LocaleUtils";
+import MarkdownView from "@/shared/components/MarkdownView.astro";
+import { getEntry, render } from "astro:content";
+
+const names = ["Web", "Build", "TypeScript"];
+
+const tabs = await Promise.all(
+  names.map(async name => {
+    const id = name.toLowerCase();
+    const entry = await getEntry("study", id);
+
+    if (!entry) {
+      throw new Error(`Entry not found for study/${id}`);
+    }
+
+    const { Content } = await render(entry);
+
+    return { id, Content };
+  }),
+);
+
+export { getStaticPaths };
+---
+
+<AppLayout title="MyPage - Study" description="Study">
+  <Header titleText="Study">Study</Header>
+  <PageMenu ids={tabs.map(tab => tab.id)} />
+  {
+    tabs.map(tab => (
+      <div data-id={tab.id} class="w-full">
+        <MarkdownView Content={tab.Content} />
+      </div>
+    ))
+  }
+</AppLayout>
+
+<script>
+  const tabIDs = ["web", "build", "typescript"];
+
+  function renderTab() {
+    const currentID = window.location.hash.slice(1).trim();
+    const targetID = tabIDs.includes(currentID) ? currentID : tabIDs[0];
+
+    for (const tabID of tabIDs) {
+      const tabElement = document.querySelector<HTMLElement>(`[data-id=${tabID}]`);
+      tabElement?.classList.toggle("hidden", tabID !== targetID);
+    }
+  }
+
+  renderTab();
+
+  window.addEventListener("hashchange", () => {
+    renderTab();
+  });
+</script>
