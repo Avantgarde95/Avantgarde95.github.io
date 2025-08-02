@@ -1,10 +1,11 @@
 ---
+import { getEntry, render } from "astro:content";
+
 import AppLayout from "@/shared/components/AppLayout.astro";
 import Header from "@/shared/components/Header.astro";
 import PageMenu from "@/shared/components/PageMenu.astro";
 import { getStaticPaths } from "@/shared/utils/LocaleUtils";
 import MarkdownView from "@/shared/components/MarkdownView.astro";
-import { getEntry, render } from "astro:content";
 
 const names = ["Web", "Build", "TypeScript"];
 

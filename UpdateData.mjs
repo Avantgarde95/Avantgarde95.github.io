@@ -1,4 +1,5 @@
 import fs from "fs";
+
 import dotenv from "dotenv";
 
 async function request(url, parameterMap, headerMap) {

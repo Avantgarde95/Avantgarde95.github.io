@@ -1,9 +1,10 @@
 ---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
 import MarkdownH2 from "@/shared/components/MarkdownH2.astro";
 import MarkdownImage from "@/shared/components/MarkdownImage.astro";
 import MarkdownInlineCode from "@/shared/components/MarkdownInlineCode.astro";
 import MarkdownLink from "@/shared/components/MarkdownLink.astro";
-import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 
 export type ContentType = AstroComponentFactory;
 
