@@ -13,10 +13,10 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/mdx": "^4.3.3",
     "@lucide/astro": "^0.513.0",
     "@tailwindcss/vite": "^4.1.8",
-    "astro": "^5.8.1",
+    "astro": "^5.12.8",
     "remark": "^15.0.1",
     "strip-markdown": "^6.0.0",
     "tailwindcss": "^4.1.8"
