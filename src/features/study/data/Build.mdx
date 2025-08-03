@@ -1,1 +1,25 @@
 ## CommonJS vs ES Modules (CJS vs ESM)
+
+비교
+
+- CJS: `require`, `module.exports` / ESM: `import`, `export`
+- CJS: 동기적 로딩 / ESM: 비동기적 로딩
+  - ESM: Top-level await 지원
+- CJS: 동적 import 가능 / ESM: 동적 import 불가
+  - ESM은 대신 빌드 단계에서 정적 분석 용이
+  - 이로 인해, CJS: Tree shaking 어려움 / ESM: Tree shaking 용이
+
+지원하기
+
+- `exports` 필드
+
+```json
+{
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./esm/index.mjs"
+    }
+  }
+}
+```

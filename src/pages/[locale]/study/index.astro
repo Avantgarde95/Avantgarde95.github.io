@@ -7,7 +7,7 @@ import PageMenu from "@/shared/components/PageMenu.astro";
 import { getStaticPaths } from "@/shared/utils/LocaleUtils";
 import MarkdownView from "@/shared/components/MarkdownView.astro";
 
-const names = ["Web", "Build", "TypeScript"];
+const names = ["Web", "Build", "TypeScript", "Render"];
 
 const tabs = await Promise.all(
   names.map(async name => {
@@ -40,7 +40,7 @@ export { getStaticPaths };
 </AppLayout>
 
 <script>
-  const tabIDs = ["web", "build", "typescript"];
+  const tabIDs = ["web", "build", "typescript", "render"];
 
   function renderTab() {
     const currentID = window.location.hash.slice(1).trim();

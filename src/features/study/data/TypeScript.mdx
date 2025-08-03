@@ -1,1 +1,54 @@
 ## Generics
+
+의미
+
+- 함수, 타입, 클래스 등에서 내부에서 사용할 타입을 외부에서 지정할 수 있도록 하는 기능.
+
+장점
+
+- 단일 타입이 아닌 다양한 타입에서 작동하는 코드 작성 가능.
+
+사용법
+
+- 타입 변수로 유저가 준 인수의 타입을 캡처.
+- 호출 시 - (1) 직접 타입 지정 or (2) 인수값에 따라 자동으로 타입 추론.
+
+응용
+
+- `number`가 아닌 타입
+
+```typescript
+type NotNumber<T> = T extends number ? never : T;
+```
+
+## any vs unknown vs never
+
+비교
+
+- `unknown` vs `any`: 둘 다 모든 타입을 담을 수 있음
+  - `unknown`: 변수 사용 시 타입 검사 요구
+  - `any`: 모든 타입의 연산 가능
+
+```typescript
+const num: unknown = 10;
+
+// Error.
+console.log(num + 10);
+
+// OK.
+if (typeof num === "number") {
+  console.log(num + 10);
+}
+```
+
+- `never`: 모든 타입의 하위 타입 -> 어떤 값도 할당할 수 없음
+
+용도
+
+- `unknown`: 기존의 `any`의 단점 커버
+- `any`: 데이터의 타입 정보를 얻을 길이 없을 때 (즉 unknown 사용 불가)
+- `never`: 함수가 아무것도 반환하지 않을 때 (ex. 무한 루프, 예외 던지기) / 특정 타입 값 할당받지 못하게 할 때
+
+```typescript
+type NotString<T> = T extends string ? never : T;
+```
