@@ -11,7 +11,7 @@ const { duration, noContent = false } = Astro.props;
   <div class="flex min-w-14 shrink-0 flex-col pr-1 md:w-36 md:flex-row">
     <span>{duration.start} -</span>
     <span class="hidden md:inline">&nbsp;</span>
-    <span>{duration.end ?? "..."}</span>
+    <span>{duration.end ?? "Now"}</span>
   </div>
   <div class="flex flex-col items-center font-mono">
     +
