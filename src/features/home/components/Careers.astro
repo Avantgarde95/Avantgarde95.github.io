@@ -3,6 +3,18 @@ import HistoryView from "@/shared/components/HistoryView.astro";
 import { getLocale } from "@/shared/utils/LocaleUtils";
 
 const data = {
+  toss: {
+    ko: "토스",
+    en: "Toss",
+  },
+  elice: {
+    ko: "엘리스",
+    en: "Elice",
+  },
+  fe: {
+    ko: "프론트엔드 개발자",
+    en: "Frontend Developer",
+  },
   tmaxgaia: {
     ko: "티맥스가이아",
     en: "TmaxGaia",
@@ -11,23 +23,20 @@ const data = {
     ko: "연구원",
     en: "Researcher",
   },
-  gaia: {
-    ko: "No-code 앱 제작 프로그램 GAIA 개발",
-    en: "No-code app dev. program GAIA",
-  },
-  office: {
-    ko: "데스크톱용 오피스 프로그램 ToOffice 개발",
-    en: "",
-  },
 };
 
 const locale = getLocale(Astro.params);
 ---
 
-<HistoryView duration={{ start: "2021", end: "2024" }}>
+<HistoryView duration={{ start: "2025.09" }} noContent>
+  <span slot="title">{data.toss[locale]}</span>
+  <span slot="subtitle">{data.fe[locale]}</span>
+</HistoryView>
+<HistoryView duration={{ start: "2025.06", end: "2025.08" }} noContent>
+  <span slot="title">{data.elice[locale]}</span>
+  <span slot="subtitle">{data.fe[locale]}</span>
+</HistoryView>
+<HistoryView duration={{ start: "2021.03", end: "2024.12" }} noContent>
   <span slot="title">{data.tmaxgaia[locale]}</span>
   <span slot="subtitle">{data.researcher[locale]}</span>
-  {data.gaia[locale]}
-  <br />
-  {data.office[locale]}
 </HistoryView>
